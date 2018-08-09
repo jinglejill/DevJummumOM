@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="QMi-WQ-QaK" customClass="CustomTableViewCellRewardDetail">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="304"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r6D-1a-5g8">
+                    <rect key="frame" x="16" y="11" width="343" height="193"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="193" id="Yk6-vf-LFP"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MAMARIN ก๋วยเตี๋ยวบ้านบึง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLX-S8-zzO">
+                    <rect key="frame" x="16" y="224" width="343" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="jfj-hx-OjT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.6588235294" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ฟรี น้ำเก๊กฮวยอบควันเทียน มูลค่า 45 บาท" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTh-mz-Ocj">
+                    <rect key="frame" x="16" y="250" width="343" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="PVQ-4V-eho"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🍄 900 points" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tP-wq-AdE">
+                    <rect key="frame" x="16" y="275" width="343" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="Nmi-H1-gOC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.0" green="0.6588235294" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5UA-Bb-WUC" firstAttribute="trailing" secondItem="aLX-S8-zzO" secondAttribute="trailing" constant="16" id="0dM-6Y-DMK"/>
+                <constraint firstItem="5UA-Bb-WUC" firstAttribute="trailing" secondItem="r6D-1a-5g8" secondAttribute="trailing" constant="16" id="AmJ-65-s5m"/>
+                <constraint firstItem="qTh-mz-Ocj" firstAttribute="leading" secondItem="5UA-Bb-WUC" secondAttribute="leading" constant="16" id="GfD-8k-QyS"/>
+                <constraint firstItem="5UA-Bb-WUC" firstAttribute="trailing" secondItem="2tP-wq-AdE" secondAttribute="trailing" constant="16" id="YMi-FA-JrJ"/>
+                <constraint firstItem="2tP-wq-AdE" firstAttribute="top" secondItem="qTh-mz-Ocj" secondAttribute="bottom" constant="8" id="Z9p-uV-BYi"/>
+                <constraint firstItem="r6D-1a-5g8" firstAttribute="top" secondItem="5UA-Bb-WUC" secondAttribute="top" constant="11" id="cEt-HL-xyd"/>
+                <constraint firstItem="qTh-mz-Ocj" firstAttribute="top" secondItem="aLX-S8-zzO" secondAttribute="bottom" constant="8" id="dLJ-vu-be7"/>
+                <constraint firstItem="2tP-wq-AdE" firstAttribute="leading" secondItem="5UA-Bb-WUC" secondAttribute="leading" constant="16" id="kTY-sa-ZLr"/>
+                <constraint firstItem="aLX-S8-zzO" firstAttribute="top" secondItem="r6D-1a-5g8" secondAttribute="bottom" constant="20" id="onT-V1-EN8"/>
+                <constraint firstItem="r6D-1a-5g8" firstAttribute="leading" secondItem="5UA-Bb-WUC" secondAttribute="leading" constant="16" id="q4x-pi-k0T"/>
+                <constraint firstItem="5UA-Bb-WUC" firstAttribute="trailing" secondItem="qTh-mz-Ocj" secondAttribute="trailing" constant="16" id="s1U-Yo-09L"/>
+                <constraint firstItem="aLX-S8-zzO" firstAttribute="leading" secondItem="5UA-Bb-WUC" secondAttribute="leading" constant="16" id="yq9-9n-wHL"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="5UA-Bb-WUC"/>
+            <connections>
+                <outlet property="imgVwValue" destination="r6D-1a-5g8" id="R2i-HE-3kh"/>
+                <outlet property="imgVwValueHeight" destination="Yk6-vf-LFP" id="g5w-SO-9fd"/>
+                <outlet property="lblHeader" destination="aLX-S8-zzO" id="wfq-IK-Kta"/>
+                <outlet property="lblHeaderHeight" destination="jfj-hx-OjT" id="n8T-WV-cg4"/>
+                <outlet property="lblRemark" destination="2tP-wq-AdE" id="GNr-st-Fem"/>
+                <outlet property="lblSubTitle" destination="qTh-mz-Ocj" id="I4Q-G0-Duw"/>
+                <outlet property="lblSubTitleHeight" destination="PVQ-4V-eho" id="RlC-dC-YI3"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="-346.5"/>
+        </view>
+    </objects>
+</document>

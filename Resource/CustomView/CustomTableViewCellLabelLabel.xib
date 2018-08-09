@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Prompt-Regular.ttf">
+            <string>Prompt-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomTableViewCellLabelLabel">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMF-Z9-vv5">
+                    <rect key="frame" x="16" y="13" width="43" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="N8q-TK-sR2"/>
+                        <constraint firstAttribute="width" constant="43" id="cxQ-ll-N4m"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VvO-lc-vzk">
+                    <rect key="frame" x="67" y="13" width="292" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="Cqu-73-74z"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VvO-lc-vzk" firstAttribute="leading" secondItem="GMF-Z9-vv5" secondAttribute="trailing" constant="8" id="KGo-RC-Qu0"/>
+                <constraint firstItem="GMF-Z9-vv5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="KgR-oL-Vo0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="VvO-lc-vzk" secondAttribute="trailing" constant="16" id="a63-ZQ-5kU"/>
+                <constraint firstItem="GMF-Z9-vv5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="bvR-MU-a0T"/>
+                <constraint firstItem="VvO-lc-vzk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="yTX-ef-S9m"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="lblText" destination="GMF-Z9-vv5" id="rB7-ZV-7He"/>
+                <outlet property="lblTextWidthConstant" destination="cxQ-ll-N4m" id="XcL-jY-LMa"/>
+                <outlet property="lblValue" destination="VvO-lc-vzk" id="vHs-Mk-bp6"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

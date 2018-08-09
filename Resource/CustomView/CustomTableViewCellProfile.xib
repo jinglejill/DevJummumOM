@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Prompt-Regular.ttf">
+            <string>Prompt-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="KGk-i7-Jjw" customClass="CustomTableViewCellProfile">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="89.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePic.png" translatesAutoresizingMaskIntoConstraints="NO" id="6Kt-Vt-Ozl">
+                        <rect key="frame" x="16" y="10" width="70" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="aNe-xp-qqU"/>
+                            <constraint firstAttribute="width" constant="70" id="szw-pP-xtC"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="jinglejill@hotmail.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rff-m8-u3H">
+                        <rect key="frame" x="94" y="10" width="210" height="70"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="j8T-UI-Wrd"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMb-AS-1ej">
+                        <rect key="frame" x="293" y="34" width="11" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="11" id="8Sx-jG-gyu"/>
+                            <constraint firstAttribute="height" constant="21" id="uUj-K1-Tua"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="rff-m8-u3H" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="9b3-Hz-tpd"/>
+                    <constraint firstItem="bMb-AS-1ej" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="KxP-Nn-9oY"/>
+                    <constraint firstItem="6Kt-Vt-Ozl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="LY9-nG-17m"/>
+                    <constraint firstItem="rff-m8-u3H" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="MQH-rH-epP"/>
+                    <constraint firstItem="bMb-AS-1ej" firstAttribute="centerY" secondItem="rff-m8-u3H" secondAttribute="centerY" id="Mbb-MX-eYy"/>
+                    <constraint firstItem="6Kt-Vt-Ozl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="fft-rd-Ihc"/>
+                    <constraint firstItem="rff-m8-u3H" firstAttribute="leading" secondItem="6Kt-Vt-Ozl" secondAttribute="trailing" constant="8" id="vm1-5Y-9Xn"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="imgValue" destination="6Kt-Vt-Ozl" id="fRE-v0-4Au"/>
+                <outlet property="lblEmail" destination="rff-m8-u3H" id="a4J-UG-puf"/>
+                <outlet property="vwContent" destination="H2p-sc-9uM" id="S0n-As-eUT"/>
+            </connections>
+            <point key="canvasLocation" x="67" y="75"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="profilePic.png" width="228" height="228"/>
+    </resources>
+</document>

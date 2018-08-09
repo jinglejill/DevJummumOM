@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Prompt-Regular.ttf">
+            <string>Prompt-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="257" id="KGk-i7-Jjw" customClass="CustomTableViewCellDisputeDetail">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="257"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="256.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ลูกค้าของคุณต้องการยกเลิกบิลนี้  ด้วยเหตุผลด้านล่างนี้ กรุณากดยืนยันเพื่อ Refund เงินคืนลูกค้า" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7e2-Si-Rgg">
+                        <rect key="frame" x="16" y="11" width="288" height="64"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="64" id="Alz-4D-FpC"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="14"/>
+                        <color key="textColor" red="0.30196078430000001" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yt-Qp-eja">
+                        <rect key="frame" x="16" y="83" width="288" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="RAW-44-IVt"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="เหตุผล:">
+                                <attributes>
+                                    <color key="NSBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="15" name="Thonburi-Bold"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content=" ">
+                                <attributes>
+                                    <font key="NSFont" size="15" name="Thonburi"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="ร้านค้าแจ้งว่าของหมด">
+                                <attributes>
+                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="15" name="Thonburi"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJF-ON-xDt">
+                        <rect key="frame" x="16" y="109" width="288" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="gkM-4r-IYT"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="จำนวนเงินที่ขอคืน:">
+                                <attributes>
+                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="15" name="Thonburi-Bold"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content=" ">
+                                <attributes>
+                                    <font key="NSFont" size="15" name="Thonburi"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="100 บาท">
+                                <attributes>
+                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="15" name="Thonburi"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="orw-W9-Zct">
+                        <rect key="frame" x="16" y="135" width="288" height="44"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="x1L-TO-C9Z"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="รายละเอียดการขอเงินคืน:">
+                                <attributes>
+                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="15" name="Thonburi-Bold"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content=" ">
+                                <attributes>
+                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" metaFont="system" size="15"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="รออาหารนานเป็นชั่วโมงถึงมาแจ้งว่าของหมด">
+                                <attributes>
+                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="15" name="Thonburi"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMz-4a-bgU">
+                        <rect key="frame" x="16" y="187" width="288" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="6CH-cZ-KJr"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="เบอร์โทรติดต่อ: ">
+                                <attributes>
+                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="15" name="Thonburi-Bold"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="081-307-2993">
+                                <attributes>
+                                    <color key="NSColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="15" name="Thonburi"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0yt-Qp-eja" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="1ml-Zy-28f"/>
+                    <constraint firstItem="lMz-4a-bgU" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Emh-UA-aXI"/>
+                    <constraint firstItem="0yt-Qp-eja" firstAttribute="top" secondItem="7e2-Si-Rgg" secondAttribute="bottom" constant="8" id="FgI-1Y-9k3"/>
+                    <constraint firstItem="7e2-Si-Rgg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Fu1-mT-0vk"/>
+                    <constraint firstItem="uJF-ON-xDt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Qon-7y-ekF"/>
+                    <constraint firstItem="lMz-4a-bgU" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="UCJ-rj-PWf"/>
+                    <constraint firstItem="7e2-Si-Rgg" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="UH6-RH-Mab"/>
+                    <constraint firstItem="orw-W9-Zct" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="UYz-2K-GSQ"/>
+                    <constraint firstItem="orw-W9-Zct" firstAttribute="top" secondItem="uJF-ON-xDt" secondAttribute="bottom" constant="8" id="XcI-0k-xFb"/>
+                    <constraint firstItem="0yt-Qp-eja" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ZXV-PZ-RKp"/>
+                    <constraint firstItem="uJF-ON-xDt" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="bgX-on-O0H"/>
+                    <constraint firstItem="lMz-4a-bgU" firstAttribute="top" secondItem="orw-W9-Zct" secondAttribute="bottom" constant="8" id="eBO-nk-tPT"/>
+                    <constraint firstItem="uJF-ON-xDt" firstAttribute="top" secondItem="0yt-Qp-eja" secondAttribute="bottom" constant="8" id="ghB-qD-aOy"/>
+                    <constraint firstItem="orw-W9-Zct" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="tZ5-0N-xJc"/>
+                    <constraint firstItem="7e2-Si-Rgg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="vFt-Iv-BZ7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="lblAmount" destination="uJF-ON-xDt" id="t1M-DY-BGO"/>
+                <outlet property="lblAmountTop" destination="ghB-qD-aOy" id="kW0-Ue-tV1"/>
+                <outlet property="lblPhoneNo" destination="lMz-4a-bgU" id="YrO-7C-DWv"/>
+                <outlet property="lblPhoneNoHeight" destination="6CH-cZ-KJr" id="caT-g0-pOO"/>
+                <outlet property="lblPhoneNoTop" destination="eBO-nk-tPT" id="ZcK-Ni-TcD"/>
+                <outlet property="lblReason" destination="0yt-Qp-eja" id="5Y2-xh-Mh3"/>
+                <outlet property="lblReasonDetail" destination="orw-W9-Zct" id="OEg-EC-10e"/>
+                <outlet property="lblReasonDetailHeight" destination="x1L-TO-C9Z" id="p2R-hm-pFa"/>
+                <outlet property="lblReasonDetailTop" destination="XcI-0k-xFb" id="9Ck-z6-aj4"/>
+                <outlet property="lblReasonHeight" destination="RAW-44-IVt" id="PYw-7i-bCa"/>
+                <outlet property="lblReasonTop" destination="FgI-1Y-9k3" id="rka-jF-AQt"/>
+                <outlet property="lblRemark" destination="7e2-Si-Rgg" id="4HM-rd-5e9"/>
+                <outlet property="lblRemarkHeight" destination="Alz-4D-FpC" id="R0i-mc-ALe"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="160.5"/>
+        </tableViewCell>
+    </objects>
+</document>

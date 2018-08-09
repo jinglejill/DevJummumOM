@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Key</key>
+	<string>jmmjmm</string>
+	<key>DomainName</key>
+	<string>http://www.jummum.co</string>
+	<key>PingAddress</key>
+	<string>www.google.com</string>
+	<key>SubjectNoConnection</key>
+	<string>No network connection</string>
+	<key>DetailNoConnection</key>
+	<string>You must be connected to the internet to use this app.</string>
+</dict>
+</plist>

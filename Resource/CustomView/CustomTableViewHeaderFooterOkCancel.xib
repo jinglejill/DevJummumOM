@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Prompt-SemiBold.ttf">
+            <string>Prompt-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomTableViewHeaderFooterOkCancel">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcQ-xL-oNG">
+                    <rect key="frame" x="16" y="629" width="343" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.23529411759999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="udZ-3c-J89"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
+                    <state key="normal" title="Cancel">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h15-DA-DVn">
+                    <rect key="frame" x="16" y="591" width="343" height="30"/>
+                    <color key="backgroundColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="B7I-Av-YIL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
+                    <state key="normal" title="Submit">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DcQ-xL-oNG" secondAttribute="trailing" constant="16" id="13L-SM-VCw"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DcQ-xL-oNG" secondAttribute="bottom" constant="8" id="IFr-cV-hlQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="h15-DA-DVn" secondAttribute="trailing" constant="16" id="bim-Re-gTK"/>
+                <constraint firstItem="DcQ-xL-oNG" firstAttribute="top" secondItem="h15-DA-DVn" secondAttribute="bottom" constant="8" id="hAQ-gu-JxV"/>
+                <constraint firstItem="DcQ-xL-oNG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="rKh-aq-jyp"/>
+                <constraint firstItem="h15-DA-DVn" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="tlP-gc-sw6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnCancel" destination="DcQ-xL-oNG" id="cW9-FW-6xU"/>
+                <outlet property="btnOk" destination="h15-DA-DVn" id="6Sj-TM-t0o"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

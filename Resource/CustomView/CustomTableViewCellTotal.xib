@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Prompt-SemiBold.ttf">
+            <string>Prompt-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomTableViewCellTotal">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="26"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJA-nh-unc">
+                    <rect key="frame" x="16" y="4" width="185" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="dXX-cV-NvB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99,99 9b" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7d-uY-WWJ">
+                    <rect key="frame" x="209" y="4" width="150" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="IHd-kB-hEW"/>
+                        <constraint firstAttribute="width" constant="150" id="hGv-us-SCx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
+                    <color key="textColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIa-lE-bEa">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="zY0-NK-IId"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="xJA-nh-unc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="6QL-la-qm4"/>
+                <constraint firstItem="TIa-lE-bEa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6Uu-Ba-7Lx"/>
+                <constraint firstAttribute="trailing" secondItem="TIa-lE-bEa" secondAttribute="trailing" id="UNQ-2b-rrT"/>
+                <constraint firstItem="TIa-lE-bEa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="V9O-Cg-O4v"/>
+                <constraint firstItem="xJA-nh-unc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="W8I-bA-oVf"/>
+                <constraint firstItem="w7d-uY-WWJ" firstAttribute="leading" secondItem="xJA-nh-unc" secondAttribute="trailing" constant="8" id="p4x-ki-VPJ"/>
+                <constraint firstItem="w7d-uY-WWJ" firstAttribute="top" secondItem="xJA-nh-unc" secondAttribute="top" id="sCI-Vw-DXp"/>
+                <constraint firstAttribute="trailing" secondItem="w7d-uY-WWJ" secondAttribute="trailing" constant="16" id="yAf-IK-NTd"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="lblAmount" destination="w7d-uY-WWJ" id="sSA-yx-DQN"/>
+                <outlet property="lblTitle" destination="xJA-nh-unc" id="hze-RW-QSy"/>
+                <outlet property="lblTitleTop" destination="6QL-la-qm4" id="OCP-Pf-YGi"/>
+                <outlet property="vwTopBorder" destination="TIa-lE-bEa" id="gjQ-gb-LEH"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="167.5"/>
+        </view>
+    </objects>
+</document>

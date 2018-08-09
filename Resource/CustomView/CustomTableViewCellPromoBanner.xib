@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dp4-ls-tig" customClass="CustomTableViewCellPromoBanner">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="159"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dp4-ls-tig" id="i7d-ll-CZg">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="158.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สั่งอาหาร จ่ายผ่าน Credit card รับส่วนลด 75 บาท ใส่โค้ด CCFOOD75" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cln-6O-V9p">
+                        <rect key="frame" x="16" y="11" width="288" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Smg-us-JJF"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2561.04.01 - 04.30 สั่งอาหาร จ่ายผ่าน Credit card รับส่วนลด 75 บาท ใส่โค้ด CCFOOD75" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGG-8c-jaD">
+                        <rect key="frame" x="16" y="35" width="288" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="UOp-RH-XoD"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="S0U-ne-sSb">
+                        <rect key="frame" x="16" y="55" width="288" height="90"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="90" id="fkg-pb-waI"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cln-6O-V9p" secondAttribute="trailing" constant="16" id="0os-9l-y3m"/>
+                    <constraint firstItem="S0U-ne-sSb" firstAttribute="leading" secondItem="i7d-ll-CZg" secondAttribute="leadingMargin" id="6ls-Ft-VjK"/>
+                    <constraint firstItem="GGG-8c-jaD" firstAttribute="trailing" secondItem="i7d-ll-CZg" secondAttribute="trailingMargin" id="BH9-Yd-XLB"/>
+                    <constraint firstItem="GGG-8c-jaD" firstAttribute="top" secondItem="cln-6O-V9p" secondAttribute="bottom" constant="8" id="SVk-HK-Yc8"/>
+                    <constraint firstItem="S0U-ne-sSb" firstAttribute="trailing" secondItem="i7d-ll-CZg" secondAttribute="trailingMargin" id="XXe-gj-ezt"/>
+                    <constraint firstItem="GGG-8c-jaD" firstAttribute="leading" secondItem="i7d-ll-CZg" secondAttribute="leadingMargin" id="gAJ-MW-120"/>
+                    <constraint firstItem="cln-6O-V9p" firstAttribute="leading" secondItem="i7d-ll-CZg" secondAttribute="leading" constant="16" id="gAl-bD-6n5"/>
+                    <constraint firstItem="S0U-ne-sSb" firstAttribute="top" secondItem="GGG-8c-jaD" secondAttribute="bottom" constant="8" id="yD3-Fe-oM8"/>
+                    <constraint firstItem="cln-6O-V9p" firstAttribute="top" secondItem="i7d-ll-CZg" secondAttribute="top" constant="11" id="zTA-Nm-isS"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="lAm-DR-geX"/>
+            <connections>
+                <outlet property="imgVwValue" destination="S0U-ne-sSb" id="KWa-jm-SCf"/>
+                <outlet property="imgVwValueHeight" destination="fkg-pb-waI" id="7RI-bI-gic"/>
+                <outlet property="lblHeader" destination="cln-6O-V9p" id="RDD-jv-LFL"/>
+                <outlet property="lblHeaderHeight" destination="Smg-us-JJF" id="Fdo-mh-zSV"/>
+                <outlet property="lblSubTitle" destination="GGG-8c-jaD" id="7bd-iV-MVP"/>
+                <outlet property="lblSubTitleHeight" destination="UOp-RH-XoD" id="ioh-I8-RUJ"/>
+            </connections>
+            <point key="canvasLocation" x="55" y="53.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Prompt-Regular.ttf">
+            <string>Prompt-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomCollectionViewCellNote">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44n-uN-bei">
+                    <rect key="frame" x="323" y="8" width="35" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="1in-95-Vlf"/>
+                        <constraint firstAttribute="width" constant="35" id="nzT-am-ieV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="14"/>
+                    <color key="textColor" red="0.30196078430000001" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AFE-sV-wEN">
+                    <rect key="frame" x="39" y="8" width="276" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="buH-Fh-XPq"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="14"/>
+                    <color key="textColor" red="0.30196078430000001" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="058-Rl-YQt">
+                    <rect key="frame" x="374" y="0.0" width="1" height="667"/>
+                    <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="1" id="baa-Vw-a2u"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wm0-H1-U76">
+                    <rect key="frame" x="16" y="8" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="XpS-Bc-bZj"/>
+                        <constraint firstAttribute="width" constant="15" id="nIM-Tk-mTP"/>
+                    </constraints>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="058-Rl-YQt" firstAttribute="leading" secondItem="44n-uN-bei" secondAttribute="trailing" constant="16" id="4Xe-mw-Qm5"/>
+                <constraint firstItem="AFE-sV-wEN" firstAttribute="leading" secondItem="wm0-H1-U76" secondAttribute="trailing" constant="8" id="Mjg-eZ-SJI"/>
+                <constraint firstAttribute="bottom" secondItem="058-Rl-YQt" secondAttribute="bottom" id="NRK-PE-5B8"/>
+                <constraint firstItem="wm0-H1-U76" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Ncs-fy-5e5"/>
+                <constraint firstItem="44n-uN-bei" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="WN2-5X-hkB"/>
+                <constraint firstItem="AFE-sV-wEN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="WnC-Tu-bWF"/>
+                <constraint firstItem="44n-uN-bei" firstAttribute="leading" secondItem="AFE-sV-wEN" secondAttribute="trailing" constant="8" id="YB1-KN-xrR"/>
+                <constraint firstItem="wm0-H1-U76" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="ewH-c3-6eO"/>
+                <constraint firstItem="058-Rl-YQt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="rUT-hp-hr0"/>
+                <constraint firstAttribute="trailing" secondItem="058-Rl-YQt" secondAttribute="trailing" id="xGO-wc-CCR"/>
+            </constraints>
+            <connections>
+                <outlet property="btnCheckBox" destination="wm0-H1-U76" id="S7a-ke-Rnk"/>
+                <outlet property="lblNoteName" destination="AFE-sV-wEN" id="wKg-dB-Zbu"/>
+                <outlet property="lblPrice" destination="44n-uN-bei" id="qc1-ZX-bbA"/>
+            </connections>
+            <point key="canvasLocation" x="38.5" y="33.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Prompt-Regular.ttf">
+            <string>Prompt-Regular</string>
+        </array>
+        <array key="Prompt-SemiBold.ttf">
+            <string>Prompt-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomTableViewCellReceiptSummary">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="บิลเลขที่ 000001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNP-Kq-HeX">
+                    <rect key="frame" x="16" y="36" width="197" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="Kfi-o6-iFD"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="13"/>
+                    <color key="textColor" red="0.30196078430000001" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ร้าน MAMARIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8KU-CG-XN7">
+                    <rect key="frame" x="16" y="65" width="100" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="lOz-aL-0u1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
+                    <color key="textColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 FEB 2018 12:30 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtg-O7-PPv">
+                    <rect key="frame" x="221" y="65" width="138" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="JoS-cY-zeW"/>
+                        <constraint firstAttribute="width" constant="138" id="j7o-3F-BTC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="13"/>
+                    <color key="textColor" red="0.30196078430000001" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LrP-pm-5NA">
+                    <rect key="frame" x="0.0" y="91" width="375" height="576"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="separatorColor" red="0.85098039215686272" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pRB-X6-wwb">
+                    <rect key="frame" x="249" y="29" width="110" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.23529411759999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="6zY-go-h8q"/>
+                        <constraint firstAttribute="width" constant="110" id="tfg-Y2-9li"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
+                    <state key="normal" title="Order it again">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ExE-pH-eZV">
+                    <rect key="frame" x="294" y="34" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ExE-pH-eZV" firstAttribute="centerX" secondItem="pRB-X6-wwb" secondAttribute="centerX" id="1bb-c2-q7b"/>
+                <constraint firstItem="8KU-CG-XN7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="A42-10-HTF"/>
+                <constraint firstItem="pRB-X6-wwb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="9" id="C74-jo-Wxa"/>
+                <constraint firstItem="LrP-pm-5NA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CgO-Bc-SEf"/>
+                <constraint firstItem="rtg-O7-PPv" firstAttribute="leading" secondItem="fNP-Kq-HeX" secondAttribute="trailing" constant="8" id="NNc-Q3-T8R"/>
+                <constraint firstItem="LrP-pm-5NA" firstAttribute="top" secondItem="8KU-CG-XN7" secondAttribute="bottom" constant="8" id="PaV-PG-VR8"/>
+                <constraint firstItem="fNP-Kq-HeX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="RQe-tv-R4F"/>
+                <constraint firstItem="ExE-pH-eZV" firstAttribute="centerY" secondItem="pRB-X6-wwb" secondAttribute="centerY" id="bZ4-us-j4F"/>
+                <constraint firstItem="8KU-CG-XN7" firstAttribute="top" secondItem="fNP-Kq-HeX" secondAttribute="bottom" constant="12" id="cc7-5y-Css"/>
+                <constraint firstItem="rtg-O7-PPv" firstAttribute="centerY" secondItem="8KU-CG-XN7" secondAttribute="centerY" id="lZr-KU-IbB"/>
+                <constraint firstItem="LrP-pm-5NA" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="m5g-RL-lyf"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pRB-X6-wwb" secondAttribute="trailing" constant="16" id="mD4-bD-hWT"/>
+                <constraint firstItem="fNP-Kq-HeX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="ncl-3c-Y8E"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rtg-O7-PPv" secondAttribute="trailing" constant="16" id="pct-8J-2fZ"/>
+                <constraint firstItem="LrP-pm-5NA" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="z49-Bz-laR"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="btnOrderItAgain" destination="pRB-X6-wwb" id="6t8-n6-ZdK"/>
+                <outlet property="indicator" destination="ExE-pH-eZV" id="nux-2x-2QP"/>
+                <outlet property="lblBranchName" destination="8KU-CG-XN7" id="5No-db-lvk"/>
+                <outlet property="lblReceiptDate" destination="rtg-O7-PPv" id="BEx-3Z-b7O"/>
+                <outlet property="lblReceiptNo" destination="fNP-Kq-HeX" id="oaq-VJ-EJq"/>
+                <outlet property="tbvOrderDetail" destination="LrP-pm-5NA" id="ssV-Hz-9R1"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>
