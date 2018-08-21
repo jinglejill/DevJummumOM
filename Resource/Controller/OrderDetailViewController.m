@@ -233,10 +233,11 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             
-            NSString *message = [Setting getValue:@"006m" example:@"Order no. #%@"];
+            NSString *message = [Setting getValue:@"006m" example:@"Order no. #%@%@"];
             NSString *message2 = [Setting getValue:@"007m" example:@"Table: %@"];
+            NSString *showBuffetOrder = receipt.buffetReceiptID?@" (Buffet)":@"";
             CustomerTable *customerTable = [CustomerTable getCustomerTable:receipt.customerTableID];
-            cell.lblReceiptNo.text = [NSString stringWithFormat:message, receipt.receiptNoID];
+            cell.lblReceiptNo.text = [NSString stringWithFormat:message, receipt.receiptNoID,showBuffetOrder];
             cell.lblReceiptDate.text = [Utility dateToString:receipt.modifiedDate toFormat:@"d MMM yy HH:mm"];
             cell.lblBranchName.text = [NSString stringWithFormat:message2,customerTable.tableName];
             cell.lblBranchName.textColor = cSystem1;

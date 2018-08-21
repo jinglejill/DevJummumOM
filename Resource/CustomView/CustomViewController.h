@@ -22,7 +22,6 @@
 @property (nonatomic,retain) UILabel *lblAlertMsg;
 @property (nonatomic,retain) UILabel *lblWaiting;
 @property (nonatomic,retain) HomeModel *homeModelPrintKitchenBill;
-@property (nonatomic,retain) UIView *backgroundView;
 @property (nonatomic) NSInteger receiptKitchenBill;
 @property (nonatomic) BOOL newOrderComing;
 @property (nonatomic) BOOL issueComing;

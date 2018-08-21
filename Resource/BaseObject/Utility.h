@@ -115,10 +115,6 @@ enum enumDB
     dbMasterWithProgressBar,
     dbLogIn,
     dbLogInUserAccount,
-    dbPushSync,
-    dbPushSyncUpdateByDeviceToken,
-    dbDevice,
-    dbPushSyncUpdateTimeSynced,
     dbWriteLog,
     dbMenu,
     dbMenuList,
@@ -138,23 +134,6 @@ enum enumDB
     dbReceiptSummary,
     dbReceiptMaxModifiedDate,
     dbReceipt,
-    dbPromotion,
-    dbFacebookComment,
-    dbRewardPoint,
-    dbRewardPointList,
-    dbRewardPointSpent,
-    dbRewardPointSpentMore,
-    dbRewardPointSpentUsed,
-    dbRewardPointSpentUsedMore,
-    dbPushReminder,
-    dbHotDeal,
-    dbHotDealList,
-    dbRewardRedemption,
-    dbRewardRedemptionList,
-    dbPromoCode,
-    dbPromoCodeList,
-    dbUserRewardRedemptionUsed,
-    dbUserRewardRedemptionUsedList,
     dbDisputeReason,
     dbDisputeReasonList,    
     dbDispute,
@@ -172,14 +151,12 @@ enum enumDB
     dbJummumReceiptTapNotificationClear,
     dbReceiptPrintList,
     dbPrinter,
-    dbCredentialsDb,
-    dbCredentials,
-//    dbJummumReceiptUpdate,
     dbAlarm,
     dbAlarmUpdate,
     dbBranch,
     dbOpeningTimeText,
-    dbSetting
+    dbSetting,
+    dbSettingWithKey
 
 
     
@@ -196,8 +173,7 @@ enum enumUrl
     urlLogInUserAccountInsert,
     urlLogInInsert,
     urlPushSyncSync,
-    urlPushSyncUpdateByDeviceToken,
-    urlDeviceInsert,
+    urlPushSyncUpdateByDeviceToken,    
     urlPushSyncUpdateTimeSynced,
     urlWriteLog,
     urlMenuInsert,
@@ -224,7 +200,6 @@ enum enumUrl
     urlCustomerTableGetList,
     urlReceiptSummaryGetList,
     urlPromotionGetList,
-    urlFacebookComment,
     urlUserAccountValidate,
     urlUserAccountInsert,
     urlUserAccountForgotPasswordInsert,
@@ -287,8 +262,7 @@ enum enumUrl
     urlDisputeUpdateList,
     urlDisputeDeleteList,
     urlDisputeGetList,
-    urlCredentialsDbGet,
-    urlCredentialsValidate,
+    urlCredentialsDbGet,    
     urlJummumReceiptGetList,
     urlJummumReceiptUpdate,
     urlJummumReceiptSendToKitchen,
@@ -299,6 +273,7 @@ enum enumUrl
     urlOpeningTimeTextGet,
     urlSettingUpdate,
     urlSettingGet,
+    urlSettingWithKeyGet,
     urlContactUs
 //    ,
 //    urlTestPasswordInsertList
@@ -421,5 +396,6 @@ enum enumUrl
 + (NSInteger) branchID;
 + (void)addObjectIfNotDuplicate:(NSObject *)object;
 +(void)updateSharedObject:(NSArray *)arrOfObjectList;
++(NSString *)formatPhoneNo:(NSString *)phoneNo;
 @end
 

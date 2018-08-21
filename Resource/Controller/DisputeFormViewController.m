@@ -98,7 +98,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
             break;
         case 4:
         {
-            _dispute.phoneNo = [Utility trimString:textField.text];
+            _dispute.phoneNo = [Utility removeDashAndSpaceAndParenthesis:[Utility trimString:textField.text]];
         }
             break;
         default:
@@ -272,7 +272,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
                 cell.txtValue.delegate = self;
                 cell.txtValue.inputView = pickerVw;
                 [cell.txtValue setInputAccessoryView:self.toolBar];
-                
+                [cell.txtValue removeTarget:self action:nil forControlEvents:UIControlEventAllEvents];
                 
                 
                 DisputeReason *disputeReason = [DisputeReason getDisputeReason:_dispute.disputeReasonID];
@@ -315,9 +315,12 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
                 cell.txtValue.tag = 4;
                 cell.txtValue.delegate = self;
                 cell.txtValue.placeholder = @"xxx-xxx-xxx";
-                cell.txtValue.text = _dispute.phoneNo;
+                cell.txtValue.text = [Utility setPhoneNoFormat:_dispute.phoneNo];
                 cell.txtValue.keyboardType = UIKeyboardTypePhonePad;
                 [cell.txtValue setInputAccessoryView:self.toolBar];
+                [cell.txtValue addTarget:self action:@selector(txtPhoneNoDidChange:) forControlEvents:UIControlEventEditingChanged];
+                
+                
                 cell.lblRemark.text = strRemark;
                 [cell.lblRemark sizeToFit];
                 cell.lblRemarkHeight.constant = cell.lblRemark.frame.size.height;
@@ -378,7 +381,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
                 cell.txtValue.delegate = self;
                 cell.txtValue.inputView = pickerVw;
                 [cell.txtValue setInputAccessoryView:self.toolBar];
-                
+                [cell.txtValue removeTarget:self action:nil forControlEvents:UIControlEventAllEvents];
                 
                 
                 DisputeReason *disputeReason = [DisputeReason getDisputeReason:_dispute.disputeReasonID];
@@ -423,6 +426,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
                 cell.txtValue.keyboardType = UIKeyboardTypeDecimalPad;
                 cell.txtValue.text = [Utility formatDecimal:_dispute.refundAmount withMinFraction:0 andMaxFraction:2];
                 [cell.txtValue setInputAccessoryView:self.toolBar];
+                [cell.txtValue removeTarget:self action:nil forControlEvents:UIControlEventAllEvents];
                 if(_dispute.refundAmount == 0)
                 {
                     cell.txtValue.text = @"";
@@ -522,6 +526,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
                 cell.txtValue.text = _dispute.phoneNo;
                 cell.txtValue.keyboardType = UIKeyboardTypePhonePad;
                 [cell.txtValue setInputAccessoryView:self.toolBar];
+                [cell.txtValue addTarget:self action:@selector(txtPhoneNoDidChange:) forControlEvents:UIControlEventEditingChanged];
                 
                 
                 
@@ -979,4 +984,9 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
     
 }
 
+-(void)txtPhoneNoDidChange:(id)sender
+{
+    UITextField *txtPhoneNo = sender;
+    txtPhoneNo.text = [Utility formatPhoneNo:[Utility removeDashAndSpaceAndParenthesis:txtPhoneNo.text]];
+}
 @end

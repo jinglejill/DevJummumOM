@@ -17,7 +17,7 @@
 #import "UserAccount.h"
 #import "Setting.h"
 #import "Utility.h"
-#import "FacebookComment.h"
+#import "Device.h"
 
 
 @interface LogInViewController ()
@@ -42,6 +42,30 @@
 @synthesize imgVwLogoText;
 @synthesize lblLogInTop;
 
+
+-(IBAction)unwindToLogIn:(UIStoryboardSegue *)segue
+{
+    if([segue.sourceViewController isMemberOfClass:[TermsOfServiceViewController class]])
+    {
+        [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"logInSession"];
+    }
+    else if([segue.sourceViewController isMemberOfClass:[MeViewController class]])
+    {
+        NSString *message = [Setting getValue:@"055m" example:@"◻︎ จำฉันไว้ในระบบ"];
+        [btnRememberMe setTitle:message forState:UIControlStateNormal];
+        _rememberMe = NO;
+        
+        
+        txtEmail.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"rememberEmail"];
+        txtPassword.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"rememberPassword"];
+    }
+    
+
+    if(![[NSUserDefaults standardUserDefaults] integerForKey:@"logInSession"])
+    {
+        _appLogIn = NO;
+    }
+}
 
 -(void)viewDidLayoutSubviews
 {
@@ -93,7 +117,10 @@
     
     
     LogIn *logIn = [[LogIn alloc]initWithUsername:userAccount.username status:1 deviceToken:[Utility deviceToken]];
-    [self.homeModel insertItems:dbUserAccountValidate withData:@[userAccount,logIn] actionScreen:@"validate userAccount"];
+    
+    
+    Device *device = [[Device alloc]initWithDeviceToken:[Utility deviceToken] model:[self deviceName] remark:@""];
+    [self.homeModel insertItems:dbUserAccountValidate withData:@[userAccount,logIn,device] actionScreen:@"validate userAccount"];
     [self loadingOverlayView];
     
 }
@@ -106,26 +133,6 @@
 - (IBAction)forgotPassword:(id)sender
 {
     [self performSegueWithIdentifier:@"segForgotPassword" sender:self];
-}
-
--(IBAction)unwindToLogIn:(UIStoryboardSegue *)segue
-{
-    if([segue.sourceViewController isMemberOfClass:[MeViewController class]])
-    {
-        NSString *message = [Setting getValue:@"055m" example:@"◻︎ จำฉันไว้ในระบบ"];
-        [btnRememberMe setTitle:message forState:UIControlStateNormal];
-        _rememberMe = NO;
-        
-        
-        txtEmail.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"rememberEmail"];
-        txtPassword.text = [[NSUserDefaults standardUserDefaults] valueForKey:@"rememberPassword"];
-    }
-    
-    
-    if(![[NSUserDefaults standardUserDefaults] integerForKey:@"logInSession"])
-    {
-        _appLogIn = NO;
-    }
 }
 
 - (void)viewDidLoad
@@ -165,6 +172,13 @@
     
     
     
+    //auto log in
+    if([[NSUserDefaults standardUserDefaults] integerForKey:@"logInSession"])
+    {
+        _appLogIn = YES;
+    }
+    
+    
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(endEditing:)];
     [self.view addGestureRecognizer:tapGesture];
@@ -174,11 +188,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    if (_faceBookLogIn)
-    {
-        [self insertUserLoginAndUserAccount];
-    }
-    else if(_appLogIn)
+    if(_appLogIn)
     {
         [self logIn:btnLogIn];
     }
@@ -275,7 +285,6 @@
         vc.credentialsDb = _credentialsDb;
     }
 }
-
 
 @end
 

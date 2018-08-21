@@ -16,31 +16,14 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <sys/utsname.h>
 #import "Receipt.h"
-#import "ReceiptPrint.h"
 #import "OrderTaking.h"
 #import "OrderNote.h"
-#import "OrderKitchen.h"
-#import "Printer.h"
-#import "Menu.h"
-#import "MenuType.h"
-#import "CustomerTable.h"
-#import "InvoiceComposer.h"
+
 
 
 @interface CustomViewController ()
 {
     UILabel *_lblStatus;
-    
-    //print kitchen
-    NSMutableArray *_webViewList;
-    
-    NSMutableArray *_arrOfHtmlContentList;
-    NSInteger _countPrint;
-    NSInteger _countingPrint;
-    NSMutableDictionary *_printBillWithPortName;
-    NSMutableArray *_statusCellArray;
-    NSMutableArray *_firmwareInfoCellArray;
-    ///------
 }
 @end
 
@@ -57,9 +40,6 @@ CGFloat animatedDistance;
 @synthesize removedNotiView;
 @synthesize lblAlertMsg;
 @synthesize lblWaiting;
-@synthesize receiptKitchenBill;
-@synthesize homeModelPrintKitchenBill;
-@synthesize backgroundView;
 @synthesize toolBar;
 
 
@@ -102,11 +82,10 @@ CGFloat animatedDistance;
     [super loadView];
     
     
-//    [self setCurrentVc];
+
     homeModel = [[HomeModel alloc]init];
     homeModel.delegate = self;
-    homeModelPrintKitchenBill = [[HomeModel alloc]init];
-    homeModelPrintKitchenBill.delegate = self;
+
     
     
     {
@@ -146,13 +125,7 @@ CGFloat animatedDistance;
     _lblStatus = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 250, 150)];
     
     
-    
-    //print kitchen
-    backgroundView = [[UIView alloc]initWithFrame:self.view.frame];
-    backgroundView.backgroundColor = [UIColor whiteColor];
-    [self.view insertSubview:backgroundView atIndex:0];
-    _webViewList = [[NSMutableArray alloc]init];
-    NSLog(@"alloc _webViewList");
+
 }
 
 - (void)viewDidLoad
@@ -230,7 +203,7 @@ CGFloat animatedDistance;
 -(void) blinkAlertMsg:(NSString *)alertMsg
 {
     lblAlertMsg.text = alertMsg;
-    lblAlertMsg.backgroundColor = [UIColor darkGrayColor];
+    lblAlertMsg.backgroundColor = cSystem4;
     lblAlertMsg.textColor = [UIColor whiteColor];
     lblAlertMsg.textAlignment = NSTextAlignmentCenter;
     lblAlertMsg.layer.cornerRadius = 8;
@@ -401,9 +374,9 @@ CGFloat animatedDistance;
     [attrStringMsg addAttribute:NSFontAttributeName
                           value:[UIFont fontWithName:@"Prompt-Regular" size:15]
                           range:NSMakeRange(0, message.length)];
-    [attrStringTitle addAttribute:NSForegroundColorAttributeName
+    [attrStringMsg addAttribute:NSForegroundColorAttributeName
                             value:cSystem4
-                            range:NSMakeRange(0, title.length)];
+                            range:NSMakeRange(0, message.length)];
     [alert setValue:attrStringMsg forKey:@"attributedMessage"];
     
     
@@ -447,9 +420,9 @@ CGFloat animatedDistance;
     [attrStringMsg addAttribute:NSFontAttributeName
                           value:[UIFont fontWithName:@"Prompt-Regular" size:15]
                           range:NSMakeRange(0, message.length)];
-    [attrStringTitle addAttribute:NSForegroundColorAttributeName
+    [attrStringMsg addAttribute:NSForegroundColorAttributeName
                             value:cSystem4
-                            range:NSMakeRange(0, title.length)];
+                            range:NSMakeRange(0, attrStringMsg.length)];
     [alert setValue:attrStringMsg forKey:@"attributedMessage"];
     
     
@@ -493,9 +466,9 @@ CGFloat animatedDistance;
     [attrStringMsg addAttribute:NSFontAttributeName
                           value:[UIFont fontWithName:@"Prompt-Regular" size:15]
                           range:NSMakeRange(0, message.length)];
-    [attrStringTitle addAttribute:NSForegroundColorAttributeName
+    [attrStringMsg addAttribute:NSForegroundColorAttributeName
                             value:cSystem4
-                            range:NSMakeRange(0, title.length)];
+                            range:NSMakeRange(0, message.length)];
     [alert setValue:attrStringMsg forKey:@"attributedMessage"];
     
     
@@ -689,9 +662,9 @@ CGFloat animatedDistance;
         [attrStringMsg addAttribute:NSFontAttributeName
                               value:[UIFont fontWithName:@"Prompt-Regular" size:15]
                               range:NSMakeRange(0, message.length)];
-        [attrStringTitle addAttribute:NSForegroundColorAttributeName
+        [attrStringMsg addAttribute:NSForegroundColorAttributeName
                                 value:cSystem4
-                                range:NSMakeRange(0, title.length)];
+                                range:NSMakeRange(0, message.length)];
         [alert setValue:attrStringMsg forKey:@"attributedMessage"];
         
         
@@ -794,7 +767,7 @@ CGFloat animatedDistance;
 
 -(void)showStatus:(NSString *)status
 {
-    [_lblStatus setFont:[UIFont systemFontOfSize:14]];
+    [_lblStatus setFont:[UIFont fontWithName:@"Prompt-Regular" size:14]];
     [_lblStatus setText:@"กำลังพิมพ์..."];
     [_lblStatus sizeToFit];
     _lblStatus.center = self.view.center;

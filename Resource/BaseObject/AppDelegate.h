@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "HomeModel.h"
 @import UserNotifications;
+@import Firebase;
+@import FirebaseInstanceID;
 
 
 #define SYSTEM_VERSION_EQUAL_TO(ver)                 ([[[UIDevice currentDevice] systemVersion] compare:ver options:NSNumericSearch] == NSOrderedSame)
@@ -42,7 +44,7 @@ typedef NS_ENUM(NSInteger, PaperSizeIndex) {
 
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,HomeModelProtocol,UNUserNotificationCenterDelegate>
+@interface AppDelegate : UIResponder <UIApplicationDelegate,HomeModelProtocol,UNUserNotificationCenterDelegate,FIRMessagingDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) UIWindow *alertWindow;

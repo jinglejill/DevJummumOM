@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16BFAA8B17D18CA2786089ED /* libPods-DevJummumOMUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF6890C56D5F93CB4F54ABD /* libPods-DevJummumOMUITests.a */; };
+		771C289CD9993A928A7F79B7 /* libPods-DevJummumOM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A70B12ABC431D57B4FD255BB /* libPods-DevJummumOM.a */; };
+		BF7A71247D64413994B99F45 /* libPods-DevJummumOMTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52814E2AEAE7882270F4707D /* libPods-DevJummumOMTests.a */; };
 		EF33CDBA211C312800560C69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33CDB9211C312800560C69 /* ViewController.m */; };
 		EF33CDBF211C312A00560C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF33CDBE211C312A00560C69 /* Assets.xcassets */; };
 		EF33CDC2211C312A00560C69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF33CDC0211C312A00560C69 /* LaunchScreen.storyboard */; };
@@ -62,29 +65,23 @@
 		EF33D5BB211C371E00560C69 /* iTunesArtwork@2x in Resources */ = {isa = PBXBuildFile; fileRef = EF33D424211C371D00560C69 /* iTunesArtwork@2x */; };
 		EF33D5BC211C371E00560C69 /* selfService.png in Resources */ = {isa = PBXBuildFile; fileRef = EF33D425211C371D00560C69 /* selfService.png */; };
 		EF33D5BD211C371E00560C69 /* ForgotPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D427211C371D00560C69 /* ForgotPasswordViewController.m */; };
-		EF33D5BE211C371E00560C69 /* HotDealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D428211C371D00560C69 /* HotDealViewController.m */; };
 		EF33D5BF211C371E00560C69 /* LaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D42A211C371D00560C69 /* LaunchScreenViewController.m */; };
-		EF33D5C0211C371E00560C69 /* MyRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D42C211C371D00560C69 /* MyRewardViewController.m */; };
 		EF33D5C1211C371E00560C69 /* OrderDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D42F211C371D00560C69 /* OrderDetailViewController.m */; };
 		EF33D5C2211C371E00560C69 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D432211C371D00560C69 /* LogInViewController.m */; };
-		EF33D5C3211C371E00560C69 /* RewardRedemptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D435211C371D00560C69 /* RewardRedemptionViewController.m */; };
 		EF33D5C4211C371E00560C69 /* PersonalDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D437211C371D00560C69 /* PersonalDataViewController.m */; };
 		EF33D5C5211C371E00560C69 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D438211C371D00560C69 /* MainTabBarController.m */; };
 		EF33D5C6211C371E00560C69 /* DisputeFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D439211C371D00560C69 /* DisputeFormViewController.m */; };
-		EF33D5C7211C371E00560C69 /* RewardDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D43B211C371D00560C69 /* RewardDetailViewController.m */; };
 		EF33D5C8211C371E00560C69 /* TermsOfServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D43D211C371D00560C69 /* TermsOfServiceViewController.m */; };
 		EF33D5C9211C371E00560C69 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D440211C371D00560C69 /* MeViewController.m */; };
 		EF33D5CA211C371E00560C69 /* OpeningTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D442211C371D00560C69 /* OpeningTimeViewController.m */; };
 		EF33D5CB211C371E00560C69 /* TosAndPrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */; };
 		EF33D5CC211C371E00560C69 /* RegisterNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D445211C371D00560C69 /* RegisterNowViewController.m */; };
 		EF33D5CD211C371E00560C69 /* CustomerKitchenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D446211C371D00560C69 /* CustomerKitchenViewController.m */; };
-		EF33D5CE211C371E00560C69 /* RewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D448211C371D00560C69 /* RewardViewController.m */; };
 		EF33D5CF211C371E00560C69 /* ConfirmDisputeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D44C211C371D00560C69 /* ConfirmDisputeViewController.m */; };
 		EF33D5D0211C371E00560C69 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF33D44E211C371D00560C69 /* beep.mp3 */; };
 		EF33D5D1211C371E00560C69 /* Pic.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D450211C371D00560C69 /* Pic.m */; };
 		EF33D5D2211C371E00560C69 /* UserRewardRedemptionUsed.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D452211C371E00560C69 /* UserRewardRedemptionUsed.m */; };
 		EF33D5D3211C371E00560C69 /* InvoiceComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D453211C371E00560C69 /* InvoiceComposer.m */; };
-		EF33D5D4211C371E00560C69 /* FacebookComment.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D454211C371E00560C69 /* FacebookComment.m */; };
 		EF33D5D5211C371E00560C69 /* SharedReceiptPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D455211C371E00560C69 /* SharedReceiptPrint.m */; };
 		EF33D5D6211C371E00560C69 /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D456211C371E00560C69 /* Receipt.m */; };
 		EF33D5D7211C371E00560C69 /* SharedSubMenuType.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D459211C371E00560C69 /* SharedSubMenuType.m */; };
@@ -283,6 +280,9 @@
 		EF33D698211C371F00560C69 /* Kanit-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF33D58A211C371E00560C69 /* Kanit-ExtraLightItalic.ttf */; };
 		EF33D699211C371F00560C69 /* Kanit-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF33D58B211C371E00560C69 /* Kanit-Medium.ttf */; };
 		EF33D69A211C371F00560C69 /* Kanit-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF33D58C211C371E00560C69 /* Kanit-SemiBoldItalic.otf */; };
+		EF5D2441212759A30073F1A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2440212759A20073F1A1 /* GoogleService-Info.plist */; };
+		EF5D2485212A98060073F1A1 /* NewVersionUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2484212A98050073F1A1 /* NewVersionUpdateViewController.m */; };
+		EF5D2488212B6BE50073F1A1 /* SharedDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2487212B6BE50073F1A1 /* SharedDevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -303,6 +303,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		033EEB944EF4415FC61413D6 /* Pods-DevJummumOMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOMTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOMTests/Pods-DevJummumOMTests.release.xcconfig"; sourceTree = "<group>"; };
+		2FEC2A34352E55A3E52D1C4C /* Pods-DevJummumOM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOM.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOM/Pods-DevJummumOM.release.xcconfig"; sourceTree = "<group>"; };
+		4FF6890C56D5F93CB4F54ABD /* libPods-DevJummumOMUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DevJummumOMUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		52814E2AEAE7882270F4707D /* libPods-DevJummumOMTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DevJummumOMTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D50129638A07EB258F6F0BE /* Pods-DevJummumOMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOMUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOMUITests/Pods-DevJummumOMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A70B12ABC431D57B4FD255BB /* libPods-DevJummumOM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DevJummumOM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAF4DE32C6F66AF596B15A1F /* Pods-DevJummumOMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOMTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOMTests/Pods-DevJummumOMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D08C660D4C012FD7849C81AA /* Pods-DevJummumOMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOMUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOMUITests/Pods-DevJummumOMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EF33CDB2211C312800560C69 /* DevJummumOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevJummumOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF33CDB8211C312800560C69 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EF33CDB9211C312800560C69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -373,39 +381,29 @@
 		EF33D424211C371D00560C69 /* iTunesArtwork@2x */ = {isa = PBXFileReference; lastKnownFileType = file; path = "iTunesArtwork@2x"; sourceTree = "<group>"; };
 		EF33D425211C371D00560C69 /* selfService.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selfService.png; sourceTree = "<group>"; };
 		EF33D427211C371D00560C69 /* ForgotPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordViewController.m; sourceTree = "<group>"; };
-		EF33D428211C371D00560C69 /* HotDealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDealViewController.m; sourceTree = "<group>"; };
 		EF33D429211C371D00560C69 /* TermsOfServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TermsOfServiceViewController.h; sourceTree = "<group>"; };
 		EF33D42A211C371D00560C69 /* LaunchScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchScreenViewController.m; sourceTree = "<group>"; };
-		EF33D42B211C371D00560C69 /* RewardDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardDetailViewController.h; sourceTree = "<group>"; };
-		EF33D42C211C371D00560C69 /* MyRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyRewardViewController.m; sourceTree = "<group>"; };
 		EF33D42D211C371D00560C69 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
-		EF33D42E211C371D00560C69 /* RewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardViewController.h; sourceTree = "<group>"; };
 		EF33D42F211C371D00560C69 /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
 		EF33D430211C371D00560C69 /* CustomerKitchenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerKitchenViewController.h; sourceTree = "<group>"; };
 		EF33D431211C371D00560C69 /* RegisterNowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNowViewController.h; sourceTree = "<group>"; };
 		EF33D432211C371D00560C69 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		EF33D433211C371D00560C69 /* TosAndPrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TosAndPrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		EF33D434211C371D00560C69 /* OpeningTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningTimeViewController.h; sourceTree = "<group>"; };
-		EF33D435211C371D00560C69 /* RewardRedemptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardRedemptionViewController.m; sourceTree = "<group>"; };
 		EF33D436211C371D00560C69 /* ConfirmDisputeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmDisputeViewController.h; sourceTree = "<group>"; };
 		EF33D437211C371D00560C69 /* PersonalDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalDataViewController.m; sourceTree = "<group>"; };
 		EF33D438211C371D00560C69 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		EF33D439211C371D00560C69 /* DisputeFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisputeFormViewController.m; sourceTree = "<group>"; };
-		EF33D43A211C371D00560C69 /* MyRewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyRewardViewController.h; sourceTree = "<group>"; };
-		EF33D43B211C371D00560C69 /* RewardDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardDetailViewController.m; sourceTree = "<group>"; };
 		EF33D43C211C371D00560C69 /* LaunchScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchScreenViewController.h; sourceTree = "<group>"; };
 		EF33D43D211C371D00560C69 /* TermsOfServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TermsOfServiceViewController.m; sourceTree = "<group>"; };
-		EF33D43E211C371D00560C69 /* HotDealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDealViewController.h; sourceTree = "<group>"; };
 		EF33D43F211C371D00560C69 /* ForgotPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordViewController.h; sourceTree = "<group>"; };
 		EF33D440211C371D00560C69 /* MeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeViewController.m; sourceTree = "<group>"; };
-		EF33D441211C371D00560C69 /* RewardRedemptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardRedemptionViewController.h; sourceTree = "<group>"; };
 		EF33D442211C371D00560C69 /* OpeningTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningTimeViewController.m; sourceTree = "<group>"; };
 		EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TosAndPrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		EF33D444211C371D00560C69 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		EF33D445211C371D00560C69 /* RegisterNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNowViewController.m; sourceTree = "<group>"; };
 		EF33D446211C371D00560C69 /* CustomerKitchenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerKitchenViewController.m; sourceTree = "<group>"; };
 		EF33D447211C371D00560C69 /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
-		EF33D448211C371D00560C69 /* RewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardViewController.m; sourceTree = "<group>"; };
 		EF33D449211C371D00560C69 /* DisputeFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisputeFormViewController.h; sourceTree = "<group>"; };
 		EF33D44A211C371D00560C69 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		EF33D44B211C371D00560C69 /* PersonalDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalDataViewController.h; sourceTree = "<group>"; };
@@ -415,7 +413,6 @@
 		EF33D451211C371D00560C69 /* SharedPromoCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedPromoCode.h; sourceTree = "<group>"; };
 		EF33D452211C371E00560C69 /* UserRewardRedemptionUsed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserRewardRedemptionUsed.m; sourceTree = "<group>"; };
 		EF33D453211C371E00560C69 /* InvoiceComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceComposer.m; sourceTree = "<group>"; };
-		EF33D454211C371E00560C69 /* FacebookComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookComment.m; sourceTree = "<group>"; };
 		EF33D455211C371E00560C69 /* SharedReceiptPrint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedReceiptPrint.m; sourceTree = "<group>"; };
 		EF33D456211C371E00560C69 /* Receipt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Receipt.m; sourceTree = "<group>"; };
 		EF33D457211C371E00560C69 /* Printer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Printer.h; sourceTree = "<group>"; };
@@ -498,7 +495,6 @@
 		EF33D4A4211C371E00560C69 /* SharedReceiptPrint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedReceiptPrint.h; sourceTree = "<group>"; };
 		EF33D4A5211C371E00560C69 /* Receipt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Receipt.h; sourceTree = "<group>"; };
 		EF33D4A6211C371E00560C69 /* Printer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Printer.m; sourceTree = "<group>"; };
-		EF33D4A7211C371E00560C69 /* FacebookComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookComment.h; sourceTree = "<group>"; };
 		EF33D4A8211C371E00560C69 /* InvoiceComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceComposer.h; sourceTree = "<group>"; };
 		EF33D4A9211C371E00560C69 /* UserRewardRedemptionUsed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserRewardRedemptionUsed.h; sourceTree = "<group>"; };
 		EF33D4AA211C371E00560C69 /* SharedPromoCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedPromoCode.m; sourceTree = "<group>"; };
@@ -726,6 +722,12 @@
 		EF33D58A211C371E00560C69 /* Kanit-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		EF33D58B211C371E00560C69 /* Kanit-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Medium.ttf"; sourceTree = "<group>"; };
 		EF33D58C211C371E00560C69 /* Kanit-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		EF5D2440212759A20073F1A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		EF5D2483212A98050073F1A1 /* NewVersionUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewVersionUpdateViewController.h; sourceTree = "<group>"; };
+		EF5D2484212A98050073F1A1 /* NewVersionUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVersionUpdateViewController.m; sourceTree = "<group>"; };
+		EF5D2486212B6BE50073F1A1 /* SharedDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedDevice.h; sourceTree = "<group>"; };
+		EF5D2487212B6BE50073F1A1 /* SharedDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedDevice.m; sourceTree = "<group>"; };
+		F5FF20B72FD762642E1EF9EF /* Pods-DevJummumOM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOM/Pods-DevJummumOM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -733,6 +735,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				771C289CD9993A928A7F79B7 /* libPods-DevJummumOM.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,6 +743,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7A71247D64413994B99F45 /* libPods-DevJummumOMTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,12 +751,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BFAA8B17D18CA2786089ED /* libPods-DevJummumOMUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86B84D5CF7A3BEDD58149493 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A70B12ABC431D57B4FD255BB /* libPods-DevJummumOM.a */,
+				52814E2AEAE7882270F4707D /* libPods-DevJummumOMTests.a */,
+				4FF6890C56D5F93CB4F54ABD /* libPods-DevJummumOMUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C756147245D5CA7BD974CB8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5FF20B72FD762642E1EF9EF /* Pods-DevJummumOM.debug.xcconfig */,
+				2FEC2A34352E55A3E52D1C4C /* Pods-DevJummumOM.release.xcconfig */,
+				CAF4DE32C6F66AF596B15A1F /* Pods-DevJummumOMTests.debug.xcconfig */,
+				033EEB944EF4415FC61413D6 /* Pods-DevJummumOMTests.release.xcconfig */,
+				6D50129638A07EB258F6F0BE /* Pods-DevJummumOMUITests.debug.xcconfig */,
+				D08C660D4C012FD7849C81AA /* Pods-DevJummumOMUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		EF33CDA9211C312800560C69 = {
 			isa = PBXGroup;
 			children = (
@@ -761,6 +789,8 @@
 				EF33CDCD211C312A00560C69 /* DevJummumOMTests */,
 				EF33CDD8211C312A00560C69 /* DevJummumOMUITests */,
 				EF33CDB3211C312800560C69 /* Products */,
+				C756147245D5CA7BD974CB8C /* Pods */,
+				86B84D5CF7A3BEDD58149493 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -777,6 +807,7 @@
 		EF33CDB4211C312800560C69 /* DevJummumOM */ = {
 			isa = PBXGroup;
 			children = (
+				EF5D2440212759A20073F1A1 /* GoogleService-Info.plist */,
 				EF33CDEC211C32DE00560C69 /* DevJummumOM.entitlements */,
 				EF33CDB8211C312800560C69 /* ViewController.h */,
 				EF33CDB9211C312800560C69 /* ViewController.m */,
@@ -824,15 +855,15 @@
 		EF33D3EA211C371D00560C69 /* BaseObject */ = {
 			isa = PBXGroup;
 			children = (
-				EF33D3EB211C371D00560C69 /* HomeModel.h */,
 				EF33D3EC211C371D00560C69 /* AppDelegate.h */,
-				EF33D3ED211C371D00560C69 /* Utility.m */,
+				EF33D3F1211C371D00560C69 /* AppDelegate.m */,
+				EF33D3EB211C371D00560C69 /* HomeModel.h */,
+				EF33D3F0211C371D00560C69 /* HomeModel.m */,
 				EF33D3EE211C371D00560C69 /* iOSDeviceModelMapping.plist */,
 				EF33D3EF211C371D00560C69 /* Main.storyboard */,
-				EF33D3F0211C371D00560C69 /* HomeModel.m */,
-				EF33D3F1211C371D00560C69 /* AppDelegate.m */,
 				EF33D3F2211C371D00560C69 /* Property List.plist */,
 				EF33D3F3211C371D00560C69 /* Utility.h */,
+				EF33D3ED211C371D00560C69 /* Utility.m */,
 			);
 			path = BaseObject;
 			sourceTree = "<group>";
@@ -916,44 +947,36 @@
 		EF33D426211C371D00560C69 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				EF33D427211C371D00560C69 /* ForgotPasswordViewController.m */,
-				EF33D428211C371D00560C69 /* HotDealViewController.m */,
-				EF33D429211C371D00560C69 /* TermsOfServiceViewController.h */,
-				EF33D42A211C371D00560C69 /* LaunchScreenViewController.m */,
-				EF33D42B211C371D00560C69 /* RewardDetailViewController.h */,
-				EF33D42C211C371D00560C69 /* MyRewardViewController.m */,
-				EF33D42D211C371D00560C69 /* MeViewController.h */,
-				EF33D42E211C371D00560C69 /* RewardViewController.h */,
-				EF33D42F211C371D00560C69 /* OrderDetailViewController.m */,
-				EF33D430211C371D00560C69 /* CustomerKitchenViewController.h */,
-				EF33D431211C371D00560C69 /* RegisterNowViewController.h */,
-				EF33D432211C371D00560C69 /* LogInViewController.m */,
-				EF33D433211C371D00560C69 /* TosAndPrivacyPolicyViewController.h */,
-				EF33D434211C371D00560C69 /* OpeningTimeViewController.h */,
-				EF33D435211C371D00560C69 /* RewardRedemptionViewController.m */,
 				EF33D436211C371D00560C69 /* ConfirmDisputeViewController.h */,
-				EF33D437211C371D00560C69 /* PersonalDataViewController.m */,
-				EF33D438211C371D00560C69 /* MainTabBarController.m */,
-				EF33D439211C371D00560C69 /* DisputeFormViewController.m */,
-				EF33D43A211C371D00560C69 /* MyRewardViewController.h */,
-				EF33D43B211C371D00560C69 /* RewardDetailViewController.m */,
-				EF33D43C211C371D00560C69 /* LaunchScreenViewController.h */,
-				EF33D43D211C371D00560C69 /* TermsOfServiceViewController.m */,
-				EF33D43E211C371D00560C69 /* HotDealViewController.h */,
-				EF33D43F211C371D00560C69 /* ForgotPasswordViewController.h */,
-				EF33D440211C371D00560C69 /* MeViewController.m */,
-				EF33D441211C371D00560C69 /* RewardRedemptionViewController.h */,
-				EF33D442211C371D00560C69 /* OpeningTimeViewController.m */,
-				EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */,
-				EF33D444211C371D00560C69 /* LogInViewController.h */,
-				EF33D445211C371D00560C69 /* RegisterNowViewController.m */,
-				EF33D446211C371D00560C69 /* CustomerKitchenViewController.m */,
-				EF33D447211C371D00560C69 /* OrderDetailViewController.h */,
-				EF33D448211C371D00560C69 /* RewardViewController.m */,
-				EF33D449211C371D00560C69 /* DisputeFormViewController.h */,
-				EF33D44A211C371D00560C69 /* MainTabBarController.h */,
-				EF33D44B211C371D00560C69 /* PersonalDataViewController.h */,
 				EF33D44C211C371D00560C69 /* ConfirmDisputeViewController.m */,
+				EF33D430211C371D00560C69 /* CustomerKitchenViewController.h */,
+				EF33D446211C371D00560C69 /* CustomerKitchenViewController.m */,
+				EF33D449211C371D00560C69 /* DisputeFormViewController.h */,
+				EF33D439211C371D00560C69 /* DisputeFormViewController.m */,
+				EF33D43F211C371D00560C69 /* ForgotPasswordViewController.h */,
+				EF33D427211C371D00560C69 /* ForgotPasswordViewController.m */,
+				EF33D43C211C371D00560C69 /* LaunchScreenViewController.h */,
+				EF33D42A211C371D00560C69 /* LaunchScreenViewController.m */,
+				EF33D444211C371D00560C69 /* LogInViewController.h */,
+				EF33D432211C371D00560C69 /* LogInViewController.m */,
+				EF33D44A211C371D00560C69 /* MainTabBarController.h */,
+				EF33D438211C371D00560C69 /* MainTabBarController.m */,
+				EF33D42D211C371D00560C69 /* MeViewController.h */,
+				EF33D440211C371D00560C69 /* MeViewController.m */,
+				EF5D2483212A98050073F1A1 /* NewVersionUpdateViewController.h */,
+				EF5D2484212A98050073F1A1 /* NewVersionUpdateViewController.m */,
+				EF33D434211C371D00560C69 /* OpeningTimeViewController.h */,
+				EF33D442211C371D00560C69 /* OpeningTimeViewController.m */,
+				EF33D447211C371D00560C69 /* OrderDetailViewController.h */,
+				EF33D42F211C371D00560C69 /* OrderDetailViewController.m */,
+				EF33D44B211C371D00560C69 /* PersonalDataViewController.h */,
+				EF33D437211C371D00560C69 /* PersonalDataViewController.m */,
+				EF33D431211C371D00560C69 /* RegisterNowViewController.h */,
+				EF33D445211C371D00560C69 /* RegisterNowViewController.m */,
+				EF33D429211C371D00560C69 /* TermsOfServiceViewController.h */,
+				EF33D43D211C371D00560C69 /* TermsOfServiceViewController.m */,
+				EF33D433211C371D00560C69 /* TosAndPrivacyPolicyViewController.h */,
+				EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -969,160 +992,160 @@
 		EF33D44F211C371D00560C69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EF33D450211C371D00560C69 /* Pic.m */,
-				EF33D451211C371D00560C69 /* SharedPromoCode.h */,
-				EF33D452211C371E00560C69 /* UserRewardRedemptionUsed.m */,
-				EF33D453211C371E00560C69 /* InvoiceComposer.m */,
-				EF33D454211C371E00560C69 /* FacebookComment.m */,
-				EF33D455211C371E00560C69 /* SharedReceiptPrint.m */,
-				EF33D456211C371E00560C69 /* Receipt.m */,
-				EF33D457211C371E00560C69 /* Printer.h */,
-				EF33D458211C371E00560C69 /* SharedBranch.h */,
-				EF33D459211C371E00560C69 /* SharedSubMenuType.m */,
-				EF33D45A211C371E00560C69 /* SharedPic.h */,
-				EF33D45B211C371E00560C69 /* SharedCurrentCredentialsDb.m */,
-				EF33D45C211C371E00560C69 /* SharedMenu.m */,
-				EF33D45D211C371E00560C69 /* OrderTaking.h */,
-				EF33D45E211C371E00560C69 /* SharedNoteType.h */,
-				EF33D45F211C371E00560C69 /* MenuType.m */,
-				EF33D460211C371E00560C69 /* SharedRewardPoint.m */,
-				EF33D461211C371E00560C69 /* Device.h */,
-				EF33D462211C371E00560C69 /* PushSync.h */,
-				EF33D463211C371E00560C69 /* OrderKitchen.h */,
-				EF33D464211C371E00560C69 /* SharedCustomerTable.h */,
-				EF33D465211C371E00560C69 /* PromoCode.h */,
-				EF33D466211C371E00560C69 /* SharedPromotionMenu.m */,
-				EF33D467211C371E00560C69 /* Credentials.m */,
-				EF33D468211C371E00560C69 /* PromotionMenu.m */,
-				EF33D469211C371E00560C69 /* SharedUserRewardRedemptionUsed.m */,
-				EF33D46A211C371E00560C69 /* Menu.m */,
-				EF33D46B211C371E00560C69 /* SharedReceipt.m */,
-				EF33D46C211C371E00560C69 /* SharedPrinter.h */,
-				EF33D46D211C371E00560C69 /* CustomerTable.h */,
-				EF33D46E211C371E00560C69 /* MenuTypeNote.h */,
-				EF33D46F211C371E00560C69 /* SharedUserAccount.h */,
-				EF33D470211C371E00560C69 /* SharedCurrentUserAccount.h */,
 				EF33D471211C371E00560C69 /* Branch.h */,
-				EF33D472211C371E00560C69 /* SharedUserPromotionUsed.m */,
-				EF33D473211C371E00560C69 /* SharedNote.m */,
-				EF33D474211C371E00560C69 /* SharedSpecialPriceProgram.h */,
-				EF33D475211C371E00560C69 /* SharedDisputeReason.h */,
-				EF33D476211C371E00560C69 /* SharedSetting.m */,
-				EF33D477211C371E00560C69 /* SharedTableNo.m */,
-				EF33D478211C371E00560C69 /* OrderNote.m */,
-				EF33D479211C371E00560C69 /* SharedMenuTypeNote.h */,
-				EF33D47A211C371E00560C69 /* SharedDispute.m */,
-				EF33D47B211C371E00560C69 /* SharedPromotion.h */,
-				EF33D47C211C371E00560C69 /* Shop.m */,
-				EF33D47D211C371E00560C69 /* SharedOrderKitchen.h */,
-				EF33D47E211C371E00560C69 /* CredentialsDb.h */,
-				EF33D47F211C371E00560C69 /* SubMenuType.h */,
-				EF33D480211C371E00560C69 /* SharedMenuPic.m */,
-				EF33D481211C371E00560C69 /* DisputeReason.h */,
-				EF33D482211C371E00560C69 /* SharedMenuType.h */,
-				EF33D483211C371E00560C69 /* SharedOrderTaking.m */,
-				EF33D484211C371E00560C69 /* HotDeal.m */,
-				EF33D485211C371E00560C69 /* SharedCurrentOrderTaking.m */,
-				EF33D486211C371E00560C69 /* SharedPushSync.m */,
-				EF33D487211C371E00560C69 /* Message.h */,
-				EF33D488211C371E00560C69 /* SharedHotDeal.m */,
-				EF33D489211C371E00560C69 /* RewardPoint.h */,
-				EF33D48A211C371E00560C69 /* NoteType.m */,
-				EF33D48B211C371E00560C69 /* SharedOrderNote.m */,
-				EF33D48C211C371E00560C69 /* SpecialPriceProgram.m */,
-				EF33D48D211C371E00560C69 /* LogIn.m */,
-				EF33D48E211C371E00560C69 /* SharedCurrentMenu.m */,
-				EF33D48F211C371E00560C69 /* MenuPic.m */,
-				EF33D490211C371E00560C69 /* UserPromotionUsed.m */,
-				EF33D491211C371E00560C69 /* Note.m */,
-				EF33D492211C371E00560C69 /* SharedLogIn.m */,
-				EF33D493211C371E00560C69 /* RewardRedemption.h */,
-				EF33D494211C371E00560C69 /* Setting.m */,
-				EF33D495211C371E00560C69 /* TableNo.m */,
-				EF33D496211C371E00560C69 /* Dispute.m */,
-				EF33D497211C371E00560C69 /* CreditCard.h */,
-				EF33D498211C371E00560C69 /* ReceiptPrint.m */,
-				EF33D499211C371E00560C69 /* SharedRewardRedemption.m */,
-				EF33D49A211C371E00560C69 /* UserAccount.m */,
-				EF33D49B211C371E00560C69 /* SharedShop.m */,
-				EF33D49C211C371E00560C69 /* Promotion.h */,
-				EF33D49D211C371E00560C69 /* SharedNoteType.m */,
-				EF33D49E211C371E00560C69 /* OrderTaking.m */,
-				EF33D49F211C371E00560C69 /* SharedCurrentCredentialsDb.h */,
-				EF33D4A0211C371E00560C69 /* SharedMenu.h */,
-				EF33D4A1211C371E00560C69 /* SharedPic.m */,
-				EF33D4A2211C371E00560C69 /* SharedSubMenuType.h */,
-				EF33D4A3211C371E00560C69 /* SharedBranch.m */,
-				EF33D4A4211C371E00560C69 /* SharedReceiptPrint.h */,
-				EF33D4A5211C371E00560C69 /* Receipt.h */,
-				EF33D4A6211C371E00560C69 /* Printer.m */,
-				EF33D4A7211C371E00560C69 /* FacebookComment.h */,
-				EF33D4A8211C371E00560C69 /* InvoiceComposer.h */,
-				EF33D4A9211C371E00560C69 /* UserRewardRedemptionUsed.h */,
-				EF33D4AA211C371E00560C69 /* SharedPromoCode.m */,
-				EF33D4AB211C371E00560C69 /* Pic.h */,
-				EF33D4AC211C371E00560C69 /* SharedUserPromotionUsed.h */,
 				EF33D4AD211C371E00560C69 /* Branch.m */,
-				EF33D4AE211C371E00560C69 /* SharedCurrentUserAccount.m */,
-				EF33D4AF211C371E00560C69 /* MenuTypeNote.m */,
-				EF33D4B0211C371E00560C69 /* SharedUserAccount.m */,
-				EF33D4B1211C371E00560C69 /* CustomerTable.m */,
-				EF33D4B2211C371E00560C69 /* Menu.h */,
-				EF33D4B3211C371E00560C69 /* SharedUserRewardRedemptionUsed.h */,
-				EF33D4B4211C371E00560C69 /* SharedReceipt.h */,
-				EF33D4B5211C371E00560C69 /* SharedPrinter.m */,
 				EF33D4B6211C371E00560C69 /* Credentials.h */,
-				EF33D4B7211C371E00560C69 /* PromotionMenu.h */,
-				EF33D4B8211C371E00560C69 /* SharedPromotionMenu.h */,
-				EF33D4B9211C371E00560C69 /* PromoCode.m */,
-				EF33D4BA211C371E00560C69 /* SharedCustomerTable.m */,
-				EF33D4BB211C371E00560C69 /* OrderKitchen.m */,
-				EF33D4BC211C371E00560C69 /* PushSync.m */,
-				EF33D4BD211C371E00560C69 /* Device.m */,
-				EF33D4BE211C371E00560C69 /* MenuType.h */,
-				EF33D4BF211C371E00560C69 /* SharedRewardPoint.h */,
-				EF33D4C0211C371E00560C69 /* SharedPushSync.h */,
-				EF33D4C1211C371E00560C69 /* HotDeal.h */,
-				EF33D4C2211C371E00560C69 /* SharedCurrentOrderTaking.h */,
-				EF33D4C3211C371E00560C69 /* SharedMenuType.m */,
-				EF33D4C4211C371E00560C69 /* SharedOrderTaking.h */,
-				EF33D4C5211C371E00560C69 /* DisputeReason.m */,
-				EF33D4C6211C371E00560C69 /* SubMenuType.m */,
-				EF33D4C7211C371E00560C69 /* SharedMenuPic.h */,
+				EF33D467211C371E00560C69 /* Credentials.m */,
+				EF33D47E211C371E00560C69 /* CredentialsDb.h */,
 				EF33D4C8211C371E00560C69 /* CredentialsDb.m */,
-				EF33D4C9211C371E00560C69 /* SharedOrderKitchen.m */,
-				EF33D4CA211C371E00560C69 /* Shop.h */,
-				EF33D4CB211C371E00560C69 /* SharedPromotion.m */,
-				EF33D4CC211C371E00560C69 /* SharedDispute.h */,
-				EF33D4CD211C371E00560C69 /* SharedMenuTypeNote.m */,
-				EF33D4CE211C371E00560C69 /* SharedSetting.h */,
-				EF33D4CF211C371E00560C69 /* SharedTableNo.h */,
-				EF33D4D0211C371E00560C69 /* OrderNote.h */,
-				EF33D4D1211C371E00560C69 /* SharedDisputeReason.m */,
-				EF33D4D2211C371E00560C69 /* SharedSpecialPriceProgram.m */,
-				EF33D4D3211C371E00560C69 /* SharedNote.h */,
-				EF33D4D4211C371E00560C69 /* UserAccount.h */,
-				EF33D4D5211C371E00560C69 /* Promotion.m */,
-				EF33D4D6211C371E00560C69 /* SharedShop.h */,
-				EF33D4D7211C371E00560C69 /* SharedRewardRedemption.h */,
-				EF33D4D8211C371E00560C69 /* ReceiptPrint.h */,
-				EF33D4D9211C371E00560C69 /* Dispute.h */,
+				EF33D497211C371E00560C69 /* CreditCard.h */,
 				EF33D4DA211C371E00560C69 /* CreditCard.m */,
-				EF33D4DB211C371E00560C69 /* Setting.h */,
-				EF33D4DC211C371E00560C69 /* TableNo.h */,
-				EF33D4DD211C371E00560C69 /* SharedLogIn.h */,
-				EF33D4DE211C371E00560C69 /* RewardRedemption.m */,
-				EF33D4DF211C371E00560C69 /* UserPromotionUsed.h */,
-				EF33D4E0211C371E00560C69 /* Note.h */,
-				EF33D4E1211C371E00560C69 /* MenuPic.h */,
-				EF33D4E2211C371E00560C69 /* SharedCurrentMenu.h */,
-				EF33D4E3211C371E00560C69 /* NoteType.h */,
-				EF33D4E4211C371E00560C69 /* SpecialPriceProgram.h */,
-				EF33D4E5211C371E00560C69 /* SharedOrderNote.h */,
+				EF33D46D211C371E00560C69 /* CustomerTable.h */,
+				EF33D4B1211C371E00560C69 /* CustomerTable.m */,
+				EF33D461211C371E00560C69 /* Device.h */,
+				EF33D4BD211C371E00560C69 /* Device.m */,
+				EF5D2486212B6BE50073F1A1 /* SharedDevice.h */,
+				EF5D2487212B6BE50073F1A1 /* SharedDevice.m */,
+				EF33D4D9211C371E00560C69 /* Dispute.h */,
+				EF33D496211C371E00560C69 /* Dispute.m */,
+				EF33D481211C371E00560C69 /* DisputeReason.h */,
+				EF33D4C5211C371E00560C69 /* DisputeReason.m */,
+				EF33D4C1211C371E00560C69 /* HotDeal.h */,
+				EF33D484211C371E00560C69 /* HotDeal.m */,
+				EF33D4A8211C371E00560C69 /* InvoiceComposer.h */,
+				EF33D453211C371E00560C69 /* InvoiceComposer.m */,
 				EF33D4E6211C371E00560C69 /* LogIn.h */,
-				EF33D4E7211C371E00560C69 /* RewardPoint.m */,
+				EF33D48D211C371E00560C69 /* LogIn.m */,
+				EF33D4B2211C371E00560C69 /* Menu.h */,
+				EF33D46A211C371E00560C69 /* Menu.m */,
+				EF33D4E1211C371E00560C69 /* MenuPic.h */,
+				EF33D48F211C371E00560C69 /* MenuPic.m */,
+				EF33D4BE211C371E00560C69 /* MenuType.h */,
+				EF33D45F211C371E00560C69 /* MenuType.m */,
+				EF33D46E211C371E00560C69 /* MenuTypeNote.h */,
+				EF33D4AF211C371E00560C69 /* MenuTypeNote.m */,
+				EF33D487211C371E00560C69 /* Message.h */,
 				EF33D4E8211C371E00560C69 /* Message.m */,
+				EF33D4E0211C371E00560C69 /* Note.h */,
+				EF33D491211C371E00560C69 /* Note.m */,
+				EF33D4E3211C371E00560C69 /* NoteType.h */,
+				EF33D48A211C371E00560C69 /* NoteType.m */,
+				EF33D463211C371E00560C69 /* OrderKitchen.h */,
+				EF33D4BB211C371E00560C69 /* OrderKitchen.m */,
+				EF33D4D0211C371E00560C69 /* OrderNote.h */,
+				EF33D478211C371E00560C69 /* OrderNote.m */,
+				EF33D45D211C371E00560C69 /* OrderTaking.h */,
+				EF33D49E211C371E00560C69 /* OrderTaking.m */,
+				EF33D4AB211C371E00560C69 /* Pic.h */,
+				EF33D450211C371D00560C69 /* Pic.m */,
+				EF33D457211C371E00560C69 /* Printer.h */,
+				EF33D4A6211C371E00560C69 /* Printer.m */,
+				EF33D465211C371E00560C69 /* PromoCode.h */,
+				EF33D4B9211C371E00560C69 /* PromoCode.m */,
+				EF33D49C211C371E00560C69 /* Promotion.h */,
+				EF33D4D5211C371E00560C69 /* Promotion.m */,
+				EF33D4B7211C371E00560C69 /* PromotionMenu.h */,
+				EF33D468211C371E00560C69 /* PromotionMenu.m */,
+				EF33D462211C371E00560C69 /* PushSync.h */,
+				EF33D4BC211C371E00560C69 /* PushSync.m */,
+				EF33D4A5211C371E00560C69 /* Receipt.h */,
+				EF33D456211C371E00560C69 /* Receipt.m */,
+				EF33D4D8211C371E00560C69 /* ReceiptPrint.h */,
+				EF33D498211C371E00560C69 /* ReceiptPrint.m */,
+				EF33D489211C371E00560C69 /* RewardPoint.h */,
+				EF33D4E7211C371E00560C69 /* RewardPoint.m */,
+				EF33D493211C371E00560C69 /* RewardRedemption.h */,
+				EF33D4DE211C371E00560C69 /* RewardRedemption.m */,
+				EF33D4DB211C371E00560C69 /* Setting.h */,
+				EF33D494211C371E00560C69 /* Setting.m */,
+				EF33D458211C371E00560C69 /* SharedBranch.h */,
+				EF33D4A3211C371E00560C69 /* SharedBranch.m */,
+				EF33D49F211C371E00560C69 /* SharedCurrentCredentialsDb.h */,
+				EF33D45B211C371E00560C69 /* SharedCurrentCredentialsDb.m */,
+				EF33D4E2211C371E00560C69 /* SharedCurrentMenu.h */,
+				EF33D48E211C371E00560C69 /* SharedCurrentMenu.m */,
+				EF33D4C2211C371E00560C69 /* SharedCurrentOrderTaking.h */,
+				EF33D485211C371E00560C69 /* SharedCurrentOrderTaking.m */,
+				EF33D470211C371E00560C69 /* SharedCurrentUserAccount.h */,
+				EF33D4AE211C371E00560C69 /* SharedCurrentUserAccount.m */,
+				EF33D464211C371E00560C69 /* SharedCustomerTable.h */,
+				EF33D4BA211C371E00560C69 /* SharedCustomerTable.m */,
+				EF33D4CC211C371E00560C69 /* SharedDispute.h */,
+				EF33D47A211C371E00560C69 /* SharedDispute.m */,
+				EF33D475211C371E00560C69 /* SharedDisputeReason.h */,
+				EF33D4D1211C371E00560C69 /* SharedDisputeReason.m */,
 				EF33D4E9211C371E00560C69 /* SharedHotDeal.h */,
+				EF33D488211C371E00560C69 /* SharedHotDeal.m */,
+				EF33D4DD211C371E00560C69 /* SharedLogIn.h */,
+				EF33D492211C371E00560C69 /* SharedLogIn.m */,
+				EF33D4A0211C371E00560C69 /* SharedMenu.h */,
+				EF33D45C211C371E00560C69 /* SharedMenu.m */,
+				EF33D4C7211C371E00560C69 /* SharedMenuPic.h */,
+				EF33D480211C371E00560C69 /* SharedMenuPic.m */,
+				EF33D482211C371E00560C69 /* SharedMenuType.h */,
+				EF33D4C3211C371E00560C69 /* SharedMenuType.m */,
+				EF33D479211C371E00560C69 /* SharedMenuTypeNote.h */,
+				EF33D4CD211C371E00560C69 /* SharedMenuTypeNote.m */,
+				EF33D4D3211C371E00560C69 /* SharedNote.h */,
+				EF33D473211C371E00560C69 /* SharedNote.m */,
+				EF33D45E211C371E00560C69 /* SharedNoteType.h */,
+				EF33D49D211C371E00560C69 /* SharedNoteType.m */,
+				EF33D47D211C371E00560C69 /* SharedOrderKitchen.h */,
+				EF33D4C9211C371E00560C69 /* SharedOrderKitchen.m */,
+				EF33D4E5211C371E00560C69 /* SharedOrderNote.h */,
+				EF33D48B211C371E00560C69 /* SharedOrderNote.m */,
+				EF33D4C4211C371E00560C69 /* SharedOrderTaking.h */,
+				EF33D483211C371E00560C69 /* SharedOrderTaking.m */,
+				EF33D45A211C371E00560C69 /* SharedPic.h */,
+				EF33D4A1211C371E00560C69 /* SharedPic.m */,
+				EF33D46C211C371E00560C69 /* SharedPrinter.h */,
+				EF33D4B5211C371E00560C69 /* SharedPrinter.m */,
+				EF33D451211C371D00560C69 /* SharedPromoCode.h */,
+				EF33D4AA211C371E00560C69 /* SharedPromoCode.m */,
+				EF33D47B211C371E00560C69 /* SharedPromotion.h */,
+				EF33D4CB211C371E00560C69 /* SharedPromotion.m */,
+				EF33D4B8211C371E00560C69 /* SharedPromotionMenu.h */,
+				EF33D466211C371E00560C69 /* SharedPromotionMenu.m */,
+				EF33D4C0211C371E00560C69 /* SharedPushSync.h */,
+				EF33D486211C371E00560C69 /* SharedPushSync.m */,
+				EF33D4B4211C371E00560C69 /* SharedReceipt.h */,
+				EF33D46B211C371E00560C69 /* SharedReceipt.m */,
+				EF33D4A4211C371E00560C69 /* SharedReceiptPrint.h */,
+				EF33D455211C371E00560C69 /* SharedReceiptPrint.m */,
+				EF33D4BF211C371E00560C69 /* SharedRewardPoint.h */,
+				EF33D460211C371E00560C69 /* SharedRewardPoint.m */,
+				EF33D4D7211C371E00560C69 /* SharedRewardRedemption.h */,
+				EF33D499211C371E00560C69 /* SharedRewardRedemption.m */,
+				EF33D4CE211C371E00560C69 /* SharedSetting.h */,
+				EF33D476211C371E00560C69 /* SharedSetting.m */,
+				EF33D4D6211C371E00560C69 /* SharedShop.h */,
+				EF33D49B211C371E00560C69 /* SharedShop.m */,
+				EF33D474211C371E00560C69 /* SharedSpecialPriceProgram.h */,
+				EF33D4D2211C371E00560C69 /* SharedSpecialPriceProgram.m */,
+				EF33D4A2211C371E00560C69 /* SharedSubMenuType.h */,
+				EF33D459211C371E00560C69 /* SharedSubMenuType.m */,
+				EF33D4CF211C371E00560C69 /* SharedTableNo.h */,
+				EF33D477211C371E00560C69 /* SharedTableNo.m */,
+				EF33D46F211C371E00560C69 /* SharedUserAccount.h */,
+				EF33D4B0211C371E00560C69 /* SharedUserAccount.m */,
+				EF33D4AC211C371E00560C69 /* SharedUserPromotionUsed.h */,
+				EF33D472211C371E00560C69 /* SharedUserPromotionUsed.m */,
+				EF33D4B3211C371E00560C69 /* SharedUserRewardRedemptionUsed.h */,
+				EF33D469211C371E00560C69 /* SharedUserRewardRedemptionUsed.m */,
+				EF33D4CA211C371E00560C69 /* Shop.h */,
+				EF33D47C211C371E00560C69 /* Shop.m */,
+				EF33D4E4211C371E00560C69 /* SpecialPriceProgram.h */,
+				EF33D48C211C371E00560C69 /* SpecialPriceProgram.m */,
+				EF33D47F211C371E00560C69 /* SubMenuType.h */,
+				EF33D4C6211C371E00560C69 /* SubMenuType.m */,
+				EF33D4DC211C371E00560C69 /* TableNo.h */,
+				EF33D495211C371E00560C69 /* TableNo.m */,
+				EF33D4D4211C371E00560C69 /* UserAccount.h */,
+				EF33D49A211C371E00560C69 /* UserAccount.m */,
+				EF33D4DF211C371E00560C69 /* UserPromotionUsed.h */,
+				EF33D490211C371E00560C69 /* UserPromotionUsed.m */,
+				EF33D4A9211C371E00560C69 /* UserRewardRedemptionUsed.h */,
+				EF33D452211C371E00560C69 /* UserRewardRedemptionUsed.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1130,113 +1153,113 @@
 		EF33D4EA211C371E00560C69 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				EF33D4EB211C371E00560C69 /* CustomTableViewHeaderFooterButton.m */,
-				EF33D4EC211C371E00560C69 /* CustomTableViewCellCreditCard.m */,
-				EF33D4ED211C371E00560C69 /* CustomTableViewCellReceiptSummary.h */,
-				EF33D4EE211C371E00560C69 /* CustomTableViewCellRedemption.h */,
-				EF33D4EF211C371E00560C69 /* CustomTableViewCellMenu.xib */,
-				EF33D4F0211C371E00560C69 /* CustomTableViewCellLabelRemark.h */,
-				EF33D4F1211C371E00560C69 /* CustomTableViewHeaderFooterButton.xib */,
-				EF33D4F2211C371E00560C69 /* CustomViewVoucher.h */,
-				EF33D4F3211C371E00560C69 /* CustomTableViewCellOrderSummary.h */,
-				EF33D4F4211C371E00560C69 /* CustomTableViewCellNote.h */,
-				EF33D4F5211C371E00560C69 /* CustomTableViewCellLabel.h */,
-				EF33D4F6211C371E00560C69 /* CustomCollectionViewCellNote.xib */,
-				EF33D4F7211C371E00560C69 /* CustomTableViewCellReward.xib */,
-				EF33D4F8211C371E00560C69 /* CustomTableViewCellRewardDetail.h */,
-				EF33D4F9211C371E00560C69 /* CustomTableViewHeaderButton.m */,
-				EF33D4FA211C371E00560C69 /* CustomViewController.m */,
-				EF33D4FB211C371E00560C69 /* CustomTableViewCellProfile.m */,
-				EF33D4FC211C371E00560C69 /* CustomTableViewCellDisputeDetail.xib */,
-				EF33D4FD211C371E00560C69 /* CustomTableViewCellPromoBanner.xib */,
-				EF33D4FE211C371E00560C69 /* CustomTableViewCellCreditCard.xib */,
-				EF33D4FF211C371E00560C69 /* CustomTableViewCellTotal.m */,
-				EF33D500211C371E00560C69 /* CustomTableViewCellOrder.m */,
-				EF33D501211C371E00560C69 /* CustomTableViewCellLabelLabel.h */,
-				EF33D502211C371E00560C69 /* CustomTableViewCellLabelText.h */,
-				EF33D503211C371E00560C69 /* CustomTableViewCellLabelText.xib */,
-				EF33D504211C371E00560C69 /* CustomTableViewCellButton.xib */,
-				EF33D505211C371E00560C69 /* CustomTableViewCellButton.h */,
-				EF33D506211C371E00560C69 /* CustomTableViewCellImageLabelRemove.xib */,
-				EF33D507211C371E00560C69 /* CustomTableViewCellMenu.h */,
-				EF33D508211C371E00560C69 /* CustomTableViewCellQuantity.m */,
-				EF33D509211C371E00560C69 /* CustomCollectionViewCellNote.m */,
-				EF33D50A211C371E00560C69 /* CustomTableViewCellRewardDetail.xib */,
-				EF33D50B211C371E00560C69 /* CustomTableViewCellPromoBanner.h */,
-				EF33D50C211C371E00560C69 /* CustomTableViewHeaderFooterOkCancel.m */,
 				EF33D50D211C371E00560C69 /* CustomCollectionReusableView.h */,
-				EF33D50E211C371E00560C69 /* CustomTableViewCellVoucherCode.m */,
-				EF33D50F211C371E00560C69 /* CustomTableViewCellLabelRemark.xib */,
-				EF33D510211C371E00560C69 /* CustomTableViewCellPromoThumbNail.m */,
-				EF33D511211C371E00560C69 /* CustomTableViewCellText.m */,
-				EF33D512211C371E00560C69 /* CustomTableViewHeaderLabel.m */,
-				EF33D513211C371E00560C69 /* CustomTableViewCellImageText.h */,
-				EF33D514211C371E00560C69 /* CustomTableViewCellSearchBar.xib */,
-				EF33D515211C371E00560C69 /* CustomTableViewCellLabelSwitch.h */,
-				EF33D516211C371E00560C69 /* CustomTableViewCellImageTextButtonHalf.m */,
-				EF33D517211C371E00560C69 /* CustomTableViewCellReward.h */,
-				EF33D518211C371E00560C69 /* CustomTableViewCellDisputeDetail.m */,
+				EF33D541211C371E00560C69 /* CustomCollectionReusableView.m */,
 				EF33D519211C371E00560C69 /* CustomCollectionReusableView.xib */,
-				EF33D51A211C371E00560C69 /* CustomTableViewCellText.xib */,
-				EF33D51B211C371E00560C69 /* CustomTableViewCellPromoThumbNail.xib */,
-				EF33D51C211C371E00560C69 /* CustomTableViewCellLabelTextView.xib */,
-				EF33D51D211C371E00560C69 /* CustomTableViewCellTotal.xib */,
+				EF33D548211C371E00560C69 /* CustomCollectionViewCellNote.h */,
+				EF33D509211C371E00560C69 /* CustomCollectionViewCellNote.m */,
+				EF33D4F6211C371E00560C69 /* CustomCollectionViewCellNote.xib */,
+				EF33D505211C371E00560C69 /* CustomTableViewCellButton.h */,
+				EF33D54B211C371E00560C69 /* CustomTableViewCellButton.m */,
+				EF33D504211C371E00560C69 /* CustomTableViewCellButton.xib */,
+				EF33D52D211C371E00560C69 /* CustomTableViewCellCreditCard.h */,
+				EF33D4EC211C371E00560C69 /* CustomTableViewCellCreditCard.m */,
+				EF33D4FE211C371E00560C69 /* CustomTableViewCellCreditCard.xib */,
+				EF33D551211C371E00560C69 /* CustomTableViewCellDisputeDetail.h */,
+				EF33D518211C371E00560C69 /* CustomTableViewCellDisputeDetail.m */,
+				EF33D4FC211C371E00560C69 /* CustomTableViewCellDisputeDetail.xib */,
 				EF33D51E211C371E00560C69 /* CustomTableViewCellImageLabelRemove.h */,
+				EF33D54F211C371E00560C69 /* CustomTableViewCellImageLabelRemove.m */,
+				EF33D506211C371E00560C69 /* CustomTableViewCellImageLabelRemove.xib */,
+				EF33D513211C371E00560C69 /* CustomTableViewCellImageText.h */,
+				EF33D53C211C371E00560C69 /* CustomTableViewCellImageText.m */,
+				EF33D545211C371E00560C69 /* CustomTableViewCellImageText.xib */,
+				EF33D552211C371E00560C69 /* CustomTableViewCellImageTextButtonHalf.h */,
+				EF33D516211C371E00560C69 /* CustomTableViewCellImageTextButtonHalf.m */,
+				EF33D54E211C371E00560C69 /* CustomTableViewCellImageTextButtonHalf.xib */,
+				EF33D4F5211C371E00560C69 /* CustomTableViewCellLabel.h */,
+				EF33D539211C371E00560C69 /* CustomTableViewCellLabel.m */,
+				EF33D533211C371E00560C69 /* CustomTableViewCellLabel.xib */,
+				EF33D501211C371E00560C69 /* CustomTableViewCellLabelLabel.h */,
+				EF33D531211C371E00560C69 /* CustomTableViewCellLabelLabel.m */,
+				EF33D53B211C371E00560C69 /* CustomTableViewCellLabelLabel.xib */,
+				EF33D4F0211C371E00560C69 /* CustomTableViewCellLabelRemark.h */,
+				EF33D527211C371E00560C69 /* CustomTableViewCellLabelRemark.m */,
+				EF33D50F211C371E00560C69 /* CustomTableViewCellLabelRemark.xib */,
+				EF33D515211C371E00560C69 /* CustomTableViewCellLabelSwitch.h */,
+				EF33D553211C371E00560C69 /* CustomTableViewCellLabelSwitch.m */,
+				EF33D53D211C371E00560C69 /* CustomTableViewCellLabelSwitch.xib */,
+				EF33D502211C371E00560C69 /* CustomTableViewCellLabelText.h */,
+				EF33D52F211C371E00560C69 /* CustomTableViewCellLabelText.m */,
+				EF33D503211C371E00560C69 /* CustomTableViewCellLabelText.xib */,
+				EF33D54D211C371E00560C69 /* CustomTableViewCellLabelTextView.h */,
 				EF33D51F211C371E00560C69 /* CustomTableViewCellLabelTextView.m */,
-				EF33D520211C371E00560C69 /* CustomTableViewCellSearchBar.m */,
-				EF33D521211C371E00560C69 /* CustomTableViewCellVoucherCode.xib */,
+				EF33D51C211C371E00560C69 /* CustomTableViewCellLabelTextView.xib */,
+				EF33D507211C371E00560C69 /* CustomTableViewCellMenu.h */,
+				EF33D549211C371E00560C69 /* CustomTableViewCellMenu.m */,
+				EF33D4EF211C371E00560C69 /* CustomTableViewCellMenu.xib */,
+				EF33D4F4211C371E00560C69 /* CustomTableViewCellNote.h */,
 				EF33D522211C371E00560C69 /* CustomTableViewCellNote.m */,
-				EF33D523211C371E00560C69 /* CustomTableViewCellQuantity.xib */,
+				EF33D53A211C371E00560C69 /* CustomTableViewCellNote.xib */,
+				EF33D530211C371E00560C69 /* CustomTableViewCellOrder.h */,
+				EF33D500211C371E00560C69 /* CustomTableViewCellOrder.m */,
+				EF33D547211C371E00560C69 /* CustomTableViewCellOrder.xib */,
+				EF33D4F3211C371E00560C69 /* CustomTableViewCellOrderSummary.h */,
 				EF33D524211C371E00560C69 /* CustomTableViewCellOrderSummary.m */,
 				EF33D525211C371E00560C69 /* CustomTableViewCellOrderSummary.xib */,
-				EF33D526211C371E00560C69 /* CustomViewVoucher.m */,
-				EF33D527211C371E00560C69 /* CustomTableViewCellLabelRemark.m */,
-				EF33D528211C371E00560C69 /* CustomTableViewCellRedemption.m */,
-				EF33D529211C371E00560C69 /* CustomViewVoucher.xib */,
+				EF33D535211C371E00560C69 /* CustomTableViewCellProfile.h */,
+				EF33D4FB211C371E00560C69 /* CustomTableViewCellProfile.m */,
+				EF33D534211C371E00560C69 /* CustomTableViewCellProfile.xib */,
+				EF33D50B211C371E00560C69 /* CustomTableViewCellPromoBanner.h */,
+				EF33D546211C371E00560C69 /* CustomTableViewCellPromoBanner.m */,
+				EF33D4FD211C371E00560C69 /* CustomTableViewCellPromoBanner.xib */,
+				EF33D540211C371E00560C69 /* CustomTableViewCellPromoThumbNail.h */,
+				EF33D510211C371E00560C69 /* CustomTableViewCellPromoThumbNail.m */,
+				EF33D51B211C371E00560C69 /* CustomTableViewCellPromoThumbNail.xib */,
+				EF33D54A211C371E00560C69 /* CustomTableViewCellQuantity.h */,
+				EF33D508211C371E00560C69 /* CustomTableViewCellQuantity.m */,
+				EF33D523211C371E00560C69 /* CustomTableViewCellQuantity.xib */,
+				EF33D4ED211C371E00560C69 /* CustomTableViewCellReceiptSummary.h */,
 				EF33D52A211C371E00560C69 /* CustomTableViewCellReceiptSummary.m */,
 				EF33D52B211C371E00560C69 /* CustomTableViewCellReceiptSummary.xib */,
-				EF33D52C211C371E00560C69 /* CustomTableViewHeaderFooterOkCancel.xib */,
-				EF33D52D211C371E00560C69 /* CustomTableViewCellCreditCard.h */,
-				EF33D52E211C371E00560C69 /* CustomTableViewHeaderFooterButton.h */,
-				EF33D52F211C371E00560C69 /* CustomTableViewCellLabelText.m */,
-				EF33D530211C371E00560C69 /* CustomTableViewCellOrder.h */,
-				EF33D531211C371E00560C69 /* CustomTableViewCellLabelLabel.m */,
-				EF33D532211C371E00560C69 /* CustomTableViewCellTotal.h */,
-				EF33D533211C371E00560C69 /* CustomTableViewCellLabel.xib */,
-				EF33D534211C371E00560C69 /* CustomTableViewCellProfile.xib */,
-				EF33D535211C371E00560C69 /* CustomTableViewCellProfile.h */,
-				EF33D536211C371E00560C69 /* CustomViewController.h */,
-				EF33D537211C371E00560C69 /* CustomTableViewHeaderButton.h */,
-				EF33D538211C371E00560C69 /* CustomTableViewCellRewardDetail.m */,
-				EF33D539211C371E00560C69 /* CustomTableViewCellLabel.m */,
-				EF33D53A211C371E00560C69 /* CustomTableViewCellNote.xib */,
-				EF33D53B211C371E00560C69 /* CustomTableViewCellLabelLabel.xib */,
-				EF33D53C211C371E00560C69 /* CustomTableViewCellImageText.m */,
-				EF33D53D211C371E00560C69 /* CustomTableViewCellLabelSwitch.xib */,
-				EF33D53E211C371E00560C69 /* CustomTableViewHeaderLabel.h */,
-				EF33D53F211C371E00560C69 /* CustomTableViewCellText.h */,
-				EF33D540211C371E00560C69 /* CustomTableViewCellPromoThumbNail.h */,
-				EF33D541211C371E00560C69 /* CustomCollectionReusableView.m */,
-				EF33D542211C371E00560C69 /* CustomTableViewCellVoucherCode.h */,
-				EF33D543211C371E00560C69 /* CustomTableViewHeaderFooterOkCancel.h */,
-				EF33D544211C371E00560C69 /* CustomTableViewHeaderButton.xib */,
-				EF33D545211C371E00560C69 /* CustomTableViewCellImageText.xib */,
-				EF33D546211C371E00560C69 /* CustomTableViewCellPromoBanner.m */,
-				EF33D547211C371E00560C69 /* CustomTableViewCellOrder.xib */,
-				EF33D548211C371E00560C69 /* CustomCollectionViewCellNote.h */,
-				EF33D549211C371E00560C69 /* CustomTableViewCellMenu.m */,
-				EF33D54A211C371E00560C69 /* CustomTableViewCellQuantity.h */,
-				EF33D54B211C371E00560C69 /* CustomTableViewCellButton.m */,
-				EF33D54C211C371E00560C69 /* CustomTableViewCellSearchBar.h */,
-				EF33D54D211C371E00560C69 /* CustomTableViewCellLabelTextView.h */,
-				EF33D54E211C371E00560C69 /* CustomTableViewCellImageTextButtonHalf.xib */,
-				EF33D54F211C371E00560C69 /* CustomTableViewCellImageLabelRemove.m */,
-				EF33D550211C371E00560C69 /* CustomTableViewCellReward.m */,
-				EF33D551211C371E00560C69 /* CustomTableViewCellDisputeDetail.h */,
-				EF33D552211C371E00560C69 /* CustomTableViewCellImageTextButtonHalf.h */,
-				EF33D553211C371E00560C69 /* CustomTableViewCellLabelSwitch.m */,
-				EF33D554211C371E00560C69 /* CustomTableViewHeaderLabel.xib */,
+				EF33D4EE211C371E00560C69 /* CustomTableViewCellRedemption.h */,
+				EF33D528211C371E00560C69 /* CustomTableViewCellRedemption.m */,
 				EF33D555211C371E00560C69 /* CustomTableViewCellRedemption.xib */,
+				EF33D517211C371E00560C69 /* CustomTableViewCellReward.h */,
+				EF33D550211C371E00560C69 /* CustomTableViewCellReward.m */,
+				EF33D4F7211C371E00560C69 /* CustomTableViewCellReward.xib */,
+				EF33D4F8211C371E00560C69 /* CustomTableViewCellRewardDetail.h */,
+				EF33D538211C371E00560C69 /* CustomTableViewCellRewardDetail.m */,
+				EF33D50A211C371E00560C69 /* CustomTableViewCellRewardDetail.xib */,
+				EF33D54C211C371E00560C69 /* CustomTableViewCellSearchBar.h */,
+				EF33D520211C371E00560C69 /* CustomTableViewCellSearchBar.m */,
+				EF33D514211C371E00560C69 /* CustomTableViewCellSearchBar.xib */,
+				EF33D53F211C371E00560C69 /* CustomTableViewCellText.h */,
+				EF33D511211C371E00560C69 /* CustomTableViewCellText.m */,
+				EF33D51A211C371E00560C69 /* CustomTableViewCellText.xib */,
+				EF33D532211C371E00560C69 /* CustomTableViewCellTotal.h */,
+				EF33D4FF211C371E00560C69 /* CustomTableViewCellTotal.m */,
+				EF33D51D211C371E00560C69 /* CustomTableViewCellTotal.xib */,
+				EF33D542211C371E00560C69 /* CustomTableViewCellVoucherCode.h */,
+				EF33D50E211C371E00560C69 /* CustomTableViewCellVoucherCode.m */,
+				EF33D521211C371E00560C69 /* CustomTableViewCellVoucherCode.xib */,
+				EF33D537211C371E00560C69 /* CustomTableViewHeaderButton.h */,
+				EF33D4F9211C371E00560C69 /* CustomTableViewHeaderButton.m */,
+				EF33D544211C371E00560C69 /* CustomTableViewHeaderButton.xib */,
+				EF33D52E211C371E00560C69 /* CustomTableViewHeaderFooterButton.h */,
+				EF33D4EB211C371E00560C69 /* CustomTableViewHeaderFooterButton.m */,
+				EF33D4F1211C371E00560C69 /* CustomTableViewHeaderFooterButton.xib */,
+				EF33D543211C371E00560C69 /* CustomTableViewHeaderFooterOkCancel.h */,
+				EF33D50C211C371E00560C69 /* CustomTableViewHeaderFooterOkCancel.m */,
+				EF33D52C211C371E00560C69 /* CustomTableViewHeaderFooterOkCancel.xib */,
+				EF33D53E211C371E00560C69 /* CustomTableViewHeaderLabel.h */,
+				EF33D512211C371E00560C69 /* CustomTableViewHeaderLabel.m */,
+				EF33D554211C371E00560C69 /* CustomTableViewHeaderLabel.xib */,
+				EF33D536211C371E00560C69 /* CustomViewController.h */,
+				EF33D4FA211C371E00560C69 /* CustomViewController.m */,
+				EF33D4F2211C371E00560C69 /* CustomViewVoucher.h */,
+				EF33D526211C371E00560C69 /* CustomViewVoucher.m */,
+				EF33D529211C371E00560C69 /* CustomViewVoucher.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -1309,6 +1332,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF33CDDE211C312A00560C69 /* Build configuration list for PBXNativeTarget "DevJummumOM" */;
 			buildPhases = (
+				661744BC1AB85270B01CC454 /* [CP] Check Pods Manifest.lock */,
 				EF33CDAE211C312800560C69 /* Sources */,
 				EF33CDAF211C312800560C69 /* Frameworks */,
 				EF33CDB0211C312800560C69 /* Resources */,
@@ -1327,6 +1351,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF33CDE1211C312A00560C69 /* Build configuration list for PBXNativeTarget "DevJummumOMTests" */;
 			buildPhases = (
+				2F4ABDA9A7C2A0EFD96E6A47 /* [CP] Check Pods Manifest.lock */,
 				EF33CDC6211C312A00560C69 /* Sources */,
 				EF33CDC7211C312A00560C69 /* Frameworks */,
 				EF33CDC8211C312A00560C69 /* Resources */,
@@ -1345,6 +1370,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF33CDE4211C312A00560C69 /* Build configuration list for PBXNativeTarget "DevJummumOMUITests" */;
 			buildPhases = (
+				38274A742A71B55F4B986B88 /* [CP] Check Pods Manifest.lock */,
 				EF33CDD1211C312A00560C69 /* Sources */,
 				EF33CDD2211C312A00560C69 /* Frameworks */,
 				EF33CDD3211C312A00560C69 /* Resources */,
@@ -1503,6 +1529,7 @@
 				EF33D675211C371F00560C69 /* Kanit-Italic.ttf in Resources */,
 				EF33D670211C371F00560C69 /* Kanit-SemiBold.ttf in Resources */,
 				EF33D5A0211C371E00560C69 /* Icon-Spotlight-40@3x.png in Resources */,
+				EF5D2441212759A30073F1A1 /* GoogleService-Info.plist in Resources */,
 				EF33D67C211C371F00560C69 /* Kanit-Thin.ttf in Resources */,
 				EF33D5A4211C371E00560C69 /* termsOfService.png in Resources */,
 				EF33D5BA211C371E00560C69 /* Icon-Small@2x.png in Resources */,
@@ -1565,6 +1592,60 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F4ABDA9A7C2A0EFD96E6A47 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DevJummumOMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38274A742A71B55F4B986B88 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DevJummumOMUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		661744BC1AB85270B01CC454 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DevJummumOM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EF33CDE7211C318100560C69 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1631,15 +1712,12 @@
 				EF33D647211C371F00560C69 /* CustomViewVoucher.m in Sources */,
 				EF33D624211C371F00560C69 /* CustomTableViewHeaderButton.m in Sources */,
 				EF33D5C1211C371E00560C69 /* OrderDetailViewController.m in Sources */,
-				EF33D5D4211C371E00560C69 /* FacebookComment.m in Sources */,
 				EF33D64E211C371F00560C69 /* CustomTableViewCellLabelText.m in Sources */,
 				EF33D5FB211C371E00560C69 /* ReceiptPrint.m in Sources */,
-				EF33D5BE211C371E00560C69 /* HotDealViewController.m in Sources */,
 				EF33D62B211C371F00560C69 /* CustomTableViewCellOrder.m in Sources */,
 				EF33D5DD211C371E00560C69 /* Credentials.m in Sources */,
 				EF33D602211C371E00560C69 /* SharedBranch.m in Sources */,
 				EF33D5EF211C371E00560C69 /* NoteType.m in Sources */,
-				EF33D5CE211C371E00560C69 /* RewardViewController.m in Sources */,
 				EF33D5F3211C371E00560C69 /* SharedCurrentMenu.m in Sources */,
 				EF33D652211C371F00560C69 /* CustomTableViewCellRewardDetail.m in Sources */,
 				EF33D5EB211C371E00560C69 /* HotDeal.m in Sources */,
@@ -1660,6 +1738,7 @@
 				EF33D643211C371F00560C69 /* CustomTableViewCellNote.m in Sources */,
 				EF33D5C9211C371E00560C69 /* MeViewController.m in Sources */,
 				EF33D5ED211C371E00560C69 /* SharedPushSync.m in Sources */,
+				EF5D2488212B6BE50073F1A1 /* SharedDevice.m in Sources */,
 				EF33D632211C371F00560C69 /* CustomTableViewHeaderFooterOkCancel.m in Sources */,
 				EF33D619211C371F00560C69 /* Promotion.m in Sources */,
 				EF33D5E9211C371E00560C69 /* SharedMenuPic.m in Sources */,
@@ -1694,7 +1773,6 @@
 				EF33D5FE211C371E00560C69 /* SharedShop.m in Sources */,
 				EF33D61B211C371F00560C69 /* RewardRedemption.m in Sources */,
 				EF33D5D9211C371E00560C69 /* SharedMenu.m in Sources */,
-				EF33D5C3211C371E00560C69 /* RewardRedemptionViewController.m in Sources */,
 				EF33D653211C371F00560C69 /* CustomTableViewCellLabel.m in Sources */,
 				EF33D5FF211C371E00560C69 /* SharedNoteType.m in Sources */,
 				EF33D661211C371F00560C69 /* CustomTableViewCellReward.m in Sources */,
@@ -1709,9 +1787,7 @@
 				EF33D5BD211C371E00560C69 /* ForgotPasswordViewController.m in Sources */,
 				EF33D603211C371E00560C69 /* Printer.m in Sources */,
 				EF33D61D211C371F00560C69 /* Message.m in Sources */,
-				EF33D5C0211C371E00560C69 /* MyRewardViewController.m in Sources */,
 				EF33D5E2211C371E00560C69 /* SharedUserPromotionUsed.m in Sources */,
-				EF33D5C7211C371E00560C69 /* RewardDetailViewController.m in Sources */,
 				EF33D639211C371F00560C69 /* CustomTableViewCellImageTextButtonHalf.m in Sources */,
 				EF33D5CD211C371E00560C69 /* CustomerKitchenViewController.m in Sources */,
 				EF33D608211C371E00560C69 /* SharedUserAccount.m in Sources */,
@@ -1720,6 +1796,7 @@
 				EF33D613211C371F00560C69 /* CredentialsDb.m in Sources */,
 				EF33D5DC211C371E00560C69 /* SharedPromotionMenu.m in Sources */,
 				EF33D616211C371F00560C69 /* SharedMenuTypeNote.m in Sources */,
+				EF5D2485212A98060073F1A1 /* NewVersionUpdateViewController.m in Sources */,
 				EF33D5CC211C371E00560C69 /* RegisterNowViewController.m in Sources */,
 				EF33D63A211C371F00560C69 /* CustomTableViewCellDisputeDetail.m in Sources */,
 				EF33D591211C371E00560C69 /* AppDelegate.m in Sources */,
@@ -1883,6 +1960,7 @@
 		};
 		EF33CDDF211C312A00560C69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5FF20B72FD762642E1EF9EF /* Pods-DevJummumOM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevJummumOM/DevJummumOM.entitlements;
@@ -1902,6 +1980,7 @@
 		};
 		EF33CDE0211C312A00560C69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FEC2A34352E55A3E52D1C4C /* Pods-DevJummumOM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = DevJummumOM/DevJummumOM.entitlements;
@@ -1921,6 +2000,7 @@
 		};
 		EF33CDE2211C312A00560C69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAF4DE32C6F66AF596B15A1F /* Pods-DevJummumOMTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1940,6 +2020,7 @@
 		};
 		EF33CDE3211C312A00560C69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 033EEB944EF4415FC61413D6 /* Pods-DevJummumOMTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1959,6 +2040,7 @@
 		};
 		EF33CDE5211C312A00560C69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D50129638A07EB258F6F0BE /* Pods-DevJummumOMUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF8AZLDC5D;
@@ -1977,6 +2059,7 @@
 		};
 		EF33CDE6211C312A00560C69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D08C660D4C012FD7849C81AA /* Pods-DevJummumOMUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF8AZLDC5D;

@@ -14,7 +14,7 @@
 
 @implementation Receipt
 
--(Receipt *)initWithBranchID:(NSInteger)branchID customerTableID:(NSInteger)customerTableID memberID:(NSInteger)memberID servingPerson:(NSInteger)servingPerson customerType:(NSInteger)customerType openTableDate:(NSDate *)openTableDate cashAmount:(float)cashAmount cashReceive:(float)cashReceive creditCardType:(NSInteger)creditCardType creditCardNo:(NSString *)creditCardNo creditCardAmount:(float)creditCardAmount transferDate:(NSDate *)transferDate transferAmount:(float)transferAmount remark:(NSString *)remark discountType:(NSInteger)discountType discountAmount:(float)discountAmount discountValue:(float)discountValue discountReason:(NSString *)discountReason serviceChargePercent:(float)serviceChargePercent serviceChargeValue:(float)serviceChargeValue priceIncludeVat:(NSInteger)priceIncludeVat vatPercent:(float)vatPercent vatValue:(float)vatValue status:(NSInteger)status statusRoute:(NSString *)statusRoute receiptNoID:(NSString *)receiptNoID receiptNoTaxID:(NSString *)receiptNoTaxID receiptDate:(NSDate *)receiptDate sendToKitchenDate:(NSDate *)sendToKitchenDate deliveredDate:(NSDate *)deliveredDate mergeReceiptID:(NSInteger)mergeReceiptID
+-(Receipt *)initWithBranchID:(NSInteger)branchID customerTableID:(NSInteger)customerTableID memberID:(NSInteger)memberID servingPerson:(NSInteger)servingPerson customerType:(NSInteger)customerType openTableDate:(NSDate *)openTableDate cashAmount:(float)cashAmount cashReceive:(float)cashReceive creditCardType:(NSInteger)creditCardType creditCardNo:(NSString *)creditCardNo creditCardAmount:(float)creditCardAmount transferDate:(NSDate *)transferDate transferAmount:(float)transferAmount remark:(NSString *)remark discountType:(NSInteger)discountType discountAmount:(float)discountAmount discountValue:(float)discountValue discountReason:(NSString *)discountReason serviceChargePercent:(float)serviceChargePercent serviceChargeValue:(float)serviceChargeValue priceIncludeVat:(NSInteger)priceIncludeVat vatPercent:(float)vatPercent vatValue:(float)vatValue status:(NSInteger)status statusRoute:(NSString *)statusRoute receiptNoID:(NSString *)receiptNoID receiptNoTaxID:(NSString *)receiptNoTaxID receiptDate:(NSDate *)receiptDate sendToKitchenDate:(NSDate *)sendToKitchenDate deliveredDate:(NSDate *)deliveredDate mergeReceiptID:(NSInteger)mergeReceiptID buffetReceiptID:(NSInteger)buffetReceiptID
 {
     self = [super init];
     if(self)
@@ -51,6 +51,7 @@
         self.sendToKitchenDate = sendToKitchenDate;
         self.deliveredDate = deliveredDate;
         self.mergeReceiptID = mergeReceiptID;
+        self.buffetReceiptID = buffetReceiptID;
         self.modifiedUser = [Utility modifiedUser];
         self.modifiedDate = [Utility currentDateTime];
     }
@@ -161,10 +162,10 @@
         [copy setSendToKitchenDate:self.sendToKitchenDate];
         [copy setDeliveredDate:self.deliveredDate];
         ((Receipt *)copy).mergeReceiptID = self.mergeReceiptID;
+        ((Receipt *)copy).buffetReceiptID = self.buffetReceiptID;
         [copy setModifiedUser:[Utility modifiedUser]];
         [copy setModifiedDate:[Utility currentDateTime]];
-        
-        
+
     }
     
     return copy;
@@ -204,6 +205,7 @@
        && [self.sendToKitchenDate isEqual:editingReceipt.sendToKitchenDate]
        && [self.deliveredDate isEqual:editingReceipt.deliveredDate]
        && self.mergeReceiptID == editingReceipt.mergeReceiptID
+       && self.buffetReceiptID == editingReceipt.buffetReceiptID
        )
     {
         return NO;
@@ -245,11 +247,13 @@
     toReceipt.sendToKitchenDate = fromReceipt.sendToKitchenDate;
     toReceipt.deliveredDate = fromReceipt.deliveredDate;
     toReceipt.mergeReceiptID = fromReceipt.mergeReceiptID;
+    toReceipt.buffetReceiptID = fromReceipt.buffetReceiptID;
     toReceipt.modifiedUser = [Utility modifiedUser];
     toReceipt.modifiedDate = [Utility currentDateTime];
     
     return toReceipt;
 }
+
 
 
 +(NSMutableArray *)getReceiptListWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate statusList:(NSArray *)statusList
@@ -379,23 +383,6 @@
     
     return nil;
 }
-
-//+(void)updateStatusList:(NSMutableArray *)receiptList
-//{
-//    NSMutableArray *dataList = [SharedReceipt sharedReceipt].receiptList;
-//    for(Receipt *item in receiptList)
-//    {
-//        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"_receiptID = %ld",item.receiptID];
-//        NSArray *filterArray = [dataList filteredArrayUsingPredicate:predicate];
-//        if([filterArray count]>0)
-//        {
-//            Receipt *receipt = filterArray[0];
-//            receipt.status = item.status;
-//            receipt.statusRoute = item.statusRoute;
-//            receipt.modifiedDate = item.modifiedDate;
-//        }
-//    }
-//}
 
 +(NSMutableArray *)getReceiptList
 {

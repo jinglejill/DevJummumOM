@@ -12,10 +12,20 @@
 
 @property (nonatomic) NSInteger deviceID;
 @property (retain, nonatomic) NSString * deviceToken;
+@property (retain, nonatomic) NSString * model;
 @property (retain, nonatomic) NSString * remark;
+@property (retain, nonatomic) NSString * modifiedUser;
 @property (retain, nonatomic) NSDate * modifiedDate;
-@property (retain, nonatomic) NSString * modifiedUser;//ใช้ตอน delete row ที่ duplicate key
-//ใช้เฉพาะตอน push type = 'd'
-//ใช้ตอน update or delete
+
+-(Device *)initWithDeviceToken:(NSString *)deviceToken model:(NSString *)model remark:(NSString *)remark;
++(NSInteger)getNextID;
++(void)addObject:(Device *)device;
++(void)removeObject:(Device *)device;
++(void)addList:(NSMutableArray *)deviceList;
++(void)removeList:(NSMutableArray *)deviceList;
++(Device *)getDevice:(NSInteger)deviceID;
+-(BOOL)editDevice:(Device *)editingDevice;
++(Device *)copyFrom:(Device *)fromDevice to:(Device *)toDevice;
+
 
 @end

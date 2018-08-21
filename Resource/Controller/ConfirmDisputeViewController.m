@@ -34,7 +34,7 @@
     vwAlertHeight.constant = 80+38+38+44+lblDisputeMessage.frame.size.height;
     [self setButtonDesign:btnConfirm];
     [self setButtonDesign:btnCancel];
-    self.backgroundView.backgroundColor = [UIColor clearColor];
+    
     
     
     CGFloat red, green, blue, alpha;
