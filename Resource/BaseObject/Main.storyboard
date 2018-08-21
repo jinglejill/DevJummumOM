@@ -1653,7 +1653,9 @@
                         <outlet property="btnDismissTop" destination="iib-wp-tW7" id="fNr-RN-chS"/>
                         <outlet property="btnUpdate" destination="S1E-qz-i6b" id="sJq-SI-5zJ"/>
                         <outlet property="lblHeader" destination="7Ec-a9-WiJ" id="ZkO-nZ-c7V"/>
+                        <outlet property="lblMessage" destination="ITi-hY-A3v" id="DFI-en-YpP"/>
                         <outlet property="lblSubtitle" destination="5Jc-CZ-54H" id="vvo-Nh-Nhm"/>
+                        <outlet property="lblTitle" destination="Iad-QC-UeL" id="6pI-PS-psd"/>
                         <outlet property="vwAlert" destination="CPs-Dk-oSQ" id="3Lw-qb-MR8"/>
                         <outlet property="vwAlertHeight" destination="wb6-bd-0SA" id="jLj-tA-zMP"/>
                         <segue destination="cE5-EA-vXz" kind="unwind" identifier="segUnwindToLaunchScreen" unwindAction="unwindToLaunchScreen:" id="wak-Wf-p0N"/>
