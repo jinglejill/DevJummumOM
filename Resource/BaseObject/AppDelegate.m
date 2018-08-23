@@ -14,6 +14,8 @@
 #import "PersonalDataViewController.h"
 #import "MeViewController.h"
 #import "OpeningTimeViewController.h"
+#import "PrinterSettingViewController.h"
+#import "PrinterChoosingViewController.h"
 #import "HomeModel.h"
 #import "Utility.h"
 #import "PushSync.h"
@@ -33,6 +35,13 @@
     HomeModel *_homeModel;
     NSMutableDictionary *_dicTimer;
 }
+//printer part
+@property (nonatomic) NSInteger selectedIndex;
+
+@property (nonatomic) LanguageIndex selectedLanguage;
+
+- (void)loadParam;
+//end printer part
 @end
 
 extern BOOL globalRotateFromSeg;
@@ -77,6 +86,16 @@ void myExceptionHandler(NSException *exception)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //printer part
+    [NSThread sleepForTimeInterval:1.0];     // 1000mS!!!
+    
+    _selectedIndex     = 0;
+    _selectedLanguage  = LanguageIndexEnglish;
+    
+    _settingManager = [SettingManager new];
+    
+    [self loadParam];
+    //end printer part
 //    NSString *key = [NSString stringWithFormat:@"dismiss verion:1.2"];
 //        [[NSUserDefaults standardUserDefaults] setValue:@0 forKey:key];
 //
@@ -697,7 +716,7 @@ void myExceptionHandler(NSException *exception)
             CustomerKitchenViewController *vc = (CustomerKitchenViewController *)currentVc;
             [vc reloadTableViewNewOrderTab];
         }
-        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]])
+        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]] || [currentVc isKindOfClass:[PrinterSettingViewController class]] || [currentVc isKindOfClass:[PrinterChoosingViewController class]])
         {
             CustomViewController *vc = (CustomViewController *)currentVc;
             vc.newOrderComing = 1;
@@ -740,7 +759,7 @@ void myExceptionHandler(NSException *exception)
             CustomerKitchenViewController *vc = (CustomerKitchenViewController *)currentVc;
             [vc reloadTableViewIssueTab];
         }
-        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]])
+        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]] || [currentVc isKindOfClass:[PrinterSettingViewController class]] || [currentVc isKindOfClass:[PrinterChoosingViewController class]])
         {
             CustomViewController *vc = (CustomViewController *)currentVc;
             vc.issueComing = 1;
@@ -783,7 +802,7 @@ void myExceptionHandler(NSException *exception)
             CustomerKitchenViewController *vc = (CustomerKitchenViewController *)currentVc;
             [vc reloadTableViewProcessingTab];
         }
-        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]])
+        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]] || [currentVc isKindOfClass:[PrinterSettingViewController class]] || [currentVc isKindOfClass:[PrinterChoosingViewController class]])
         {
             CustomViewController *vc = (CustomViewController *)currentVc;
             vc.issueComing = 1;
@@ -826,7 +845,7 @@ void myExceptionHandler(NSException *exception)
             CustomerKitchenViewController *vc = (CustomerKitchenViewController *)currentVc;
             [vc reloadTableViewDeliveredTab];
         }
-        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]])
+        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]] || [currentVc isKindOfClass:[PrinterSettingViewController class]] || [currentVc isKindOfClass:[PrinterChoosingViewController class]])
         {
             CustomViewController *vc = (CustomViewController *)currentVc;
             vc.issueComing = 1;
@@ -868,7 +887,7 @@ void myExceptionHandler(NSException *exception)
             CustomerKitchenViewController *vc = (CustomerKitchenViewController *)currentVc;
             [vc reloadTableViewClearTab];
         }
-        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]])
+        else if([currentVc isKindOfClass:[OrderDetailViewController class]] || [currentVc isKindOfClass:[PersonalDataViewController class]] || [currentVc isKindOfClass:[TosAndPrivacyPolicyViewController class]] || [currentVc isKindOfClass:[PrinterSettingViewController class]] || [currentVc isKindOfClass:[PrinterChoosingViewController class]])
         {
             CustomViewController *vc = (CustomViewController *)currentVc;
             vc.issueComing = 1;
@@ -1057,5 +1076,153 @@ void myExceptionHandler(NSException *exception)
     UILabel *label = [[defaultAction valueForKey:@"__representer"] valueForKey:@"label"];
     label.attributedText = attrString;
 }
+
+//printer part
+- (void)loadParam {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    [delegate.settingManager load];
+}
+
++ (NSString *)getPortName {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.settingManager.settings[0].portName;
+}
+
++ (void)setPortName:(NSString *)portName {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.settingManager.settings[0].portName = portName;
+    [delegate.settingManager save];
+}
+
++ (NSString *)getPortSettings {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.settingManager.settings[0].portSettings;
+}
+
++ (void)setPortSettings:(NSString *)portSettings {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.settingManager.settings[0].portSettings = portSettings;
+    [delegate.settingManager save];
+}
+
++ (NSString *)getModelName {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.settingManager.settings[0].modelName;
+}
+
++ (void)setModelName:(NSString *)modelName {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    delegate.settingManager.settings[0].modelName = modelName;
+    [delegate.settingManager save];
+}
+
++ (NSString *)getMacAddress {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.settingManager.settings[0].macAddress;
+}
+
++ (void)setMacAddress:(NSString *)macAddress {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.settingManager.settings[0].macAddress = macAddress;
+    [delegate.settingManager save];
+}
+
++ (StarIoExtEmulation)getEmulation {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.settingManager.settings[0].emulation;
+}
+
++ (void)setEmulation:(StarIoExtEmulation)emulation {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.settingManager.settings[0].emulation = emulation;
+    [delegate.settingManager save];
+}
+
++ (BOOL)getCashDrawerOpenActiveHigh {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.settingManager.settings[0].cashDrawerOpenActiveHigh;
+}
+
++ (void)setCashDrawerOpenActiveHigh:(BOOL)activeHigh {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.settingManager.settings[0].cashDrawerOpenActiveHigh = activeHigh;
+    [delegate.settingManager save];
+}
+
++ (NSInteger)getAllReceiptsSettings {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.settingManager.settings[0].allReceiptsSettings;
+}
+
++ (void)setAllReceiptsSettings:(NSInteger)allReceiptsSettings {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.settingManager.settings[0].allReceiptsSettings = allReceiptsSettings;
+    [delegate.settingManager save];
+}
+
++ (NSInteger)getSelectedIndex {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.selectedIndex;
+}
+
++ (void)setSelectedIndex:(NSInteger)index {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.selectedIndex = index;
+}
+
++ (LanguageIndex)getSelectedLanguage {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.selectedLanguage;
+}
+
++ (void)setSelectedLanguage:(LanguageIndex)index {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.selectedLanguage = index;
+}
+
++ (PaperSizeIndex)getSelectedPaperSize {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.settingManager.settings[0].selectedPaperSize;
+}
+
++ (void)setSelectedPaperSize:(PaperSizeIndex)index {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.settingManager.settings[0].selectedPaperSize = index;
+    [delegate.settingManager save];
+}
+
++ (ModelIndex)getSelectedModelIndex {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    return delegate.settingManager.settings[0].selectedModelIndex;
+}
+
++ (void)setSelectedModelIndex:(ModelIndex)modelIndex {
+    AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    delegate.settingManager.settings[0].selectedModelIndex = modelIndex;
+    [delegate.settingManager save];
+}
+//end printer part
 @end
         

@@ -19,7 +19,8 @@
 @property (strong, nonatomic) CredentialsDb *credentialsDb;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeight;
-
+@property (strong, nonatomic) IBOutlet UIButton *btnShowPrintButton;
+- (IBAction)showPrintButton:(id)sender;
 
 -(IBAction)unwindToOrderDetail:(UIStoryboardSegue *)segue;
 - (IBAction)goBack:(id)sender;

@@ -49,6 +49,7 @@
 
 
 @property (nonatomic) BOOL toBeProcessing;
+@property (nonatomic) BOOL toBePrinting;
 
 -(Receipt *)initWithBranchID:(NSInteger)branchID customerTableID:(NSInteger)customerTableID memberID:(NSInteger)memberID servingPerson:(NSInteger)servingPerson customerType:(NSInteger)customerType openTableDate:(NSDate *)openTableDate cashAmount:(float)cashAmount cashReceive:(float)cashReceive creditCardType:(NSInteger)creditCardType creditCardNo:(NSString *)creditCardNo creditCardAmount:(float)creditCardAmount transferDate:(NSDate *)transferDate transferAmount:(float)transferAmount remark:(NSString *)remark discountType:(NSInteger)discountType discountAmount:(float)discountAmount discountValue:(float)discountValue discountReason:(NSString *)discountReason serviceChargePercent:(float)serviceChargePercent serviceChargeValue:(float)serviceChargeValue priceIncludeVat:(NSInteger)priceIncludeVat vatPercent:(float)vatPercent vatValue:(float)vatValue status:(NSInteger)status statusRoute:(NSString *)statusRoute receiptNoID:(NSString *)receiptNoID receiptNoTaxID:(NSString *)receiptNoTaxID receiptDate:(NSDate *)receiptDate sendToKitchenDate:(NSDate *)sendToKitchenDate deliveredDate:(NSDate *)deliveredDate mergeReceiptID:(NSInteger)mergeReceiptID buffetReceiptID:(NSInteger)buffetReceiptID;
 +(NSInteger)getNextID;
@@ -70,7 +71,6 @@
 +(float)getAllCreditAmountWithReceiptDate:(NSDate *)date;
 +(float)getAllTransferAmountWithReceiptDate:(NSDate *)date;
 +(NSDate *)getMaxModifiedDateWithMemberID:(NSInteger)memberID;
-//+(void)updateStatusList:(NSMutableArray *)receiptList;
 +(NSMutableArray *)getReceiptList;
 +(void)removeAllObjects;
 +(float)getTotalAmount:(Receipt *)receipt;
@@ -82,9 +82,8 @@
 +(Receipt *)getReceipt:(NSInteger)receiptID branchID:(NSInteger)branchID;
 +(NSMutableArray *)getReceiptListWithStatus:(NSInteger)status branchID:(NSInteger)branchID;
 +(void)updateStatus:(Receipt *)receipt;
-//+(NSMutableArray *)sortListDesc:(NSMutableArray *)receiptList;
 +(NSMutableArray *)sortListAsc:(NSMutableArray *)receiptList;
 +(NSDate *)getMaxModifiedDateWithBranchID:(NSInteger)branchID;
-+(Receipt *)updateStatusAndIndicator:(Receipt *)receipt;
 +(NSInteger)getPriorStatus:(Receipt *)receipt;
++(NSInteger)getIndex:(NSMutableArray *)receiptList receipt:(Receipt *)receipt;
 @end

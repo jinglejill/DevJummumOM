@@ -16,8 +16,8 @@
 
 
 #define mRedThemeColor      [UIColor colorWithRed:255/255.0 green:51/255.0 blue:51/255.0 alpha:1]
-#define mGrayColor          [UIColor colorWithRed:156/255.0 green:156/255.0 blue:156/255.0 alpha:1]
 #define mLightGrayColor     [UIColor colorWithRed:204/255.0 green:204/255.0 blue:204/255.0 alpha:1]
+#define mGrayColor          [UIColor colorWithRed:156/255.0 green:156/255.0 blue:156/255.0 alpha:1]
 #define mDarkGrayColor      [UIColor colorWithRed:85/255.0 green:85/255.0 blue:85/255.0 alpha:1]
 #define mYellowColor        [UIColor colorWithRed:255/255.0 green:255/255.0 blue:253/255.0 alpha:1]
 #define mBlueColor          [UIColor colorWithRed:51/255.0 green:153/255.0 blue:255/255.0 alpha:1]
@@ -43,7 +43,9 @@
 #define cSystem1     [UIColor colorWithRed:107/255.0 green:213/255.0 blue:194/255.0 alpha:1]
 #define cSystem3     [UIColor colorWithRed:0/255.0 green:95/255.0 blue:77/255.0 alpha:1]
 #define cSystem4     [UIColor colorWithRed:77/255.0 green:78/255.0 blue:78/255.0 alpha:1]
+#define cSystem4_50     [UIColor colorWithRed:162/255.0 green:162/255.0 blue:162/255.0 alpha:1]
 #define cSystem4_10     [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1]
+
 
 #define UIColorFromRGB(rgbValue) \
 [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
@@ -397,5 +399,7 @@ enum enumUrl
 + (void)addObjectIfNotDuplicate:(NSObject *)object;
 +(void)updateSharedObject:(NSArray *)arrOfObjectList;
 +(NSString *)formatPhoneNo:(NSString *)phoneNo;
++(BOOL)showPrintButton;
++(void)setShowPrintButton:(BOOL)show;
 @end
 

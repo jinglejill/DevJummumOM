@@ -1464,6 +1464,17 @@ extern NSString *globalModifiedUser;
     
     return formatPhoneNo;
 }
+
++(BOOL)showPrintButton
+{
+    BOOL showPrinter = [[NSUserDefaults standardUserDefaults] boolForKey:@"showPrintButton"];
+    return showPrinter;
+}
+
++(void)setShowPrintButton:(BOOL)show
+{
+    [[NSUserDefaults standardUserDefaults] setBool:show forKey:@"showPrintButton"];
+}
 @end
 
 

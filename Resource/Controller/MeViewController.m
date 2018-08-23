@@ -55,10 +55,11 @@ static NSString * const reuseIdentifierLabelSwitch = @"CustomTableViewCellLabelS
 
     NSString *message = [Setting getValue:@"059m" example:@"ข้อกำหนดและเงื่อนไข"];
     NSString *message2 = [Setting getValue:@"060m" example:@"ตั้งค่าระบบการสั่งอาหารด้วยตนเอง"];
+    NSString *message5 = [Setting getValue:@"104t" example:@"ตั้งค่าเครื่องพิมพ์"];
     NSString *message3 = [Setting getValue:@"101m" example:@"ติดต่อ JUMMUM"];
     NSString *message4 = [Setting getValue:@"061m" example:@"Log out"];
-    _aboutUsList = @[message,message2,message3,message4];
-    _aboutUsImageList = @[@"termsOfService.png",@"selfService.png",@"contactUs.png",@"logOut.png"];
+    _aboutUsList = @[message,message2,message5,message3,message4];
+    _aboutUsImageList = @[@"termsOfService.png",@"selfService.png",@"printer.png",@"contactUs.png",@"logOut.png"];
     tbvMe.delegate = self;
     tbvMe.dataSource = self;
     
@@ -189,11 +190,16 @@ static NSString * const reuseIdentifierLabelSwitch = @"CustomTableViewCellLabelS
                 break;
             case 2:
             {
+                [self performSegueWithIdentifier:@"segPrinterSetting" sender:self];
+            }
+            break;
+            case 3:
+            {
                 _pageType = 2;
                 [self performSegueWithIdentifier:@"segTosAndPrivacyPolicy" sender:self];
             }
                 break;
-            case 3:
+            case 4:
             {
                 [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"logInSession"];
                 [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"rememberMe"];

@@ -25,6 +25,8 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *imgBadgeProcessingLeading;
 @property (strong, nonatomic) IBOutlet UILabel *lblNavTitle;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
+@property (strong, nonatomic) IBOutlet UIButton *btnShowPrintButton;
+- (IBAction)showPrintButton:(id)sender;
 
 
 -(IBAction)unwindToCustomerKitchen:(UIStoryboardSegue *)segue;

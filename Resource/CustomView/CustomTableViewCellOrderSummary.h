@@ -15,5 +15,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblTotalAmount;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *lblMenuNameHeight;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *lblNoteHeight;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *lblTotalAmountWidth;
 
 @end

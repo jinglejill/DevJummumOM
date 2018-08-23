@@ -10,5 +10,6 @@
 
 @interface CustomTableViewCellButton : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIButton *btnValue;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 
 @end

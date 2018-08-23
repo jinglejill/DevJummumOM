@@ -283,6 +283,24 @@
 		EF5D2441212759A30073F1A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2440212759A20073F1A1 /* GoogleService-Info.plist */; };
 		EF5D2485212A98060073F1A1 /* NewVersionUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2484212A98050073F1A1 /* NewVersionUpdateViewController.m */; };
 		EF5D2488212B6BE50073F1A1 /* SharedDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2487212B6BE50073F1A1 /* SharedDevice.m */; };
+		EF5D2A41212F3C400073F1A1 /* printer.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A40212F3C400073F1A1 /* printer.png */; };
+		EF5D2A44212F3E460073F1A1 /* PrinterSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A43212F3E460073F1A1 /* PrinterSettingViewController.m */; };
+		EF5D2A49212F40C70073F1A1 /* StarIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5D2A46212F40C60073F1A1 /* StarIO.framework */; };
+		EF5D2A4A212F40C70073F1A1 /* StarIO_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5D2A47212F40C70073F1A1 /* StarIO_Extension.framework */; };
+		EF5D2A4B212F40C70073F1A1 /* SMCloudServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5D2A48212F40C70073F1A1 /* SMCloudServices.framework */; };
+		EF5D2A4D212F40D80073F1A1 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5D2A4C212F40D80073F1A1 /* CoreBluetooth.framework */; };
+		EF5D2A61212F41270073F1A1 /* ModelCapability.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A4E212F41240073F1A1 /* ModelCapability.m */; };
+		EF5D2A62212F41270073F1A1 /* SearchPortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A4F212F41240073F1A1 /* SearchPortViewController.m */; };
+		EF5D2A63212F41270073F1A1 /* SettingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A53212F41250073F1A1 /* SettingManager.m */; };
+		EF5D2A64212F41270073F1A1 /* GlobalQueueManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A54212F41250073F1A1 /* GlobalQueueManager.m */; };
+		EF5D2A65212F41270073F1A1 /* PrinterInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A58212F41250073F1A1 /* PrinterInfo.m */; };
+		EF5D2A66212F41270073F1A1 /* Communication.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A5D212F41260073F1A1 /* Communication.m */; };
+		EF5D2A67212F41270073F1A1 /* CommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A5E212F41260073F1A1 /* CommonViewController.m */; };
+		EF5D2A68212F41270073F1A1 /* PrinterInfo+Builder.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A5F212F41270073F1A1 /* PrinterInfo+Builder.m */; };
+		EF5D2A69212F41270073F1A1 /* PrinterSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A60212F41270073F1A1 /* PrinterSetting.m */; };
+		EF5D2A6C212F4B690073F1A1 /* PrinterChoosingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */; };
+		EF5D2A6F212F59E20073F1A1 /* printerWhiteNo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A6D212F59E10073F1A1 /* printerWhiteNo.png */; };
+		EF5D2A70212F59E20073F1A1 /* printerWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A6E212F59E20073F1A1 /* printerWhite.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -727,6 +745,35 @@
 		EF5D2484212A98050073F1A1 /* NewVersionUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVersionUpdateViewController.m; sourceTree = "<group>"; };
 		EF5D2486212B6BE50073F1A1 /* SharedDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedDevice.h; sourceTree = "<group>"; };
 		EF5D2487212B6BE50073F1A1 /* SharedDevice.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedDevice.m; sourceTree = "<group>"; };
+		EF5D2A40212F3C400073F1A1 /* printer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printer.png; sourceTree = "<group>"; };
+		EF5D2A42212F3E460073F1A1 /* PrinterSettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinterSettingViewController.h; sourceTree = "<group>"; };
+		EF5D2A43212F3E460073F1A1 /* PrinterSettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterSettingViewController.m; sourceTree = "<group>"; };
+		EF5D2A46212F40C60073F1A1 /* StarIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StarIO.framework; sourceTree = "<group>"; };
+		EF5D2A47212F40C70073F1A1 /* StarIO_Extension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StarIO_Extension.framework; sourceTree = "<group>"; };
+		EF5D2A48212F40C70073F1A1 /* SMCloudServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMCloudServices.framework; sourceTree = "<group>"; };
+		EF5D2A4C212F40D80073F1A1 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		EF5D2A4E212F41240073F1A1 /* ModelCapability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelCapability.m; sourceTree = "<group>"; };
+		EF5D2A4F212F41240073F1A1 /* SearchPortViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchPortViewController.m; sourceTree = "<group>"; };
+		EF5D2A50212F41240073F1A1 /* PrinterInfo+Builder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrinterInfo+Builder.h"; sourceTree = "<group>"; };
+		EF5D2A51212F41240073F1A1 /* SettingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingManager.h; sourceTree = "<group>"; };
+		EF5D2A52212F41240073F1A1 /* PrinterSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrinterSetting.h; sourceTree = "<group>"; };
+		EF5D2A53212F41250073F1A1 /* SettingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingManager.m; sourceTree = "<group>"; };
+		EF5D2A54212F41250073F1A1 /* GlobalQueueManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalQueueManager.m; sourceTree = "<group>"; };
+		EF5D2A55212F41250073F1A1 /* PrinterInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrinterInfo.h; sourceTree = "<group>"; };
+		EF5D2A56212F41250073F1A1 /* ModelCapability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelCapability.h; sourceTree = "<group>"; };
+		EF5D2A57212F41250073F1A1 /* GlobalQueueManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalQueueManager.h; sourceTree = "<group>"; };
+		EF5D2A58212F41250073F1A1 /* PrinterInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrinterInfo.m; sourceTree = "<group>"; };
+		EF5D2A59212F41260073F1A1 /* SearchPortViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPortViewController.h; sourceTree = "<group>"; };
+		EF5D2A5A212F41260073F1A1 /* CommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonViewController.h; sourceTree = "<group>"; };
+		EF5D2A5C212F41260073F1A1 /* Communication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Communication.h; sourceTree = "<group>"; };
+		EF5D2A5D212F41260073F1A1 /* Communication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Communication.m; sourceTree = "<group>"; };
+		EF5D2A5E212F41260073F1A1 /* CommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonViewController.m; sourceTree = "<group>"; };
+		EF5D2A5F212F41270073F1A1 /* PrinterInfo+Builder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "PrinterInfo+Builder.m"; sourceTree = "<group>"; };
+		EF5D2A60212F41270073F1A1 /* PrinterSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrinterSetting.m; sourceTree = "<group>"; };
+		EF5D2A6A212F4B690073F1A1 /* PrinterChoosingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinterChoosingViewController.h; sourceTree = "<group>"; };
+		EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterChoosingViewController.m; sourceTree = "<group>"; };
+		EF5D2A6D212F59E10073F1A1 /* printerWhiteNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerWhiteNo.png; sourceTree = "<group>"; };
+		EF5D2A6E212F59E20073F1A1 /* printerWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerWhite.png; sourceTree = "<group>"; };
 		F5FF20B72FD762642E1EF9EF /* Pods-DevJummumOM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOM/Pods-DevJummumOM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -735,7 +782,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF5D2A4D212F40D80073F1A1 /* CoreBluetooth.framework in Frameworks */,
+				EF5D2A4B212F40C70073F1A1 /* SMCloudServices.framework in Frameworks */,
+				EF5D2A49212F40C70073F1A1 /* StarIO.framework in Frameworks */,
 				771C289CD9993A928A7F79B7 /* libPods-DevJummumOM.a in Frameworks */,
+				EF5D2A4A212F40C70073F1A1 /* StarIO_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -761,6 +812,7 @@
 		86B84D5CF7A3BEDD58149493 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF5D2A4C212F40D80073F1A1 /* CoreBluetooth.framework */,
 				A70B12ABC431D57B4FD255BB /* libPods-DevJummumOM.a */,
 				52814E2AEAE7882270F4707D /* libPods-DevJummumOMTests.a */,
 				4FF6890C56D5F93CB4F54ABD /* libPods-DevJummumOMUITests.a */,
@@ -871,6 +923,7 @@
 		EF33D3F4211C371D00560C69 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				EF5D2A45212F40A30073F1A1 /* Star */,
 				EF33D3F5211C371D00560C69 /* Encryption */,
 				EF33D3FA211C371D00560C69 /* KeychainWrapper */,
 			);
@@ -901,45 +954,48 @@
 		EF33D3FE211C371D00560C69 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				EF33D3FF211C371D00560C69 /* me.png */,
-				EF33D400211C371D00560C69 /* jummumOMLogo.png */,
-				EF33D401211C371D00560C69 /* Icon.png */,
-				EF33D402211C371D00560C69 /* Icon-76@2x.png */,
-				EF33D403211C371D00560C69 /* jummumTypeOMWhite.png */,
-				EF33D404211C371D00560C69 /* iTunesArtwork */,
-				EF33D405211C371D00560C69 /* Icon-76@3x.png */,
-				EF33D406211C371D00560C69 /* Icon-Small.png */,
-				EF33D407211C371D00560C69 /* Icon-60@3x.png */,
-				EF33D408211C371D00560C69 /* jummumChef_lightGray.png */,
-				EF33D409211C371D00560C69 /* Icon-Spotlight-40@3x.png */,
-				EF33D40A211C371D00560C69 /* Icon-iPadPro@2x.png */,
-				EF33D40B211C371D00560C69 /* Icon-76.png */,
+				EF33D422211C371D00560C69 /* badge.png */,
+				EF33D41D211C371D00560C69 /* contactUs.png */,
+				EF33D420211C371D00560C69 /* Icon-20.png */,
 				EF33D40C211C371D00560C69 /* Icon-60.png */,
-				EF33D40D211C371D00560C69 /* termsOfService.png */,
-				EF33D40E211C371D00560C69 /* Icon-1024.png */,
-				EF33D40F211C371D00560C69 /* logOut.png */,
-				EF33D410211C371D00560C69 /* profilePic.png */,
-				EF33D411211C371D00560C69 /* triangle_and_om.png */,
-				EF33D412211C371D00560C69 /* Icon-Spotlight-40.png */,
-				EF33D413211C371D00560C69 /* Icon-Small-50@2x.png */,
+				EF33D419211C371D00560C69 /* Icon-60@2x.png */,
+				EF33D407211C371D00560C69 /* Icon-60@3x.png */,
 				EF33D414211C371D00560C69 /* Icon-72.png */,
 				EF33D415211C371D00560C69 /* Icon-72@2x.png */,
-				EF33D416211C371D00560C69 /* list.png */,
-				EF33D417211C371D00560C69 /* triangle.png */,
-				EF33D418211C371D00560C69 /* Icon-Spotlight-40@2x.png */,
-				EF33D419211C371D00560C69 /* Icon-60@2x.png */,
-				EF33D41A211C371D00560C69 /* Icon@2x.png */,
-				EF33D41B211C371D00560C69 /* triangle_dev_om.png */,
-				EF33D41C211C371D00560C69 /* triangle_demo.png */,
-				EF33D41D211C371D00560C69 /* contactUs.png */,
-				EF33D41E211C371D00560C69 /* jummumLogoCrop2.png */,
-				EF33D41F211C371D00560C69 /* Icon-Small@3x.png */,
-				EF33D420211C371D00560C69 /* Icon-20.png */,
+				EF33D40B211C371D00560C69 /* Icon-76.png */,
+				EF33D402211C371D00560C69 /* Icon-76@2x.png */,
+				EF33D405211C371D00560C69 /* Icon-76@3x.png */,
+				EF33D40E211C371D00560C69 /* Icon-1024.png */,
+				EF33D40A211C371D00560C69 /* Icon-iPadPro@2x.png */,
 				EF33D421211C371D00560C69 /* Icon-Small-50.png */,
-				EF33D422211C371D00560C69 /* badge.png */,
+				EF33D413211C371D00560C69 /* Icon-Small-50@2x.png */,
+				EF33D406211C371D00560C69 /* Icon-Small.png */,
 				EF33D423211C371D00560C69 /* Icon-Small@2x.png */,
+				EF33D41F211C371D00560C69 /* Icon-Small@3x.png */,
+				EF33D412211C371D00560C69 /* Icon-Spotlight-40.png */,
+				EF33D418211C371D00560C69 /* Icon-Spotlight-40@2x.png */,
+				EF33D409211C371D00560C69 /* Icon-Spotlight-40@3x.png */,
+				EF33D401211C371D00560C69 /* Icon.png */,
+				EF33D41A211C371D00560C69 /* Icon@2x.png */,
+				EF33D404211C371D00560C69 /* iTunesArtwork */,
 				EF33D424211C371D00560C69 /* iTunesArtwork@2x */,
+				EF33D408211C371D00560C69 /* jummumChef_lightGray.png */,
+				EF33D41E211C371D00560C69 /* jummumLogoCrop2.png */,
+				EF33D400211C371D00560C69 /* jummumOMLogo.png */,
+				EF33D403211C371D00560C69 /* jummumTypeOMWhite.png */,
+				EF33D416211C371D00560C69 /* list.png */,
+				EF33D40F211C371D00560C69 /* logOut.png */,
+				EF33D3FF211C371D00560C69 /* me.png */,
+				EF5D2A40212F3C400073F1A1 /* printer.png */,
+				EF5D2A6E212F59E20073F1A1 /* printerWhite.png */,
+				EF5D2A6D212F59E10073F1A1 /* printerWhiteNo.png */,
+				EF33D410211C371D00560C69 /* profilePic.png */,
 				EF33D425211C371D00560C69 /* selfService.png */,
+				EF33D40D211C371D00560C69 /* termsOfService.png */,
+				EF33D411211C371D00560C69 /* triangle_and_om.png */,
+				EF33D41C211C371D00560C69 /* triangle_demo.png */,
+				EF33D41B211C371D00560C69 /* triangle_dev_om.png */,
+				EF33D417211C371D00560C69 /* triangle.png */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -977,6 +1033,10 @@
 				EF33D43D211C371D00560C69 /* TermsOfServiceViewController.m */,
 				EF33D433211C371D00560C69 /* TosAndPrivacyPolicyViewController.h */,
 				EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */,
+				EF5D2A42212F3E460073F1A1 /* PrinterSettingViewController.h */,
+				EF5D2A43212F3E460073F1A1 /* PrinterSettingViewController.m */,
+				EF5D2A6A212F4B690073F1A1 /* PrinterChoosingViewController.h */,
+				EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1325,6 +1385,42 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		EF5D2A45212F40A30073F1A1 /* Star */ = {
+			isa = PBXGroup;
+			children = (
+				EF5D2A5A212F41260073F1A1 /* CommonViewController.h */,
+				EF5D2A5E212F41260073F1A1 /* CommonViewController.m */,
+				EF5D2A5B212F41260073F1A1 /* Communications */,
+				EF5D2A57212F41250073F1A1 /* GlobalQueueManager.h */,
+				EF5D2A54212F41250073F1A1 /* GlobalQueueManager.m */,
+				EF5D2A56212F41250073F1A1 /* ModelCapability.h */,
+				EF5D2A4E212F41240073F1A1 /* ModelCapability.m */,
+				EF5D2A55212F41250073F1A1 /* PrinterInfo.h */,
+				EF5D2A58212F41250073F1A1 /* PrinterInfo.m */,
+				EF5D2A50212F41240073F1A1 /* PrinterInfo+Builder.h */,
+				EF5D2A5F212F41270073F1A1 /* PrinterInfo+Builder.m */,
+				EF5D2A52212F41240073F1A1 /* PrinterSetting.h */,
+				EF5D2A60212F41270073F1A1 /* PrinterSetting.m */,
+				EF5D2A59212F41260073F1A1 /* SearchPortViewController.h */,
+				EF5D2A4F212F41240073F1A1 /* SearchPortViewController.m */,
+				EF5D2A51212F41240073F1A1 /* SettingManager.h */,
+				EF5D2A53212F41250073F1A1 /* SettingManager.m */,
+				EF5D2A48212F40C70073F1A1 /* SMCloudServices.framework */,
+				EF5D2A47212F40C70073F1A1 /* StarIO_Extension.framework */,
+				EF5D2A46212F40C60073F1A1 /* StarIO.framework */,
+			);
+			path = Star;
+			sourceTree = "<group>";
+		};
+		EF5D2A5B212F41260073F1A1 /* Communications */ = {
+			isa = PBXGroup;
+			children = (
+				EF5D2A5C212F41260073F1A1 /* Communication.h */,
+				EF5D2A5D212F41260073F1A1 /* Communication.m */,
+			);
+			path = Communications;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1461,6 +1557,7 @@
 				EF33D58E211C371E00560C69 /* iOSDeviceModelMapping.plist in Resources */,
 				EF33D644211C371F00560C69 /* CustomTableViewCellQuantity.xib in Resources */,
 				EF33D627211C371F00560C69 /* CustomTableViewCellDisputeDetail.xib in Resources */,
+				EF5D2A70212F59E20073F1A1 /* printerWhite.png in Resources */,
 				EF33D628211C371F00560C69 /* CustomTableViewCellPromoBanner.xib in Resources */,
 				EF33D59F211C371E00560C69 /* jummumChef_lightGray.png in Resources */,
 				EF33D599211C371E00560C69 /* Icon-76@2x.png in Resources */,
@@ -1475,6 +1572,7 @@
 				EF33D5AF211C371E00560C69 /* Icon-Spotlight-40@2x.png in Resources */,
 				EF33D64C211C371F00560C69 /* CustomTableViewCellReceiptSummary.xib in Resources */,
 				EF33D59E211C371E00560C69 /* Icon-60@3x.png in Resources */,
+				EF5D2A6F212F59E20073F1A1 /* printerWhiteNo.png in Resources */,
 				EF33D68E211C371F00560C69 /* Kanit-Light.otf in Resources */,
 				EF33CDC2211C312A00560C69 /* LaunchScreen.storyboard in Resources */,
 				EF33D67E211C371F00560C69 /* Kanit-Italic.otf in Resources */,
@@ -1559,6 +1657,7 @@
 				EF33D5B7211C371E00560C69 /* Icon-20.png in Resources */,
 				EF33D66B211C371F00560C69 /* Kanit-BoldItalic.ttf in Resources */,
 				EF33D62C211C371F00560C69 /* CustomTableViewCellLabelText.xib in Resources */,
+				EF5D2A41212F3C400073F1A1 /* printer.png in Resources */,
 				EF33D695211C371F00560C69 /* Prompt-ExtraBoldItalic.ttf in Resources */,
 				EF33D629211C371F00560C69 /* CustomTableViewCellCreditCard.xib in Resources */,
 				EF33D654211C371F00560C69 /* CustomTableViewCellNote.xib in Resources */,
@@ -1678,6 +1777,7 @@
 				EF33D5E0211C371E00560C69 /* Menu.m in Sources */,
 				EF33D645211C371F00560C69 /* CustomTableViewCellOrderSummary.m in Sources */,
 				EF33D594211C371E00560C69 /* NSData+AES.m in Sources */,
+				EF5D2A62212F41270073F1A1 /* SearchPortViewController.m in Sources */,
 				EF33D601211C371E00560C69 /* SharedPic.m in Sources */,
 				EF33D637211C371F00560C69 /* CustomTableViewHeaderLabel.m in Sources */,
 				EF33D595211C371E00560C69 /* KeychainWrapper.m in Sources */,
@@ -1687,6 +1787,7 @@
 				EF33D618211C371F00560C69 /* SharedSpecialPriceProgram.m in Sources */,
 				EF33D590211C371E00560C69 /* HomeModel.m in Sources */,
 				EF33D600211C371E00560C69 /* OrderTaking.m in Sources */,
+				EF5D2A6C212F4B690073F1A1 /* PrinterChoosingViewController.m in Sources */,
 				EF33D5D1211C371E00560C69 /* Pic.m in Sources */,
 				EF33D606211C371E00560C69 /* SharedCurrentUserAccount.m in Sources */,
 				EF33D5DB211C371E00560C69 /* SharedRewardPoint.m in Sources */,
@@ -1700,6 +1801,7 @@
 				EF33D649211C371F00560C69 /* CustomTableViewCellRedemption.m in Sources */,
 				EF33D65D211C371F00560C69 /* CustomTableViewCellMenu.m in Sources */,
 				EF33D607211C371E00560C69 /* MenuTypeNote.m in Sources */,
+				EF5D2A66212F41270073F1A1 /* Communication.m in Sources */,
 				EF33D614211C371F00560C69 /* SharedOrderKitchen.m in Sources */,
 				EF33D5C4211C371E00560C69 /* PersonalDataViewController.m in Sources */,
 				EF33D5EE211C371E00560C69 /* SharedHotDeal.m in Sources */,
@@ -1719,10 +1821,12 @@
 				EF33D602211C371E00560C69 /* SharedBranch.m in Sources */,
 				EF33D5EF211C371E00560C69 /* NoteType.m in Sources */,
 				EF33D5F3211C371E00560C69 /* SharedCurrentMenu.m in Sources */,
+				EF5D2A68212F41270073F1A1 /* PrinterInfo+Builder.m in Sources */,
 				EF33D652211C371F00560C69 /* CustomTableViewCellRewardDetail.m in Sources */,
 				EF33D5EB211C371E00560C69 /* HotDeal.m in Sources */,
 				EF33D5F0211C371E00560C69 /* SharedOrderNote.m in Sources */,
 				EF33D636211C371F00560C69 /* CustomTableViewCellText.m in Sources */,
+				EF5D2A65212F41270073F1A1 /* PrinterInfo.m in Sources */,
 				EF33D648211C371F00560C69 /* CustomTableViewCellLabelRemark.m in Sources */,
 				EF33D61A211C371F00560C69 /* CreditCard.m in Sources */,
 				EF33D5CF211C371E00560C69 /* ConfirmDisputeViewController.m in Sources */,
@@ -1741,14 +1845,18 @@
 				EF5D2488212B6BE50073F1A1 /* SharedDevice.m in Sources */,
 				EF33D632211C371F00560C69 /* CustomTableViewHeaderFooterOkCancel.m in Sources */,
 				EF33D619211C371F00560C69 /* Promotion.m in Sources */,
+				EF5D2A64212F41270073F1A1 /* GlobalQueueManager.m in Sources */,
 				EF33D5E9211C371E00560C69 /* SharedMenuPic.m in Sources */,
+				EF5D2A44212F3E460073F1A1 /* PrinterSettingViewController.m in Sources */,
 				EF33D5FA211C371E00560C69 /* Dispute.m in Sources */,
 				EF33D5E5211C371E00560C69 /* SharedTableNo.m in Sources */,
+				EF5D2A63212F41270073F1A1 /* SettingManager.m in Sources */,
 				EF33D5E1211C371E00560C69 /* SharedReceipt.m in Sources */,
 				EF33D5F2211C371E00560C69 /* LogIn.m in Sources */,
 				EF33D60C211C371E00560C69 /* SharedCustomerTable.m in Sources */,
 				EF33D64F211C371F00560C69 /* CustomTableViewCellLabelLabel.m in Sources */,
 				EF33D611211C371F00560C69 /* DisputeReason.m in Sources */,
+				EF5D2A67212F41270073F1A1 /* CommonViewController.m in Sources */,
 				EF33D5E6211C371E00560C69 /* OrderNote.m in Sources */,
 				EF33D5BF211C371E00560C69 /* LaunchScreenViewController.m in Sources */,
 				EF33D5D2211C371E00560C69 /* UserRewardRedemptionUsed.m in Sources */,
@@ -1761,6 +1869,7 @@
 				EF33D617211C371F00560C69 /* SharedDisputeReason.m in Sources */,
 				EF33D5C5211C371E00560C69 /* MainTabBarController.m in Sources */,
 				EF33D5F1211C371E00560C69 /* SpecialPriceProgram.m in Sources */,
+				EF5D2A69212F41270073F1A1 /* PrinterSetting.m in Sources */,
 				EF33D5EC211C371E00560C69 /* SharedCurrentOrderTaking.m in Sources */,
 				EF33D5F8211C371E00560C69 /* Setting.m in Sources */,
 				EF33D5DA211C371E00560C69 /* MenuType.m in Sources */,
@@ -1780,6 +1889,7 @@
 				EF33D609211C371E00560C69 /* CustomerTable.m in Sources */,
 				EF33D61C211C371F00560C69 /* RewardPoint.m in Sources */,
 				EF33D5DE211C371E00560C69 /* PromotionMenu.m in Sources */,
+				EF5D2A61212F41270073F1A1 /* ModelCapability.m in Sources */,
 				EF33D5C8211C371E00560C69 /* TermsOfServiceViewController.m in Sources */,
 				EF33D5F9211C371E00560C69 /* TableNo.m in Sources */,
 				EF33D5DF211C371E00560C69 /* SharedUserRewardRedemptionUsed.m in Sources */,
@@ -1966,6 +2076,10 @@
 				CODE_SIGN_ENTITLEMENTS = DevJummumOM/DevJummumOM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF8AZLDC5D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resource/Library/Star",
+				);
 				INFOPLIST_FILE = DevJummumOM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1986,6 +2100,10 @@
 				CODE_SIGN_ENTITLEMENTS = DevJummumOM/DevJummumOM.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF8AZLDC5D;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resource/Library/Star",
+				);
 				INFOPLIST_FILE = DevJummumOM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

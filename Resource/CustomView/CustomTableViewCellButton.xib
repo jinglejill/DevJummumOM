@@ -34,16 +34,26 @@
                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                     </button>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hX3-e7-kYj">
+                        <rect key="frame" x="150" y="12" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Vs1-4x-tM6"/>
+                            <constraint firstAttribute="width" constant="20" id="k5n-rS-ql6"/>
+                        </constraints>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Qah-eI-ZtW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="2mh-y5-ZSg"/>
+                    <constraint firstItem="hX3-e7-kYj" firstAttribute="centerX" secondItem="Qah-eI-ZtW" secondAttribute="centerX" id="WFN-dr-CJY"/>
                     <constraint firstItem="Qah-eI-ZtW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="dgC-Cj-BKa"/>
+                    <constraint firstItem="hX3-e7-kYj" firstAttribute="centerY" secondItem="Qah-eI-ZtW" secondAttribute="centerY" id="nFW-uf-uoa"/>
                     <constraint firstAttribute="trailing" secondItem="Qah-eI-ZtW" secondAttribute="trailing" constant="16" id="sZO-pk-Qow"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="btnValue" destination="Qah-eI-ZtW" id="Ran-yc-Xbo"/>
+                <outlet property="indicator" destination="hX3-e7-kYj" id="9DF-Wu-aPb"/>
             </connections>
         </tableViewCell>
     </objects>

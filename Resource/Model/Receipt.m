@@ -630,21 +630,26 @@
     }    
 }
 
-+(Receipt *)updateStatusAndIndicator:(Receipt *)receipt
-{
-    Receipt *sharedReceipt = [Receipt getReceipt:receipt.receiptID];
-    sharedReceipt.toBeProcessing = 0;
-//    sharedReceipt.status = receipt.status;
-    
-    return sharedReceipt;
-}
-
 +(NSInteger)getPriorStatus:(Receipt *)receipt
 {
     NSArray *arrStatus = [receipt.statusRoute componentsSeparatedByString: @","];
     if([arrStatus count] >= 2)
     {
         return [arrStatus[[arrStatus count]-2] integerValue];
+    }
+    return 0;
+}
+
++(NSInteger)getIndex:(NSMutableArray *)receiptList receipt:(Receipt *)receipt
+{
+    NSInteger i;
+    for(i=0; i<[receiptList count]; i++)
+    {
+        Receipt *item = receiptList[i];
+        if(item.receiptID == receipt.receiptID)
+        {
+            return i;
+        }
     }
     return 0;
 }

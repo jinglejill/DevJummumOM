@@ -72,6 +72,7 @@
                 <outlet property="lblNote" destination="aed-d2-2xt" id="Bhf-ER-hkk"/>
                 <outlet property="lblQuantity" destination="Fab-K4-BFl" id="8Mi-tw-1Hg"/>
                 <outlet property="lblTotalAmount" destination="fPw-d8-nec" id="Gdf-ad-vZR"/>
+                <outlet property="lblTotalAmountWidth" destination="98t-eM-lHj" id="rpT-JA-IBx"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>

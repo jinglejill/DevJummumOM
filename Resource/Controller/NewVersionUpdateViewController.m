@@ -62,7 +62,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSString *title = [Setting getValue:@"103t" example:@"It's time to update"];
-    NSString *message = [Setting getValue:@"103m" example:@"New version coming!!"];
+    NSString *message = [Setting getValue:@"103m" example:@"A newer version of the app is available for you, please update to get the latest features."];
     lblHeader.text = title;
     lblSubtitle.text = message;
     
