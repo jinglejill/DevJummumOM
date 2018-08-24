@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Prompt-Regular.ttf">
+            <string>Prompt-Regular</string>
+        </array>
+        <array key="Prompt-SemiBold.ttf">
+            <string>Prompt-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="dMi-FT-ay4" customClass="CustomTableViewCellReceiptSummary2">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="บิลเลขที่ 000001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI9-yi-PyO">
+                    <rect key="frame" x="16" y="36" width="225" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="17" id="sFp-6Q-0YT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="13"/>
+                    <color key="textColor" red="0.30196078430000001" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ร้าน MAMARIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upu-Dr-4wh">
+                    <rect key="frame" x="16" y="65" width="100" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="02N-kx-vws"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
+                    <color key="textColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 FEB 2018 12:30 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXs-Db-OjN">
+                    <rect key="frame" x="221" y="65" width="138" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="138" id="PeV-G2-AVB"/>
+                        <constraint firstAttribute="height" constant="17" id="VG1-hl-5pv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="13"/>
+                    <color key="textColor" red="0.30196078430000001" green="0.30588235289999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iIv-po-2Lo">
+                    <rect key="frame" x="0.0" y="91" width="375" height="576"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="separatorColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rx-VP-mD5">
+                    <rect key="frame" x="249" y="29" width="110" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.23529411759999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="110" id="58v-vn-ThS"/>
+                        <constraint firstAttribute="height" constant="30" id="JkU-GE-FPU"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
+                    <state key="normal" title="Order it again">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wQX-wn-BFn">
+                    <rect key="frame" x="294" y="34" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iIv-po-2Lo" firstAttribute="bottom" secondItem="z0S-hv-RIS" secondAttribute="bottom" id="0w6-QO-pQn"/>
+                <constraint firstItem="iIv-po-2Lo" firstAttribute="trailing" secondItem="z0S-hv-RIS" secondAttribute="trailing" id="1DG-VZ-WvU"/>
+                <constraint firstItem="9Rx-VP-mD5" firstAttribute="leading" secondItem="WI9-yi-PyO" secondAttribute="trailing" constant="8" id="1MM-w8-Pah"/>
+                <constraint firstItem="iIv-po-2Lo" firstAttribute="leading" secondItem="z0S-hv-RIS" secondAttribute="leading" id="4fa-xy-Ae5"/>
+                <constraint firstItem="wQX-wn-BFn" firstAttribute="centerX" secondItem="9Rx-VP-mD5" secondAttribute="centerX" id="6aj-iT-Zex"/>
+                <constraint firstItem="WI9-yi-PyO" firstAttribute="top" secondItem="z0S-hv-RIS" secondAttribute="top" constant="16" id="9ZM-Qx-EPH"/>
+                <constraint firstItem="WI9-yi-PyO" firstAttribute="leading" secondItem="z0S-hv-RIS" secondAttribute="leading" constant="16" id="Swq-QO-4ZX"/>
+                <constraint firstItem="Upu-Dr-4wh" firstAttribute="top" secondItem="WI9-yi-PyO" secondAttribute="bottom" constant="12" id="Vix-sJ-sIb"/>
+                <constraint firstItem="z0S-hv-RIS" firstAttribute="trailing" secondItem="AXs-Db-OjN" secondAttribute="trailing" constant="16" id="fyh-iS-K1u"/>
+                <constraint firstItem="wQX-wn-BFn" firstAttribute="centerY" secondItem="9Rx-VP-mD5" secondAttribute="centerY" id="mlp-CB-qaD"/>
+                <constraint firstItem="iIv-po-2Lo" firstAttribute="top" secondItem="Upu-Dr-4wh" secondAttribute="bottom" constant="8" id="pXe-6w-m6t"/>
+                <constraint firstItem="AXs-Db-OjN" firstAttribute="centerY" secondItem="Upu-Dr-4wh" secondAttribute="centerY" id="pdK-F5-PpL"/>
+                <constraint firstItem="Upu-Dr-4wh" firstAttribute="leading" secondItem="z0S-hv-RIS" secondAttribute="leading" constant="16" id="t23-qe-2LE"/>
+                <constraint firstItem="9Rx-VP-mD5" firstAttribute="top" secondItem="z0S-hv-RIS" secondAttribute="top" constant="9" id="v1b-Qv-t6i"/>
+                <constraint firstItem="z0S-hv-RIS" firstAttribute="trailing" secondItem="9Rx-VP-mD5" secondAttribute="trailing" constant="16" id="wbU-lq-zeN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="z0S-hv-RIS"/>
+            <connections>
+                <outlet property="btnOrderItAgain" destination="9Rx-VP-mD5" id="Rlo-6q-vi2"/>
+                <outlet property="indicator" destination="wQX-wn-BFn" id="3NS-hW-Ahg"/>
+                <outlet property="lblBranchName" destination="Upu-Dr-4wh" id="kHV-al-TeT"/>
+                <outlet property="lblReceiptDate" destination="AXs-Db-OjN" id="P0Z-Bb-0ud"/>
+                <outlet property="lblReceiptNo" destination="WI9-yi-PyO" id="Mqb-Zt-OmK"/>
+                <outlet property="tbvOrderDetail" destination="iIv-po-2Lo" id="kLs-ET-896"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
+        </view>
+    </objects>
+</document>

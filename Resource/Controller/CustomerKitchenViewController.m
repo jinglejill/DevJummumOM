@@ -12,6 +12,7 @@
 #import "PersonalDataViewController.h"
 #import "DisputeFormViewController.h"
 #import "CustomTableViewCellReceiptSummary.h"
+#import "CustomTableViewCellReceiptSummary2.h"
 #import "CustomTableViewCellOrderSummary.h"
 #import "CustomTableViewCellTotal.h"
 #import "CustomTableViewCellLabelLabel.h"
@@ -63,6 +64,7 @@
 
 @implementation CustomerKitchenViewController
 static NSString * const reuseIdentifierReceiptSummary = @"CustomTableViewCellReceiptSummary";
+static NSString * const reuseIdentifierReceiptSummary2 = @"CustomTableViewCellReceiptSummary2";
 static NSString * const reuseIdentifierOrderSummary = @"CustomTableViewCellOrderSummary";
 static NSString * const reuseIdentifierTotal = @"CustomTableViewCellTotal";
 static NSString * const reuseIdentifierLabelLabel = @"CustomTableViewCellLabelLabel";
@@ -92,12 +94,15 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
 {
     if([Utility showPrintButton])
     {
-        [btnShowPrintButton setBackgroundImage:[UIImage imageNamed:@"printerWhite.png"] forState:UIControlStateNormal];
+        [btnShowPrintButton setBackgroundImage:[UIImage imageNamed:@"printerWhiteNo.png"] forState:UIControlStateNormal];
+        [Utility setShowPrintButton:NO];
     }
     else
     {
-        [btnShowPrintButton setBackgroundImage:[UIImage imageNamed:@"printerWhiteNo.png"] forState:UIControlStateNormal];
+        [btnShowPrintButton setBackgroundImage:[UIImage imageNamed:@"printerWhite.png"] forState:UIControlStateNormal];
+        [Utility setShowPrintButton:YES];
     }
+    [tbvData reloadData];
 }
 
 -(IBAction)unwindToCustomerKitchen:(UIStoryboardSegue *)segue
@@ -145,6 +150,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     self.homeModel = [[HomeModel alloc]init];
     self.homeModel.delegate = self;
     [self.homeModel downloadItems:dbReceiptMaxModifiedDate withData:@[credentialsDb, maxReceiptModifiedDate]];
+    
 }
 
 -(void)viewDidLayoutSubviews
@@ -324,7 +330,24 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
         UINib *nib = [UINib nibWithNibName:reuseIdentifierLabelRemark bundle:nil];
         [tbvData registerNib:nib forCellReuseIdentifier:reuseIdentifierLabelRemark];
     }
+    {
+        UINib *nib = [UINib nibWithNibName:reuseIdentifierOrderSummary bundle:nil];
+        [tbvData registerNib:nib forCellReuseIdentifier:reuseIdentifierOrderSummary];
+    }
+    {
+        UINib *nib = [UINib nibWithNibName:reuseIdentifierReceiptSummary2 bundle:nil];
+        [tbvData registerNib:nib forCellReuseIdentifier:reuseIdentifierReceiptSummary2];
+    }
     
+    
+    if([Utility showPrintButton])
+    {
+        [btnShowPrintButton setBackgroundImage:[UIImage imageNamed:@"printerWhite.png"] forState:UIControlStateNormal];
+    }
+    else
+    {
+        [btnShowPrintButton setBackgroundImage:[UIImage imageNamed:@"printerWhiteNo.png"] forState:UIControlStateNormal];
+    }
 }
 
 ///tableview section
@@ -1356,7 +1379,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
 -(void)printReviewOrderBill:(Receipt *)receipt
 {
     UIImage *reviewOrderBill = [self getReviewOrderBill:receipt];
-    
+    return;//test
     NSData *commands = nil;
     
     ISCBBuilder *builder = [StarIoExt createCommandBuilder:[AppDelegate getEmulation]];
@@ -1413,28 +1436,33 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
 -(UIImage *)getReviewOrderBill:(Receipt *)receipt
 {
     NSMutableArray *arrImage = [[NSMutableArray alloc]init];
-    Branch *branch = [Branch getBranch:receipt.branchID];
-    
-    
-    
-    
     
     
     {
         //order header
-        CustomTableViewCellReceiptSummary *cell = [tbvData dequeueReusableCellWithIdentifier:reuseIdentifierReceiptSummary];
-        cell.lblReceiptNo.text = [NSString stringWithFormat:@"Order no. #%@", receipt.receiptNoID];
-        cell.lblReceiptDate.text = [Utility dateToString:receipt.receiptDate toFormat:@"d MMM yy HH:mm"];
-        cell.lblBranchName.text = [NSString stringWithFormat:@"ร้าน %@",branch.name];
-        cell.lblBranchName.textColor = cSystem1;
+        CustomTableViewCellReceiptSummary2 *cell = [tbvData dequeueReusableCellWithIdentifier:reuseIdentifierReceiptSummary2];
+        NSString *message = [Setting getValue:@"006m" example:@"Order no. #%@%@"];
+        NSString *message2 = [Setting getValue:@"007m" example:@"Table: %@"];
+        NSString *showBuffetOrder = receipt.buffetReceiptID?@" (Buffet)":@"";
+        CustomerTable *customerTable = [CustomerTable getCustomerTable:receipt.customerTableID];
+        cell.lblReceiptNo.text = [NSString stringWithFormat:message, receipt.receiptNoID, showBuffetOrder];
+        cell.lblReceiptNo.textColor = [UIColor blackColor];
+        cell.lblReceiptDate.text = [Utility dateToString:receipt.modifiedDate toFormat:@"d MMM yy HH:mm"];
+        cell.lblReceiptDate.textColor = [UIColor blackColor];
+        cell.lblBranchName.text = [NSString stringWithFormat:message2,customerTable.tableName];
+        cell.lblBranchName.textColor = [UIColor blackColor];
+        [cell.lblBranchName sizeToFit];
         cell.btnOrderItAgain.hidden = YES;
+        cell.indicator.hidden = YES;
         
         
         CGRect frame = cell.frame;
-        frame.size.height = 79;
+        frame.size.height = 91;//79;
         cell.frame = frame;
-        
+        [self.view addSubview:cell];
         UIImage *image = [self imageFromView:cell];
+        //test
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
         [arrImage addObject:image];
     }
     
@@ -1453,8 +1481,9 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
         
         
         OrderTaking *orderTaking = orderTakingList[i];
-        Menu *menu = [Menu getMenu:orderTaking.menuID branchID:orderTaking.branchID];
+        Menu *menu = [Menu getMenu:orderTaking.menuID];
         cell.lblQuantity.text = [Utility formatDecimal:orderTaking.quantity withMinFraction:0 andMaxFraction:0];
+        cell.lblQuantity.textColor = [UIColor blackColor];
         
         
         //menu
@@ -1471,10 +1500,12 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
             
             [attrString appendAttributedString:attrString2];
             cell.lblMenuName.attributedText = attrString;
+            cell.lblMenuName.textColor = [UIColor blackColor];
         }
         else
         {
             cell.lblMenuName.text = menu.titleThai;
+            cell.lblMenuName.textColor = [UIColor blackColor];
         }
         CGSize menuNameLabelSize = [self suggestedSizeWithFont:cell.lblMenuName.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:cell.lblMenuName.text];
         CGRect frame = cell.lblMenuName.frame;
@@ -1541,7 +1572,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
             }
         }
         cell.lblNote.attributedText = strAllNote;
-        
+        cell.lblNote.textColor = [UIColor blackColor];
         
         
         CGSize noteLabelSize = [self suggestedSizeWithFont:cell.lblNote.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:[strAllNote string]];
@@ -2081,6 +2112,11 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
 //        return;
 //    }
     
-    return [self combineImage:arrImage];
+    UIImage *combineImage = [self combineImage:arrImage];
+    
+    //test
+    UIImageWriteToSavedPhotosAlbum(combineImage, nil, nil, nil);
+    
+    return combineImage;
 }
 @end

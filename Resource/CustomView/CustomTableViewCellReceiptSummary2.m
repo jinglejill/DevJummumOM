@@ -1,14 +1,14 @@
 //
-//  CustomTableViewCellButton.m
-//  Jummum2
+//  CustomTableViewCellReceiptSummary2.m
+//  DevJummumOM
 //
-//  Created by Thidaporn Kijkamjai on 11/5/2561 BE.
-//  Copyright © 2561 Appxelent. All rights reserved.
+//  Created by Thidaporn Kijkamjai on 24/8/2561 BE.
+//  Copyright © 2561 Jummum Tech. All rights reserved.
 //
 
-#import "CustomTableViewCellButton.h"
+#import "CustomTableViewCellReceiptSummary2.h"
 
-@implementation CustomTableViewCellButton
+@implementation CustomTableViewCellReceiptSummary2
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -28,6 +28,6 @@
     self.indicator.alpha = 0;
     [self.indicator stopAnimating];
     self.indicator.hidden = YES;
-    self.btnValue.enabled = YES;
+    self.btnOrderItAgain.enabled = YES;
 }
 @end

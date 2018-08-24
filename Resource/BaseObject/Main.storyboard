@@ -1216,10 +1216,10 @@
             </objects>
             <point key="canvasLocation" x="2644" y="-2259.2203898050975"/>
         </scene>
-        <!--Printer Setting View Controller-->
+        <!--Printer Choosing View Controller-->
         <scene sceneID="jsA-7i-ufD">
             <objects>
-                <viewController id="sDg-UQ-r5B" customClass="PrinterSettingViewController" sceneMemberID="viewController">
+                <viewController id="sDg-UQ-r5B" customClass="PrinterChoosingViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9f7-vb-Jix">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1281,6 +1281,16 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="579"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <view hidden="YES" alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCH-SH-gU7">
+                                <rect key="frame" x="0.0" y="88" width="375" height="579"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="rpK-W7-6Gy">
+                                        <rect key="frame" x="169" y="271" width="37" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJy-CG-Y4J">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <subviews>
@@ -1304,6 +1314,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="rJy-CG-Y4J" firstAttribute="trailing" secondItem="7d3-rV-Rta" secondAttribute="trailing" id="0kE-aJ-2Qw"/>
+                            <constraint firstItem="dCH-SH-gU7" firstAttribute="trailing" secondItem="7d3-rV-Rta" secondAttribute="trailing" id="1Wl-9h-s5c"/>
                             <constraint firstItem="xnU-ZF-AoX" firstAttribute="trailing" secondItem="7d3-rV-Rta" secondAttribute="trailing" id="7V2-yU-TIy"/>
                             <constraint firstAttribute="bottom" secondItem="Xga-6F-1eL" secondAttribute="bottom" id="AzJ-VS-zu0"/>
                             <constraint firstItem="rJy-CG-Y4J" firstAttribute="top" secondItem="9f7-vb-Jix" secondAttribute="top" id="HL5-k1-zZ5"/>
@@ -1312,11 +1323,16 @@
                             <constraint firstItem="Xga-6F-1eL" firstAttribute="top" secondItem="xnU-ZF-AoX" secondAttribute="bottom" id="NA0-F0-iCt"/>
                             <constraint firstItem="xnU-ZF-AoX" firstAttribute="leading" secondItem="7d3-rV-Rta" secondAttribute="leading" id="S7K-fJ-DF1"/>
                             <constraint firstItem="Xga-6F-1eL" firstAttribute="leading" secondItem="7d3-rV-Rta" secondAttribute="leading" id="Uep-aj-m9n"/>
+                            <constraint firstItem="Xga-6F-1eL" firstAttribute="top" secondItem="dCH-SH-gU7" secondAttribute="top" id="khO-ys-byr"/>
+                            <constraint firstAttribute="bottom" secondItem="dCH-SH-gU7" secondAttribute="bottom" id="nSl-hS-Jw9"/>
+                            <constraint firstItem="dCH-SH-gU7" firstAttribute="leading" secondItem="7d3-rV-Rta" secondAttribute="leading" id="t5D-uL-nff"/>
                             <constraint firstItem="Xga-6F-1eL" firstAttribute="trailing" secondItem="7d3-rV-Rta" secondAttribute="trailing" id="tJ1-ZD-8D2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7d3-rV-Rta"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="rpK-W7-6Gy" id="Js1-A2-huO"/>
+                        <outlet property="blindView" destination="dCH-SH-gU7" id="edu-XP-vyI"/>
                         <outlet property="lblNavTitle" destination="rFf-4g-Nia" id="ZNT-xO-TeQ"/>
                         <outlet property="tbvData" destination="Xga-6F-1eL" id="4EQ-eA-MWB"/>
                         <outlet property="topViewHeight" destination="yNA-Fj-Pup" id="d8M-I2-Jtc"/>

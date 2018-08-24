@@ -77,7 +77,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
     if([textView.text isEqualToString:@""])
     {
         textView.text = _strPlaceHolder;
-        textView.textColor = mPlaceHolder;
+        textView.textColor = cPlaceHolder;
     }
 }
 
@@ -342,7 +342,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
                 NSString *message = [Setting getValue:@"021m" example:@"กรุณากรอกรายละเอียดด้านล่างนี้"];
                 cell.textLabel.text = message;
                 cell.textLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15];
-                cell.textLabel.textColor = mPlaceHolder;
+                cell.textLabel.textColor = cPlaceHolder;
                 
                 
                 return cell;
@@ -472,7 +472,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
                 if([cell.txvValue.text isEqualToString:@""])
                 {
                     cell.txvValue.text = _strPlaceHolder;
-                    cell.txvValue.textColor = mPlaceHolder;
+                    cell.txvValue.textColor = cPlaceHolder;
                 }
                 else
                 {

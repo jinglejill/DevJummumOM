@@ -59,6 +59,9 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
     
     float topPadding = window.safeAreaInsets.top;
     topViewHeight.constant = topPadding == 0?20:topPadding;
+    
+    
+    tbvData.layer.zPosition = 0;
 }
 
 - (void)viewDidLoad
@@ -88,8 +91,11 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (_didAppear == NO) {
+    if (_didAppear == NO)
+    {
+//        [self loadingOverlayView];
         [self refreshPortInfo];
+//        [self removeOverlayViews];
         
         _didAppear = YES;
     }
@@ -600,7 +606,7 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
 
 -(void)skipSelectInterface
 {
-//    self.blind = YES;
+    self.blind = YES;
     [self loadingOverlayView];
     
     [_cellArray removeAllObjects];
@@ -633,7 +639,7 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
     [tbvData reloadData];
     
     [self removeOverlayViews];
-//    self.blind = NO;
+    self.blind = NO;
     
 }
 
@@ -763,4 +769,30 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
     [self refreshPortInfo];
 }
 
+- (void)setBlind:(BOOL)blind {
+    if (blind == YES) {
+        self.navigationItem.hidesBackButton = YES;
+        
+        self.navigationItem.rightBarButtonItem.enabled = NO;
+        
+        _blindView            .hidden = NO;
+        _activityIndicatorView.hidden = NO;
+        
+        [_activityIndicatorView startAnimating];
+        
+        [NSRunLoop.currentRunLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];     // Update View
+    }
+    else {
+        [_activityIndicatorView stopAnimating];
+        
+        _blindView            .hidden = YES;
+        _activityIndicatorView.hidden = YES;
+        
+        self.navigationItem.rightBarButtonItem.enabled = YES;
+        
+        self.navigationItem.hidesBackButton = NO;
+        
+        //      [NSRunLoop.currentRunLoop runUntilDate:[NSDate dateWithTimeIntervalSinceNow:0.1]];     // Update View(No need)
+    }
+}
 @end

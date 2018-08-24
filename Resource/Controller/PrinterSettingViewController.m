@@ -105,7 +105,7 @@
         {
             UITableViewCell *cell =  [tableView dequeueReusableCellWithIdentifier:@"cell"];
             if (!cell) {
-                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+                cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
             }
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
@@ -118,13 +118,26 @@
                                                   printerSetting.macAddress];
             
             
-            cell.textLabel.text = printerSetting.modelName;
-            cell.textLabel.textColor = cSystem4;
-            cell.textLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
-            cell.detailTextLabel.text = strPortNameAndMacAddress;
-            cell.detailTextLabel.textColor = cSystem4;
-            cell.detailTextLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:13.0f];
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            if(printerSetting.modelName)
+            {
+                cell.textLabel.text = printerSetting.modelName;
+                cell.textLabel.textColor = cSystem4;
+                cell.textLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
+                cell.detailTextLabel.text = strPortNameAndMacAddress;
+                cell.detailTextLabel.textColor = cSystem4;
+                cell.detailTextLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:13.0f];
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }
+            else
+            {
+                cell.textLabel.text = @"เลือกเครื่องพิมพ์";
+                cell.textLabel.textColor = cPlaceHolder;
+                cell.textLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
+                cell.detailTextLabel.text = @"";
+                cell.detailTextLabel.textColor = cSystem4;
+                cell.detailTextLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:13.0f];
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }
             
             return cell;
         }
@@ -181,8 +194,10 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.item == 0)
-    {        
-        
+    {
+        dispatch_async(dispatch_get_main_queue(),^ {
+            [self performSegueWithIdentifier:@"segPrinterChoosing" sender:self];            
+        } );
     }
 }
 
@@ -334,33 +349,8 @@
         [self showAlert:@"Fail to Open Port" message:@""];
     }
     
-    if(_statusCellArray && [_statusCellArray count]>0)
-    {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
-        UITableViewCell *cell = [tbvData cellForRowAtIndexPath:indexPath];
-        
-        
-        cell.textLabel.text = @"สถานะ";
-        cell.textLabel.textColor = cSystem4;
-        cell.textLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
-        cell.detailTextLabel.text = _statusCellArray[0][1];
-        cell.detailTextLabel.textColor = cSystem4_50;
-        cell.detailTextLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
-    }
-    else
-    {
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
-        UITableViewCell *cell = [tbvData cellForRowAtIndexPath:indexPath];
-        
-        
-        cell.textLabel.text = @"สถานะ";
-        cell.textLabel.textColor = cSystem4;
-        cell.textLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
-        cell.detailTextLabel.text = @"Offline";
-        cell.detailTextLabel.textColor = cSystem4_50;
-        cell.detailTextLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
-    }
     
+    [tbvData reloadData];
     [self removeOverlayViews];
 }
 @end

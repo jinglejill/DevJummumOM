@@ -301,6 +301,9 @@
 		EF5D2A6C212F4B690073F1A1 /* PrinterChoosingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */; };
 		EF5D2A6F212F59E20073F1A1 /* printerWhiteNo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A6D212F59E10073F1A1 /* printerWhiteNo.png */; };
 		EF5D2A70212F59E20073F1A1 /* printerWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A6E212F59E20073F1A1 /* printerWhite.png */; };
+		EF5D2A72212F72490073F1A1 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A71212F72480073F1A1 /* refresh.png */; };
+		EF5D2A79212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */; };
+		EF5D2A7A212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -774,6 +777,10 @@
 		EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterChoosingViewController.m; sourceTree = "<group>"; };
 		EF5D2A6D212F59E10073F1A1 /* printerWhiteNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerWhiteNo.png; sourceTree = "<group>"; };
 		EF5D2A6E212F59E20073F1A1 /* printerWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerWhite.png; sourceTree = "<group>"; };
+		EF5D2A71212F72480073F1A1 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		EF5D2A76212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellReceiptSummary2.h; sourceTree = "<group>"; };
+		EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellReceiptSummary2.m; sourceTree = "<group>"; };
+		EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellReceiptSummary2.xib; sourceTree = "<group>"; };
 		F5FF20B72FD762642E1EF9EF /* Pods-DevJummumOM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOM/Pods-DevJummumOM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -893,13 +900,13 @@
 			isa = PBXGroup;
 			children = (
 				EF33D3EA211C371D00560C69 /* BaseObject */,
-				EF33D3F4211C371D00560C69 /* Library */,
-				EF33D3FE211C371D00560C69 /* Image */,
 				EF33D426211C371D00560C69 /* Controller */,
-				EF33D44D211C371D00560C69 /* Voice */,
-				EF33D44F211C371D00560C69 /* Model */,
 				EF33D4EA211C371E00560C69 /* CustomView */,
 				EF33D556211C371E00560C69 /* font */,
+				EF33D3FE211C371D00560C69 /* Image */,
+				EF33D3F4211C371D00560C69 /* Library */,
+				EF33D44F211C371D00560C69 /* Model */,
+				EF33D44D211C371D00560C69 /* Voice */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -954,6 +961,7 @@
 		EF33D3FE211C371D00560C69 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EF5D2A71212F72480073F1A1 /* refresh.png */,
 				EF33D422211C371D00560C69 /* badge.png */,
 				EF33D41D211C371D00560C69 /* contactUs.png */,
 				EF33D420211C371D00560C69 /* Icon-20.png */,
@@ -1320,6 +1328,9 @@
 				EF33D4F2211C371E00560C69 /* CustomViewVoucher.h */,
 				EF33D526211C371E00560C69 /* CustomViewVoucher.m */,
 				EF33D529211C371E00560C69 /* CustomViewVoucher.xib */,
+				EF5D2A76212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.h */,
+				EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */,
+				EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -1570,6 +1581,7 @@
 				EF33D665211C371F00560C69 /* Prompt-ThinItalic.ttf in Resources */,
 				EF33D677211C371F00560C69 /* Prompt-Light.ttf in Resources */,
 				EF33D5AF211C371E00560C69 /* Icon-Spotlight-40@2x.png in Resources */,
+				EF5D2A7A212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib in Resources */,
 				EF33D64C211C371F00560C69 /* CustomTableViewCellReceiptSummary.xib in Resources */,
 				EF33D59E211C371E00560C69 /* Icon-60@3x.png in Resources */,
 				EF5D2A6F212F59E20073F1A1 /* printerWhiteNo.png in Resources */,
@@ -1666,6 +1678,7 @@
 				EF33D5A2211C371E00560C69 /* Icon-76.png in Resources */,
 				EF33D66F211C371F00560C69 /* Kanit-MediumItalic.otf in Resources */,
 				EF33D650211C371F00560C69 /* CustomTableViewCellLabel.xib in Resources */,
+				EF5D2A72212F72490073F1A1 /* refresh.png in Resources */,
 				EF33D63D211C371F00560C69 /* CustomTableViewCellPromoThumbNail.xib in Resources */,
 				EF33D680211C371F00560C69 /* Kanit-ExtraBoldItalic.ttf in Resources */,
 				EF33D5B2211C371E00560C69 /* triangle_dev_om.png in Resources */,
@@ -1846,6 +1859,7 @@
 				EF33D632211C371F00560C69 /* CustomTableViewHeaderFooterOkCancel.m in Sources */,
 				EF33D619211C371F00560C69 /* Promotion.m in Sources */,
 				EF5D2A64212F41270073F1A1 /* GlobalQueueManager.m in Sources */,
+				EF5D2A79212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m in Sources */,
 				EF33D5E9211C371E00560C69 /* SharedMenuPic.m in Sources */,
 				EF5D2A44212F3E460073F1A1 /* PrinterSettingViewController.m in Sources */,
 				EF33D5FA211C371E00560C69 /* Dispute.m in Sources */,
