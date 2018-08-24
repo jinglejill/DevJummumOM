@@ -2600,7 +2600,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
 -(void)printReviewOrderBill:(Receipt *)receipt
 {
     UIImage *reviewOrderBill = [self getReviewOrderBill:receipt];
-    return; //test
+    
     NSData *commands = nil;
     
     ISCBBuilder *builder = [StarIoExt createCommandBuilder:[AppDelegate getEmulation]];
@@ -3327,8 +3327,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
     //        UIImageWriteToSavedPhotosAlbum(combineImage, nil, nil, nil);
     //        return;
     //    }
-    UIImage *combineImage = [self combineImage:arrImage];
-    UIImageWriteToSavedPhotosAlbum(combineImage, nil, nil, nil);//test
+    UIImage *combineImage = [self combineImage:arrImage];    
     return combineImage;
 }
 @end

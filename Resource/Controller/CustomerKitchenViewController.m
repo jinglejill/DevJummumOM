@@ -1379,7 +1379,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
 -(void)printReviewOrderBill:(Receipt *)receipt
 {
     UIImage *reviewOrderBill = [self getReviewOrderBill:receipt];
-    return;//test
+    
     NSData *commands = nil;
     
     ISCBBuilder *builder = [StarIoExt createCommandBuilder:[AppDelegate getEmulation]];
@@ -1461,8 +1461,6 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
         cell.frame = frame;
         [self.view addSubview:cell];
         UIImage *image = [self imageFromView:cell];
-        //test
-        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
         [arrImage addObject:image];
     }
     
@@ -2113,10 +2111,6 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
 //    }
     
     UIImage *combineImage = [self combineImage:arrImage];
-    
-    //test
-    UIImageWriteToSavedPhotosAlbum(combineImage, nil, nil, nil);
-    
     return combineImage;
 }
 @end
