@@ -1459,7 +1459,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
         CGRect frame = cell.frame;
         frame.size.height = 91;//79;
         cell.frame = frame;
-        [self.view addSubview:cell];
+//        [self.view addSubview:cell];
         UIImage *image = [self imageFromView:cell];
         [arrImage addObject:image];
     }
