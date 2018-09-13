@@ -517,7 +517,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                             cell.lblTitle.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
                             cell.lblTitle.textColor = [UIColor darkGrayColor];
                             cell.lblAmount.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
-                            cell.lblAmount.textColor = mGreen;
+                            cell.lblAmount.textColor = cSystem2;
                             
                             
                             return cell;
@@ -540,7 +540,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                             cell.lblTitle.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
                             cell.lblTitle.textColor = [UIColor darkGrayColor];
                             cell.lblAmount.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
-                            cell.lblAmount.textColor = mGreen;
+                            cell.lblAmount.textColor = cSystem2;
                             
                             return  cell;
                         }
@@ -804,7 +804,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                             cell.lblTitle.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
                             cell.lblTitle.textColor = [UIColor darkGrayColor];
                             cell.lblAmount.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
-                            cell.lblAmount.textColor = mGreen;
+                            cell.lblAmount.textColor = cSystem2;
                             
                             
                             return cell;
@@ -828,7 +828,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                             cell.lblTitle.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
                             cell.lblTitle.textColor = [UIColor darkGrayColor];
                             cell.lblAmount.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
-                            cell.lblAmount.textColor = mGreen;
+                            cell.lblAmount.textColor = cSystem2;
                             
                             return  cell;
                         }

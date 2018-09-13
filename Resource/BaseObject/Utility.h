@@ -305,6 +305,8 @@ enum enumUrl
 + (NSString *) deviceToken;
 + (NSInteger) deviceID;
 + (NSString *) dbName;
++ (void)setBundleID:(NSString *)bundleID;
++ (NSString *)bundleID;
 + (NSString *) formatDate:(NSString *)strDate fromFormat:(NSString *)fromFormat toFormat:(NSString *)toFormat;
 + (NSDate *) stringToDate:(NSString *)strDate fromFormat:(NSString *)fromFormat;
 + (NSString *) dateToString:(NSDate *)date toFormat:(NSString *)toFormat;

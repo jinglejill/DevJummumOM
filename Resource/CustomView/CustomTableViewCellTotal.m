@@ -29,6 +29,6 @@
     
     self.lblTitle.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
     self.lblAmount.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
-    self.lblAmount.textColor = mGreen;
+    self.lblAmount.textColor = cSystem1;
 }
 @end

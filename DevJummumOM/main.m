@@ -17,7 +17,7 @@ NSString *globalDetailNoConnection;
 BOOL globalRotateFromSeg;
 NSString *globalKey;
 NSString *globalModifiedUser;
-
+NSString *globalBundleID;
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
