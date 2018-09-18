@@ -28,9 +28,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เงินคืนพิเศษจาก JUMMUM เงินคืนพิเศษจาก JUMMUM" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-aS-hf1">
-                        <rect key="frame" x="48" y="11" width="163" height="45"/>
+                        <rect key="frame" x="48" y="11" width="163" height="22"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="45" id="Ib7-a1-fgF"/>
+                            <constraint firstAttribute="height" constant="22" id="Ib7-a1-fgF"/>
                             <constraint firstAttribute="width" constant="163" id="Wyv-bo-UVX"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="14"/>

@@ -235,6 +235,8 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
         {
             CustomTableViewCellReportSummaryByDay *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierReportSummaryByDay];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.lblTitle.textColor = cSystem4;
+            cell.lblValue.textColor = cSystem4;
             
             
             NSInteger reportItem = tableView.tag;
@@ -263,6 +265,8 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
         {
             CustomTableViewCellReportSummaryByDay *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierReportSummaryByDay];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.lblTitle.textColor = cSystem4;
+            cell.lblValue.textColor = cSystem4;
             cell.hidden = NO;
             cell.lblTitle.font = [UIFont fontWithName:@"Prompt-SemiBold" size:14.0f];
             cell.lblTitleLeading.constant = 32;
@@ -323,30 +327,10 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
                 {
                     cell.lblTitle.text = @"เงินคืนพิเศษจาก JUMMUM";
                     cell.lblValue.text = [Utility formatDecimal:reportDaily.jummumPayValue withMinFraction:2 andMaxFraction:2];
+                    cell.lblTitle.textColor = cSystem1;
+                    cell.lblValue.textColor = cSystem1;
                 }
                     break;
-//                case 8:
-//                {
-//                    CustomTableViewCellButtonDetail *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierButtonDetail];
-//                    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//
-//
-//                    cell.btnShowDetail.tag = reportItem;
-//                    [self setButtonDesign:cell.btnShowDetail];
-//                    [cell.btnShowDetail addTarget:self action:@selector(showDetail:) forControlEvents:UIControlEventTouchUpInside];
-//                    if(reportDaily.expand)
-//                    {
-//                        [cell.btnShowDetail setTitle:@"ซ่อนรายละเอียด" forState:UIControlStateNormal];
-//                    }
-//                    else
-//                    {
-//                        [cell.btnShowDetail setTitle:@"แสดงรายละเอียด" forState:UIControlStateNormal];
-//                    }
-//
-//
-//                    return cell;
-//                }
-//                    break;
                 default:
                     break;
             }
@@ -388,14 +372,12 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
             if(reportDaily.expand)
             {
                 NSMutableArray *reportDetailsByOrderList = [self getOrderWithReceiptID:reportDaily.receiptID];
-//                section0Height = [reportDetailsByOrderList count]*44;
                 for(int i=0; i<[reportDetailsByOrderList count]; i++)
                 {
                     CustomTableViewCellReportSummaryByDay *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierReportSummaryByDay];
                     cell.selectionStyle = UITableViewCellSelectionStyleNone;
                     
                     
-//                    NSInteger reportItem = tableView.tag;
                     ReportDaily *reportDaily = _reportDailyList[item];
                     
                     
@@ -485,16 +467,7 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
 {
     NSInteger section = indexPath.section;
     NSInteger item = indexPath.item;
-//    if([tableView isEqual:tbvData])
-//    {
-//        if(section == 1)
-//        {
-//            if(item%2 == 1)
-//            {
-//                cell.backgroundColor = cSystem1_20;
-//            }
-//        }
-//    }
+
     
     [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
     

@@ -12,6 +12,9 @@
         <array key="Prompt-Regular.ttf">
             <string>Prompt-Regular</string>
         </array>
+        <array key="Prompt-SemiBold.ttf">
+            <string>Prompt-SemiBold</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -29,7 +32,7 @@
                             <constraint firstAttribute="height" constant="23" id="4dK-lO-VhV"/>
                             <constraint firstAttribute="width" constant="49" id="O3h-3G-3Jh"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="15"/>
+                        <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
                         <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>

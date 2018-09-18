@@ -192,11 +192,6 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
     }
     else
     {
-//        Branch *branch = [Branch getCurrentBranch];
-//        NSInteger countServiceCharge = branch.serviceChargePercent == 0?0:1;
-//        NSInteger countVat = branch.percentVat == 0?0:1;
-//        NSInteger countNetTotal = countServiceCharge + countVat == 0?0:1;
-//        return 5 + countServiceCharge + countVat + countNetTotal + 1;
         return 9;
     }
     return 0;
@@ -257,6 +252,8 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
     {
         CustomTableViewCellReportSummaryByDay *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierReportSummaryByDay];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.lblTitle.textColor = cSystem4;
+        cell.lblValue.textColor = cSystem4;
         cell.hidden = NO;
         
         
@@ -314,6 +311,8 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
             {
                 cell.lblTitle.text = @"เงินคืนพิเศษจาก JUMMUM";
                 cell.lblValue.text = [Utility formatDecimal:reportDaily.jummumPayValue withMinFraction:2 andMaxFraction:2];
+                cell.lblTitle.textColor = cSystem1;
+                cell.lblValue.textColor = cSystem1;
             }
                 break;
             case 8:
@@ -331,6 +330,7 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
             default:
                 break;
         }
+
         
         return cell;
     }
