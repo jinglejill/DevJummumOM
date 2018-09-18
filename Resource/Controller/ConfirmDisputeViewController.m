@@ -24,7 +24,6 @@
 @synthesize receipt;
 @synthesize btnConfirm;
 @synthesize btnCancel;
-@synthesize credentialsDb;
 
 
 -(void)viewDidLayoutSubviews
@@ -127,7 +126,6 @@
         DisputeFormViewController *vc = segue.destinationViewController;
         vc.fromType = fromType;
         vc.receipt = receipt;
-        vc.credentialsDb = credentialsDb;
     }
 }
 

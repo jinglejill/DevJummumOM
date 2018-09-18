@@ -60,5 +60,6 @@
 +(NSMutableArray *)getBranchList;
 +(NSString *)getAddress:(Branch *)branch;
 +(NSMutableArray *)sortList:(NSMutableArray *)branchList;
-
++(void)setCurrentBranch:(Branch *)branch;
++(Branch *)getCurrentBranch;
 @end

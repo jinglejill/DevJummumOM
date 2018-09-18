@@ -8,7 +8,6 @@
 
 #import "CustomViewController.h"
 #import "Receipt.h"
-#import "CredentialsDb.h"
 
 
 @interface ConfirmDisputeViewController : CustomViewController
@@ -19,7 +18,6 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *lblDisputeMessageHeight;
 @property (strong, nonatomic) IBOutlet UIButton *btnConfirm;
 @property (strong, nonatomic) IBOutlet UIButton *btnCancel;
-@property (strong, nonatomic) CredentialsDb *credentialsDb;
 
 
 @property (nonatomic) NSInteger fromType;

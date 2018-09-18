@@ -9,7 +9,7 @@
 #import "PersonalDataViewController.h"
 #import "CustomTableViewCellLabelLabel.h"
 #import "UserAccount.h"
-#import "CredentialsDb.h"
+#import "Branch.h"
 #import "Setting.h"
 
 
@@ -93,7 +93,7 @@ static NSString * const reuseIdentifierLabelLabel = @"CustomTableViewCellLabelLa
             cell.lblText.textColor = cSystem1;
             [cell.lblText sizeToFit];
             cell.lblTextWidthConstant.constant = cell.lblText.frame.size.width;
-            cell.lblValue.text = [CredentialsDb getCurrentCredentialsDb].name;
+            cell.lblValue.text = [Branch getCurrentBranch].name;
             cell.lblValue.textColor = cSystem4;
         }
             break;

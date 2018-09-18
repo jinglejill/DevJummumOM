@@ -24,7 +24,6 @@
 @synthesize btnAcceptWidthConstant;
 @synthesize btnDeclineWidthConstant;
 @synthesize username;
-@synthesize credentialsDb;
 @synthesize topViewHeight;
 @synthesize bottomButtonHeight;
 @synthesize lblNavTitle;
@@ -120,13 +119,5 @@
     [self performSegueWithIdentifier:@"segUnwindToLogIn" sender:self];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([segue.identifier isEqualToString:@"segQrCodeScanTable"])
-    {
-        MainTabBarController *vc = segue.destinationViewController;
-        vc.credentialsDb = credentialsDb;
-    }
-}
 
 @end

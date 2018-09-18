@@ -74,7 +74,6 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
 
 
 @synthesize tbvData;
-@synthesize credentialsDb;
 @synthesize segConPrintStatus;
 @synthesize imgBadge;
 @synthesize imgBadgeTrailing;
@@ -146,10 +145,10 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     [super viewDidAppear:animated];
     
     
-    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:credentialsDb.branchID];    
+    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:[Branch getCurrentBranch].branchID];
     self.homeModel = [[HomeModel alloc]init];
     self.homeModel.delegate = self;
-    [self.homeModel downloadItems:dbReceiptMaxModifiedDate withData:@[credentialsDb, maxReceiptModifiedDate]];
+    [self.homeModel downloadItems:dbReceiptMaxModifiedDate withData:@[[Branch getCurrentBranch], maxReceiptModifiedDate]];
     
 }
 
@@ -253,23 +252,23 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     
     //badge
     {
-        NSMutableArray *receiptActionList = [Receipt getReceiptListWithStatus:7 branchID:credentialsDb.branchID];
-        [receiptActionList addObjectsFromArray:[Receipt getReceiptListWithStatus:8 branchID:credentialsDb.branchID]];        
-        [receiptActionList addObjectsFromArray:[Receipt getReceiptListWithStatus:13 branchID:credentialsDb.branchID]];
+        NSMutableArray *receiptActionList = [Receipt getReceiptListWithStatus:7 branchID:[Branch getCurrentBranch].branchID];
+        [receiptActionList addObjectsFromArray:[Receipt getReceiptListWithStatus:8 branchID:[Branch getCurrentBranch].branchID]];
+        [receiptActionList addObjectsFromArray:[Receipt getReceiptListWithStatus:13 branchID:[Branch getCurrentBranch].branchID]];
         imgBadge.hidden = [receiptActionList count]==0;
     }
     
     
     //badge new
     {
-        NSMutableArray *receiptActionList = [Receipt getReceiptListWithStatus:2 branchID:credentialsDb.branchID];
+        NSMutableArray *receiptActionList = [Receipt getReceiptListWithStatus:2 branchID:[Branch getCurrentBranch].branchID];
         imgBadgeNew.hidden = [receiptActionList count]==0;
     }
     
     
     //badge processing
     {
-        NSMutableArray *receiptActionList = [Receipt getReceiptListWithStatus:5 branchID:credentialsDb.branchID];
+        NSMutableArray *receiptActionList = [Receipt getReceiptListWithStatus:5 branchID:[Branch getCurrentBranch].branchID];
         imgBadgeProcessing.hidden = [receiptActionList count]==0;
     }
 }
@@ -278,33 +277,33 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
 {
     if(segConPrintStatus.selectedSegmentIndex == 0)
     {
-        _receiptList = [Receipt getReceiptListWithStatus:2 branchID:credentialsDb.branchID];
+        _receiptList = [Receipt getReceiptListWithStatus:2 branchID:[Branch getCurrentBranch].branchID];
         _receiptList = [Receipt sortListAsc:_receiptList];
     }
     else if(segConPrintStatus.selectedSegmentIndex == 1)
     {
-        _receiptList = [Receipt getReceiptListWithStatus:5 branchID:credentialsDb.branchID];
+        _receiptList = [Receipt getReceiptListWithStatus:5 branchID:[Branch getCurrentBranch].branchID];
         _receiptList = [Receipt sortListAsc:_receiptList];
     }
     else if(segConPrintStatus.selectedSegmentIndex == 2)
     {
-        _receiptList = [Receipt getReceiptListWithStatus:6 branchID:credentialsDb.branchID];
+        _receiptList = [Receipt getReceiptListWithStatus:6 branchID:[Branch getCurrentBranch].branchID];
         _receiptList = [Receipt sortList:_receiptList];
     }
     else if(segConPrintStatus.selectedSegmentIndex == 3)
     {
-        _receiptList = [Receipt getReceiptListWithStatus:7 branchID:credentialsDb.branchID];
-        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:8 branchID:credentialsDb.branchID]];
-        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:11 branchID:credentialsDb.branchID]];
-        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:12 branchID:credentialsDb.branchID]];
-        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:13 branchID:credentialsDb.branchID]];
+        _receiptList = [Receipt getReceiptListWithStatus:7 branchID:[Branch getCurrentBranch].branchID];
+        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:8 branchID:[Branch getCurrentBranch].branchID]];
+        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:11 branchID:[Branch getCurrentBranch].branchID]];
+        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:12 branchID:[Branch getCurrentBranch].branchID]];
+        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:13 branchID:[Branch getCurrentBranch].branchID]];
         _receiptList = [Receipt sortListAsc:_receiptList];
     }
     else if(segConPrintStatus.selectedSegmentIndex == 4)
     {
-        _receiptList = [Receipt getReceiptListWithStatus:9 branchID:credentialsDb.branchID];
-        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:10 branchID:credentialsDb.branchID]];
-        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:14 branchID:credentialsDb.branchID]];
+        _receiptList = [Receipt getReceiptListWithStatus:9 branchID:[Branch getCurrentBranch].branchID];
+        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:10 branchID:[Branch getCurrentBranch].branchID]];
+        [_receiptList addObjectsFromArray:[Receipt getReceiptListWithStatus:14 branchID:[Branch getCurrentBranch].branchID]];
         _receiptList = [Receipt sortList:_receiptList];
     }
 }
@@ -388,7 +387,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     else
     {
         NSInteger receiptID = tableView.tag;
-        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receiptID branchID:credentialsDb.branchID];
+        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receiptID branchID:[Branch getCurrentBranch].branchID];
         orderTakingList = [OrderTaking createSumUpOrderTakingWithTheSameMenuAndNote:orderTakingList];
         return [orderTakingList count]+1+1+1+1;//remark,total amount,status,print
     }
@@ -498,7 +497,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
             {
                 if (!_lastItemReachedDelivery && section == [_receiptList count]-1)
                 {
-                    [self.homeModel downloadItems:dbReceiptSummary withData:@[receipt,credentialsDb]];
+                    [self.homeModel downloadItems:dbReceiptSummary withData:@[receipt,[Branch getCurrentBranch]]];
                 }
             }
                 break;
@@ -506,7 +505,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
             {
                 if (!_lastItemReachedOthers && section == [_receiptList count]-1)
                 {
-                    [self.homeModel downloadItems:dbReceiptSummary withData:@[receipt,credentialsDb]];
+                    [self.homeModel downloadItems:dbReceiptSummary withData:@[receipt,[Branch getCurrentBranch]]];
                 }
             }
                 break;
@@ -520,7 +519,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     else
     {
         NSInteger receiptID = tableView.tag;
-        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receiptID branchID:credentialsDb.branchID];
+        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receiptID branchID:[Branch getCurrentBranch].branchID];
         orderTakingList = [OrderTaking createSumUpOrderTakingWithTheSameMenuAndNote:orderTakingList];
         
         
@@ -541,8 +540,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
                 NSString *message = [Setting getValue:@"010m" example:@"ใส่ห่อ"];
                 UIFont *font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
                 NSDictionary *attribute = @{NSUnderlineStyleAttributeName: @(NSUnderlineStyleSingle), NSFontAttributeName: font};
-                NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:message
-                                                                                               attributes:attribute];
+                NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:message                                                                                               attributes:attribute];
                 
                 NSDictionary *attribute2 = @{NSFontAttributeName: font};
                 NSMutableAttributedString *attrString2 = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@" %@",menu.titleThai] attributes:attribute2];
@@ -665,7 +663,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             
             
-            Receipt *receipt = [Receipt getReceipt:receiptID branchID:credentialsDb.branchID];
+            Receipt *receipt = [Receipt getReceipt:receiptID branchID:[Branch getCurrentBranch].branchID];
             if([Utility isStringEmpty:receipt.remark])
             {
                 cell.lblText.attributedText = [self setAttributedString:@"" text:receipt.remark];
@@ -688,7 +686,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
             
             
             NSString *message = [Setting getValue:@"014m" example:@"รวมทั้งหมด"];
-            Receipt *receipt = [Receipt getReceipt:receiptID branchID:credentialsDb.branchID];
+            Receipt *receipt = [Receipt getReceipt:receiptID branchID:[Branch getCurrentBranch].branchID];
             NSString *strTotalAmount = [Utility formatDecimal:receipt.cashAmount+receipt.transferAmount+receipt.creditCardAmount withMinFraction:2 andMaxFraction:2];
             strTotalAmount = [Utility addPrefixBahtSymbol:strTotalAmount];
             cell.lblAmount.text = strTotalAmount;
@@ -712,7 +710,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
             cell.separatorInset = UIEdgeInsetsMake(0.f, cell.bounds.size.width, 0.f, 0.f);
             
             
-            Receipt *receipt = [Receipt getReceipt:receiptID branchID:credentialsDb.branchID];
+            Receipt *receipt = [Receipt getReceipt:receiptID branchID:[Branch getCurrentBranch].branchID];
             NSString *strStatus = [Receipt getStrStatus:receipt];
             UIColor *color = cSystem2;
             
@@ -754,7 +752,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
             [self setButtonDesign:cell.btnValue];
             
             
-            Receipt *receipt = [Receipt getReceipt:receiptID branchID:credentialsDb.branchID];
+            Receipt *receipt = [Receipt getReceipt:receiptID branchID:[Branch getCurrentBranch].branchID];
             if(receipt.toBePrinting)
             {
                 cell.indicator.alpha = 1;
@@ -784,7 +782,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     {
         //load order มาโชว์
         Receipt *receipt = _receiptList[indexPath.section];
-        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receipt.receiptID branchID:credentialsDb.branchID];
+        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receipt.receiptID branchID:[Branch getCurrentBranch].branchID];
         orderTakingList = [OrderTaking createSumUpOrderTakingWithTheSameMenuAndNote:orderTakingList];
         float sumHeight = 0;
         for(int i=0; i<[orderTakingList count]; i++)
@@ -903,7 +901,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     else
     {
         NSInteger receiptID = tableView.tag;
-        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receiptID branchID:credentialsDb.branchID];
+        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receiptID branchID:[Branch getCurrentBranch].branchID];
         orderTakingList = [OrderTaking createSumUpOrderTakingWithTheSameMenuAndNote:orderTakingList];
         
         
@@ -1018,7 +1016,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
             CustomTableViewCellLabelRemark *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierLabelRemark];
             
             
-            Receipt *receipt = [Receipt getReceipt:receiptID branchID:credentialsDb.branchID];
+            Receipt *receipt = [Receipt getReceipt:receiptID branchID:[Branch getCurrentBranch].branchID];
             if([Utility isStringEmpty:receipt.remark])
             {
                 cell.lblText.attributedText = [self setAttributedString:@"" text:receipt.remark];
@@ -1184,7 +1182,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     
     
     //update receipt
-    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:credentialsDb.branchID];
+    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:[Branch getCurrentBranch].branchID];
     Receipt *receipt = _receiptList[btnPrint.tag];
     receipt.toBeProcessing = 1;
     
@@ -1214,7 +1212,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     
     
     //update receipt
-    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:credentialsDb.branchID];
+    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:[Branch getCurrentBranch].branchID];
     Receipt *receipt = _receiptList[btnPrint.tag];
     receipt.toBeProcessing = 1;
     
@@ -1263,7 +1261,6 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     {
         OrderDetailViewController *vc = segue.destinationViewController;
         vc.receipt = _selectedReceipt;
-        vc.credentialsDb = credentialsDb;
     }
 }
 
@@ -1361,7 +1358,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
     NSInteger receiptIndex = [Receipt getIndex:_receiptList receipt:receipt];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:receiptIndex];
     CustomTableViewCellReceiptSummary *cell = [tbvData cellForRowAtIndexPath:indexPath];
-    NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receipt.receiptID branchID:credentialsDb.branchID];
+    NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receipt.receiptID branchID:[Branch getCurrentBranch].branchID];
     orderTakingList = [OrderTaking createSumUpOrderTakingWithTheSameMenuAndNote:orderTakingList];
     NSIndexPath *indexPathOrderDetail = [NSIndexPath indexPathForRow:[orderTakingList count]+4-1 inSection:0];
     CustomTableViewCellButton *cellButton = [cell.tbvOrderDetail cellForRowAtIndexPath:indexPathOrderDetail];
@@ -1414,7 +1411,7 @@ static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
                               NSInteger receiptIndex = [Receipt getIndex:_receiptList receipt:receipt];
                               NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:receiptIndex];
                               CustomTableViewCellReceiptSummary *cell = [tbvData cellForRowAtIndexPath:indexPath];
-                              NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receipt.receiptID branchID:credentialsDb.branchID];
+                              NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receipt.receiptID branchID:[Branch getCurrentBranch].branchID];
                               orderTakingList = [OrderTaking createSumUpOrderTakingWithTheSameMenuAndNote:orderTakingList];
                               NSIndexPath *indexPathOrderDetail = [NSIndexPath indexPathForRow:[orderTakingList count]+4-1 inSection:0];
                               CustomTableViewCellButton *cellButton = [cell.tbvOrderDetail cellForRowAtIndexPath:indexPathOrderDetail];

@@ -26,7 +26,6 @@
 #import "UserRewardRedemptionUsed.h"
 #import "DisputeReason.h"
 #import "Dispute.h"
-#import "CredentialsDb.h"
 #import "Device.h"
 #import "CustomViewController.h"
 
@@ -162,6 +161,12 @@
             arrClassName = @[@"Setting"];
         }
             break;
+        case dbReportDaily:
+        case dbReportDetailsByDay:
+        {
+            arrClassName = @[@"ReportDaily",@"ReportDetailsByOrder"];
+        }
+            break;
         default:
             break;
     }
@@ -236,7 +241,7 @@
                 // Ready to notify delegate that data is ready and pass back items
                 if (self.delegate)
                 {
-                    if(propCurrentDB == dbJummumReceipt || propCurrentDB == dbJummumReceiptTapNotification || propCurrentDB == dbJummumReceiptTapNotificationIssue || propCurrentDB == dbOpeningTimeText || propCurrentDB == dbSetting)
+                    if(propCurrentDB == dbJummumReceipt || propCurrentDB == dbJummumReceiptTapNotification || propCurrentDB == dbJummumReceiptTapNotificationIssue || propCurrentDB == dbOpeningTimeText || propCurrentDB == dbSetting || propCurrentDB == dbReportDetailsByDay || propCurrentDB == dbReportDetailsByOrder)
                     {
                         [self.delegate itemsDownloaded:arrItem manager:self];
                     }
@@ -393,7 +398,7 @@
     }
     
 
-    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Utility branchID]];
+    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Branch getCurrentBranch].branchID];
     
     
 
@@ -439,11 +444,11 @@
         {
             NSArray *dataList = (NSArray *)data;
             Receipt *receipt = dataList[0];
-            CredentialsDb *credentialDb = dataList[1];
+            Branch *branch = dataList[1];
             NSString *strReceiptDate = [Utility dateToString:receipt.receiptDate toFormat:@"yyyy-MM-dd HH:mm:ss"];
             
             
-            noteDataString = [NSString stringWithFormat:@"receiptDate=%@&receiptID=%ld&branchID=%ld&status=%ld",strReceiptDate,receipt.receiptID,credentialDb.branchID,receipt.status];
+            noteDataString = [NSString stringWithFormat:@"receiptDate=%@&receiptID=%ld&branchID=%ld&status=%ld",strReceiptDate,receipt.receiptID,branch.branchID,receipt.status];
             url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlReceiptSummaryGetList]]];
             
         }
@@ -457,9 +462,9 @@
         case dbReceiptMaxModifiedDate:
         {
             NSArray *dataList = (NSArray *)data;
-            CredentialsDb *credentialsDb = dataList[0];
+            Branch *branch = dataList[0];
             NSDate *maxReceiptModifiedDate = dataList[1];
-            noteDataString = [NSString stringWithFormat:@"branchID=%ld&modifiedDate=%@",credentialsDb.branchID,maxReceiptModifiedDate];
+            noteDataString = [NSString stringWithFormat:@"branchID=%ld&modifiedDate=%@",branch.branchID,maxReceiptModifiedDate];
             url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlReceiptMaxModifiedDateGetList]]];
         }
             break;
@@ -499,7 +504,7 @@
         {
             NSNumber *receiptID = (NSNumber *)data;
             
-            noteDataString = [NSString stringWithFormat:@"receiptID=%ld&branchID=%ld",[receiptID integerValue],[Utility branchID]];
+            noteDataString = [NSString stringWithFormat:@"receiptID=%ld&branchID=%ld",[receiptID integerValue],[Branch getCurrentBranch].branchID];
             url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlJummumReceiptGetList]]];
         }
             break;
@@ -523,10 +528,28 @@
             noteDataString = [Utility getNoteDataString:data];
             url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlSettingWithKeyGet]]];
         }
+            break;
+        case dbReportDaily:
+        {
+            NSArray *dataList = (NSArray *)data;
+            Branch *branch = dataList[0];
+            NSString *strMonthYear = dataList[1];
+            noteDataString = [NSString stringWithFormat:@"branch=%ld&monthYear=%@",branch.branchID, strMonthYear];
+            url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlReportDailyGetList]]];
+        }
+            break;
+        case dbReportDetailsByDay:
+        {
+            NSArray *dataList = (NSArray *)data;
+            Branch *branch = dataList[0];
+            NSString *strReceiptDate = dataList[1];
+            noteDataString = [NSString stringWithFormat:@"branch=%ld&receiptDate=%@",branch.branchID, strReceiptDate];
+            url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlReportDetailsByDayGetList]]];
+        }
         default:
             break;
     }
-    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Utility branchID]];
+    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Branch getCurrentBranch].branchID];
     NSLog(@"url: %@",url);
     NSLog(@"notedatastring: %@",noteDataString);
     
@@ -751,7 +774,7 @@
         default:
             break;
     }
-    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld&actionScreen=%@",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Utility branchID],actionScreen];
+    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld&actionScreen=%@",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Branch getCurrentBranch].branchID,actionScreen];
     NSLog(@"url: %@",url);
     NSLog(@"notedatastring: %@",noteDataString);
     
@@ -1027,7 +1050,7 @@
     }
     
     
-    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld&actionScreen=%@",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Utility branchID],actionScreen];
+    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld&actionScreen=%@",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Branch getCurrentBranch].branchID,actionScreen];
     NSLog(@"url: %@",url);
     NSLog(@"notedatastring: %@",noteDataString);
     
@@ -1260,7 +1283,7 @@
     }
     
     
-    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld&actionScreen=%@",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Utility branchID],actionScreen];
+    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld&actionScreen=%@",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Branch getCurrentBranch].branchID,actionScreen];
     NSLog(@"url: %@",url);
     NSLog(@"notedatastring: %@",noteDataString);
     
@@ -1326,7 +1349,7 @@
 {
     NSString *bodyPercentEscape = [Utility percentEscapeString:body];
     NSString *noteDataString = [NSString stringWithFormat:@"toAddress=%@&subject=%@&body=%@", toAddress,subject,bodyPercentEscape];
-    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Utility branchID]];
+    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Branch getCurrentBranch].branchID];
     
     
     NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -1387,7 +1410,7 @@
     if (imageData != nil)
     {
         NSString *noteDataString = @"";
-        noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Utility branchID]];
+        noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Branch getCurrentBranch].branchID];
         
         NSURLSessionConfiguration *defaultConfigObject = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *defaultSession = [NSURLSession sessionWithConfiguration: defaultConfigObject delegate: nil delegateQueue: [NSOperationQueue mainQueue]];
@@ -1450,7 +1473,7 @@
 {
     NSString* escapeString = [Utility percentEscapeString:fileName];
     NSString *noteDataString = [NSString stringWithFormat:@"imageFileName=%@",escapeString];
-    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Utility branchID]];
+    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Branch getCurrentBranch].branchID];
     NSURL * url = [NSURL URLWithString:[Utility url:urlDownloadPhoto]];
     
     
@@ -1502,7 +1525,7 @@
 {
     NSString* escapeString = [Utility percentEscapeString:fileName];
     NSString *noteDataString = [NSString stringWithFormat:@"fileName=%@",escapeString];
-    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Utility branchID]];
+    noteDataString = [NSString stringWithFormat:@"%@&modifiedDeviceToken=%@&modifiedUser=%@&branchID=%ld",noteDataString,[Utility deviceToken],[Utility modifiedUser],[Branch getCurrentBranch].branchID];
     NSURL * url = [NSURL URLWithString:[Utility url:urlDownloadFile]];
     
     

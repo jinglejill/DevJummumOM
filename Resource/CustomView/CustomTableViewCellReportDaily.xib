@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Prompt-Regular.ttf">
+            <string>Prompt-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="267" id="GAC-Pl-Gaq" customClass="CustomTableViewCellReportDaily">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GAC-Pl-Gaq" id="wbD-bG-DD9">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="266.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01/08/20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16m-lf-y1x">
+                        <rect key="frame" x="16" y="10" width="60" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="SR9-Xq-yJP"/>
+                            <constraint firstAttribute="width" constant="60" id="gyi-dC-Ilv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="13"/>
+                        <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8,900.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B4a-Q7-8yx">
+                        <rect key="frame" x="84" y="10" width="122" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="5g5-2y-Qqn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="13"/>
+                        <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="กำลังสรุปยอด" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7I-OW-QCN">
+                        <rect key="frame" x="226" y="10" width="78" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="Y4H-PR-maR"/>
+                            <constraint firstAttribute="width" constant="78" id="Z2p-GN-Q42"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="13"/>
+                        <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xGg-Lh-aVs">
+                        <rect key="frame" x="0.0" y="44" width="320" height="222.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tableView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="xGg-Lh-aVs" secondAttribute="trailing" id="4fW-B0-Sps"/>
+                    <constraint firstItem="B4a-Q7-8yx" firstAttribute="centerY" secondItem="16m-lf-y1x" secondAttribute="centerY" id="KEV-Uj-dLM"/>
+                    <constraint firstItem="xGg-Lh-aVs" firstAttribute="top" secondItem="16m-lf-y1x" secondAttribute="bottom" constant="11" id="MKd-Qb-a1X"/>
+                    <constraint firstItem="K7I-OW-QCN" firstAttribute="centerY" secondItem="16m-lf-y1x" secondAttribute="centerY" id="Um2-qR-ldI"/>
+                    <constraint firstItem="xGg-Lh-aVs" firstAttribute="leading" secondItem="wbD-bG-DD9" secondAttribute="leading" id="WEk-PL-j3h"/>
+                    <constraint firstItem="K7I-OW-QCN" firstAttribute="leading" secondItem="B4a-Q7-8yx" secondAttribute="trailing" constant="20" id="Xph-Ne-vas"/>
+                    <constraint firstItem="B4a-Q7-8yx" firstAttribute="leading" secondItem="16m-lf-y1x" secondAttribute="trailing" constant="8" id="aDX-Vg-PPW"/>
+                    <constraint firstAttribute="bottom" secondItem="xGg-Lh-aVs" secondAttribute="bottom" id="jTj-WF-QGR"/>
+                    <constraint firstAttribute="trailing" secondItem="K7I-OW-QCN" secondAttribute="trailing" constant="16" id="rg0-jh-i1H"/>
+                    <constraint firstItem="16m-lf-y1x" firstAttribute="leading" secondItem="wbD-bG-DD9" secondAttribute="leading" constant="16" id="uyq-yu-uP9"/>
+                    <constraint firstItem="16m-lf-y1x" firstAttribute="top" secondItem="wbD-bG-DD9" secondAttribute="top" constant="10" id="vMV-6f-1xq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="KJ7-Vd-8sA"/>
+            <connections>
+                <outlet property="lblBalance" destination="B4a-Q7-8yx" id="a38-6c-hL8"/>
+                <outlet property="lblReceiptDate" destination="16m-lf-y1x" id="rfq-Sx-RFN"/>
+                <outlet property="lblReceiptDateWidth" destination="gyi-dC-Ilv" id="T7i-A5-A6T"/>
+                <outlet property="lblStatus" destination="K7I-OW-QCN" id="26b-hC-Jh3"/>
+                <outlet property="lblStatusLeading" destination="Xph-Ne-vas" id="ufX-OH-Lfk"/>
+                <outlet property="lblStatusWidth" destination="Z2p-GN-Q42" id="nd5-9r-bwH"/>
+                <outlet property="tbvSummaryByDay" destination="xGg-Lh-aVs" id="mYx-bO-7M0"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="165.5"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -9,7 +9,6 @@
 #import "LaunchScreenViewController.h"
 #import "LogInViewController.h"
 #import "NewVersionUpdateViewController.h"
-#import "CredentialsDb.h"
 #import "Credentials.h"
 #import "Device.h"
 #import "Message.h"

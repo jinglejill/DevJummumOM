@@ -8,7 +8,6 @@
 
 #import "CustomViewController.h"
 #import "Receipt.h"
-#import "CredentialsDb.h"
 
 
 
@@ -16,7 +15,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblNavTitle;
 @property (strong, nonatomic) IBOutlet UITableView *tbvData;
 @property (strong, nonatomic) Receipt *receipt;
-@property (strong, nonatomic) CredentialsDb *credentialsDb;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomViewHeight;
 @property (strong, nonatomic) IBOutlet UIButton *btnShowPrintButton;

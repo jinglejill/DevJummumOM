@@ -38,12 +38,14 @@
 #define mButtonText     [UIColor colorWithRed:21/255.0 green:126/255.0 blue:251/255.0 alpha:1]
 #define mSelectionStyleGray     [UIColor colorWithRed:217/255.0 green:217/255.0 blue:217/255.0 alpha:1]
 #define cPlaceHolder     [UIColor colorWithRed:199/255.0 green:199/255.0 blue:205/255.0 alpha:1]
-#define cSystem2     [UIColor colorWithRed:236/255.0 green:62/255.0 blue:72/255.0 alpha:1]
+#define cSystem2     [UIColor colorWithRed:255/255.0 green:59/255.0 blue:74/255.0 alpha:1]
 #define cSystem1     [UIColor colorWithRed:107/255.0 green:213/255.0 blue:194/255.0 alpha:1]
 #define cSystem3     [UIColor colorWithRed:0/255.0 green:95/255.0 blue:77/255.0 alpha:1]
 #define cSystem4     [UIColor colorWithRed:77/255.0 green:78/255.0 blue:78/255.0 alpha:1]
 #define cSystem4_50     [UIColor colorWithRed:162/255.0 green:162/255.0 blue:162/255.0 alpha:1]
 #define cSystem4_10     [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1]
+#define cSystem1_10     [UIColor colorWithRed:239/255.0 green:251/255.0 blue:249/255.0 alpha:1]
+#define cSystem1_20     [UIColor colorWithRed:223/255.0 green:247/255.0 blue:243/255.0 alpha:1]
 
 
 #define UIColorFromRGB(rgbValue) \
@@ -157,10 +159,12 @@ enum enumDB
     dbBranch,
     dbOpeningTimeText,
     dbSetting,
-    dbSettingWithKey
+    dbSettingWithKey,
+    dbReportDaily,
+    dbReportSummaryByDay,
+    dbReportDetailsByDay,
+    dbReportDetailsByOrder
 
-
-    
 };
 
 enum enumUrl
@@ -275,10 +279,11 @@ enum enumUrl
     urlSettingUpdate,
     urlSettingGet,
     urlSettingWithKeyGet,
-    urlContactUs
-//    ,
-//    urlTestPasswordInsertList
-    
+    urlContactUs,
+    urlReportDailyGetList,
+    urlReportSummaryByDayGet,
+    urlReportDetailsByDayGetList,
+    urlReportDetailsByOrderGetList
 
 
     
@@ -357,6 +362,7 @@ enum enumUrl
 + (NSInteger)getLastDayOfMonth:(NSDate *)datetime;
 + (void)itemsDownloaded:(NSArray *)items;
 + (NSDate *)addDay:(NSDate *)dateFrom numberOfDay:(NSInteger)days;
++ (NSDate *)addMonth:(NSDate *)dateFrom numberOfMonth:(NSInteger)months;
 + (NSDate *)addSecond:(NSDate *)dateFrom numberOfSecond:(NSInteger)second;
 + (NSString *)getUserDefaultPreOrderEventID;
 + (BOOL)alreadySynced:(NSInteger)pushSyncID;
@@ -402,5 +408,7 @@ enum enumUrl
 +(NSString *)formatPhoneNo:(NSString *)phoneNo;
 +(BOOL)showPrintButton;
 +(void)setShowPrintButton:(BOOL)show;
++(BOOL)isWeekend:(NSDate *)date;
++(NSString *)encloseWithBracket:(NSString *)text;
 @end
 

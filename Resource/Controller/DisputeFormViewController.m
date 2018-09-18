@@ -40,7 +40,6 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
 @synthesize receipt;
 @synthesize fromType;
 @synthesize tbvAction;
-@synthesize credentialsDb;
 @synthesize topViewHeight;
 @synthesize bottomViewHeight;
 
@@ -769,7 +768,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
         _dispute.modifiedDate = [Utility currentDateTime];
         
 
-        [self.homeModel insertItems:dbDisputeCancel withData:@[_dispute,@(credentialsDb.branchID)] actionScreen:@"insert dispute cancel"];
+        [self.homeModel insertItems:dbDisputeCancel withData:@[_dispute,@([Branch getCurrentBranch].branchID)] actionScreen:@"insert dispute cancel"];
     }
     else if(fromType == 4)
     {

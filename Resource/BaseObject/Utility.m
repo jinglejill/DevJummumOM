@@ -230,6 +230,18 @@ extern NSString *globalBundleID;
         case urlContactUs:
             url = @"HtmlContactUs.php";
             break;
+        case urlReportDailyGetList:
+            url = @"JMSReportDailyGetList.php";
+            break;
+        case urlReportSummaryByDayGet:
+            url = @"JMSReportSummaryByDayGet.php";
+            break;
+        case urlReportDetailsByDayGetList:
+            url = @"JMSReportDetailsByDayGetList.php";
+            break;
+        case urlReportDetailsByOrderGetList:
+            url = @"JMSReportDetailsByOrderGetList.php";
+            break;
         default:
             break;
     }
@@ -877,6 +889,16 @@ extern NSString *globalBundleID;
     }
 }
 
++ (NSDate *)addMonth:(NSDate *)dateFrom numberOfMonth:(NSInteger)months
+{
+    NSDateComponents *monthComponent = [[NSDateComponents alloc] init];
+    monthComponent.month = months;
+    
+    NSCalendar *theCalendar = [NSCalendar currentCalendar];
+    NSDate *addedDate = [theCalendar dateByAddingComponents:monthComponent toDate:dateFrom options:0];
+    return addedDate;
+}
+
 + (NSDate *)addDay:(NSDate *)dateFrom numberOfDay:(NSInteger)days
 {
     NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
@@ -1483,6 +1505,26 @@ extern NSString *globalBundleID;
 +(void)setShowPrintButton:(BOOL)show
 {
     [[NSUserDefaults standardUserDefaults] setBool:show forKey:@"showPrintButton"];
+}
+
++(BOOL)isWeekend:(NSDate *)date;
+{
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSRange weekdayRange = [calendar maximumRangeOfUnit:NSCalendarUnitWeekday];
+    NSDateComponents *components = [calendar components:NSCalendarUnitWeekday fromDate:date];
+    NSUInteger weekdayOfDate = [components weekday];
+    
+    if (weekdayOfDate == weekdayRange.location || weekdayOfDate == weekdayRange.length) {
+        //the date falls somewhere on the first or last days of the week
+        return YES;
+    }
+    
+    return NO;
+}
+
++(NSString *)encloseWithBracket:(NSString *)text
+{
+    return [NSString stringWithFormat:@"(%@)",text];
 }
 @end
 

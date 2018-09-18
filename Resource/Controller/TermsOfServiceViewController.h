@@ -7,7 +7,6 @@
 //
 
 #import "CustomViewController.h"
-#import "CredentialsDb.h"
 #import <WebKit/WebKit.h>
 
 
@@ -20,7 +19,6 @@
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *btnDeclineWidthConstant;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *bottomButtonHeight;
-@property (strong, nonatomic) CredentialsDb *credentialsDb;
 @property (nonatomic) NSString *username;
 
 

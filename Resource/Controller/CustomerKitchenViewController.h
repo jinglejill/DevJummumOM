@@ -7,7 +7,6 @@
 //
 
 #import "CustomViewController.h"
-#import "CredentialsDb.h"
 
 
 @interface CustomerKitchenViewController : CustomViewController<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
@@ -15,7 +14,6 @@
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tbvData;
-@property (strong, nonatomic) CredentialsDb *credentialsDb;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segConPrintStatus;
 @property (strong, nonatomic) IBOutlet UIImageView *imgBadge;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *imgBadgeTrailing;

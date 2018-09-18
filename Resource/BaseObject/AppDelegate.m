@@ -99,6 +99,8 @@ void myExceptionHandler(NSException *exception)
 //    NSString *key = [NSString stringWithFormat:@"dismiss verion:1.2"];
 //        [[NSUserDefaults standardUserDefaults] setValue:@0 forKey:key];
 //
+
+    
     
     
     UIBarButtonItem *barButtonAppearance = [UIBarButtonItem appearance];

@@ -1,4 +1,4 @@
-//
+///
 //  LogInViewController.m
 //  Jummum
 //
@@ -18,6 +18,7 @@
 #import "Setting.h"
 #import "Utility.h"
 #import "Device.h"
+#import "Branch.h"
 
 
 @interface LogInViewController ()
@@ -27,7 +28,8 @@
     BOOL _rememberMe;
     NSString *_username;
     NSMutableArray *allComments;
-    CredentialsDb *_credentialsDb;
+    Branch *_branch;
+//    CredentialsDb *_credentialsDb;
 }
 @end
 
@@ -220,12 +222,11 @@
             [UserAccount setCurrentUserAccount:userAccountList[0]];
             
             
-            NSMutableArray *credentialsDbList = items[[items count]-1];
-            _credentialsDb = credentialsDbList[0];
-            [CredentialsDb setCurrentCredentialsDb:_credentialsDb];
-            [Utility setBranchID:_credentialsDb.branchID];
-            [[NSUserDefaults standardUserDefaults] setValue:_credentialsDb.dbName forKey:BRANCH];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+            NSMutableArray *branchList = items[[items count]-1];
+            _branch = branchList[0];
+            [Branch setCurrentBranch:_branch];
+//            [CredentialsDb setCurrentCredentialsDb:_credentialsDb];
+//            [Utility setBranchID:_credentialsDb.branchID];
             //-----------**********
             
             
@@ -276,13 +277,11 @@
     if([[segue identifier] isEqualToString:@"segTermsOfService"])
     {
         TermsOfServiceViewController *vc = segue.destinationViewController;
-        vc.credentialsDb = _credentialsDb;
         vc.username = txtEmail.text;
     }
     else if([segue.identifier isEqualToString:@"segCustomerKitchen"])
     {
         MainTabBarController *vc = segue.destinationViewController;
-        vc.credentialsDb = _credentialsDb;
     }
 }
 

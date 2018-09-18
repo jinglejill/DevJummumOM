@@ -9,7 +9,7 @@
 #import "Branch.h"
 #import "SharedBranch.h"
 #import "Utility.h"
-
+#import "SharedCurrentBranch.h"
 
 
 @implementation Branch
@@ -275,5 +275,15 @@
     NSArray *sortArray = [branchList sortedArrayUsingDescriptors:sortDescriptors];
     
     return [sortArray mutableCopy];    
+}
+
++(void)setCurrentBranch:(Branch *)branch
+{
+    [SharedCurrentBranch sharedCurrentBranch].branch = branch;
+}
+
++(Branch *)getCurrentBranch
+{
+    return [SharedCurrentBranch sharedCurrentBranch].branch;
 }
 @end

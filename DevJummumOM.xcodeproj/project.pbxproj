@@ -75,7 +75,6 @@
 		EF33D5C9211C371E00560C69 /* MeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D440211C371D00560C69 /* MeViewController.m */; };
 		EF33D5CA211C371E00560C69 /* OpeningTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D442211C371D00560C69 /* OpeningTimeViewController.m */; };
 		EF33D5CB211C371E00560C69 /* TosAndPrivacyPolicyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */; };
-		EF33D5CC211C371E00560C69 /* RegisterNowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D445211C371D00560C69 /* RegisterNowViewController.m */; };
 		EF33D5CD211C371E00560C69 /* CustomerKitchenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D446211C371D00560C69 /* CustomerKitchenViewController.m */; };
 		EF33D5CF211C371E00560C69 /* ConfirmDisputeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D44C211C371D00560C69 /* ConfirmDisputeViewController.m */; };
 		EF33D5D0211C371E00560C69 /* beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF33D44E211C371D00560C69 /* beep.mp3 */; };
@@ -85,7 +84,6 @@
 		EF33D5D5211C371E00560C69 /* SharedReceiptPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D455211C371E00560C69 /* SharedReceiptPrint.m */; };
 		EF33D5D6211C371E00560C69 /* Receipt.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D456211C371E00560C69 /* Receipt.m */; };
 		EF33D5D7211C371E00560C69 /* SharedSubMenuType.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D459211C371E00560C69 /* SharedSubMenuType.m */; };
-		EF33D5D8211C371E00560C69 /* SharedCurrentCredentialsDb.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D45B211C371E00560C69 /* SharedCurrentCredentialsDb.m */; };
 		EF33D5D9211C371E00560C69 /* SharedMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D45C211C371E00560C69 /* SharedMenu.m */; };
 		EF33D5DA211C371E00560C69 /* MenuType.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D45F211C371E00560C69 /* MenuType.m */; };
 		EF33D5DB211C371E00560C69 /* SharedRewardPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D460211C371E00560C69 /* SharedRewardPoint.m */; };
@@ -144,7 +142,6 @@
 		EF33D610211C371F00560C69 /* SharedMenuType.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4C3211C371E00560C69 /* SharedMenuType.m */; };
 		EF33D611211C371F00560C69 /* DisputeReason.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4C5211C371E00560C69 /* DisputeReason.m */; };
 		EF33D612211C371F00560C69 /* SubMenuType.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4C6211C371E00560C69 /* SubMenuType.m */; };
-		EF33D613211C371F00560C69 /* CredentialsDb.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4C8211C371E00560C69 /* CredentialsDb.m */; };
 		EF33D614211C371F00560C69 /* SharedOrderKitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4C9211C371E00560C69 /* SharedOrderKitchen.m */; };
 		EF33D615211C371F00560C69 /* SharedPromotion.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4CB211C371E00560C69 /* SharedPromotion.m */; };
 		EF33D616211C371F00560C69 /* SharedMenuTypeNote.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4CD211C371E00560C69 /* SharedMenuTypeNote.m */; };
@@ -304,6 +301,25 @@
 		EF5D2A72212F72490073F1A1 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A71212F72480073F1A1 /* refresh.png */; };
 		EF5D2A79212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */; };
 		EF5D2A7A212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */; };
+		EFDAFE32214BCF5400A2596D /* report.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE31214BCF5300A2596D /* report.png */; };
+		EFDAFE35214BCFA100A2596D /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE34214BCFA100A2596D /* ReportViewController.m */; };
+		EFDAFE41214E63FA00A2596D /* CustomTableViewCellMonthYear.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE3F214E63FA00A2596D /* CustomTableViewCellMonthYear.m */; };
+		EFDAFE42214E63FA00A2596D /* CustomTableViewCellMonthYear.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE40214E63FA00A2596D /* CustomTableViewCellMonthYear.xib */; };
+		EFDAFE47214E64BC00A2596D /* NTMonthYearPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE44214E64BB00A2596D /* NTMonthYearPicker.m */; };
+		EFDAFE4A214F525800A2596D /* SharedCurrentBranch.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE49214F525800A2596D /* SharedCurrentBranch.m */; };
+		EFDAFE4D214F595200A2596D /* ReportDaily.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE4C214F595200A2596D /* ReportDaily.m */; };
+		EFDAFE51214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE4F214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.m */; };
+		EFDAFE52214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE50214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.xib */; };
+		EFDAFE56214F5F5A00A2596D /* CustomTableViewCellReportDaily.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE54214F5F5A00A2596D /* CustomTableViewCellReportDaily.m */; };
+		EFDAFE57214F5F5A00A2596D /* CustomTableViewCellReportDaily.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE55214F5F5A00A2596D /* CustomTableViewCellReportDaily.xib */; };
+		EFDAFE5B214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE59214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.m */; };
+		EFDAFE5C214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE5A214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.xib */; };
+		EFDAFE60214FCFBB00A2596D /* CustomTableViewCellButtonDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE5E214FCFBB00A2596D /* CustomTableViewCellButtonDetail.m */; };
+		EFDAFE61214FCFBB00A2596D /* CustomTableViewCellButtonDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE5F214FCFBB00A2596D /* CustomTableViewCellButtonDetail.xib */; };
+		EFDAFE64214FD2A000A2596D /* ReportDetailsByDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE63214FD2A000A2596D /* ReportDetailsByDayViewController.m */; };
+		EFDAFE68214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE66214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m */; };
+		EFDAFE69214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE67214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib */; };
+		EFDAFE6F2150159100A2596D /* ReportDetailsByOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE6E2150159100A2596D /* ReportDetailsByOrder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -407,7 +423,6 @@
 		EF33D42D211C371D00560C69 /* MeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeViewController.h; sourceTree = "<group>"; };
 		EF33D42F211C371D00560C69 /* OrderDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDetailViewController.m; sourceTree = "<group>"; };
 		EF33D430211C371D00560C69 /* CustomerKitchenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomerKitchenViewController.h; sourceTree = "<group>"; };
-		EF33D431211C371D00560C69 /* RegisterNowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterNowViewController.h; sourceTree = "<group>"; };
 		EF33D432211C371D00560C69 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		EF33D433211C371D00560C69 /* TosAndPrivacyPolicyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TosAndPrivacyPolicyViewController.h; sourceTree = "<group>"; };
 		EF33D434211C371D00560C69 /* OpeningTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpeningTimeViewController.h; sourceTree = "<group>"; };
@@ -422,7 +437,6 @@
 		EF33D442211C371D00560C69 /* OpeningTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpeningTimeViewController.m; sourceTree = "<group>"; };
 		EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TosAndPrivacyPolicyViewController.m; sourceTree = "<group>"; };
 		EF33D444211C371D00560C69 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
-		EF33D445211C371D00560C69 /* RegisterNowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterNowViewController.m; sourceTree = "<group>"; };
 		EF33D446211C371D00560C69 /* CustomerKitchenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomerKitchenViewController.m; sourceTree = "<group>"; };
 		EF33D447211C371D00560C69 /* OrderDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDetailViewController.h; sourceTree = "<group>"; };
 		EF33D449211C371D00560C69 /* DisputeFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisputeFormViewController.h; sourceTree = "<group>"; };
@@ -440,7 +454,6 @@
 		EF33D458211C371E00560C69 /* SharedBranch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedBranch.h; sourceTree = "<group>"; };
 		EF33D459211C371E00560C69 /* SharedSubMenuType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedSubMenuType.m; sourceTree = "<group>"; };
 		EF33D45A211C371E00560C69 /* SharedPic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedPic.h; sourceTree = "<group>"; };
-		EF33D45B211C371E00560C69 /* SharedCurrentCredentialsDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedCurrentCredentialsDb.m; sourceTree = "<group>"; };
 		EF33D45C211C371E00560C69 /* SharedMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedMenu.m; sourceTree = "<group>"; };
 		EF33D45D211C371E00560C69 /* OrderTaking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTaking.h; sourceTree = "<group>"; };
 		EF33D45E211C371E00560C69 /* SharedNoteType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedNoteType.h; sourceTree = "<group>"; };
@@ -475,7 +488,6 @@
 		EF33D47B211C371E00560C69 /* SharedPromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedPromotion.h; sourceTree = "<group>"; };
 		EF33D47C211C371E00560C69 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
 		EF33D47D211C371E00560C69 /* SharedOrderKitchen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedOrderKitchen.h; sourceTree = "<group>"; };
-		EF33D47E211C371E00560C69 /* CredentialsDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredentialsDb.h; sourceTree = "<group>"; };
 		EF33D47F211C371E00560C69 /* SubMenuType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubMenuType.h; sourceTree = "<group>"; };
 		EF33D480211C371E00560C69 /* SharedMenuPic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedMenuPic.m; sourceTree = "<group>"; };
 		EF33D481211C371E00560C69 /* DisputeReason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DisputeReason.h; sourceTree = "<group>"; };
@@ -508,7 +520,6 @@
 		EF33D49C211C371E00560C69 /* Promotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Promotion.h; sourceTree = "<group>"; };
 		EF33D49D211C371E00560C69 /* SharedNoteType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedNoteType.m; sourceTree = "<group>"; };
 		EF33D49E211C371E00560C69 /* OrderTaking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTaking.m; sourceTree = "<group>"; };
-		EF33D49F211C371E00560C69 /* SharedCurrentCredentialsDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedCurrentCredentialsDb.h; sourceTree = "<group>"; };
 		EF33D4A0211C371E00560C69 /* SharedMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedMenu.h; sourceTree = "<group>"; };
 		EF33D4A1211C371E00560C69 /* SharedPic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedPic.m; sourceTree = "<group>"; };
 		EF33D4A2211C371E00560C69 /* SharedSubMenuType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedSubMenuType.h; sourceTree = "<group>"; };
@@ -548,7 +559,6 @@
 		EF33D4C5211C371E00560C69 /* DisputeReason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DisputeReason.m; sourceTree = "<group>"; };
 		EF33D4C6211C371E00560C69 /* SubMenuType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubMenuType.m; sourceTree = "<group>"; };
 		EF33D4C7211C371E00560C69 /* SharedMenuPic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedMenuPic.h; sourceTree = "<group>"; };
-		EF33D4C8211C371E00560C69 /* CredentialsDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CredentialsDb.m; sourceTree = "<group>"; };
 		EF33D4C9211C371E00560C69 /* SharedOrderKitchen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedOrderKitchen.m; sourceTree = "<group>"; };
 		EF33D4CA211C371E00560C69 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
 		EF33D4CB211C371E00560C69 /* SharedPromotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedPromotion.m; sourceTree = "<group>"; };
@@ -781,6 +791,38 @@
 		EF5D2A76212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellReceiptSummary2.h; sourceTree = "<group>"; };
 		EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellReceiptSummary2.m; sourceTree = "<group>"; };
 		EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellReceiptSummary2.xib; sourceTree = "<group>"; };
+		EFDAFE31214BCF5300A2596D /* report.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = report.png; sourceTree = "<group>"; };
+		EFDAFE33214BCFA100A2596D /* ReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		EFDAFE34214BCFA100A2596D /* ReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
+		EFDAFE3E214E63FA00A2596D /* CustomTableViewCellMonthYear.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellMonthYear.h; sourceTree = "<group>"; };
+		EFDAFE3F214E63FA00A2596D /* CustomTableViewCellMonthYear.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellMonthYear.m; sourceTree = "<group>"; };
+		EFDAFE40214E63FA00A2596D /* CustomTableViewCellMonthYear.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellMonthYear.xib; sourceTree = "<group>"; };
+		EFDAFE44214E64BB00A2596D /* NTMonthYearPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTMonthYearPicker.m; sourceTree = "<group>"; };
+		EFDAFE45214E64BB00A2596D /* NTMonthYearPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTMonthYearPicker.h; sourceTree = "<group>"; };
+		EFDAFE46214E64BB00A2596D /* NTMonthYearPicker-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NTMonthYearPicker-Prefix.pch"; sourceTree = "<group>"; };
+		EFDAFE48214F525800A2596D /* SharedCurrentBranch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedCurrentBranch.h; sourceTree = "<group>"; };
+		EFDAFE49214F525800A2596D /* SharedCurrentBranch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedCurrentBranch.m; sourceTree = "<group>"; };
+		EFDAFE4B214F595200A2596D /* ReportDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportDaily.h; sourceTree = "<group>"; };
+		EFDAFE4C214F595200A2596D /* ReportDaily.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportDaily.m; sourceTree = "<group>"; };
+		EFDAFE4E214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellReportDailyHeader.h; sourceTree = "<group>"; };
+		EFDAFE4F214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellReportDailyHeader.m; sourceTree = "<group>"; };
+		EFDAFE50214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellReportDailyHeader.xib; sourceTree = "<group>"; };
+		EFDAFE53214F5F5A00A2596D /* CustomTableViewCellReportDaily.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellReportDaily.h; sourceTree = "<group>"; };
+		EFDAFE54214F5F5A00A2596D /* CustomTableViewCellReportDaily.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellReportDaily.m; sourceTree = "<group>"; };
+		EFDAFE55214F5F5A00A2596D /* CustomTableViewCellReportDaily.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellReportDaily.xib; sourceTree = "<group>"; };
+		EFDAFE58214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellReportSummaryByDay.h; sourceTree = "<group>"; };
+		EFDAFE59214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellReportSummaryByDay.m; sourceTree = "<group>"; };
+		EFDAFE5A214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellReportSummaryByDay.xib; sourceTree = "<group>"; };
+		EFDAFE5D214FCFBB00A2596D /* CustomTableViewCellButtonDetail.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellButtonDetail.h; sourceTree = "<group>"; };
+		EFDAFE5E214FCFBB00A2596D /* CustomTableViewCellButtonDetail.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellButtonDetail.m; sourceTree = "<group>"; };
+		EFDAFE5F214FCFBB00A2596D /* CustomTableViewCellButtonDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellButtonDetail.xib; sourceTree = "<group>"; };
+		EFDAFE62214FD2A000A2596D /* ReportDetailsByDayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportDetailsByDayViewController.h; sourceTree = "<group>"; };
+		EFDAFE63214FD2A000A2596D /* ReportDetailsByDayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportDetailsByDayViewController.m; sourceTree = "<group>"; };
+		EFDAFE65214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellMonthYearBalance.h; sourceTree = "<group>"; };
+		EFDAFE66214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellMonthYearBalance.m; sourceTree = "<group>"; };
+		EFDAFE67214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellMonthYearBalance.xib; sourceTree = "<group>"; };
+		EFDAFE6D2150159100A2596D /* ReportDetailsByOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportDetailsByOrder.h; sourceTree = "<group>"; };
+		EFDAFE6E2150159100A2596D /* ReportDetailsByOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportDetailsByOrder.m; sourceTree = "<group>"; };
 		F5FF20B72FD762642E1EF9EF /* Pods-DevJummumOM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOM/Pods-DevJummumOM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -961,6 +1003,7 @@
 		EF33D3FE211C371D00560C69 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EFDAFE31214BCF5300A2596D /* report.png */,
 				EF5D2A71212F72480073F1A1 /* refresh.png */,
 				EF33D422211C371D00560C69 /* badge.png */,
 				EF33D41D211C371D00560C69 /* contactUs.png */,
@@ -1035,16 +1078,18 @@
 				EF33D42F211C371D00560C69 /* OrderDetailViewController.m */,
 				EF33D44B211C371D00560C69 /* PersonalDataViewController.h */,
 				EF33D437211C371D00560C69 /* PersonalDataViewController.m */,
-				EF33D431211C371D00560C69 /* RegisterNowViewController.h */,
-				EF33D445211C371D00560C69 /* RegisterNowViewController.m */,
+				EF5D2A6A212F4B690073F1A1 /* PrinterChoosingViewController.h */,
+				EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */,
+				EF5D2A42212F3E460073F1A1 /* PrinterSettingViewController.h */,
+				EF5D2A43212F3E460073F1A1 /* PrinterSettingViewController.m */,
+				EFDAFE33214BCFA100A2596D /* ReportViewController.h */,
+				EFDAFE34214BCFA100A2596D /* ReportViewController.m */,
 				EF33D429211C371D00560C69 /* TermsOfServiceViewController.h */,
 				EF33D43D211C371D00560C69 /* TermsOfServiceViewController.m */,
 				EF33D433211C371D00560C69 /* TosAndPrivacyPolicyViewController.h */,
 				EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */,
-				EF5D2A42212F3E460073F1A1 /* PrinterSettingViewController.h */,
-				EF5D2A43212F3E460073F1A1 /* PrinterSettingViewController.m */,
-				EF5D2A6A212F4B690073F1A1 /* PrinterChoosingViewController.h */,
-				EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */,
+				EFDAFE62214FD2A000A2596D /* ReportDetailsByDayViewController.h */,
+				EFDAFE63214FD2A000A2596D /* ReportDetailsByDayViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1064,8 +1109,6 @@
 				EF33D4AD211C371E00560C69 /* Branch.m */,
 				EF33D4B6211C371E00560C69 /* Credentials.h */,
 				EF33D467211C371E00560C69 /* Credentials.m */,
-				EF33D47E211C371E00560C69 /* CredentialsDb.h */,
-				EF33D4C8211C371E00560C69 /* CredentialsDb.m */,
 				EF33D497211C371E00560C69 /* CreditCard.h */,
 				EF33D4DA211C371E00560C69 /* CreditCard.m */,
 				EF33D46D211C371E00560C69 /* CustomerTable.h */,
@@ -1126,10 +1169,10 @@
 				EF33D4DE211C371E00560C69 /* RewardRedemption.m */,
 				EF33D4DB211C371E00560C69 /* Setting.h */,
 				EF33D494211C371E00560C69 /* Setting.m */,
+				EFDAFE48214F525800A2596D /* SharedCurrentBranch.h */,
+				EFDAFE49214F525800A2596D /* SharedCurrentBranch.m */,
 				EF33D458211C371E00560C69 /* SharedBranch.h */,
 				EF33D4A3211C371E00560C69 /* SharedBranch.m */,
-				EF33D49F211C371E00560C69 /* SharedCurrentCredentialsDb.h */,
-				EF33D45B211C371E00560C69 /* SharedCurrentCredentialsDb.m */,
 				EF33D4E2211C371E00560C69 /* SharedCurrentMenu.h */,
 				EF33D48E211C371E00560C69 /* SharedCurrentMenu.m */,
 				EF33D4C2211C371E00560C69 /* SharedCurrentOrderTaking.h */,
@@ -1214,6 +1257,10 @@
 				EF33D490211C371E00560C69 /* UserPromotionUsed.m */,
 				EF33D4A9211C371E00560C69 /* UserRewardRedemptionUsed.h */,
 				EF33D452211C371E00560C69 /* UserRewardRedemptionUsed.m */,
+				EFDAFE4B214F595200A2596D /* ReportDaily.h */,
+				EFDAFE4C214F595200A2596D /* ReportDaily.m */,
+				EFDAFE6D2150159100A2596D /* ReportDetailsByOrder.h */,
+				EFDAFE6E2150159100A2596D /* ReportDetailsByOrder.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1221,6 +1268,7 @@
 		EF33D4EA211C371E00560C69 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				EFDAFE43214E64BB00A2596D /* NTMonthYearPicker */,
 				EF33D50D211C371E00560C69 /* CustomCollectionReusableView.h */,
 				EF33D541211C371E00560C69 /* CustomCollectionReusableView.m */,
 				EF33D519211C371E00560C69 /* CustomCollectionReusableView.xib */,
@@ -1331,6 +1379,24 @@
 				EF5D2A76212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.h */,
 				EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */,
 				EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */,
+				EFDAFE3E214E63FA00A2596D /* CustomTableViewCellMonthYear.h */,
+				EFDAFE3F214E63FA00A2596D /* CustomTableViewCellMonthYear.m */,
+				EFDAFE40214E63FA00A2596D /* CustomTableViewCellMonthYear.xib */,
+				EFDAFE4E214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.h */,
+				EFDAFE4F214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.m */,
+				EFDAFE50214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.xib */,
+				EFDAFE53214F5F5A00A2596D /* CustomTableViewCellReportDaily.h */,
+				EFDAFE54214F5F5A00A2596D /* CustomTableViewCellReportDaily.m */,
+				EFDAFE55214F5F5A00A2596D /* CustomTableViewCellReportDaily.xib */,
+				EFDAFE58214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.h */,
+				EFDAFE59214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.m */,
+				EFDAFE5A214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.xib */,
+				EFDAFE5D214FCFBB00A2596D /* CustomTableViewCellButtonDetail.h */,
+				EFDAFE5E214FCFBB00A2596D /* CustomTableViewCellButtonDetail.m */,
+				EFDAFE5F214FCFBB00A2596D /* CustomTableViewCellButtonDetail.xib */,
+				EFDAFE65214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.h */,
+				EFDAFE66214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m */,
+				EFDAFE67214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -1430,6 +1496,16 @@
 				EF5D2A5D212F41260073F1A1 /* Communication.m */,
 			);
 			path = Communications;
+			sourceTree = "<group>";
+		};
+		EFDAFE43214E64BB00A2596D /* NTMonthYearPicker */ = {
+			isa = PBXGroup;
+			children = (
+				EFDAFE44214E64BB00A2596D /* NTMonthYearPicker.m */,
+				EFDAFE45214E64BB00A2596D /* NTMonthYearPicker.h */,
+				EFDAFE46214E64BB00A2596D /* NTMonthYearPicker-Prefix.pch */,
+			);
+			path = NTMonthYearPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1550,6 +1626,7 @@
 				EF33D694211C371F00560C69 /* Kanit-LightItalic.ttf in Resources */,
 				EF33D66A211C371F00560C69 /* Kanit-Bold.otf in Resources */,
 				EF33D5A3211C371E00560C69 /* Icon-60.png in Resources */,
+				EFDAFE52214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.xib in Resources */,
 				EF33D5AE211C371E00560C69 /* triangle.png in Resources */,
 				EF33D631211C371F00560C69 /* CustomTableViewCellRewardDetail.xib in Resources */,
 				EF33D69A211C371F00560C69 /* Kanit-SemiBoldItalic.otf in Resources */,
@@ -1597,7 +1674,9 @@
 				EF33D673211C371F00560C69 /* Kanit-Regular.ttf in Resources */,
 				EF33D68D211C371F00560C69 /* Prompt-SemiBoldItalic.ttf in Resources */,
 				EF33D623211C371F00560C69 /* CustomTableViewCellReward.xib in Resources */,
+				EFDAFE32214BCF5400A2596D /* report.png in Resources */,
 				EF33D5A5211C371E00560C69 /* Icon-1024.png in Resources */,
+				EFDAFE5C214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.xib in Resources */,
 				EF33D671211C371F00560C69 /* Kanit-Thin.otf in Resources */,
 				EF33D5B5211C371E00560C69 /* jummumLogoCrop2.png in Resources */,
 				EF33D67B211C371F00560C69 /* Prompt-ExtraBold.ttf in Resources */,
@@ -1622,6 +1701,7 @@
 				EF33D63C211C371F00560C69 /* CustomTableViewCellText.xib in Resources */,
 				EF33D5BC211C371E00560C69 /* selfService.png in Resources */,
 				EF33D672211C371F00560C69 /* Kanit-Black.ttf in Resources */,
+				EFDAFE61214FCFBB00A2596D /* CustomTableViewCellButtonDetail.xib in Resources */,
 				EF33D5AC211C371E00560C69 /* Icon-72@2x.png in Resources */,
 				EF33D682211C371F00560C69 /* Prompt-LightItalic.ttf in Resources */,
 				EF33D667211C371F00560C69 /* Prompt-BlackItalic.ttf in Resources */,
@@ -1631,6 +1711,7 @@
 				EF33D59B211C371E00560C69 /* iTunesArtwork in Resources */,
 				EF33D679211C371F00560C69 /* Kanit-MediumItalic.ttf in Resources */,
 				EF33D63B211C371F00560C69 /* CustomCollectionReusableView.xib in Resources */,
+				EFDAFE69214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib in Resources */,
 				EF33D5A1211C371E00560C69 /* Icon-iPadPro@2x.png in Resources */,
 				EF33D678211C371F00560C69 /* Kanit-SemiBold.otf in Resources */,
 				EF33D681211C371F00560C69 /* Kanit-ExtraBold.ttf in Resources */,
@@ -1645,6 +1726,7 @@
 				EF33D5BA211C371E00560C69 /* Icon-Small@2x.png in Resources */,
 				EF33D692211C371F00560C69 /* Kanit-Light.ttf in Resources */,
 				EF33D68F211C371F00560C69 /* Kanit-BlackItalic.ttf in Resources */,
+				EFDAFE42214E63FA00A2596D /* CustomTableViewCellMonthYear.xib in Resources */,
 				EF33D597211C371E00560C69 /* jummumOMLogo.png in Resources */,
 				EF33D68B211C371F00560C69 /* Kanit-SemiBoldItalic.ttf in Resources */,
 				EF33D5BB211C371E00560C69 /* iTunesArtwork@2x in Resources */,
@@ -1653,6 +1735,7 @@
 				EF33D58F211C371E00560C69 /* Main.storyboard in Resources */,
 				EF33D696211C371F00560C69 /* Prompt-Italic.ttf in Resources */,
 				EF33D5B4211C371E00560C69 /* contactUs.png in Resources */,
+				EFDAFE57214F5F5A00A2596D /* CustomTableViewCellReportDaily.xib in Resources */,
 				EF33D5B3211C371E00560C69 /* triangle_demo.png in Resources */,
 				EF33D688211C371F00560C69 /* Kanit-Bold.ttf in Resources */,
 				EF33D64D211C371F00560C69 /* CustomTableViewHeaderFooterOkCancel.xib in Resources */,
@@ -1782,7 +1865,6 @@
 				EF33D61F211C371F00560C69 /* CustomTableViewCellCreditCard.m in Sources */,
 				EF33D662211C371F00560C69 /* CustomTableViewCellLabelSwitch.m in Sources */,
 				EF33D5F6211C371E00560C69 /* Note.m in Sources */,
-				EF33D5D8211C371E00560C69 /* SharedCurrentCredentialsDb.m in Sources */,
 				EF33D5C2211C371E00560C69 /* LogInViewController.m in Sources */,
 				EF33D60F211C371F00560C69 /* Device.m in Sources */,
 				EF33D60D211C371E00560C69 /* OrderKitchen.m in Sources */,
@@ -1802,6 +1884,7 @@
 				EF33D600211C371E00560C69 /* OrderTaking.m in Sources */,
 				EF5D2A6C212F4B690073F1A1 /* PrinterChoosingViewController.m in Sources */,
 				EF33D5D1211C371E00560C69 /* Pic.m in Sources */,
+				EFDAFE64214FD2A000A2596D /* ReportDetailsByDayViewController.m in Sources */,
 				EF33D606211C371E00560C69 /* SharedCurrentUserAccount.m in Sources */,
 				EF33D5DB211C371E00560C69 /* SharedRewardPoint.m in Sources */,
 				EF33D633211C371F00560C69 /* CustomTableViewCellVoucherCode.m in Sources */,
@@ -1809,10 +1892,12 @@
 				EF33D5CA211C371E00560C69 /* OpeningTimeViewController.m in Sources */,
 				EF33D60A211C371E00560C69 /* SharedPrinter.m in Sources */,
 				EF33D630211C371F00560C69 /* CustomCollectionViewCellNote.m in Sources */,
+				EFDAFE68214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m in Sources */,
 				EF33D635211C371F00560C69 /* CustomTableViewCellPromoThumbNail.m in Sources */,
 				EF33D610211C371F00560C69 /* SharedMenuType.m in Sources */,
 				EF33D649211C371F00560C69 /* CustomTableViewCellRedemption.m in Sources */,
 				EF33D65D211C371F00560C69 /* CustomTableViewCellMenu.m in Sources */,
+				EFDAFE47214E64BC00A2596D /* NTMonthYearPicker.m in Sources */,
 				EF33D607211C371E00560C69 /* MenuTypeNote.m in Sources */,
 				EF5D2A66212F41270073F1A1 /* Communication.m in Sources */,
 				EF33D614211C371F00560C69 /* SharedOrderKitchen.m in Sources */,
@@ -1861,8 +1946,10 @@
 				EF5D2A64212F41270073F1A1 /* GlobalQueueManager.m in Sources */,
 				EF5D2A79212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m in Sources */,
 				EF33D5E9211C371E00560C69 /* SharedMenuPic.m in Sources */,
+				EFDAFE60214FCFBB00A2596D /* CustomTableViewCellButtonDetail.m in Sources */,
 				EF5D2A44212F3E460073F1A1 /* PrinterSettingViewController.m in Sources */,
 				EF33D5FA211C371E00560C69 /* Dispute.m in Sources */,
+				EFDAFE5B214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.m in Sources */,
 				EF33D5E5211C371E00560C69 /* SharedTableNo.m in Sources */,
 				EF5D2A63212F41270073F1A1 /* SettingManager.m in Sources */,
 				EF33D5E1211C371E00560C69 /* SharedReceipt.m in Sources */,
@@ -1873,6 +1960,7 @@
 				EF5D2A67212F41270073F1A1 /* CommonViewController.m in Sources */,
 				EF33D5E6211C371E00560C69 /* OrderNote.m in Sources */,
 				EF33D5BF211C371E00560C69 /* LaunchScreenViewController.m in Sources */,
+				EFDAFE51214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.m in Sources */,
 				EF33D5D2211C371E00560C69 /* UserRewardRedemptionUsed.m in Sources */,
 				EF33D5E7211C371E00560C69 /* SharedDispute.m in Sources */,
 				EF33D5F5211C371E00560C69 /* UserPromotionUsed.m in Sources */,
@@ -1881,10 +1969,13 @@
 				EF33D5D3211C371E00560C69 /* InvoiceComposer.m in Sources */,
 				EF33D625211C371F00560C69 /* CustomViewController.m in Sources */,
 				EF33D617211C371F00560C69 /* SharedDisputeReason.m in Sources */,
+				EFDAFE4A214F525800A2596D /* SharedCurrentBranch.m in Sources */,
 				EF33D5C5211C371E00560C69 /* MainTabBarController.m in Sources */,
 				EF33D5F1211C371E00560C69 /* SpecialPriceProgram.m in Sources */,
+				EFDAFE35214BCFA100A2596D /* ReportViewController.m in Sources */,
 				EF5D2A69212F41270073F1A1 /* PrinterSetting.m in Sources */,
 				EF33D5EC211C371E00560C69 /* SharedCurrentOrderTaking.m in Sources */,
+				EFDAFE56214F5F5A00A2596D /* CustomTableViewCellReportDaily.m in Sources */,
 				EF33D5F8211C371E00560C69 /* Setting.m in Sources */,
 				EF33D5DA211C371E00560C69 /* MenuType.m in Sources */,
 				EF33D5C6211C371E00560C69 /* DisputeFormViewController.m in Sources */,
@@ -1896,6 +1987,7 @@
 				EF33D5FE211C371E00560C69 /* SharedShop.m in Sources */,
 				EF33D61B211C371F00560C69 /* RewardRedemption.m in Sources */,
 				EF33D5D9211C371E00560C69 /* SharedMenu.m in Sources */,
+				EFDAFE4D214F595200A2596D /* ReportDaily.m in Sources */,
 				EF33D653211C371F00560C69 /* CustomTableViewCellLabel.m in Sources */,
 				EF33D5FF211C371E00560C69 /* SharedNoteType.m in Sources */,
 				EF33D661211C371F00560C69 /* CustomTableViewCellReward.m in Sources */,
@@ -1917,11 +2009,11 @@
 				EF33D608211C371E00560C69 /* SharedUserAccount.m in Sources */,
 				EF33D5E4211C371E00560C69 /* SharedSetting.m in Sources */,
 				EF33CDC5211C312A00560C69 /* main.m in Sources */,
-				EF33D613211C371F00560C69 /* CredentialsDb.m in Sources */,
 				EF33D5DC211C371E00560C69 /* SharedPromotionMenu.m in Sources */,
+				EFDAFE41214E63FA00A2596D /* CustomTableViewCellMonthYear.m in Sources */,
 				EF33D616211C371F00560C69 /* SharedMenuTypeNote.m in Sources */,
+				EFDAFE6F2150159100A2596D /* ReportDetailsByOrder.m in Sources */,
 				EF5D2485212A98060073F1A1 /* NewVersionUpdateViewController.m in Sources */,
-				EF33D5CC211C371E00560C69 /* RegisterNowViewController.m in Sources */,
 				EF33D63A211C371F00560C69 /* CustomTableViewCellDisputeDetail.m in Sources */,
 				EF33D591211C371E00560C69 /* AppDelegate.m in Sources */,
 				EF33D5D7211C371E00560C69 /* SharedSubMenuType.m in Sources */,
