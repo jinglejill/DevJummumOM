@@ -7,6 +7,8 @@
 //
 
 #import "CustomTableViewCellOrderSummary.h"
+#import "Utility.h"
+
 
 @implementation CustomTableViewCellOrderSummary
 
@@ -19,6 +21,15 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+    
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+    
+    self.lblQuantity.textColor = cSystem1;
+    self.lblMenuName.textColor = cSystem4;
+    self.lblNote.textColor = cSystem4;
 }
 
 @end

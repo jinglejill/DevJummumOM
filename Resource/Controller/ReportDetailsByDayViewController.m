@@ -65,6 +65,7 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
     lblNavTitle.text = title;
     tbvData.dataSource = self;
     tbvData.delegate = self;
+    tbvData.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
     
 
@@ -465,11 +466,21 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
 
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
 {
+    [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
+    
+    
     NSInteger section = indexPath.section;
     NSInteger item = indexPath.item;
-
-    
-    [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
+    if([tableView isEqual:tbvData])
+    {
+        if(section == 1)
+        {
+            cell.backgroundColor = cSystem4_10;
+            
+            
+            cell.separatorInset = UIEdgeInsetsMake(0.0f, self.view.bounds.size.width, 0.0f, CGFLOAT_MAX);
+        }
+    }
     
 }
 
@@ -502,7 +513,24 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
             headerView.lblStatusWidth.constant = 0;
             headerView.lblStatusLeading.constant = 0;
             headerView.lblStatus.hidden = NO;
-            headerView.layer.backgroundColor = cSystem1.CGColor;
+//            headerView.layer.backgroundColor = cSystem1.CGColor;
+            
+            
+            //corner
+            CAShapeLayer * maskLayer = [CAShapeLayer layer];
+            maskLayer.path = [UIBezierPath bezierPathWithRoundedRect: headerView.bounds byRoundingCorners: UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii: (CGSize){14.0}].CGPath;
+            maskLayer.fillColor = cSystem1.CGColor;
+            [headerView.layer insertSublayer:maskLayer atIndex:0];
+            
+            
+            //shadow
+            headerView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+            headerView.layer.shadowOpacity = 0.8;
+            headerView.layer.shadowRadius = 3;
+            headerView.layer.shadowOffset = CGSizeMake(0, 1);
+            headerView.layer.masksToBounds = NO;
+        
+            
             
             return headerView;
         }

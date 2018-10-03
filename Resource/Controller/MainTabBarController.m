@@ -23,6 +23,9 @@
     
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"Prompt-Regular" size:11.0f]} forState:UIControlStateNormal];
+    
+    [[UITabBar appearance] setBarTintColor:cSystem3];
+    
 
 }
 

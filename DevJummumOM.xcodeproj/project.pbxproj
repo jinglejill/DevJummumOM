@@ -10,6 +10,8 @@
 		16BFAA8B17D18CA2786089ED /* libPods-DevJummumOMUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FF6890C56D5F93CB4F54ABD /* libPods-DevJummumOMUITests.a */; };
 		771C289CD9993A928A7F79B7 /* libPods-DevJummumOM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A70B12ABC431D57B4FD255BB /* libPods-DevJummumOM.a */; };
 		BF7A71247D64413994B99F45 /* libPods-DevJummumOMTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52814E2AEAE7882270F4707D /* libPods-DevJummumOMTests.a */; };
+		EF14CC46216359540035A292 /* printerGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = EF14CC44216359540035A292 /* printerGreen.png */; };
+		EF14CC47216359540035A292 /* printerGreenNo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF14CC45216359540035A292 /* printerGreenNo.png */; };
 		EF33CDBA211C312800560C69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33CDB9211C312800560C69 /* ViewController.m */; };
 		EF33CDBF211C312A00560C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF33CDBE211C312A00560C69 /* Assets.xcassets */; };
 		EF33CDC2211C312A00560C69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF33CDC0211C312A00560C69 /* LaunchScreen.storyboard */; };
@@ -296,11 +298,21 @@
 		EF5D2A68212F41270073F1A1 /* PrinterInfo+Builder.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A5F212F41270073F1A1 /* PrinterInfo+Builder.m */; };
 		EF5D2A69212F41270073F1A1 /* PrinterSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A60212F41270073F1A1 /* PrinterSetting.m */; };
 		EF5D2A6C212F4B690073F1A1 /* PrinterChoosingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */; };
-		EF5D2A6F212F59E20073F1A1 /* printerWhiteNo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A6D212F59E10073F1A1 /* printerWhiteNo.png */; };
-		EF5D2A70212F59E20073F1A1 /* printerWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A6E212F59E20073F1A1 /* printerWhite.png */; };
 		EF5D2A72212F72490073F1A1 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A71212F72480073F1A1 /* refresh.png */; };
 		EF5D2A79212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */; };
 		EF5D2A7A212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */; };
+		EFA4E3562156B1B3004C0ECF /* OmiseTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E3492156B1B2004C0ECF /* OmiseTokenRequest.swift */; };
+		EFA4E3572156B1B3004C0ECF /* OmiseToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E34A2156B1B2004C0ECF /* OmiseToken.swift */; };
+		EFA4E3582156B1B3004C0ECF /* OmiseAuthorizingPaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E34D2156B1B2004C0ECF /* OmiseAuthorizingPaymentViewController.swift */; };
+		EFA4E3592156B1B3004C0ECF /* OmiseJsonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E34E2156B1B2004C0ECF /* OmiseJsonParser.swift */; };
+		EFA4E35A2156B1B3004C0ECF /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E34F2156B1B2004C0ECF /* Globals.swift */; };
+		EFA4E35B2156B1B3004C0ECF /* CardBrand.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E3512156B1B2004C0ECF /* CardBrand.swift */; };
+		EFA4E35C2156B1B3004C0ECF /* OmiseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E3522156B1B2004C0ECF /* OmiseCard.swift */; };
+		EFA4E35D2156B1B3004C0ECF /* CardNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E3532156B1B2004C0ECF /* CardNumber.swift */; };
+		EFA4E35E2156B1B3004C0ECF /* OmiseSDKClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E3542156B1B2004C0ECF /* OmiseSDKClient.swift */; };
+		EFA4E35F2156B1B3004C0ECF /* OmiseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E3552156B1B2004C0ECF /* OmiseError.swift */; };
+		EFA4E3622156BF3C004C0ECF /* badgeGray.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA4E3602156BF3C004C0ECF /* badgeGray.png */; };
+		EFA4E3632156BF3C004C0ECF /* badgeWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA4E3612156BF3C004C0ECF /* badgeWhite.png */; };
 		EFDAFE32214BCF5400A2596D /* report.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE31214BCF5300A2596D /* report.png */; };
 		EFDAFE35214BCFA100A2596D /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE34214BCFA100A2596D /* ReportViewController.m */; };
 		EFDAFE41214E63FA00A2596D /* CustomTableViewCellMonthYear.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE3F214E63FA00A2596D /* CustomTableViewCellMonthYear.m */; };
@@ -348,6 +360,8 @@
 		A70B12ABC431D57B4FD255BB /* libPods-DevJummumOM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DevJummumOM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAF4DE32C6F66AF596B15A1F /* Pods-DevJummumOMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOMTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOMTests/Pods-DevJummumOMTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D08C660D4C012FD7849C81AA /* Pods-DevJummumOMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOMUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOMUITests/Pods-DevJummumOMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EF14CC44216359540035A292 /* printerGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerGreen.png; sourceTree = "<group>"; };
+		EF14CC45216359540035A292 /* printerGreenNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerGreenNo.png; sourceTree = "<group>"; };
 		EF33CDB2211C312800560C69 /* DevJummumOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevJummumOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF33CDB8211C312800560C69 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EF33CDB9211C312800560C69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -785,12 +799,25 @@
 		EF5D2A60212F41270073F1A1 /* PrinterSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrinterSetting.m; sourceTree = "<group>"; };
 		EF5D2A6A212F4B690073F1A1 /* PrinterChoosingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinterChoosingViewController.h; sourceTree = "<group>"; };
 		EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterChoosingViewController.m; sourceTree = "<group>"; };
-		EF5D2A6D212F59E10073F1A1 /* printerWhiteNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerWhiteNo.png; sourceTree = "<group>"; };
-		EF5D2A6E212F59E20073F1A1 /* printerWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerWhite.png; sourceTree = "<group>"; };
 		EF5D2A71212F72480073F1A1 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		EF5D2A76212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellReceiptSummary2.h; sourceTree = "<group>"; };
 		EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellReceiptSummary2.m; sourceTree = "<group>"; };
 		EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellReceiptSummary2.xib; sourceTree = "<group>"; };
+		EFA4E3492156B1B2004C0ECF /* OmiseTokenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmiseTokenRequest.swift; sourceTree = "<group>"; };
+		EFA4E34A2156B1B2004C0ECF /* OmiseToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmiseToken.swift; sourceTree = "<group>"; };
+		EFA4E34B2156B1B2004C0ECF /* OmiseSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OmiseSDK.h; sourceTree = "<group>"; };
+		EFA4E34C2156B1B2004C0ECF /* OmiseSDK.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = OmiseSDK.modulemap; sourceTree = "<group>"; };
+		EFA4E34D2156B1B2004C0ECF /* OmiseAuthorizingPaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmiseAuthorizingPaymentViewController.swift; sourceTree = "<group>"; };
+		EFA4E34E2156B1B2004C0ECF /* OmiseJsonParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmiseJsonParser.swift; sourceTree = "<group>"; };
+		EFA4E34F2156B1B2004C0ECF /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		EFA4E3502156B1B2004C0ECF /* Jummum-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Jummum-Bridging-Header.h"; sourceTree = "<group>"; };
+		EFA4E3512156B1B2004C0ECF /* CardBrand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBrand.swift; sourceTree = "<group>"; };
+		EFA4E3522156B1B2004C0ECF /* OmiseCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmiseCard.swift; sourceTree = "<group>"; };
+		EFA4E3532156B1B2004C0ECF /* CardNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardNumber.swift; sourceTree = "<group>"; };
+		EFA4E3542156B1B2004C0ECF /* OmiseSDKClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmiseSDKClient.swift; sourceTree = "<group>"; };
+		EFA4E3552156B1B2004C0ECF /* OmiseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmiseError.swift; sourceTree = "<group>"; };
+		EFA4E3602156BF3C004C0ECF /* badgeGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badgeGray.png; sourceTree = "<group>"; };
+		EFA4E3612156BF3C004C0ECF /* badgeWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badgeWhite.png; sourceTree = "<group>"; };
 		EFDAFE31214BCF5300A2596D /* report.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = report.png; sourceTree = "<group>"; };
 		EFDAFE33214BCFA100A2596D /* ReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
 		EFDAFE34214BCFA100A2596D /* ReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
@@ -972,6 +999,7 @@
 		EF33D3F4211C371D00560C69 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				EFA4E3482156B1B2004C0ECF /* Omise */,
 				EF5D2A45212F40A30073F1A1 /* Star */,
 				EF33D3F5211C371D00560C69 /* Encryption */,
 				EF33D3FA211C371D00560C69 /* KeychainWrapper */,
@@ -1003,6 +1031,10 @@
 		EF33D3FE211C371D00560C69 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EF14CC44216359540035A292 /* printerGreen.png */,
+				EF14CC45216359540035A292 /* printerGreenNo.png */,
+				EFA4E3602156BF3C004C0ECF /* badgeGray.png */,
+				EFA4E3612156BF3C004C0ECF /* badgeWhite.png */,
 				EFDAFE31214BCF5300A2596D /* report.png */,
 				EF5D2A71212F72480073F1A1 /* refresh.png */,
 				EF33D422211C371D00560C69 /* badge.png */,
@@ -1038,8 +1070,6 @@
 				EF33D40F211C371D00560C69 /* logOut.png */,
 				EF33D3FF211C371D00560C69 /* me.png */,
 				EF5D2A40212F3C400073F1A1 /* printer.png */,
-				EF5D2A6E212F59E20073F1A1 /* printerWhite.png */,
-				EF5D2A6D212F59E10073F1A1 /* printerWhiteNo.png */,
 				EF33D410211C371D00560C69 /* profilePic.png */,
 				EF33D425211C371D00560C69 /* selfService.png */,
 				EF33D40D211C371D00560C69 /* termsOfService.png */,
@@ -1498,6 +1528,26 @@
 			path = Communications;
 			sourceTree = "<group>";
 		};
+		EFA4E3482156B1B2004C0ECF /* Omise */ = {
+			isa = PBXGroup;
+			children = (
+				EFA4E3492156B1B2004C0ECF /* OmiseTokenRequest.swift */,
+				EFA4E34A2156B1B2004C0ECF /* OmiseToken.swift */,
+				EFA4E34B2156B1B2004C0ECF /* OmiseSDK.h */,
+				EFA4E34C2156B1B2004C0ECF /* OmiseSDK.modulemap */,
+				EFA4E34D2156B1B2004C0ECF /* OmiseAuthorizingPaymentViewController.swift */,
+				EFA4E34E2156B1B2004C0ECF /* OmiseJsonParser.swift */,
+				EFA4E34F2156B1B2004C0ECF /* Globals.swift */,
+				EFA4E3502156B1B2004C0ECF /* Jummum-Bridging-Header.h */,
+				EFA4E3512156B1B2004C0ECF /* CardBrand.swift */,
+				EFA4E3522156B1B2004C0ECF /* OmiseCard.swift */,
+				EFA4E3532156B1B2004C0ECF /* CardNumber.swift */,
+				EFA4E3542156B1B2004C0ECF /* OmiseSDKClient.swift */,
+				EFA4E3552156B1B2004C0ECF /* OmiseError.swift */,
+			);
+			path = Omise;
+			sourceTree = "<group>";
+		};
 		EFDAFE43214E64BB00A2596D /* NTMonthYearPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1622,6 +1672,8 @@
 			files = (
 				EF33D64A211C371F00560C69 /* CustomViewVoucher.xib in Resources */,
 				EF33D63F211C371F00560C69 /* CustomTableViewCellTotal.xib in Resources */,
+				EF14CC47216359540035A292 /* printerGreenNo.png in Resources */,
+				EFA4E3622156BF3C004C0ECF /* badgeGray.png in Resources */,
 				EF33D686211C371F00560C69 /* Kanit-BoldItalic.otf in Resources */,
 				EF33D694211C371F00560C69 /* Kanit-LightItalic.ttf in Resources */,
 				EF33D66A211C371F00560C69 /* Kanit-Bold.otf in Resources */,
@@ -1645,7 +1697,6 @@
 				EF33D58E211C371E00560C69 /* iOSDeviceModelMapping.plist in Resources */,
 				EF33D644211C371F00560C69 /* CustomTableViewCellQuantity.xib in Resources */,
 				EF33D627211C371F00560C69 /* CustomTableViewCellDisputeDetail.xib in Resources */,
-				EF5D2A70212F59E20073F1A1 /* printerWhite.png in Resources */,
 				EF33D628211C371F00560C69 /* CustomTableViewCellPromoBanner.xib in Resources */,
 				EF33D59F211C371E00560C69 /* jummumChef_lightGray.png in Resources */,
 				EF33D599211C371E00560C69 /* Icon-76@2x.png in Resources */,
@@ -1661,7 +1712,6 @@
 				EF5D2A7A212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib in Resources */,
 				EF33D64C211C371F00560C69 /* CustomTableViewCellReceiptSummary.xib in Resources */,
 				EF33D59E211C371E00560C69 /* Icon-60@3x.png in Resources */,
-				EF5D2A6F212F59E20073F1A1 /* printerWhiteNo.png in Resources */,
 				EF33D68E211C371F00560C69 /* Kanit-Light.otf in Resources */,
 				EF33CDC2211C312A00560C69 /* LaunchScreen.storyboard in Resources */,
 				EF33D67E211C371F00560C69 /* Kanit-Italic.otf in Resources */,
@@ -1675,6 +1725,7 @@
 				EF33D68D211C371F00560C69 /* Prompt-SemiBoldItalic.ttf in Resources */,
 				EF33D623211C371F00560C69 /* CustomTableViewCellReward.xib in Resources */,
 				EFDAFE32214BCF5400A2596D /* report.png in Resources */,
+				EF14CC46216359540035A292 /* printerGreen.png in Resources */,
 				EF33D5A5211C371E00560C69 /* Icon-1024.png in Resources */,
 				EFDAFE5C214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.xib in Resources */,
 				EF33D671211C371F00560C69 /* Kanit-Thin.otf in Resources */,
@@ -1696,6 +1747,7 @@
 				EF33D690211C371F00560C69 /* Kanit-LightItalic.otf in Resources */,
 				EF33D5A7211C371E00560C69 /* profilePic.png in Resources */,
 				EF33D5B1211C371E00560C69 /* Icon@2x.png in Resources */,
+				EFA4E3632156BF3C004C0ECF /* badgeWhite.png in Resources */,
 				EF33D596211C371E00560C69 /* me.png in Resources */,
 				EF33D668211C371F00560C69 /* Kanit-ThinItalic.ttf in Resources */,
 				EF33D63C211C371F00560C69 /* CustomTableViewCellText.xib in Resources */,
@@ -1878,6 +1930,7 @@
 				EF33D595211C371E00560C69 /* KeychainWrapper.m in Sources */,
 				EF33D5FC211C371E00560C69 /* SharedRewardRedemption.m in Sources */,
 				EF33D612211C371F00560C69 /* SubMenuType.m in Sources */,
+				EFA4E35C2156B1B3004C0ECF /* OmiseCard.swift in Sources */,
 				EF33D60B211C371E00560C69 /* PromoCode.m in Sources */,
 				EF33D618211C371F00560C69 /* SharedSpecialPriceProgram.m in Sources */,
 				EF33D590211C371E00560C69 /* HomeModel.m in Sources */,
@@ -1904,6 +1957,8 @@
 				EF33D5C4211C371E00560C69 /* PersonalDataViewController.m in Sources */,
 				EF33D5EE211C371E00560C69 /* SharedHotDeal.m in Sources */,
 				EF33D593211C371E00560C69 /* NSData+Encryption.m in Sources */,
+				EFA4E35B2156B1B3004C0ECF /* CardBrand.swift in Sources */,
+				EFA4E3592156B1B3004C0ECF /* OmiseJsonParser.swift in Sources */,
 				EF33D658211C371F00560C69 /* CustomCollectionReusableView.m in Sources */,
 				EF33D5D6211C371E00560C69 /* Receipt.m in Sources */,
 				EF33D641211C371F00560C69 /* CustomTableViewCellSearchBar.m in Sources */,
@@ -1922,6 +1977,8 @@
 				EF5D2A68212F41270073F1A1 /* PrinterInfo+Builder.m in Sources */,
 				EF33D652211C371F00560C69 /* CustomTableViewCellRewardDetail.m in Sources */,
 				EF33D5EB211C371E00560C69 /* HotDeal.m in Sources */,
+				EFA4E35A2156B1B3004C0ECF /* Globals.swift in Sources */,
+				EFA4E3562156B1B3004C0ECF /* OmiseTokenRequest.swift in Sources */,
 				EF33D5F0211C371E00560C69 /* SharedOrderNote.m in Sources */,
 				EF33D636211C371F00560C69 /* CustomTableViewCellText.m in Sources */,
 				EF5D2A65212F41270073F1A1 /* PrinterInfo.m in Sources */,
@@ -1944,6 +2001,7 @@
 				EF33D632211C371F00560C69 /* CustomTableViewHeaderFooterOkCancel.m in Sources */,
 				EF33D619211C371F00560C69 /* Promotion.m in Sources */,
 				EF5D2A64212F41270073F1A1 /* GlobalQueueManager.m in Sources */,
+				EFA4E3582156B1B3004C0ECF /* OmiseAuthorizingPaymentViewController.swift in Sources */,
 				EF5D2A79212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m in Sources */,
 				EF33D5E9211C371E00560C69 /* SharedMenuPic.m in Sources */,
 				EFDAFE60214FCFBB00A2596D /* CustomTableViewCellButtonDetail.m in Sources */,
@@ -1964,10 +2022,12 @@
 				EF33D5D2211C371E00560C69 /* UserRewardRedemptionUsed.m in Sources */,
 				EF33D5E7211C371E00560C69 /* SharedDispute.m in Sources */,
 				EF33D5F5211C371E00560C69 /* UserPromotionUsed.m in Sources */,
+				EFA4E35F2156B1B3004C0ECF /* OmiseError.swift in Sources */,
 				EF33D62A211C371F00560C69 /* CustomTableViewCellTotal.m in Sources */,
 				EF33D62F211C371F00560C69 /* CustomTableViewCellQuantity.m in Sources */,
 				EF33D5D3211C371E00560C69 /* InvoiceComposer.m in Sources */,
 				EF33D625211C371F00560C69 /* CustomViewController.m in Sources */,
+				EFA4E35E2156B1B3004C0ECF /* OmiseSDKClient.swift in Sources */,
 				EF33D617211C371F00560C69 /* SharedDisputeReason.m in Sources */,
 				EFDAFE4A214F525800A2596D /* SharedCurrentBranch.m in Sources */,
 				EF33D5C5211C371E00560C69 /* MainTabBarController.m in Sources */,
@@ -1984,7 +2044,9 @@
 				EF33D5E8211C371E00560C69 /* Shop.m in Sources */,
 				EF33D5EA211C371E00560C69 /* SharedOrderTaking.m in Sources */,
 				EF33D5FD211C371E00560C69 /* UserAccount.m in Sources */,
+				EFA4E35D2156B1B3004C0ECF /* CardNumber.swift in Sources */,
 				EF33D5FE211C371E00560C69 /* SharedShop.m in Sources */,
+				EFA4E3572156B1B3004C0ECF /* OmiseToken.swift in Sources */,
 				EF33D61B211C371F00560C69 /* RewardRedemption.m in Sources */,
 				EF33D5D9211C371E00560C69 /* SharedMenu.m in Sources */,
 				EFDAFE4D214F595200A2596D /* ReportDaily.m in Sources */,
@@ -2119,6 +2181,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -2170,6 +2233,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2194,6 +2258,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JummumCo.DevJummumOM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2218,6 +2283,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JummumCo.DevJummumOM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -2226,6 +2292,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CAF4DE32C6F66AF596B15A1F /* Pods-DevJummumOMTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF8AZLDC5D;
@@ -2246,6 +2313,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 033EEB944EF4415FC61413D6 /* Pods-DevJummumOMTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF8AZLDC5D;
@@ -2266,6 +2334,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6D50129638A07EB258F6F0BE /* Pods-DevJummumOMUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF8AZLDC5D;
 				INFOPLIST_FILE = DevJummumOMUITests/Info.plist;
@@ -2285,6 +2354,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D08C660D4C012FD7849C81AA /* Pods-DevJummumOMUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DF8AZLDC5D;
 				INFOPLIST_FILE = DevJummumOMUITests/Info.plist;

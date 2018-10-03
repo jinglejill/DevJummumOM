@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[CustomerKitchenViewController getReviewOrderBill:]:CustomerKitchenViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.lblBranchName.text">
+            </PersistentString>
+            <PersistentString
+               value = "cell.lblReceiptNo.text">
+            </PersistentString>
+            <PersistentString
+               value = "cell.lblMenuName.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[PrinterSettingViewController tableView:cellForRowAtIndexPath:]:PrinterSettingViewController.m">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

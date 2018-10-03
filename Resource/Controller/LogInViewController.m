@@ -29,7 +29,6 @@
     NSString *_username;
     NSMutableArray *allComments;
     Branch *_branch;
-//    CredentialsDb *_credentialsDb;
 }
 @end
 
@@ -38,7 +37,6 @@
 @synthesize txtPassword;
 @synthesize btnRememberMe;
 @synthesize btnLogIn;
-//@synthesize credentialsDb;
 @synthesize imgVwValueHeight;
 @synthesize lblOrBottom;
 @synthesize imgVwLogoText;
@@ -88,6 +86,8 @@
         //hide jummum text
         imgVwLogoText.hidden = YES;
     }
+    
+    btnLogIn.backgroundColor = cSystem2;
 }
 
 - (IBAction)rememberMe:(id)sender

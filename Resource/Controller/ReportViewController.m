@@ -105,6 +105,9 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
     lblNavTitle.text = title;
     tbvData.dataSource = self;
     tbvData.delegate = self;
+    tbvData.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    
 //    [picker setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
     [picker removeFromSuperview];
     
@@ -242,8 +245,8 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
                 UINib *nib = [UINib nibWithNibName:reuseIdentifierButtonDetail bundle:nil];
                 [cell.tbvSummaryByDay registerNib:nib forCellReuseIdentifier:reuseIdentifierButtonDetail];
             }
-            
             [cell.tbvSummaryByDay reloadData];
+            
             
             return cell;
         }
@@ -397,6 +400,9 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
 
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
 {
+    [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
+    
+    
     NSInteger section = indexPath.section;
     NSInteger item = indexPath.item;
     if([tableView isEqual:tbvData])
@@ -404,15 +410,16 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
         if(section == 1)
         {
             ReportDaily *reportDaily = _reportDailyList[item];
+            cell.backgroundColor = cSystem4_10;
             if([Utility isWeekend:reportDaily.receiptDate])
             {
                 cell.backgroundColor = cSystem1_10;
             }
+            
+            
+            cell.separatorInset = UIEdgeInsetsMake(0.0f, self.view.bounds.size.width, 0.0f, CGFLOAT_MAX);
         }
     }
-    
-    [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
-
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -447,7 +454,27 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
         {
             CustomTableViewCellReportDailyHeader *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:reuseIdentifierReportDailyHeader];
             
-            headerView.layer.backgroundColor = cSystem1.CGColor;
+//            headerView.layer.backgroundColor = cSystem1.CGColor;
+            
+            
+            //corner
+            CAShapeLayer * maskLayer = [CAShapeLayer layer];
+            maskLayer.path = [UIBezierPath bezierPathWithRoundedRect: headerView.bounds byRoundingCorners: UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii: (CGSize){14.0}].CGPath;
+            maskLayer.fillColor = cSystem1.CGColor;
+            [headerView.layer insertSublayer:maskLayer atIndex:0];
+
+
+            
+            
+            //shadow
+            headerView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+            headerView.layer.shadowOpacity = 0.8;
+            headerView.layer.shadowRadius = 3;
+            headerView.layer.shadowOffset = CGSizeMake(0, 1);
+            headerView.layer.masksToBounds = NO;
+
+            
+            
             return headerView;
         }
     }

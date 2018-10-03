@@ -15,12 +15,12 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tbvData;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segConPrintStatus;
-@property (strong, nonatomic) IBOutlet UIImageView *imgBadge;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *imgBadgeTrailing;
-@property (strong, nonatomic) IBOutlet UIImageView *imgBadgeNew;
-@property (strong, nonatomic) IBOutlet UIImageView *imgBadgeProcessing;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *imgBadgeLeading;
-@property (strong, nonatomic) IBOutlet NSLayoutConstraint *imgBadgeProcessingLeading;
+//@property (strong, nonatomic) IBOutlet UIImageView *imgBadge;
+//@property (strong, nonatomic) IBOutlet NSLayoutConstraint *imgBadgeTrailing;
+//@property (strong, nonatomic) IBOutlet UIImageView *imgBadgeNew;
+//@property (strong, nonatomic) IBOutlet UIImageView *imgBadgeProcessing;
+//@property (strong, nonatomic) IBOutlet NSLayoutConstraint *imgBadgeLeading;
+//@property (strong, nonatomic) IBOutlet NSLayoutConstraint *imgBadgeProcessingLeading;
 @property (strong, nonatomic) IBOutlet UILabel *lblNavTitle;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
 @property (strong, nonatomic) IBOutlet UIButton *btnShowPrintButton;
@@ -28,7 +28,6 @@
 
 
 -(IBAction)unwindToCustomerKitchen:(UIStoryboardSegue *)segue;
-//- (IBAction)doAction:(id)sender;
 - (IBAction)printStatusChanged:(id)sender;
 -(void)setReceiptList;
 -(void)reloadTableView;

@@ -10,6 +10,7 @@
 #import "SharedReceipt.h"
 #import "Utility.h"
 #import "Setting.h"
+#import "DevJummumOM-Swift.h"
 
 
 @implementation Receipt
@@ -652,5 +653,40 @@
         }
     }
     return 0;
+}
+
++(NSString *)maskCreditCardNo:(Receipt *)receipt
+{
+    NSRange needleRange;
+    needleRange = NSMakeRange(12,4);
+    NSString *last4digit = [receipt.creditCardNo substringWithRange:needleRange];
+    
+    NSInteger cardBrand = [OMSCardNumber brandForPan:receipt.creditCardNo];
+    NSString *cardAbbr;
+    switch (cardBrand)
+    {
+        case OMSCardBrandJCB:
+        {
+            cardAbbr = @"JCB";
+        }
+        break;
+        case OMSCardBrandAMEX:
+        {
+            cardAbbr = @"AMEX";
+        }
+        break;
+        case OMSCardBrandVisa:
+        {
+            cardAbbr = @"VISA";
+        }
+        break;
+        case OMSCardBrandMasterCard:
+        {
+            cardAbbr = @"Master";
+        }
+        break;
+    }
+    
+    return [NSString stringWithFormat:@"**** **** **** %@ %@",last4digit,cardAbbr];
 }
 @end

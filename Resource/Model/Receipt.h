@@ -86,4 +86,6 @@
 +(NSDate *)getMaxModifiedDateWithBranchID:(NSInteger)branchID;
 +(NSInteger)getPriorStatus:(Receipt *)receipt;
 +(NSInteger)getIndex:(NSMutableArray *)receiptList receipt:(Receipt *)receipt;
++(NSString *)maskCreditCardNo:(Receipt *)receipt;
 @end
+
