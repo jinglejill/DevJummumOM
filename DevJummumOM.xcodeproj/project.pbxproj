@@ -12,6 +12,8 @@
 		BF7A71247D64413994B99F45 /* libPods-DevJummumOMTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 52814E2AEAE7882270F4707D /* libPods-DevJummumOMTests.a */; };
 		EF14CC46216359540035A292 /* printerGreen.png in Resources */ = {isa = PBXBuildFile; fileRef = EF14CC44216359540035A292 /* printerGreen.png */; };
 		EF14CC47216359540035A292 /* printerGreenNo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF14CC45216359540035A292 /* printerGreenNo.png */; };
+		EF14CDE621647FE90035A292 /* CustomTableViewCellButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF14CDE421647FE90035A292 /* CustomTableViewCellButtonLabel.m */; };
+		EF14CDE721647FE90035A292 /* CustomTableViewCellButtonLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF14CDE521647FE90035A292 /* CustomTableViewCellButtonLabel.xib */; };
 		EF33CDBA211C312800560C69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33CDB9211C312800560C69 /* ViewController.m */; };
 		EF33CDBF211C312A00560C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF33CDBE211C312A00560C69 /* Assets.xcassets */; };
 		EF33CDC2211C312A00560C69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF33CDC0211C312A00560C69 /* LaunchScreen.storyboard */; };
@@ -362,6 +364,9 @@
 		D08C660D4C012FD7849C81AA /* Pods-DevJummumOMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOMUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOMUITests/Pods-DevJummumOMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EF14CC44216359540035A292 /* printerGreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerGreen.png; sourceTree = "<group>"; };
 		EF14CC45216359540035A292 /* printerGreenNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = printerGreenNo.png; sourceTree = "<group>"; };
+		EF14CDE321647FE90035A292 /* CustomTableViewCellButtonLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellButtonLabel.h; sourceTree = "<group>"; };
+		EF14CDE421647FE90035A292 /* CustomTableViewCellButtonLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellButtonLabel.m; sourceTree = "<group>"; };
+		EF14CDE521647FE90035A292 /* CustomTableViewCellButtonLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellButtonLabel.xib; sourceTree = "<group>"; };
 		EF33CDB2211C312800560C69 /* DevJummumOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevJummumOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF33CDB8211C312800560C69 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EF33CDB9211C312800560C69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -1298,7 +1303,6 @@
 		EF33D4EA211C371E00560C69 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
-				EFDAFE43214E64BB00A2596D /* NTMonthYearPicker */,
 				EF33D50D211C371E00560C69 /* CustomCollectionReusableView.h */,
 				EF33D541211C371E00560C69 /* CustomCollectionReusableView.m */,
 				EF33D519211C371E00560C69 /* CustomCollectionReusableView.xib */,
@@ -1308,6 +1312,12 @@
 				EF33D505211C371E00560C69 /* CustomTableViewCellButton.h */,
 				EF33D54B211C371E00560C69 /* CustomTableViewCellButton.m */,
 				EF33D504211C371E00560C69 /* CustomTableViewCellButton.xib */,
+				EFDAFE5D214FCFBB00A2596D /* CustomTableViewCellButtonDetail.h */,
+				EFDAFE5E214FCFBB00A2596D /* CustomTableViewCellButtonDetail.m */,
+				EFDAFE5F214FCFBB00A2596D /* CustomTableViewCellButtonDetail.xib */,
+				EF14CDE321647FE90035A292 /* CustomTableViewCellButtonLabel.h */,
+				EF14CDE421647FE90035A292 /* CustomTableViewCellButtonLabel.m */,
+				EF14CDE521647FE90035A292 /* CustomTableViewCellButtonLabel.xib */,
 				EF33D52D211C371E00560C69 /* CustomTableViewCellCreditCard.h */,
 				EF33D4EC211C371E00560C69 /* CustomTableViewCellCreditCard.m */,
 				EF33D4FE211C371E00560C69 /* CustomTableViewCellCreditCard.xib */,
@@ -1344,6 +1354,12 @@
 				EF33D507211C371E00560C69 /* CustomTableViewCellMenu.h */,
 				EF33D549211C371E00560C69 /* CustomTableViewCellMenu.m */,
 				EF33D4EF211C371E00560C69 /* CustomTableViewCellMenu.xib */,
+				EFDAFE3E214E63FA00A2596D /* CustomTableViewCellMonthYear.h */,
+				EFDAFE3F214E63FA00A2596D /* CustomTableViewCellMonthYear.m */,
+				EFDAFE40214E63FA00A2596D /* CustomTableViewCellMonthYear.xib */,
+				EFDAFE65214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.h */,
+				EFDAFE66214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m */,
+				EFDAFE67214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib */,
 				EF33D4F4211C371E00560C69 /* CustomTableViewCellNote.h */,
 				EF33D522211C371E00560C69 /* CustomTableViewCellNote.m */,
 				EF33D53A211C371E00560C69 /* CustomTableViewCellNote.xib */,
@@ -1368,9 +1384,21 @@
 				EF33D4ED211C371E00560C69 /* CustomTableViewCellReceiptSummary.h */,
 				EF33D52A211C371E00560C69 /* CustomTableViewCellReceiptSummary.m */,
 				EF33D52B211C371E00560C69 /* CustomTableViewCellReceiptSummary.xib */,
+				EF5D2A76212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.h */,
+				EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */,
+				EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */,
 				EF33D4EE211C371E00560C69 /* CustomTableViewCellRedemption.h */,
 				EF33D528211C371E00560C69 /* CustomTableViewCellRedemption.m */,
 				EF33D555211C371E00560C69 /* CustomTableViewCellRedemption.xib */,
+				EFDAFE53214F5F5A00A2596D /* CustomTableViewCellReportDaily.h */,
+				EFDAFE54214F5F5A00A2596D /* CustomTableViewCellReportDaily.m */,
+				EFDAFE55214F5F5A00A2596D /* CustomTableViewCellReportDaily.xib */,
+				EFDAFE4E214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.h */,
+				EFDAFE4F214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.m */,
+				EFDAFE50214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.xib */,
+				EFDAFE58214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.h */,
+				EFDAFE59214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.m */,
+				EFDAFE5A214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.xib */,
 				EF33D517211C371E00560C69 /* CustomTableViewCellReward.h */,
 				EF33D550211C371E00560C69 /* CustomTableViewCellReward.m */,
 				EF33D4F7211C371E00560C69 /* CustomTableViewCellReward.xib */,
@@ -1406,27 +1434,7 @@
 				EF33D4F2211C371E00560C69 /* CustomViewVoucher.h */,
 				EF33D526211C371E00560C69 /* CustomViewVoucher.m */,
 				EF33D529211C371E00560C69 /* CustomViewVoucher.xib */,
-				EF5D2A76212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.h */,
-				EF5D2A77212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.m */,
-				EF5D2A78212FE8A90073F1A1 /* CustomTableViewCellReceiptSummary2.xib */,
-				EFDAFE3E214E63FA00A2596D /* CustomTableViewCellMonthYear.h */,
-				EFDAFE3F214E63FA00A2596D /* CustomTableViewCellMonthYear.m */,
-				EFDAFE40214E63FA00A2596D /* CustomTableViewCellMonthYear.xib */,
-				EFDAFE4E214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.h */,
-				EFDAFE4F214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.m */,
-				EFDAFE50214F5AE900A2596D /* CustomTableViewCellReportDailyHeader.xib */,
-				EFDAFE53214F5F5A00A2596D /* CustomTableViewCellReportDaily.h */,
-				EFDAFE54214F5F5A00A2596D /* CustomTableViewCellReportDaily.m */,
-				EFDAFE55214F5F5A00A2596D /* CustomTableViewCellReportDaily.xib */,
-				EFDAFE58214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.h */,
-				EFDAFE59214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.m */,
-				EFDAFE5A214F969A00A2596D /* CustomTableViewCellReportSummaryByDay.xib */,
-				EFDAFE5D214FCFBB00A2596D /* CustomTableViewCellButtonDetail.h */,
-				EFDAFE5E214FCFBB00A2596D /* CustomTableViewCellButtonDetail.m */,
-				EFDAFE5F214FCFBB00A2596D /* CustomTableViewCellButtonDetail.xib */,
-				EFDAFE65214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.h */,
-				EFDAFE66214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m */,
-				EFDAFE67214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib */,
+				EFDAFE43214E64BB00A2596D /* NTMonthYearPicker */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -1747,6 +1755,7 @@
 				EF33D690211C371F00560C69 /* Kanit-LightItalic.otf in Resources */,
 				EF33D5A7211C371E00560C69 /* profilePic.png in Resources */,
 				EF33D5B1211C371E00560C69 /* Icon@2x.png in Resources */,
+				EF14CDE721647FE90035A292 /* CustomTableViewCellButtonLabel.xib in Resources */,
 				EFA4E3632156BF3C004C0ECF /* badgeWhite.png in Resources */,
 				EF33D596211C371E00560C69 /* me.png in Resources */,
 				EF33D668211C371F00560C69 /* Kanit-ThinItalic.ttf in Resources */,
@@ -2043,6 +2052,7 @@
 				EF33D65E211C371F00560C69 /* CustomTableViewCellButton.m in Sources */,
 				EF33D5E8211C371E00560C69 /* Shop.m in Sources */,
 				EF33D5EA211C371E00560C69 /* SharedOrderTaking.m in Sources */,
+				EF14CDE621647FE90035A292 /* CustomTableViewCellButtonLabel.m in Sources */,
 				EF33D5FD211C371E00560C69 /* UserAccount.m in Sources */,
 				EFA4E35D2156B1B3004C0ECF /* CardNumber.swift in Sources */,
 				EF33D5FE211C371E00560C69 /* SharedShop.m in Sources */,

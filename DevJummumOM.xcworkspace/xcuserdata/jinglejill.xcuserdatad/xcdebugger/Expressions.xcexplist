@@ -3,16 +3,39 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[CustomerKitchenViewController tableView:heightForRowAtIndexPath:]:CustomerKitchenViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "cell.lblMenuNameHeight.constant">
+            </PersistentString>
+            <PersistentString
+               value = "cell.lblMenuName.text">
+            </PersistentString>
+            <PersistentString
+               value = "receipt.receiptID">
+            </PersistentString>
+            <PersistentString
+               value = "cell.lblNote.text">
+            </PersistentString>
+            <PersistentString
+               value = "cell.lblMenuName.frame.size.height">
+            </PersistentString>
+            <PersistentString
+               value = "strAllNote">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[CustomerKitchenViewController getReviewOrderBill:]:CustomerKitchenViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "cell.lblBranchName.text">
+               value = "cell.lblMenuName.text">
             </PersistentString>
             <PersistentString
                value = "cell.lblReceiptNo.text">
             </PersistentString>
             <PersistentString
-               value = "cell.lblMenuName.text">
+               value = "cell.lblBranchName.text">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

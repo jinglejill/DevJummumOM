@@ -353,27 +353,10 @@
                                     <constraint firstItem="1HW-nZ-euS" firstAttribute="leading" secondItem="KhC-mg-31x" secondAttribute="trailing" constant="11" id="iuX-De-0w0"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="foi-xg-jny">
-                                <rect key="frame" x="0.0" y="139" width="375" height="479"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="foi-xg-jny">
+                                <rect key="frame" x="0.0" y="132" width="375" height="486"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SFl-GK-6F5">
-                                <rect key="frame" x="16" y="96" width="343" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="vzm-CS-KQO"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="มาใหม่"/>
-                                    <segment title="เข้าครัว"/>
-                                    <segment title="เสิร์ฟ"/>
-                                    <segment title="ประเด็น"/>
-                                    <segment title="เคลียร์"/>
-                                </segments>
-                                <color key="tintColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="printStatusChanged:" destination="mH6-Gk-7OO" eventType="valueChanged" id="LSY-I0-nYb"/>
-                                </connections>
-                            </segmentedControl>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q1W-BU-aHQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
@@ -385,17 +368,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="It6-gE-V5X" firstAttribute="trailing" secondItem="lrZ-Sy-cxl" secondAttribute="trailing" id="3gx-am-MWO"/>
-                            <constraint firstItem="foi-xg-jny" firstAttribute="top" secondItem="SFl-GK-6F5" secondAttribute="bottom" constant="8" id="3v4-xT-0S5"/>
                             <constraint firstItem="It6-gE-V5X" firstAttribute="leading" secondItem="lrZ-Sy-cxl" secondAttribute="leading" id="917-b6-Mpu"/>
-                            <constraint firstItem="SFl-GK-6F5" firstAttribute="top" secondItem="It6-gE-V5X" secondAttribute="bottom" constant="8" id="BU1-Ia-LNm"/>
                             <constraint firstItem="q1W-BU-aHQ" firstAttribute="leading" secondItem="lrZ-Sy-cxl" secondAttribute="leading" id="GhQ-F4-OWe"/>
                             <constraint firstItem="q1W-BU-aHQ" firstAttribute="top" secondItem="J9Y-9d-wU1" secondAttribute="top" id="Lsd-Ty-683"/>
                             <constraint firstItem="foi-xg-jny" firstAttribute="leading" secondItem="lrZ-Sy-cxl" secondAttribute="leading" id="O1v-xn-woe"/>
                             <constraint firstItem="q1W-BU-aHQ" firstAttribute="trailing" secondItem="lrZ-Sy-cxl" secondAttribute="trailing" id="RxH-HS-3xM"/>
                             <constraint firstItem="It6-gE-V5X" firstAttribute="top" secondItem="q1W-BU-aHQ" secondAttribute="bottom" id="c7F-zb-act"/>
-                            <constraint firstItem="lrZ-Sy-cxl" firstAttribute="trailing" secondItem="SFl-GK-6F5" secondAttribute="trailing" constant="16" id="il9-fi-FP8"/>
                             <constraint firstItem="foi-xg-jny" firstAttribute="trailing" secondItem="lrZ-Sy-cxl" secondAttribute="trailing" id="jX8-Xv-cYj"/>
-                            <constraint firstItem="SFl-GK-6F5" firstAttribute="leading" secondItem="lrZ-Sy-cxl" secondAttribute="leading" constant="16" id="pKa-nf-qQ4"/>
+                            <constraint firstItem="foi-xg-jny" firstAttribute="top" secondItem="It6-gE-V5X" secondAttribute="bottom" constant="44" id="mLa-ud-UAv"/>
                             <constraint firstItem="foi-xg-jny" firstAttribute="bottom" secondItem="lrZ-Sy-cxl" secondAttribute="bottom" id="pNu-SO-GoZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lrZ-Sy-cxl"/>
@@ -404,7 +384,6 @@
                     <connections>
                         <outlet property="btnShowPrintButton" destination="KhC-mg-31x" id="BFZ-Rd-B92"/>
                         <outlet property="lblNavTitle" destination="2gp-px-WHJ" id="UJz-db-Tk2"/>
-                        <outlet property="segConPrintStatus" destination="SFl-GK-6F5" id="r4S-JT-x5I"/>
                         <outlet property="tbvData" destination="foi-xg-jny" id="bAa-nx-WzL"/>
                         <outlet property="topViewHeight" destination="xOu-f8-5Th" id="TGA-aR-QvU"/>
                         <segue destination="btE-BM-gjN" kind="show" identifier="segOrderDetail" id="1DE-ef-y4m"/>
