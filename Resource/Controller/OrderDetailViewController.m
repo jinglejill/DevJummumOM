@@ -2166,8 +2166,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
     
     
     //update receipt
-    [self loadingOverlayView];
-    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:[Branch getCurrentBranch].branchID];
+    [self loadingOverlayView];    
     receipt.toBeProcessing = 1;
     Receipt *updateReceipt = [receipt copy];
     updateReceipt.status = 5;
@@ -2179,7 +2178,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
     
     self.homeModel = [[HomeModel alloc]init];
     self.homeModel.delegate = self;
-    [self.homeModel updateItems:dbJummumReceiptSendToKitchen withData:@[updateReceipt,maxReceiptModifiedDate] actionScreen:@"update JMM receipt"];
+    [self.homeModel updateItems:dbJummumReceiptSendToKitchen withData:updateReceipt actionScreen:@"update JMM receipt"];
 }
 
 -(void)deliver:(id)sender
@@ -2195,7 +2194,6 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
 
     //update receipt
     [self loadingOverlayView];
-    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:[Branch getCurrentBranch].branchID];
     receipt.toBeProcessing = 1;
     Receipt *updateReceipt = [receipt copy];
     updateReceipt.status = 6;
@@ -2208,7 +2206,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
     
     self.homeModel = [[HomeModel alloc]init];
     self.homeModel.delegate = self;
-    [self.homeModel updateItems:dbJummumReceiptDelivered withData:@[updateReceipt,maxReceiptModifiedDate] actionScreen:@"update JMM receipt"];
+    [self.homeModel updateItems:dbJummumReceiptDelivered withData:updateReceipt actionScreen:@"update JMM receipt"];
 }
 
 -(void)reloadTableView

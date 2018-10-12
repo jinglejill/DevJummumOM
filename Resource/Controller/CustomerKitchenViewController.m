@@ -76,7 +76,6 @@ static NSString * const reuseIdentifierReceiptSummary = @"CustomTableViewCellRec
 static NSString * const reuseIdentifierReceiptSummary2 = @"CustomTableViewCellReceiptSummary2";
 static NSString * const reuseIdentifierOrderSummary = @"CustomTableViewCellOrderSummary";
 static NSString * const reuseIdentifierTotal = @"CustomTableViewCellTotal";
-//static NSString * const reuseIdentifierLabelLabel = @"CustomTableViewCellLabelLabel";
 static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelRemark";
 static NSString * const reuseIdentifierButton = @"CustomTableViewCellButton";
 static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButtonLabel";
@@ -84,10 +83,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
 
 
 @synthesize tbvData;
-@synthesize segConPrintStatus;
-@synthesize btnSelect;
-@synthesize btnBack;
-@synthesize imgPrinterStaus;
 @synthesize lblNavTitle;
 @synthesize topViewHeight;
 @synthesize btnShowPrintButton;
@@ -156,6 +151,13 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [tbvData reloadData];
+    
+}
+
 -(void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
@@ -167,14 +169,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
     float topPadding = window.safeAreaInsets.top;
     topViewHeight.constant = topPadding == 0?20:topPadding;
     
-    
-    
-
-    UIFont *font = [UIFont fontWithName:@"Prompt-SemiBold" size:14.0f];
-    NSDictionary *attributes = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
-    [segConPrintStatus setTitleTextAttributes:attributes forState:UIControlStateNormal];
-    segConPrintStatus.tintColor = [UIColor blackColor];
-    segConPrintStatus.hidden = YES;
     
     
     
@@ -202,8 +196,9 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         _buttonTypeList = [[NSMutableArray alloc]init];
         for (int i = 0; i < [_typeList count]; i++)
         {
+            float buttonWidth = self.view.frame.size.width/4;
             NSString *type = _typeList[i];
-            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(buttonX, 0, 100, 44)];
+            UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(buttonX, 0, buttonWidth, 44)];
             button.titleLabel.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
             if(i==0)
             {
@@ -216,7 +211,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
                 button.backgroundColor = cSystem4_10;
             }
             [button setTitle:type forState:UIControlStateNormal];
-            float buttonWidth = self.view.frame.size.width/([_typeList count]-1);
             [_horizontalScrollView addSubview:button];
             buttonX = buttonX + buttonWidth;
             [button addTarget:self action:@selector(typeSelected:) forControlEvents:UIControlEventTouchUpInside];
@@ -565,12 +559,28 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         
         
         
-        NSString *message = [Setting getValue:@"006m" example:@"Order no. #%@%@"];
-        NSString *message2 = [Setting getValue:@"007m" example:@"Table: %@"];
         Receipt *receipt = _receiptList[section];
-        NSString *showBuffetOrder = receipt.buffetReceiptID?@" (Buffet)":@"";
+//        NSString *showBuffetOrder = receipt.buffetReceiptID?@" (Buffet)":@"";
+        UIColor *color = cSystem4;
+        NSDictionary *attribute = @{NSForegroundColorAttributeName:color};
+        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Order no. #%@",receipt.receiptNoID] attributes:attribute];
+        
+        
+        UIColor *color2 = cSystem2;
+        NSDictionary *attribute2 = @{NSForegroundColorAttributeName:color2};
+        NSMutableAttributedString *attrString2 = [[NSMutableAttributedString alloc] initWithString:@" (Buffet)" attributes:attribute2];
+        if(receipt.buffetReceiptID)
+        {
+            [attrString appendAttributedString:attrString2];
+        }
+        
+//        NSString *message = [Setting getValue:@"006m" example:@"Order no. #%@%@"];
+        NSString *message2 = [Setting getValue:@"007m" example:@"Table: %@"];
+//        Receipt *receipt = _receiptList[section];
+//        NSString *showBuffetOrder = receipt.buffetReceiptID?@" (Buffet)":@"";
         CustomerTable *customerTable = [CustomerTable getCustomerTable:receipt.customerTableID];
-        cell.lblReceiptNo.text = [NSString stringWithFormat:message, receipt.receiptNoID, showBuffetOrder];
+        cell.lblReceiptNo.attributedText = attrString;
+//        cell.lblReceiptNo.text = [NSString stringWithFormat:message, receipt.receiptNoID, showBuffetOrder];
         cell.lblReceiptDate.text = [Utility dateToString:receipt.modifiedDate toFormat:@"d MMM yy HH:mm"];
         cell.lblBranchName.text = [NSString stringWithFormat:message2,customerTable.tableName];
         cell.lblBranchName.textColor = cSystem1;
@@ -717,13 +727,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             }
             [cell.lblMenuName sizeToFit];
             cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
-//            CGSize menuNameLabelSize = [self suggestedSizeWithFont:cell.lblMenuName.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:cell.lblMenuName.text];
-//            CGRect frame = cell.lblMenuName.frame;
-//            frame.size.width = menuNameLabelSize.width;
-//            frame.size.height = menuNameLabelSize.height;
-//            cell.lblMenuNameHeight.constant = menuNameLabelSize.height;
-//            cell.lblMenuName.frame = frame;
-            
+
             
             
             //note
@@ -789,17 +793,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
             
             
-//            CGSize noteLabelSize = [self suggestedSizeWithFont:cell.lblNote.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:[strAllNote string]];
-//            noteLabelSize.height = [Utility isStringEmpty:[strAllNote string]]?13.13:noteLabelSize.height;
-//            CGRect frame2 = cell.lblNote.frame;
-//            frame2.size.width = noteLabelSize.width;
-//            frame2.size.height = noteLabelSize.height;
-//            cell.lblNoteHeight.constant = noteLabelSize.height;
-//            cell.lblNote.frame = frame2;
-            
-            
-            
-            
+
             
             float totalAmount = orderTaking.specialPrice * orderTaking.quantity;
             NSString *strTotalAmount = [Utility formatDecimal:totalAmount withMinFraction:2 andMaxFraction:2];
@@ -976,9 +970,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             }
             [cell.lblMenuName sizeToFit];
             cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
-            //            CGSize menuNameLabelSize = [self suggestedSizeWithFont:cell.lblMenuName.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:cell.lblMenuName.text];
-            
-            
+          
             
             
             //note
@@ -1043,9 +1035,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             [cell.lblNote sizeToFit];
             cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
             
-            
-            //            CGSize noteLabelSize = [self suggestedSizeWithFont:cell.lblNote.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:[strAllNote string]];
-            //            noteLabelSize.height = [Utility isStringEmpty:[strAllNote string]]?13.13:noteLabelSize.height;
             
             
             float height = 8+cell.lblMenuNameHeight.constant+2+cell.lblNoteHeight.constant+8;
@@ -1114,9 +1103,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             }
             [cell.lblMenuName sizeToFit];
             cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
-//            CGSize menuNameLabelSize = [self suggestedSizeWithFont:cell.lblMenuName.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:cell.lblMenuName.text];
-            
-            
+
             
             
             //note
@@ -1181,13 +1168,8 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             [cell.lblNote sizeToFit];
             cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
             
-            
-//            CGSize noteLabelSize = [self suggestedSizeWithFont:cell.lblNote.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:[strAllNote string]];
-//            noteLabelSize.height = [Utility isStringEmpty:[strAllNote string]]?13.13:noteLabelSize.height;
-            
-            
+ 
             float height = 8+cell.lblMenuNameHeight.constant+2+cell.lblNoteHeight.constant+8;
-//            float height = menuNameLabelSize.height+noteLabelSize.height+8+8+2;
             return height;
         }
         else if(indexPath.item == [orderTakingList count])
@@ -1275,21 +1257,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         });
     }
 }
-//
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    if([tableView isEqual:tbvData])
-//    {
-//        if(section != 0)
-//        {
-//            UIView *topBorder = [[UIView alloc]initWithFrame:CGRectMake(16, 0, tableView.frame.size.width-16*2, 1)];
-//            topBorder.backgroundColor = cSystem4_10;
-//            return topBorder;
-//        }
-//    }
-//
-//    return nil;
-//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -1302,15 +1269,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         return tableView.sectionHeaderHeight;
     }
     return CGFLOAT_MIN;
-    
-//    if([tableView isEqual:tbvData])
-//    {
-//        if(section != 0)
-//        {
-//            return 1;
-//        }
-//    }
-//    return 0;
 }
 
 -(void)itemsDownloaded:(NSArray *)items
@@ -1367,7 +1325,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
     
     
     //update receipt
-    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:[Branch getCurrentBranch].branchID];
     Receipt *receipt = _receiptList[btnPrint.tag];
     receipt.toBeProcessing = 1;
     
@@ -1380,7 +1337,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
     
     self.homeModel = [[HomeModel alloc]init];
     self.homeModel.delegate = self;
-    [self.homeModel updateItems:dbJummumReceiptSendToKitchen withData:@[updateReceipt,maxReceiptModifiedDate] actionScreen:@"update JMM receipt"];
+    [self.homeModel updateItems:dbJummumReceiptSendToKitchen withData:updateReceipt actionScreen:@"update JMM receipt"];
 }
 
 -(void)deliver:(id)sender
@@ -1397,7 +1354,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
     
     
     //update receipt
-    NSDate *maxReceiptModifiedDate = [Receipt getMaxModifiedDateWithBranchID:[Branch getCurrentBranch].branchID];
     Receipt *receipt = _receiptList[btnPrint.tag];
     receipt.toBeProcessing = 1;
     
@@ -1410,7 +1366,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
     
     self.homeModel = [[HomeModel alloc]init];
     self.homeModel.delegate = self;
-    [self.homeModel updateItems:dbJummumReceiptDelivered withData:@[updateReceipt,maxReceiptModifiedDate] actionScreen:@"update JMM receipt"];
+    [self.homeModel updateItems:dbJummumReceiptDelivered withData:updateReceipt actionScreen:@"update JMM receipt"];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

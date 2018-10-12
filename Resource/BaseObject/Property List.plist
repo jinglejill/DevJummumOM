@@ -11,8 +11,8 @@
 	<key>SubjectNoConnection</key>
 	<string>No network connection</string>
 	<key>DetailNoConnection</key>
-	<string>You must be connected to the internet to use this app.</string>
-    <key>BundleID</key>
-    <string>com.JummumCo.JummumShop</string>
+	<string>The Internet connection appears to be offline</string>
+	<key>BundleID</key>
+	<string>com.JummumCo.JummumShop</string>
 </dict>
 </plist>

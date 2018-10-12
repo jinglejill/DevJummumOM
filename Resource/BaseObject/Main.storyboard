@@ -395,6 +395,102 @@
             </objects>
             <point key="canvasLocation" x="1809" y="621"/>
         </scene>
+        <!--Receipt-->
+        <scene sceneID="iiV-dg-OCL">
+            <objects>
+                <viewController id="WOb-k7-M3U" customClass="RunningReceiptViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="438-jU-MuT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RKE-tO-ghy">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="บิลใบเสร็จ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoS-T2-YP1">
+                                        <rect key="frame" x="16" y="12" width="343" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="FGE-Px-jQz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSO-tJ-8wt">
+                                        <rect key="frame" x="342" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="CCR-jn-vmN"/>
+                                            <constraint firstAttribute="width" constant="30" id="cMD-uX-OAJ"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="refresh.png"/>
+                                        <connections>
+                                            <action selector="refresh:" destination="WOb-k7-M3U" eventType="touchUpInside" id="i5b-QY-GB3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzd-Hh-LUr">
+                                        <rect key="frame" x="301" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Y67-fR-3h3"/>
+                                            <constraint firstAttribute="width" constant="30" id="nHx-B7-kJ4"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="printerGreenNo.png"/>
+                                        <connections>
+                                            <action selector="showPrintButton:" destination="WOb-k7-M3U" eventType="touchUpInside" id="SrD-Qi-KO8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="bzd-Hh-LUr" firstAttribute="centerY" secondItem="WoS-T2-YP1" secondAttribute="centerY" id="7ql-CY-2o6"/>
+                                    <constraint firstItem="WoS-T2-YP1" firstAttribute="top" secondItem="RKE-tO-ghy" secondAttribute="top" constant="12" id="7sT-Km-413"/>
+                                    <constraint firstAttribute="height" constant="44" id="9xe-aM-RBN"/>
+                                    <constraint firstAttribute="trailing" secondItem="WSO-tJ-8wt" secondAttribute="trailing" constant="3" id="LJq-25-7GN"/>
+                                    <constraint firstItem="WoS-T2-YP1" firstAttribute="leading" secondItem="RKE-tO-ghy" secondAttribute="leading" constant="16" id="aaI-WV-vfE"/>
+                                    <constraint firstAttribute="trailing" secondItem="WoS-T2-YP1" secondAttribute="trailing" constant="16" id="jza-3b-Zx6"/>
+                                    <constraint firstItem="WSO-tJ-8wt" firstAttribute="leading" secondItem="bzd-Hh-LUr" secondAttribute="trailing" constant="11" id="pGK-az-o8P"/>
+                                    <constraint firstItem="WSO-tJ-8wt" firstAttribute="centerY" secondItem="WoS-T2-YP1" secondAttribute="centerY" id="vvh-JZ-5sx"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="xxf-qc-84W">
+                                <rect key="frame" x="0.0" y="132" width="375" height="486"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aL8-Uv-qhf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="backgroundColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nNZ-1Q-WfB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RKE-tO-ghy" firstAttribute="trailing" secondItem="4eD-86-fLO" secondAttribute="trailing" id="Cqa-Qh-21Q"/>
+                            <constraint firstItem="aL8-Uv-qhf" firstAttribute="trailing" secondItem="4eD-86-fLO" secondAttribute="trailing" id="G1E-Ax-nHm"/>
+                            <constraint firstItem="aL8-Uv-qhf" firstAttribute="leading" secondItem="4eD-86-fLO" secondAttribute="leading" id="QO0-HH-7Dv"/>
+                            <constraint firstItem="xxf-qc-84W" firstAttribute="leading" secondItem="4eD-86-fLO" secondAttribute="leading" id="Rfm-0n-bAi"/>
+                            <constraint firstItem="RKE-tO-ghy" firstAttribute="leading" secondItem="4eD-86-fLO" secondAttribute="leading" id="Z19-xw-Edf"/>
+                            <constraint firstItem="xxf-qc-84W" firstAttribute="trailing" secondItem="4eD-86-fLO" secondAttribute="trailing" id="f1x-nv-qNp"/>
+                            <constraint firstItem="xxf-qc-84W" firstAttribute="top" secondItem="RKE-tO-ghy" secondAttribute="bottom" constant="44" id="gB3-uP-gCw"/>
+                            <constraint firstItem="RKE-tO-ghy" firstAttribute="top" secondItem="aL8-Uv-qhf" secondAttribute="bottom" id="ipA-qY-sMM"/>
+                            <constraint firstItem="xxf-qc-84W" firstAttribute="bottom" secondItem="4eD-86-fLO" secondAttribute="bottom" id="ipU-aG-CKr"/>
+                            <constraint firstItem="aL8-Uv-qhf" firstAttribute="top" secondItem="438-jU-MuT" secondAttribute="top" id="xHF-Z7-IAP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4eD-86-fLO"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Receipt" image="hourGlass2.png" id="3gS-e2-jGy"/>
+                    <connections>
+                        <outlet property="btnShowPrintButton" destination="bzd-Hh-LUr" id="YG6-kE-xXn"/>
+                        <outlet property="lblNavTitle" destination="WoS-T2-YP1" id="fHS-Bq-6Uc"/>
+                        <outlet property="tbvData" destination="xxf-qc-84W" id="uRb-0F-sj4"/>
+                        <outlet property="topViewHeight" destination="nNZ-1Q-WfB" id="kXO-d0-hyO"/>
+                        <segue destination="klu-a2-Uf2" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="xmA-gs-XIJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ceu-ix-jym" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="klu-a2-Uf2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="1305"/>
+        </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="AJc-TX-uxf">
             <objects>
@@ -793,6 +889,7 @@
                         <segue destination="OXe-is-SUn" kind="unwind" identifier="segUnwindToMe" unwindAction="unwindToMe:" id="zDt-hu-QEL"/>
                         <segue destination="OXe-is-SUn" kind="unwind" identifier="segUnwindToCustomerKitchen" animates="NO" unwindAction="unwindToCustomerKitchen:" id="hzn-Rs-u7F"/>
                         <segue destination="OXe-is-SUn" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="NSs-1n-iaH"/>
+                        <segue destination="OXe-is-SUn" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="FYa-od-3FU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="amo-bW-tNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -942,6 +1039,7 @@
                         <segue destination="vmU-p8-Lii" kind="unwind" identifier="segUnwindToMe" unwindAction="unwindToMe:" id="9Li-BT-3Dy"/>
                         <segue destination="vmU-p8-Lii" kind="unwind" identifier="segUnwindToCustomerKitchen" animates="NO" unwindAction="unwindToCustomerKitchen:" id="Hfm-Fk-KhQ"/>
                         <segue destination="vmU-p8-Lii" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="mRe-zu-MeC"/>
+                        <segue destination="vmU-p8-Lii" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="Znw-MF-sAi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UdO-ZA-1Cp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1041,6 +1139,7 @@
                         <segue destination="piV-Sx-JMu" kind="unwind" identifier="segUnwindToMe" unwindAction="unwindToMe:" id="LPT-a0-EwB"/>
                         <segue destination="piV-Sx-JMu" kind="unwind" identifier="segUnwindToCustomerKitchen" animates="NO" unwindAction="unwindToCustomerKitchen:" id="Q5y-gv-3Sq"/>
                         <segue destination="piV-Sx-JMu" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="0ui-ps-03X"/>
+                        <segue destination="piV-Sx-JMu" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="MyQ-DT-0FN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tz9-GF-Jh2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1156,6 +1255,7 @@
                         <segue destination="kZJ-Qv-ODE" kind="unwind" identifier="segUnwindToCustomerKitchen" animates="NO" unwindAction="unwindToCustomerKitchen:" id="bwN-St-pv8"/>
                         <segue destination="kZJ-Qv-ODE" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="Ci5-oN-Whp"/>
                         <segue destination="sDg-UQ-r5B" kind="show" identifier="segPrinterChoosing" id="hZN-A3-51Z"/>
+                        <segue destination="kZJ-Qv-ODE" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="4Ow-Bd-Q3H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lft-u4-kzm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1287,12 +1387,13 @@
                         <segue destination="luN-Dm-9gJ" kind="unwind" identifier="segUnwindToCustomerKitchen" animates="NO" unwindAction="unwindToCustomerKitchen:" id="h0e-9I-3QJ"/>
                         <segue destination="luN-Dm-9gJ" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="tjX-CU-e8I"/>
                         <segue destination="luN-Dm-9gJ" kind="unwind" identifier="segUnwindToPrinterSetting" unwindAction="unwindToPrinterSetting:" id="RUf-gB-5uz"/>
+                        <segue destination="luN-Dm-9gJ" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="pCB-Xa-UuL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaH-UA-auQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="luN-Dm-9gJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3390" y="-2259"/>
+            <point key="canvasLocation" x="3334" y="-2259"/>
         </scene>
         <!--Order Detail View Controller-->
         <scene sceneID="qtl-NZ-9bD">
@@ -1413,6 +1514,7 @@
                         <segue destination="dOc-Km-btJ" kind="presentation" identifier="segConfirmDispute" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="vSa-G8-BZk"/>
                         <segue destination="8Ok-4Q-dTd" kind="unwind" identifier="segUnwindToCustomerKitchen" unwindAction="unwindToCustomerKitchen:" id="VuB-P7-c5e"/>
                         <segue destination="8Ok-4Q-dTd" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="fTL-4y-nFs"/>
+                        <segue destination="8Ok-4Q-dTd" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="ZFq-Zk-dMf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NSK-5i-aen" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1511,6 +1613,7 @@
                         <segue destination="ioj-Ro-JdP" kind="unwind" identifier="segUnwindToOrderDetail" unwindAction="unwindToOrderDetail:" id="7Bw-iO-dbc"/>
                         <segue destination="z4l-rZ-sry" kind="show" identifier="segDisputeForm" id="8d7-Y9-TLl"/>
                         <segue destination="ioj-Ro-JdP" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="Mhd-Ph-vhK"/>
+                        <segue destination="ioj-Ro-JdP" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="nWs-AO-CUw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TUg-yJ-IMm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1645,6 +1748,7 @@
                         <segue destination="Ews-OR-sQr" kind="unwind" identifier="segUnwindToReceiptSummary" unwindAction="unwindToReceiptSummary:" id="aO3-CW-t0U"/>
                         <segue destination="Ews-OR-sQr" kind="unwind" identifier="segUnwindToCustomerKitchen" animates="NO" unwindAction="unwindToCustomerKitchen:" id="Cj4-lk-OmC"/>
                         <segue destination="Ews-OR-sQr" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="9wo-vs-7kD"/>
+                        <segue destination="Ews-OR-sQr" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="ZmA-Ot-Dfw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1t-If-Cq9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1659,7 +1763,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Vjg-G2-MtU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.15000000000000002" blue="0.2148148148148149" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.3529411764705882" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="selectedImageTintColor" red="0.3921568627" green="0.86274509799999999" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
@@ -1669,6 +1773,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="mH6-Gk-7OO" kind="relationship" relationship="viewControllers" id="PD3-CO-j6o"/>
+                        <segue destination="WOb-k7-M3U" kind="relationship" relationship="viewControllers" id="RU6-Qd-QRr"/>
                         <segue destination="wG5-UT-D17" kind="relationship" relationship="viewControllers" id="icD-RQ-XRL"/>
                     </connections>
                 </tabBarController>
@@ -1940,6 +2045,7 @@
                         <segue destination="8sR-xK-6DE" kind="unwind" identifier="segUnwindToCustomerKitchen" animates="NO" unwindAction="unwindToCustomerKitchen:" id="gsn-VW-bia"/>
                         <segue destination="8sR-xK-6DE" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="FAU-Xd-0Qp"/>
                         <segue destination="ZUD-R3-sYP" kind="show" identifier="segReportDetailsByDay" id="iu5-8m-QYV"/>
+                        <segue destination="8sR-xK-6DE" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="tSZ-bu-RLh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zkA-5u-3YK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2043,6 +2149,7 @@
                         <segue destination="uG3-cK-Iai" kind="unwind" identifier="segUnwindToCustomerKitchen" animates="NO" unwindAction="unwindToCustomerKitchen:" id="e3A-bB-hhY"/>
                         <segue destination="uG3-cK-Iai" kind="unwind" identifier="segUnwindToLaunchScreen" animates="NO" unwindAction="unwindToLaunchScreen:" id="cCx-P2-wpB"/>
                         <segue destination="uG3-cK-Iai" kind="unwind" identifier="segUnwindToReport" unwindAction="unwindToReport:" id="kk7-Ne-qRd"/>
+                        <segue destination="uG3-cK-Iai" kind="unwind" identifier="segUnwindToMainTabBar" unwindAction="unwindToMainTabBar:" id="ZAa-TH-gbn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcY-qe-DTb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2052,6 +2159,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="hourGlass2.png" width="30" height="30"/>
         <image name="jummumChef_lightGray.png" width="546" height="485"/>
         <image name="jummumLogoCrop2.png" width="1024" height="701"/>
         <image name="jummumOMLogo.png" width="891" height="1076"/>

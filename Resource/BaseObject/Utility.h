@@ -138,6 +138,8 @@ enum enumDB
     dbReceiptSummary,
     dbReceiptMaxModifiedDate,
     dbReceipt,
+    dbReceiptBuffetPage,
+    dbReceiptBuffetEndedPage,
     dbDisputeReason,
     dbDisputeReasonList,    
     dbDispute,
@@ -164,7 +166,10 @@ enum enumDB
     dbReportDaily,
     dbReportSummaryByDay,
     dbReportDetailsByDay,
-    dbReportDetailsByOrder
+    dbReportDetailsByOrder,
+    dbReceiptBuffetEnded,
+    dbReceiptBuffetEndedGet,
+    dbReceiptBuffetEndedTapGet
 
 };
 
@@ -284,7 +289,10 @@ enum enumUrl
     urlReportDailyGetList,
     urlReportSummaryByDayGet,
     urlReportDetailsByDayGetList,
-    urlReportDetailsByOrderGetList
+    urlReportDetailsByOrderGetList,
+    urlReceiptBuffetPageGetList,
+    urlReceiptBuffetEndedPageGetList,
+    urlReceiptBuffetEndedUpdate
 
 
     

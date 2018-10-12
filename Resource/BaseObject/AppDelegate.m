@@ -18,6 +18,7 @@
 #import "PrinterChoosingViewController.h"
 #import "ReportViewController.h"
 #import "ReportDetailsByDayViewController.h"
+#import "RunningReceiptViewController.h"
 #import "HomeModel.h"
 #import "Utility.h"
 #import "PushSync.h"
@@ -195,15 +196,7 @@ void myExceptionHandler(NSException *exception)
 //        [FIRMessaging messaging].delegate = self;
     }
     
-    
-//    //load shared at the begining of everyday
-//    NSDictionary *todayLoadShared = [[NSUserDefaults standardUserDefaults] dictionaryForKey:@"todayLoadShared"];
-//    NSString *strCurrentDate = [Utility dateToString:[Utility currentDateTime] toFormat:@"yyyy-MM-dd"];
-//    NSString *alreadyLoaded = [todayLoadShared objectForKey:strCurrentDate];
-//    if(!alreadyLoaded)
-//    {
-//        [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithObject:@"1" forKey:strCurrentDate] forKey:@"todayLoadShared"];
-//    }
+
     
     
     #if (TARGET_OS_SIMULATOR)
@@ -258,16 +251,7 @@ void myExceptionHandler(NSException *exception)
     
     
     
-    if([currentVc isKindOfClass:[CustomerKitchenViewController class]])
-    {
-    }
-    else if([currentVc isKindOfClass:[OrderDetailViewController class]])
-    {
-    }
-    else
-    {
-        completionHandler(UNNotificationPresentationOptionAlert);
-    }
+    
     ////////
     
     if([userInfo objectForKey:@"localNoti"])
@@ -315,15 +299,37 @@ void myExceptionHandler(NSException *exception)
     }
     else
     {
+        //customer send noti -> update status = cancel&dispute, printKitchenBill = pay order
+        //shop another device send noti -> processing, delivered move to processed and delivered tab
+        //shop another device send noti -> clear move to clear tab
+        //updateStatus move to issue tab
+        //reminder not use anymore, use local noti instead
         NSDictionary *myAps = [userInfo objectForKey:@"aps"];
         NSString *categoryIdentifier = [myAps objectForKey:@"category"];
-        if([categoryIdentifier isEqualToString:@"updateStatus"] || [categoryIdentifier isEqualToString:@"printKitchenBill"] || [categoryIdentifier isEqualToString:@"reminder"] || [categoryIdentifier isEqualToString:@"processing"] || [categoryIdentifier isEqualToString:@"delivered"] || [categoryIdentifier isEqualToString:@"clear"])
+        if([categoryIdentifier isEqualToString:@"updateStatus"] || [categoryIdentifier isEqualToString:@"printKitchenBill"] || [categoryIdentifier isEqualToString:@"processing"] || [categoryIdentifier isEqualToString:@"delivered"] || [categoryIdentifier isEqualToString:@"clear"])
         {
+            if(![currentVc isKindOfClass:[CustomerKitchenViewController class]] && ![currentVc isKindOfClass:[OrderDetailViewController class]])
+            {
+                completionHandler(UNNotificationPresentationOptionAlert);
+            }
             NSDictionary *data = [myAps objectForKey:@"data"];
             NSNumber *receiptID = [data objectForKey:@"receiptID"];
             _homeModel = [[HomeModel alloc]init];
             _homeModel.delegate = self;
             [_homeModel downloadItems:dbJummumReceipt withData:receiptID];
+        }
+        else if([categoryIdentifier isEqualToString:@"buffetEnded"])
+        {
+            if(![currentVc isKindOfClass:[RunningReceiptViewController class]])
+            {
+                completionHandler(UNNotificationPresentationOptionAlert);
+            }
+    
+            NSDictionary *data = [myAps objectForKey:@"data"];
+            NSNumber *receiptID = [data objectForKey:@"receiptID"];
+            _homeModel = [[HomeModel alloc]init];
+            _homeModel.delegate = self;
+            [_homeModel downloadItems:dbReceiptBuffetEndedGet withData:receiptID];
         }
         else if([categoryIdentifier isEqualToString:@"openingTime"])
         {
@@ -436,6 +442,14 @@ void myExceptionHandler(NSException *exception)
             _homeModel = [[HomeModel alloc]init];
             _homeModel.delegate = self;
             [_homeModel downloadItems:dbJummumReceiptTapNotificationClear withData:receiptID];
+        }
+        else if([categoryIdentifier isEqualToString:@"buffetEnded"])
+        {
+            NSDictionary *data = [myAps objectForKey:@"data"];
+            NSNumber *receiptID = [data objectForKey:@"receiptID"];
+            _homeModel = [[HomeModel alloc]init];
+            _homeModel.delegate = self;
+            [_homeModel downloadItems:dbReceiptBuffetEndedTapGet withData:receiptID];
         }
     }
 }
@@ -640,7 +654,11 @@ void myExceptionHandler(NSException *exception)
         OrderDetailViewController *vc = (OrderDetailViewController *)currentVc;
         [vc refresh:nil];
     }
-
+    else if([currentVc isKindOfClass:[RunningReceiptViewController class]])
+    {
+        RunningReceiptViewController *vc = (RunningReceiptViewController *)currentVc;
+        [vc refresh:nil];
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
@@ -688,6 +706,88 @@ void myExceptionHandler(NSException *exception)
         {
             OrderDetailViewController *vc = (OrderDetailViewController *)currentVc;
             [vc reloadTableView];
+        }
+        else if([currentVc isKindOfClass:[RunningReceiptViewController class]])
+        {
+            RunningReceiptViewController *vc = (RunningReceiptViewController *)currentVc;
+            [vc reloadTableView];
+        }
+    }
+    else if(homeModel.propCurrentDB == dbReceiptBuffetEndedGet)
+    {
+        [Utility updateSharedObject:items];
+        NSMutableArray *receiptList = items[0];
+        Receipt *receipt = receiptList[0];
+        
+        //Get current vc
+        CustomViewController *currentVc;
+        CustomViewController *parentViewController = (CustomViewController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
+        
+        while (parentViewController.presentedViewController != nil && ![parentViewController.presentedViewController isKindOfClass:[UIAlertController class]])
+        {
+            parentViewController = (CustomViewController *)parentViewController.presentedViewController;
+        }
+        if([parentViewController isKindOfClass:[UITabBarController class]])
+        {
+            currentVc = ((UITabBarController *)parentViewController).selectedViewController;
+        }
+        else
+        {
+            currentVc = parentViewController;
+        }
+        
+        
+        
+        if([currentVc isKindOfClass:[RunningReceiptViewController class]])
+        {
+            RunningReceiptViewController *vc = (RunningReceiptViewController *)currentVc;
+            vc.selectedReceipt = receipt;
+            [vc reloadTableView];
+        }
+    }
+    else if(homeModel.propCurrentDB == dbReceiptBuffetEndedTapGet)
+    {
+        [Utility updateSharedObject:items];
+        NSMutableArray *receiptList = items[0];
+        Receipt *receipt = receiptList[0];
+        
+        //Get current vc
+        CustomViewController *currentVc;
+        CustomViewController *parentViewController = (CustomViewController *)[[[UIApplication sharedApplication] delegate] window].rootViewController;
+        
+        while (parentViewController.presentedViewController != nil && ![parentViewController.presentedViewController isKindOfClass:[UIAlertController class]])
+        {
+            parentViewController = (CustomViewController *)parentViewController.presentedViewController;
+        }
+        if([parentViewController isKindOfClass:[UITabBarController class]])
+        {
+            currentVc = ((UITabBarController *)parentViewController).selectedViewController;
+        }
+        else
+        {
+            currentVc = parentViewController;
+        }
+        
+        
+        
+        if([currentVc isKindOfClass:[RunningReceiptViewController class]])
+        {
+            RunningReceiptViewController *vc = (RunningReceiptViewController *)currentVc;
+            vc.selectedReceipt = receipt;
+            [vc reloadTableView];
+        }
+        else if([currentVc isKindOfClass:[CustomerKitchenViewController class]] || [currentVc isKindOfClass:[MeViewController class]])
+        {
+            currentVc.tabBarController.selectedIndex = 1;
+            RunningReceiptViewController *vc = currentVc.tabBarController.selectedViewController;
+            vc.selectedReceipt = receipt;
+            [vc reloadTableView];
+        }
+        else
+        {
+            currentVc.showRunningReceipt = 1;
+            currentVc.selectedReceipt = receipt;
+            [currentVc performSegueWithIdentifier:@"segUnwindToMainTabBar" sender:self];
         }
     }
     else if(homeModel.propCurrentDB == dbJummumReceiptTapNotification)

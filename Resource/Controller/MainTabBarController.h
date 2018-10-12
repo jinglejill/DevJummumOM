@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MainTabBarController : UITabBarController
+@interface MainTabBarController : UITabBarController<UITabBarDelegate>
+-(IBAction)unwindToMainTabBar:(UIStoryboardSegue *)segue;
 @end

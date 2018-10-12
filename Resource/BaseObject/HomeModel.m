@@ -117,6 +117,8 @@
         }
             break;
         case dbReceipt:
+        case dbReceiptBuffetPage:
+        case dbReceiptBuffetEndedPage:
         {
             arrClassName = @[@"Receipt"];
         }
@@ -141,6 +143,8 @@
         case dbReceiptMaxModifiedDate:
         case dbJummumReceiptTapNotification:
         case dbJummumReceiptTapNotificationIssue:
+        case dbReceiptBuffetEndedGet:
+        case dbReceiptBuffetEndedTapGet:
         {
             arrClassName = @[@"Receipt",@"OrderTaking",@"OrderNote",@"Dispute"];
         }
@@ -167,6 +171,7 @@
             arrClassName = @[@"ReportDaily",@"ReportDetailsByOrder"];
         }
             break;
+            
         default:
             break;
     }
@@ -241,7 +246,7 @@
                 // Ready to notify delegate that data is ready and pass back items
                 if (self.delegate)
                 {
-                    if(propCurrentDB == dbJummumReceipt || propCurrentDB == dbJummumReceiptTapNotification || propCurrentDB == dbJummumReceiptTapNotificationIssue || propCurrentDB == dbOpeningTimeText || propCurrentDB == dbSetting || propCurrentDB == dbReportDetailsByDay || propCurrentDB == dbReportDetailsByOrder)
+                    if(propCurrentDB == dbJummumReceipt || propCurrentDB == dbJummumReceiptTapNotification || propCurrentDB == dbJummumReceiptTapNotificationIssue || propCurrentDB == dbReceiptBuffetEndedGet || propCurrentDB == dbReceiptBuffetEndedTapGet || propCurrentDB == dbOpeningTimeText || propCurrentDB == dbSetting || propCurrentDB == dbReportDetailsByDay || propCurrentDB == dbReportDetailsByOrder || propCurrentDB == dbReceiptBuffetPage || propCurrentDB == dbReceiptBuffetEndedPage)
                     {
                         [self.delegate itemsDownloaded:arrItem manager:self];
                     }
@@ -501,6 +506,8 @@
         case dbJummumReceipt:
         case dbJummumReceiptTapNotification:
         case dbJummumReceiptTapNotificationIssue:
+        case dbReceiptBuffetEndedGet:
+        case dbReceiptBuffetEndedTapGet:
         {
             NSNumber *receiptID = (NSNumber *)data;
             
@@ -546,6 +553,29 @@
             noteDataString = [NSString stringWithFormat:@"branch=%ld&receiptDate=%@",branch.branchID, strReceiptDate];
             url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlReportDetailsByDayGetList]]];
         }
+            break;
+        case dbReceiptBuffetPage:
+        {
+            NSArray *dataList = (NSArray *)data;
+            Branch *branch = dataList[0];
+            NSNumber *objPage = dataList[1];
+            NSNumber *objPerPage = dataList[2];
+            
+            noteDataString = [NSString stringWithFormat:@"branchID=%ld&page=%ld&perPage=%ld",branch.branchID,[objPage integerValue],[objPerPage integerValue]];
+            url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlReceiptBuffetPageGetList]]];
+        }
+            break;
+        case dbReceiptBuffetEndedPage:
+        {
+            NSArray *dataList = (NSArray *)data;
+            Branch *branch = dataList[0];
+            NSNumber *objPage = dataList[1];
+            NSNumber *objPerPage = dataList[2];
+            
+            noteDataString = [NSString stringWithFormat:@"branchID=%ld&page=%ld&perPage=%ld",branch.branchID,[objPage integerValue],[objPerPage integerValue]];
+            url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlReceiptBuffetEndedPageGetList]]];
+        }
+            break;
         default:
             break;
     }
@@ -892,7 +922,9 @@
         {
             if (self.delegate)
             {
-                [self.delegate itemsFail];
+                CustomViewController *vc = (CustomViewController *)self.delegate;
+                [vc showAlert:@"" message:[error localizedDescription] method:@selector(removeOverlayViews)];
+//                [self.delegate itemsFail];
                 //                [self.delegate connectionFail];
             }
             
@@ -1032,11 +1064,7 @@
         case dbJummumReceiptSendToKitchen:
         case dbJummumReceiptDelivered:
         {
-            NSArray *dataList =  (NSArray *)data;
-            Receipt *receipt = dataList[0];
-//            NSDate *maxModifiedDate = dataList[1];
-            noteDataString = [Utility getNoteDataString:receipt];
-//            noteDataString = [NSString stringWithFormat:@"%@&maxModifiedDate=%@",noteDataString,maxModifiedDate];
+            noteDataString = [Utility getNoteDataString:data];
             url = [NSURL URLWithString:[Utility url:urlJummumReceiptSendToKitchen]];
         }
         break;
@@ -1045,6 +1073,13 @@
             noteDataString = [Utility getNoteDataString:data];
             url = [NSURL URLWithString:[Utility url:urlSettingUpdate]];
         }
+        break;
+        case dbReceiptBuffetEnded:
+        {
+            noteDataString = [Utility getNoteDataString:data];
+            url = [NSURL URLWithString:[Utility url:urlReceiptBuffetEndedUpdate]];
+        }
+        break;
         default:
             break;
     }

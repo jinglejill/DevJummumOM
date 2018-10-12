@@ -242,6 +242,15 @@ extern NSString *globalBundleID;
         case urlReportDetailsByOrderGetList:
             url = @"JMSReportDetailsByOrderGetList.php";
             break;
+        case urlReceiptBuffetPageGetList:
+            url = @"JMSReceiptBuffetPageGetList.php";
+            break;
+        case urlReceiptBuffetEndedPageGetList:
+            url = @"JMSReceiptBuffetEndedPageGetList.php";
+            break;
+        case urlReceiptBuffetEndedUpdate:
+            url = @"JMSReceiptBuffetEndedUpdate.php";
+            break;
         default:
             break;
     }

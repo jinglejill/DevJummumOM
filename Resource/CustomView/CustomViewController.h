@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HomeModel.h"
 #import "Utility.h"
+#import "Receipt.h"
 #import <MessageUI/MFMailComposeViewController.h>
 
 
@@ -28,7 +29,10 @@
 @property (nonatomic) BOOL processingComing;
 @property (nonatomic) BOOL deliveredComing;
 @property (nonatomic) BOOL clearComing;
+@property (nonatomic) BOOL showRunningReceipt;
 @property (nonatomic,retain) UIToolbar *toolBar;
+@property (nonatomic,retain) Receipt *selectedReceipt;
+
 
 
 -(void)setCurrentVc;

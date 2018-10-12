@@ -8,16 +8,32 @@
 
 #import "MainTabBarController.h"
 #import "CustomerKitchenViewController.h"
+#import "RunningReceiptViewController.h"
+#import "Setting.h"
+#import "Receipt.h"
 
 
 @interface MainTabBarController ()
-
+{
+    BOOL _switchToRunningReceiptTab;
+    Receipt *_selectedReceipt;
+}
 @end
 
 @implementation MainTabBarController
 
 
-- (void)viewDidLoad {
+-(IBAction)unwindToMainTabBar:(UIStoryboardSegue *)segue
+{
+    CustomViewController *vc = segue.sourceViewController;
+    _switchToRunningReceiptTab = 1;
+    _selectedReceipt = vc.selectedReceipt;
+    [self viewDidAppear:NO];
+    NSLog(@"unwindToMainTabBar");
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
@@ -26,22 +42,30 @@
     
     [[UITabBar appearance] setBarTintColor:cSystem3];
     
-
+    
+    BOOL hasBuffetMenu = [[Setting getSettingValueWithKeyName:@"hasBuffetMenu"] boolValue];
+    if(!hasBuffetMenu)
+    {
+        NSMutableArray *items = [NSMutableArray arrayWithArray:self.viewControllers];
+        [items removeObjectAtIndex:1];
+        [self setViewControllers:items animated:NO];
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"viewDidAppear mainTabBar");
+    [super viewDidAppear:animated];
+    
+    if(_switchToRunningReceiptTab)
+    {
+        _switchToRunningReceiptTab = 0;
+        self.selectedIndex = 1;
+        
+        
+        RunningReceiptViewController *vc = (RunningReceiptViewController *)self.selectedViewController;
+        vc.selectedReceipt = _selectedReceipt;
+        [vc reloadTableView];
+    }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

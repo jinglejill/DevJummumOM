@@ -14,6 +14,9 @@
 		EF14CC47216359540035A292 /* printerGreenNo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF14CC45216359540035A292 /* printerGreenNo.png */; };
 		EF14CDE621647FE90035A292 /* CustomTableViewCellButtonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = EF14CDE421647FE90035A292 /* CustomTableViewCellButtonLabel.m */; };
 		EF14CDE721647FE90035A292 /* CustomTableViewCellButtonLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = EF14CDE521647FE90035A292 /* CustomTableViewCellButtonLabel.xib */; };
+		EF14CE52216B89B80035A292 /* hourGlass.png in Resources */ = {isa = PBXBuildFile; fileRef = EF14CE51216B89B70035A292 /* hourGlass.png */; };
+		EF14CE56216B8AB80035A292 /* RunningReceiptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF14CE54216B8AB80035A292 /* RunningReceiptViewController.m */; };
+		EF14CE59216C2F930035A292 /* hourGlass2.png in Resources */ = {isa = PBXBuildFile; fileRef = EF14CE58216C2F920035A292 /* hourGlass2.png */; };
 		EF33CDBA211C312800560C69 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33CDB9211C312800560C69 /* ViewController.m */; };
 		EF33CDBF211C312A00560C69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF33CDBE211C312A00560C69 /* Assets.xcassets */; };
 		EF33CDC2211C312A00560C69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF33CDC0211C312A00560C69 /* LaunchScreen.storyboard */; };
@@ -367,6 +370,10 @@
 		EF14CDE321647FE90035A292 /* CustomTableViewCellButtonLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellButtonLabel.h; sourceTree = "<group>"; };
 		EF14CDE421647FE90035A292 /* CustomTableViewCellButtonLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellButtonLabel.m; sourceTree = "<group>"; };
 		EF14CDE521647FE90035A292 /* CustomTableViewCellButtonLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellButtonLabel.xib; sourceTree = "<group>"; };
+		EF14CE51216B89B70035A292 /* hourGlass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourGlass.png; sourceTree = "<group>"; };
+		EF14CE53216B8AB80035A292 /* RunningReceiptViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunningReceiptViewController.h; sourceTree = "<group>"; };
+		EF14CE54216B8AB80035A292 /* RunningReceiptViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunningReceiptViewController.m; sourceTree = "<group>"; };
+		EF14CE58216C2F920035A292 /* hourGlass2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hourGlass2.png; sourceTree = "<group>"; };
 		EF33CDB2211C312800560C69 /* DevJummumOM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DevJummumOM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF33CDB8211C312800560C69 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		EF33CDB9211C312800560C69 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -1036,6 +1043,8 @@
 		EF33D3FE211C371D00560C69 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				EF14CE58216C2F920035A292 /* hourGlass2.png */,
+				EF14CE51216B89B70035A292 /* hourGlass.png */,
 				EF14CC44216359540035A292 /* printerGreen.png */,
 				EF14CC45216359540035A292 /* printerGreenNo.png */,
 				EFA4E3602156BF3C004C0ECF /* badgeGray.png */,
@@ -1125,6 +1134,8 @@
 				EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */,
 				EFDAFE62214FD2A000A2596D /* ReportDetailsByDayViewController.h */,
 				EFDAFE63214FD2A000A2596D /* ReportDetailsByDayViewController.m */,
+				EF14CE53216B8AB80035A292 /* RunningReceiptViewController.h */,
+				EF14CE54216B8AB80035A292 /* RunningReceiptViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1700,6 +1711,7 @@
 				EF33D66C211C371F00560C69 /* Prompt-MediumItalic.ttf in Resources */,
 				EF33D638211C371F00560C69 /* CustomTableViewCellSearchBar.xib in Resources */,
 				EF33D642211C371F00560C69 /* CustomTableViewCellVoucherCode.xib in Resources */,
+				EF14CE52216B89B80035A292 /* hourGlass.png in Resources */,
 				EF33D65A211C371F00560C69 /* CustomTableViewCellImageText.xib in Resources */,
 				EF33D687211C371F00560C69 /* Prompt-SemiBold.ttf in Resources */,
 				EF33D58E211C371E00560C69 /* iOSDeviceModelMapping.plist in Resources */,
@@ -1816,6 +1828,7 @@
 				EF5D2A41212F3C400073F1A1 /* printer.png in Resources */,
 				EF33D695211C371F00560C69 /* Prompt-ExtraBoldItalic.ttf in Resources */,
 				EF33D629211C371F00560C69 /* CustomTableViewCellCreditCard.xib in Resources */,
+				EF14CE59216C2F930035A292 /* hourGlass2.png in Resources */,
 				EF33D654211C371F00560C69 /* CustomTableViewCellNote.xib in Resources */,
 				EF33D5AD211C371E00560C69 /* list.png in Resources */,
 				EF33D5B8211C371E00560C69 /* Icon-Small-50.png in Resources */,
@@ -2068,6 +2081,7 @@
 				EF33D61C211C371F00560C69 /* RewardPoint.m in Sources */,
 				EF33D5DE211C371E00560C69 /* PromotionMenu.m in Sources */,
 				EF5D2A61212F41270073F1A1 /* ModelCapability.m in Sources */,
+				EF14CE56216B8AB80035A292 /* RunningReceiptViewController.m in Sources */,
 				EF33D5C8211C371E00560C69 /* TermsOfServiceViewController.m in Sources */,
 				EF33D5F9211C371E00560C69 /* TableNo.m in Sources */,
 				EF33D5DF211C371E00560C69 /* SharedUserRewardRedemptionUsed.m in Sources */,
