@@ -54,16 +54,16 @@ CGFloat animatedDistance;
     [super viewDidLayoutSubviews];
     
     
-    //triangle band
-    UIImageView *demoView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"triangle_dev_om.png"]];
-    CGRect frame = demoView.frame;
-    frame.size.width = 64;
-    frame.size.height = 64;
-    frame.origin.x = self.view.frame.size.width - frame.size.width;
-    frame.origin.y = 0;
-    demoView.frame = frame;
-    [self.view addSubview:demoView];
-    demoView.layer.zPosition = 1;
+//    //triangle band
+//    UIImageView *demoView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"triangle_dev_om.png"]];
+//    CGRect frame = demoView.frame;
+//    frame.size.width = 64;
+//    frame.size.height = 64;
+//    frame.origin.x = self.view.frame.size.width - frame.size.width;
+//    frame.origin.y = 0;
+//    demoView.frame = frame;
+//    [self.view addSubview:demoView];
+//    demoView.layer.zPosition = 1;
     
 }
 

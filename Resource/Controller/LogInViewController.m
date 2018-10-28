@@ -41,6 +41,7 @@
 @synthesize lblOrBottom;
 @synthesize imgVwLogoText;
 @synthesize lblLogInTop;
+@synthesize lblLogInBottom;
 
 
 -(IBAction)unwindToLogIn:(UIStoryboardSegue *)segue
@@ -80,7 +81,10 @@
     
     
     
-    lblLogInTop.constant = 7 + bottomPadding;
+//    lblLogInTop.constant = 7 + bottomPadding;
+    float spaceHeading = bottomPadding?30:0;
+    lblLogInTop.constant = 7 + spaceHeading;
+    lblLogInBottom.constant = 7 + spaceHeading;
     if(bottom+286+40>self.view.frame.size.height)
     {
         //hide jummum text

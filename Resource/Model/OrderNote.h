@@ -12,15 +12,16 @@
 @property (nonatomic) NSInteger orderNoteID;
 @property (nonatomic) NSInteger orderTakingID;
 @property (nonatomic) NSInteger noteID;
+@property (nonatomic) float quantity;
 @property (retain, nonatomic) NSString * modifiedUser;
 @property (retain, nonatomic) NSDate * modifiedDate;
 
 
-
-
 @property (nonatomic) NSInteger branchID;
 
--(OrderNote *)initWithOrderTakingID:(NSInteger)orderTakingID noteID:(NSInteger)noteID;
+
+- (NSDictionary *)dictionary;
+-(OrderNote *)initWithOrderTakingID:(NSInteger)orderTakingID noteID:(NSInteger)noteID quantity:(float)quantity;
 +(NSInteger)getNextID;
 +(void)addObject:(OrderNote *)orderNote;
 +(void)addList:(NSMutableArray *)orderNoteList;

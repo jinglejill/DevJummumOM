@@ -560,7 +560,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         
         
         Receipt *receipt = _receiptList[section];
-//        NSString *showBuffetOrder = receipt.buffetReceiptID?@" (Buffet)":@"";
         UIColor *color = cSystem4;
         NSDictionary *attribute = @{NSForegroundColorAttributeName:color};
         NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"Order no. #%@",receipt.receiptNoID] attributes:attribute];
@@ -574,13 +573,9 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             [attrString appendAttributedString:attrString2];
         }
         
-//        NSString *message = [Setting getValue:@"006m" example:@"Order no. #%@%@"];
         NSString *message2 = [Setting getValue:@"007m" example:@"Table: %@"];
-//        Receipt *receipt = _receiptList[section];
-//        NSString *showBuffetOrder = receipt.buffetReceiptID?@" (Buffet)":@"";
         CustomerTable *customerTable = [CustomerTable getCustomerTable:receipt.customerTableID];
         cell.lblReceiptNo.attributedText = attrString;
-//        cell.lblReceiptNo.text = [NSString stringWithFormat:message, receipt.receiptNoID, showBuffetOrder];
         cell.lblReceiptDate.text = [Utility dateToString:receipt.modifiedDate toFormat:@"d MMM yy HH:mm"];
         cell.lblBranchName.text = [NSString stringWithFormat:message2,customerTable.tableName];
         cell.lblBranchName.textColor = cSystem1;

@@ -238,6 +238,8 @@ static NSString * const reuseIdentifierReceiptSummary = @"CustomTableViewCellRec
     _page = 1;
     _pageEnded = 1;
     _perPage = 10;
+    _lastItemReached = NO;
+    _lastItemReachedEnded = NO;
     _selectedTypeIndex = 0;
     _indexPathNew = nil;
     _indexPathPrinted = nil;
@@ -702,6 +704,7 @@ static NSString * const reuseIdentifierReceiptSummary = @"CustomTableViewCellRec
     if(_selectedTypeIndex == 0)
     {
         _page = 1;
+        _lastItemReached = NO;
         Branch *branch = [Branch getCurrentBranch];
         self.homeModel = [[HomeModel alloc]init];
         self.homeModel.delegate = self;
@@ -710,6 +713,7 @@ static NSString * const reuseIdentifierReceiptSummary = @"CustomTableViewCellRec
     else
     {
         _pageEnded = 1;
+        _lastItemReachedEnded = NO;
         Branch *branch = [Branch getCurrentBranch];
         self.homeModel = [[HomeModel alloc]init];
         self.homeModel.delegate = self;

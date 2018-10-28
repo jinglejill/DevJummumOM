@@ -283,6 +283,7 @@
                         <outlet property="btnRegisterNow" destination="eNB-fN-xZC" id="Lc8-oC-7nJ"/>
                         <outlet property="btnRememberMe" destination="9iM-JL-8ef" id="8ug-pK-8xG"/>
                         <outlet property="imgVwValueHeight" destination="0mF-U6-cC0" id="c0s-4f-wgS"/>
+                        <outlet property="lblLogInBottom" destination="TII-ZX-NO1" id="w2n-UM-r0N"/>
                         <outlet property="lblLogInTop" destination="vfL-A6-OUI" id="7Iu-1Z-n5b"/>
                         <outlet property="lblOrBottom" destination="bKf-dX-mvb" id="qkB-Ba-pWR"/>
                         <outlet property="txtEmail" destination="cWW-EM-GZm" id="zuo-gy-lcw"/>
@@ -2170,6 +2171,6 @@
         <image name="refresh.png" width="192" height="192"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MDz-RH-tSw"/>
+        <segue reference="DCf-pC-0Ih"/>
     </inferredMetricsTieBreakers>
 </document>
