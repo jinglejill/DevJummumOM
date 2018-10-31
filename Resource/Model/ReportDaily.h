@@ -12,10 +12,12 @@
 @property (retain, nonatomic) NSDate * receiptDate;
 @property (nonatomic) float balance;
 @property (nonatomic) float totalAmount;
+@property (nonatomic) float specialPriceDiscount;
 @property (nonatomic) float discountValue;
 @property (nonatomic) float afterDiscount;
 @property (nonatomic) float serviceChargeValue;
 @property (nonatomic) float vatValue;
+@property (nonatomic) float beforeVat;
 @property (nonatomic) float netTotal;
 @property (nonatomic) float transactionFeeValue;
 @property (nonatomic) float jummumPayValue;

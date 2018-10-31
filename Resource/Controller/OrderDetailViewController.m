@@ -198,7 +198,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
         }
         else if(section == 1)
         {
-            return 8;//remark,total items,discount,after discount,service charge,vat,net total,pay by
+            return 10;//remark,total items,specialPriceDiscount,discount,after discount,service charge,vat,net total,before vat,pay by
         }
         else if(section == 2)
         {
@@ -397,6 +397,31 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                     break;
                     case 2:
                     {
+                        //specialDiscount
+                        CustomTableViewCellTotal *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierTotal];
+                        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        
+                        
+                        NSString *strAmount = [Utility formatDecimal:receipt.specialPriceDiscount withMinFraction:2 andMaxFraction:2];
+                        strAmount = [Utility addPrefixBahtSymbol:strAmount];
+                        strAmount = [NSString stringWithFormat:@"-%@",strAmount];
+                        
+                        
+                        cell.lblTitle.text = @"ส่วนลด";
+                        cell.lblAmount.text = strAmount;
+                        cell.vwTopBorder.hidden = YES;
+                        cell.lblTitle.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
+                        cell.lblTitle.textColor = [UIColor darkGrayColor];
+                        cell.lblAmount.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15];
+                        cell.lblAmount.textColor = cSystem2;
+                        cell.hidden = receipt.discountAmount == 0;
+                        
+                        
+                        return cell;
+                    }
+                    break;
+                    case 3:
+                    {
                         //discount
                         CustomTableViewCellTotal *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierTotal];
                         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -425,7 +450,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                         return cell;
                     }
                     break;
-                    case 3:
+                    case 4:
                     {
                         //after discount
                         CustomTableViewCellTotal *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierTotal];
@@ -448,7 +473,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                         return  cell;
                     }
                     break;
-                    case 4:
+                    case 5:
                     {
                         //service charge
                         CustomTableViewCellTotal *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierTotal];
@@ -476,7 +501,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                         return cell;
                     }
                     break;
-                    case 5:
+                    case 6:
                     {
                         //vat
                         CustomTableViewCellTotal *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierTotal];
@@ -505,7 +530,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                         return cell;
                     }
                     break;
-                    case 6:
+                    case 7:
                     {
                         //net total
                         CustomTableViewCellTotal *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierTotal];
@@ -530,18 +555,36 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                         return cell;
                     }
                     break;
-                    case 7:
+                    case 8:
+                    {
+                        //beforeVat
+                        CustomTableViewCellTotal *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierTotal];
+                        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                        
+                       
+                        NSString *strAmount = [Utility formatDecimal:receipt.beforeVat withMinFraction:2 andMaxFraction:2];
+                        strAmount = [Utility addPrefixBahtSymbol:strAmount];
+                        
+                        cell.lblTitle.text = @"ราคารวมก่อน Vat";
+                        cell.lblAmount.text = strAmount;
+                        cell.vwTopBorder.hidden = YES;
+                        cell.lblTitle.textColor = cSystem4;
+                        cell.lblTitle.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
+                        cell.lblAmount.textColor = cSystem4;
+                        cell.lblAmount.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
+                        cell.hidden = branch.percentVat == 0;
+                        
+                        
+                        return cell;
+                    }
+                    break;
+                    case 9:
                     {
                         //pay by
                         CustomTableViewCellLabelLabel *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierLabelLabel];
                         cell.selectionStyle = UITableViewCellSelectionStyleNone;
                         
-                        
-                        NSString *strStatus = [Receipt getStrStatus:receipt];
                         UIColor *color = cSystem4;
-                        
-                        
-                        
                         UIFont *font = [UIFont fontWithName:@"Prompt-SemiBold" size:14.0f];
                         NSDictionary *attribute = @{NSForegroundColorAttributeName:color ,NSFontAttributeName: font};
                         NSMutableAttributedString *attrStringStatus = [[NSMutableAttributedString alloc] initWithString:[Receipt maskCreditCardNo:receipt] attributes:attribute];
@@ -1498,26 +1541,35 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                 Branch *branch = [Branch getBranch:receipt.branchID];
                 switch (item)
                 {
-                    case 0:
-                        return 26;
-                        break;
+//                    case 0:
+//                        return 26;
+//                        break;
                     case 1:
                         return 26;
                         break;
                     case 2:
-                        return receipt.discountAmount > 0?26:0;
+                        return receipt.specialPriceDiscount == 0?0:26;
                         break;
                     case 3:
-                        return 26;
+                        return receipt.discountAmount > 0?26:0;
                         break;
                     case 4:
-                        return branch.serviceChargePercent > 0?26:0;
+                        return 26;
                         break;
                     case 5:
-                        return branch.percentVat > 0?26:0;
+                        return branch.serviceChargePercent > 0?26:0;
                         break;
                     case 6:
+                        return branch.percentVat > 0?26:0;
+                        break;
+                    case 7:
                         return branch.serviceChargePercent + branch.percentVat > 0?26:0;
+                        break;
+                    case 8:
+                        return branch.serviceChargePercent > 0 && branch.percentVat > 0?26:0;
+                        break;
+                    case 9:
+                        return 26;
                         break;
                     default:
                         break;
@@ -2377,9 +2429,6 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
     NSMutableArray *arrImage = [[NSMutableArray alloc]init];
     
     
-    
-    
-    
     {
         //order header
         CustomTableViewCellReceiptSummary *cell = [tbvData dequeueReusableCellWithIdentifier:reuseIdentifierReceiptSummary];
@@ -2449,14 +2498,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
         }
         [cell.lblMenuName sizeToFit];
         cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
-//        CGSize menuNameLabelSize = [self suggestedSizeWithFont:cell.lblMenuName.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:cell.lblMenuName.text];
-//        CGRect frame = cell.lblMenuName.frame;
-//        frame.size.width = menuNameLabelSize.width;
-//        frame.size.height = menuNameLabelSize.height;
-//        cell.lblMenuNameHeight.constant = menuNameLabelSize.height;
-//        cell.lblMenuName.frame = frame;
-//
-        
+  
         
         //note
         NSMutableAttributedString *strAllNote;
@@ -2518,21 +2560,11 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
         [cell.lblNote sizeToFit];
         cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
         
-//        CGSize noteLabelSize = [self suggestedSizeWithFont:cell.lblNote.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:[strAllNote string]];
-//        noteLabelSize.height = [Utility isStringEmpty:[strAllNote string]]?0:noteLabelSize.height;
-//        CGRect frame2 = cell.lblNote.frame;
-//        frame2.size.width = noteLabelSize.width;
-//        frame2.size.height = noteLabelSize.height;
-//        cell.lblNoteHeight.constant = noteLabelSize.height;
-//        cell.lblNote.frame = frame2;
-        
-        
         
         cell.lblTotalAmountWidth.constant = 0;
 
         
         float height = 8+cell.lblMenuNameHeight.constant+2+cell.lblNoteHeight.constant+8;
-//        float height = menuNameLabelSize.height+noteLabelSize.height+8+8+2;
         CGRect frameCell = cell.frame;
         frameCell.size.height = height;
         cell.frame = frameCell;

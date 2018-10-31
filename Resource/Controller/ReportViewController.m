@@ -195,7 +195,7 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
     }
     else
     {
-        return 9;
+        return 11;
     }
     return 0;
 }
@@ -274,43 +274,56 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
             case 1:
             {
                 cell.lblTitle.text = @"ส่วนลด";
-                cell.lblValue.text = [Utility encloseWithBracket:[Utility formatDecimal:reportDaily.discountValue withMinFraction:2 andMaxFraction:2]];
+                cell.lblValue.text = [Utility encloseWithBracket:[Utility formatDecimal:reportDaily.specialPriceDiscount withMinFraction:2 andMaxFraction:2]];
             }
                 break;
             case 2:
+            {
+                cell.lblTitle.text = @"ส่วนลดจาก Voucher";
+                cell.lblValue.text = [Utility encloseWithBracket:[Utility formatDecimal:reportDaily.discountValue withMinFraction:2 andMaxFraction:2]];
+            }
+                break;
+            case 3:
             {
                 cell.lblTitle.text = @"ยอดขายหลังส่วนลด";
                 cell.lblValue.text = [Utility formatDecimal:reportDaily.afterDiscount withMinFraction:2 andMaxFraction:2];
             }
                 break;
-            case 3:
+            case 4:
             {
                 cell.lblTitle.text = @"Service charge";
                 cell.lblValue.text = [Utility formatDecimal:reportDaily.serviceChargeValue withMinFraction:2 andMaxFraction:2];
                 cell.hidden = branch.serviceChargePercent == 0;
             }
                 break;
-            case 4:
+            case 5:
             {
                 cell.lblTitle.text = @"VAT";
                 cell.lblValue.text = [Utility formatDecimal:reportDaily.vatValue withMinFraction:2 andMaxFraction:2];
                 cell.hidden = branch.percentVat == 0;
             }
                 break;
-            case 5:
+            case 6:
             {
                 cell.lblTitle.text = @"ยอดรวมทั้งสิ้น";
                 cell.lblValue.text = [Utility formatDecimal:reportDaily.netTotal withMinFraction:2 andMaxFraction:2];
                 cell.hidden = branch.serviceChargePercent + branch.percentVat == 0;
             }
                 break;
-            case 6:
+            case 7:
+            {
+                cell.lblTitle.text = @"ยอดรวมก่อน VAT";
+                cell.lblValue.text = [Utility formatDecimal:reportDaily.beforeVat withMinFraction:2 andMaxFraction:2];
+                cell.hidden = branch.serviceChargePercent == 0 || branch.percentVat == 0;
+            }
+                break;
+            case 8:
             {
                 cell.lblTitle.text = @"ค่า transaction";
                 cell.lblValue.text = [Utility encloseWithBracket:[Utility formatDecimal:reportDaily.transactionFeeValue withMinFraction:2 andMaxFraction:2]];
             }
                 break;
-            case 7:
+            case 9:
             {
                 cell.lblTitle.text = @"เงินคืนพิเศษจาก JUMMUM";
                 cell.lblValue.text = [Utility formatDecimal:reportDaily.jummumPayValue withMinFraction:2 andMaxFraction:2];
@@ -318,7 +331,7 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
                 cell.lblValue.textColor = cSystem1;
             }
                 break;
-            case 8:
+            case 10:
             {
                 CustomTableViewCellButtonDetail *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierButtonDetail];
                 cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -361,7 +374,8 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
                 NSInteger countServiceCharge = branch.serviceChargePercent == 0?0:1;
                 NSInteger countVat = branch.percentVat == 0?0:1;
                 NSInteger countNetTotal = countServiceCharge + countVat == 0?0:1;
-                NSInteger countRow = 5 + countServiceCharge + countVat + countNetTotal + 1;
+                NSInteger countBeforeVat = branch.serviceChargePercent > 0 && branch.percentVat > 0?1:0;
+                NSInteger countRow = 6 + countServiceCharge + countVat + countNetTotal + countBeforeVat + 1;
                 
                 return 44+countRow*44;
             }
@@ -375,20 +389,24 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
     {
         Branch *branch = [Branch getCurrentBranch];
     
-        switch (item) {
+        switch (item)
+        {
             case 0:
             case 1:
             case 2:
-            case 6:
-            case 7:
-            case 8:
-                return 44;
             case 3:
-                return branch.serviceChargePercent == 0?0:44;
+            case 8:
+            case 9:
+            case 10:
+                return 44;
             case 4:
-                return branch.percentVat == 0?0:44;
+                return branch.serviceChargePercent == 0?0:44;
             case 5:
+                return branch.percentVat == 0?0:44;
+            case 6:
                 return branch.serviceChargePercent + branch.percentVat == 0?0:44;
+            case 7:
+                return branch.serviceChargePercent > 0 && branch.percentVat > 0?44:0;
             default:
                 break;
         }
@@ -454,8 +472,6 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
         {
             CustomTableViewCellReportDailyHeader *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:reuseIdentifierReportDailyHeader];
             
-//            headerView.layer.backgroundColor = cSystem1.CGColor;
-            
             
             //corner
             CAShapeLayer * maskLayer = [CAShapeLayer layer];
@@ -463,8 +479,6 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
             maskLayer.fillColor = cSystem1.CGColor;
             [headerView.layer insertSublayer:maskLayer atIndex:0];
 
-
-            
             
             //shadow
             headerView.layer.shadowColor = [UIColor lightGrayColor].CGColor;
@@ -473,7 +487,6 @@ static NSString * const reuseIdentifierButtonDetail = @"CustomTableViewCellButto
             headerView.layer.shadowOffset = CGSizeMake(0, 1);
             headerView.layer.masksToBounds = NO;
 
-            
             
             return headerView;
         }

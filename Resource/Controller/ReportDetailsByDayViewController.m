@@ -161,7 +161,7 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
         }
         else if(section == 1)
         {
-            return 8;
+            return 10;
         }
     }
     return 0;
@@ -288,43 +288,56 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
                 case 1:
                 {
                     cell.lblTitle.text = @"ส่วนลด";
-                    cell.lblValue.text = [Utility encloseWithBracket:[Utility formatDecimal:reportDaily.discountValue withMinFraction:2 andMaxFraction:2]];
+                    cell.lblValue.text = [Utility encloseWithBracket:[Utility formatDecimal:reportDaily.specialPriceDiscount withMinFraction:2 andMaxFraction:2]];
                 }
                     break;
                 case 2:
+                {
+                    cell.lblTitle.text = @"ส่วนลดจาก Voucher";
+                    cell.lblValue.text = [Utility encloseWithBracket:[Utility formatDecimal:reportDaily.discountValue withMinFraction:2 andMaxFraction:2]];
+                }
+                    break;
+                case 3:
                 {
                     cell.lblTitle.text = @"ยอดขายหลังส่วนลด";
                     cell.lblValue.text = [Utility formatDecimal:reportDaily.afterDiscount withMinFraction:2 andMaxFraction:2];
                 }
                     break;
-                case 3:
+                case 4:
                 {
                     cell.lblTitle.text = @"Service charge";
                     cell.lblValue.text = [Utility formatDecimal:reportDaily.serviceChargeValue withMinFraction:2 andMaxFraction:2];
                     cell.hidden = branch.serviceChargePercent == 0;
                 }
                     break;
-                case 4:
+                case 5:
                 {
                     cell.lblTitle.text = @"VAT";
                     cell.lblValue.text = [Utility formatDecimal:reportDaily.vatValue withMinFraction:2 andMaxFraction:2];
                     cell.hidden = branch.percentVat == 0;
                 }
                     break;
-                case 5:
+                case 6:
                 {
                     cell.lblTitle.text = @"ยอดรวมทั้งสิ้น";
                     cell.lblValue.text = [Utility formatDecimal:reportDaily.netTotal withMinFraction:2 andMaxFraction:2];
                     cell.hidden = branch.serviceChargePercent + branch.percentVat == 0;
                 }
                     break;
-                case 6:
+                case 7:
+                {
+                    cell.lblTitle.text = @"ยอดรวมก่อน VAT";
+                    cell.lblValue.text = [Utility formatDecimal:reportDaily.beforeVat withMinFraction:2 andMaxFraction:2];
+                    cell.hidden = branch.serviceChargePercent == 0 || branch.percentVat == 0;
+                }
+                    break;
+                case 8:
                 {
                     cell.lblTitle.text = @"ค่า transaction";
                     cell.lblValue.text = [Utility encloseWithBracket:[Utility formatDecimal:reportDaily.transactionFeeValue withMinFraction:2 andMaxFraction:2]];
                 }
                     break;
-                case 7:
+                case 9:
                 {
                     cell.lblTitle.text = @"เงินคืนพิเศษจาก JUMMUM";
                     cell.lblValue.text = [Utility formatDecimal:reportDaily.jummumPayValue withMinFraction:2 andMaxFraction:2];
@@ -365,7 +378,8 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
             NSInteger countServiceCharge = branch.serviceChargePercent == 0?0:1;
             NSInteger countVat = branch.percentVat == 0?0:1;
             NSInteger countNetTotal = countServiceCharge + countVat == 0?0:1;
-            NSInteger countRow = 5 + countServiceCharge + countVat + countNetTotal;
+            NSInteger countBeforeVat = branch.serviceChargePercent > 0 && branch.percentVat > 0?1:0;
+            NSInteger countRow = 6 + countServiceCharge + countVat + countNetTotal + countBeforeVat;
             
             
             float section0Height = 0;
@@ -443,16 +457,18 @@ static NSString * const reuseIdentifierMonthYearBalance = @"CustomTableViewCellM
                 case 0:
                 case 1:
                 case 2:
-                case 6:
-                case 7:
-//                case 8:
-                    return 44;
                 case 3:
-                    return branch.serviceChargePercent == 0?0:44;
+                case 8:
+                case 9:
+                    return 44;
                 case 4:
-                    return branch.percentVat == 0?0:44;
+                    return branch.serviceChargePercent == 0?0:44;
                 case 5:
+                    return branch.percentVat == 0?0:44;
+                case 6:
                     return branch.serviceChargePercent + branch.percentVat == 0?0:44;
+                case 7:
+                    return branch.serviceChargePercent > 0 && branch.percentVat > 0?44:0;
                 default:
                     break;
             }
