@@ -572,7 +572,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                         cell.lblTitle.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
                         cell.lblAmount.textColor = cSystem4;
                         cell.lblAmount.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
-                        cell.hidden = branch.percentVat == 0;
+                        cell.hidden = !((branch.serviceChargePercent>0 && branch.percentVat>0) || (branch.serviceChargePercent == 0 && branch.percentVat>0 && branch.priceIncludeVat));
                         
                         
                         return cell;
@@ -1291,14 +1291,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
             }
             [cell.lblMenuName sizeToFit];
             cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
-//            CGSize menuNameLabelSize = [self suggestedSizeWithFont:cell.lblMenuName.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:cell.lblMenuName.text];
-//            CGRect frame = cell.lblMenuName.frame;
-//            frame.size.width = menuNameLabelSize.width;
-//            frame.size.height = menuNameLabelSize.height;
-//            cell.lblMenuNameHeight.constant = menuNameLabelSize.height;
-//            cell.lblMenuName.frame = frame;
-            
-            
+   
             
             //note
             NSMutableAttributedString *strAllNote;
@@ -1363,18 +1356,6 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
             
             
             
-//            CGSize noteLabelSize = [self suggestedSizeWithFont:cell.lblNote.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:[strAllNote string]];
-//            noteLabelSize.height = [Utility isStringEmpty:[strAllNote string]]?13.13:noteLabelSize.height;
-//            CGRect frame2 = cell.lblNote.frame;
-//            frame2.size.width = noteLabelSize.width;
-//            frame2.size.height = noteLabelSize.height;
-//            cell.lblNoteHeight.constant = noteLabelSize.height;
-//            cell.lblNote.frame = frame2;
-            
-            
-            
-            
-            
             float totalAmount = orderTaking.specialPrice * orderTaking.quantity;
             NSString *strTotalAmount = [Utility formatDecimal:totalAmount withMinFraction:2 andMaxFraction:2];
             cell.lblTotalAmount.text = [Utility addPrefixBahtSymbol:strTotalAmount];
@@ -1434,10 +1415,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                 }
                 [cell.lblMenuName sizeToFit];
                 cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
-                //            CGSize menuNameLabelSize = [self suggestedSizeWithFont:cell.lblMenuName.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:cell.lblMenuName.text];
-                
-                
-                
+  
                 
                 //note
                 NSMutableAttributedString *strAllNote;
@@ -1501,11 +1479,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                 [cell.lblNote sizeToFit];
                 cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
                 
-                
-                //            CGSize noteLabelSize = [self suggestedSizeWithFont:cell.lblNote.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:[strAllNote string]];
-                //            noteLabelSize.height = [Utility isStringEmpty:[strAllNote string]]?13.13:noteLabelSize.height;
-                
-                
+
                 float height = 8+cell.lblMenuNameHeight.constant+2+cell.lblNoteHeight.constant+8;
                 sumHeight += height;
             }
@@ -1566,10 +1540,10 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                         return branch.serviceChargePercent + branch.percentVat > 0?26:0;
                         break;
                     case 8:
-                        return branch.serviceChargePercent > 0 && branch.percentVat > 0?26:0;
+                        return (branch.serviceChargePercent>0 && branch.percentVat>0) || (branch.serviceChargePercent == 0 && branch.percentVat>0 && branch.priceIncludeVat)?26:0;
                         break;
                     case 9:
-                        return 26;
+                        return 44;
                         break;
                     default:
                         break;

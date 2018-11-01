@@ -15,7 +15,6 @@
 #import "CustomTableViewCellReceiptSummary2.h"
 #import "CustomTableViewCellOrderSummary.h"
 #import "CustomTableViewCellTotal.h"
-//#import "CustomTableViewCellLabelLabel.h"
 #import "CustomTableViewCellLabelRemark.h"
 #import "CustomTableViewCellButton.h"
 #import "CustomTableViewCellButtonLabel.h"
@@ -309,7 +308,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         [UIView animateWithDuration:.25 animations:^{
             if(_indexPathNew)
             {
-                if(_indexPathNew.row < [_receiptList count])
+                if(_indexPathNew.section < [_receiptList count])
                 {
                     [tbvData scrollToRowAtIndexPath:_indexPathNew atScrollPosition:UITableViewScrollPositionTop animated:YES];
                 }
@@ -321,7 +320,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         [UIView animateWithDuration:.25 animations:^{
             if(_indexPathPrinted)
             {
-                if(_indexPathPrinted.row < [_receiptList count])
+                if(_indexPathPrinted.section < [_receiptList count])
                 {
                     [tbvData scrollToRowAtIndexPath:_indexPathPrinted atScrollPosition:UITableViewScrollPositionTop animated:YES];
                 }
@@ -333,7 +332,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         [UIView animateWithDuration:.25 animations:^{
             if(_indexPathDelivered)
             {
-                if(_indexPathDelivered.row < [_receiptList count])
+                if(_indexPathDelivered.section < [_receiptList count])
                 {
                     [tbvData scrollToRowAtIndexPath:_indexPathDelivered atScrollPosition:UITableViewScrollPositionTop animated:YES];
                 }
@@ -346,7 +345,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         [UIView animateWithDuration:.25 animations:^{
             if(_indexPathAction)
             {
-                if(_indexPathAction.row < [_receiptList count])
+                if(_indexPathAction.section < [_receiptList count])
                 {
                     [tbvData scrollToRowAtIndexPath:_indexPathAction atScrollPosition:UITableViewScrollPositionTop animated:YES];
                 }
@@ -359,7 +358,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         [UIView animateWithDuration:.25 animations:^{
             if(_indexPathOthers)
             {
-                if(_indexPathOthers.row < [_receiptList count])
+                if(_indexPathOthers.section < [_receiptList count])
                 {
                     [tbvData scrollToRowAtIndexPath:_indexPathOthers atScrollPosition:UITableViewScrollPositionTop animated:YES];
                 }
