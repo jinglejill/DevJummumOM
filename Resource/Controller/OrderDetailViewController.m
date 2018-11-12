@@ -1290,7 +1290,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                 cell.lblMenuName.text = menu.titleThai;
             }
             [cell.lblMenuName sizeToFit];
-            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
+            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height;
    
             
             //note
@@ -1352,7 +1352,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
             }
             cell.lblNote.attributedText = strAllNote;
             [cell.lblNote sizeToFit];
-            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
+            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height;
             
             
             
@@ -1414,7 +1414,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                     cell.lblMenuName.text = menu.titleThai;
                 }
                 [cell.lblMenuName sizeToFit];
-                cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
+                cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height;
   
                 
                 //note
@@ -1477,7 +1477,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                 }
                 cell.lblNote.attributedText = strAllNote;
                 [cell.lblNote sizeToFit];
-                cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
+                cell.lblNoteHeight.constant = cell.lblNote.frame.size.height;
                 
 
                 float height = 8+cell.lblMenuNameHeight.constant+2+cell.lblNoteHeight.constant+8;
@@ -2014,8 +2014,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
                 cell.lblMenuName.text = menu.titleThai;
             }
             [cell.lblMenuName sizeToFit];
-            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
-            //            CGSize menuNameLabelSize = [self suggestedSizeWithFont:cell.lblMenuName.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:cell.lblMenuName.text];
+            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height;
             
             
             
@@ -2080,11 +2079,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
             }
             cell.lblNote.attributedText = strAllNote;
             [cell.lblNote sizeToFit];
-            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
-            
-            
-            //            CGSize noteLabelSize = [self suggestedSizeWithFont:cell.lblNote.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:[strAllNote string]];
-            //            noteLabelSize.height = [Utility isStringEmpty:[strAllNote string]]?13.13:noteLabelSize.height;
+            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height;
             
             
             float height = 8+cell.lblMenuNameHeight.constant+2+cell.lblNoteHeight.constant+8;
@@ -2471,7 +2466,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
             cell.lblMenuName.textColor = [UIColor blackColor];
         }
         [cell.lblMenuName sizeToFit];
-        cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
+        cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height;
   
         
         //note
@@ -2532,7 +2527,7 @@ static NSString * const reuseIdentifierLabelRemark = @"CustomTableViewCellLabelR
         cell.lblNote.attributedText = strAllNote;
         cell.lblNote.textColor = [UIColor blackColor];
         [cell.lblNote sizeToFit];
-        cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
+        cell.lblNoteHeight.constant = cell.lblNote.frame.size.height;
         
         
         cell.lblTotalAmountWidth.constant = 0;

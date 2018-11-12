@@ -1037,7 +1037,6 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         
         
         //remarkHeight
-        CustomTableViewCellReceiptSummary *receiptSummaryCell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierReceiptSummary];
         CustomTableViewCellLabelRemark *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifierLabelRemark];
         if([Utility isStringEmpty:receipt.remark])
         {
