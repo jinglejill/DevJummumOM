@@ -720,7 +720,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
                 cell.lblMenuName.text = menu.titleThai;
             }
             [cell.lblMenuName sizeToFit];
-            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
+            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height;
 
             
             
@@ -784,7 +784,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             }
             cell.lblNote.attributedText = strAllNote;
             [cell.lblNote sizeToFit];
-            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
+            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height;
             
             
 
@@ -963,7 +963,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
                 cell.lblMenuName.text = menu.titleThai;
             }
             [cell.lblMenuName sizeToFit];
-            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
+            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height;
           
             
             
@@ -1027,7 +1027,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             }
             cell.lblNote.attributedText = strAllNote;
             [cell.lblNote sizeToFit];
-            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
+            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height;
             
             
             
@@ -1096,7 +1096,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
                 cell.lblMenuName.text = menu.titleThai;
             }
             [cell.lblMenuName sizeToFit];
-            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height>46?46:cell.lblMenuName.frame.size.height;
+            cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height;
 
             
             
@@ -1160,7 +1160,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             }
             cell.lblNote.attributedText = strAllNote;
             [cell.lblNote sizeToFit];
-            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height>40?40:cell.lblNote.frame.size.height;
+            cell.lblNoteHeight.constant = cell.lblNote.frame.size.height;
             
  
             float height = 8+cell.lblMenuNameHeight.constant+2+cell.lblNoteHeight.constant+8;
@@ -1610,12 +1610,9 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             cell.lblMenuName.text = menu.titleThai;
             cell.lblMenuName.textColor = [UIColor blackColor];
         }
-        CGSize menuNameLabelSize = [self suggestedSizeWithFont:cell.lblMenuName.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:cell.lblMenuName.text];
-        CGRect frame = cell.lblMenuName.frame;
-        frame.size.width = menuNameLabelSize.width;
-        frame.size.height = menuNameLabelSize.height;
-        cell.lblMenuNameHeight.constant = menuNameLabelSize.height;
-        cell.lblMenuName.frame = frame;
+        [cell.lblMenuName sizeToFit];
+        cell.lblMenuNameHeight.constant = cell.lblMenuName.frame.size.height;
+        
         
         
         
@@ -1676,26 +1673,18 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
         }
         cell.lblNote.attributedText = strAllNote;
         cell.lblNote.textColor = [UIColor blackColor];
+        [cell.lblNote sizeToFit];
+        cell.lblNoteHeight.constant = cell.lblNote.frame.size.height;
         
         
-        CGSize noteLabelSize = [self suggestedSizeWithFont:cell.lblNote.font size:CGSizeMake(tbvData.frame.size.width - 75-28-2*16-2*8, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping forString:[strAllNote string]];
-        noteLabelSize.height = [Utility isStringEmpty:[strAllNote string]]?0:noteLabelSize.height;
-        CGRect frame2 = cell.lblNote.frame;
-        frame2.size.width = noteLabelSize.width;
-        frame2.size.height = noteLabelSize.height;
-        cell.lblNoteHeight.constant = noteLabelSize.height;
-        cell.lblNote.frame = frame2;
         
         
         
         cell.lblTotalAmountWidth.constant = 0;
         
-//        float totalAmount = orderTaking.specialPrice * orderTaking.quantity;
-//        NSString *strTotalAmount = [Utility formatDecimal:totalAmount withMinFraction:2 andMaxFraction:2];
-//        cell.lblTotalAmount.text = [Utility addPrefixBahtSymbol:strTotalAmount];
+ 
         
-        
-        float height = menuNameLabelSize.height+noteLabelSize.height+8+8+2;
+        float height = cell.lblMenuNameHeight.constant+cell.lblNoteHeight.constant+8+8+2;
         CGRect frameCell = cell.frame;
         frameCell.size.height = height;
         cell.frame = frameCell;

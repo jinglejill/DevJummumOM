@@ -111,7 +111,6 @@
 
 - (IBAction)logIn:(id)sender
 {
-
     txtEmail.text = [Utility trimString:txtEmail.text];
     txtPassword.text = [Utility trimString:txtPassword.text];
     [Utility setModifiedUser:txtEmail.text];
