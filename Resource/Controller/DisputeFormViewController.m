@@ -397,7 +397,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
                 
                 
                 NSString *strTitle = @"จำนวนเงิน";
-                NSString *strTotalAmount = [Utility formatDecimal:[Receipt getTotalAmount:receipt] withMinFraction:2 andMaxFraction:2];
+                NSString *strTotalAmount = [Utility formatDecimal:receipt.netTotal withMinFraction:2 andMaxFraction:2];
                 NSString *strRemark = [NSString stringWithFormat:@"จำนวนเงิน: THB 0.01 to %@",strTotalAmount];
                 
                 
@@ -850,7 +850,7 @@ static NSString * const reuseIdentifierHeaderFooterOkCancel = @"CustomTableViewH
             
             NSString *message = [Setting getValue:@"029t" example:@"กรุณาใส่จำนวนเงินระหว่าง %@"];
             NSString *message2 = [Setting getValue:@"029m" example:@"THB 0.01 to %@"];
-            float totalAmount = [Receipt getTotalAmount:receipt];
+            float totalAmount = receipt.netTotal;
             NSString *strTotalAmount = [Utility formatDecimal:totalAmount withMinFraction:2 andMaxFraction:2];
             NSString *strRemark = [NSString stringWithFormat:message2,strTotalAmount];
             NSString *strMessage = [NSString stringWithFormat:message,strRemark];

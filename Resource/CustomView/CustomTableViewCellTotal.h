@@ -12,6 +12,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblTitle;
 @property (strong, nonatomic) IBOutlet UILabel *lblAmount;
 @property (strong, nonatomic) IBOutlet UIView *vwTopBorder;
+@property (strong, nonatomic) IBOutlet UIView *vwBottomBorder;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *lblTitleTop;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *lblAmountWidth;
 
 @end

@@ -71,16 +71,25 @@
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ExE-pH-eZV">
                     <rect key="frame" x="294" y="34" width="20" height="20"/>
                 </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Cl-cA-BcY">
+                    <rect key="frame" x="16" y="91" width="343" height="0.5"/>
+                    <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="e3N-If-uZG"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ExE-pH-eZV" firstAttribute="centerX" secondItem="pRB-X6-wwb" secondAttribute="centerX" id="1bb-c2-q7b"/>
+                <constraint firstItem="pRB-X6-wwb" firstAttribute="trailing" secondItem="3Cl-cA-BcY" secondAttribute="trailing" id="7Pr-eA-Q11"/>
                 <constraint firstItem="8KU-CG-XN7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="A42-10-HTF"/>
                 <constraint firstItem="pRB-X6-wwb" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="9" id="C74-jo-Wxa"/>
                 <constraint firstItem="LrP-pm-5NA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="CgO-Bc-SEf"/>
                 <constraint firstItem="pRB-X6-wwb" firstAttribute="leading" secondItem="fNP-Kq-HeX" secondAttribute="trailing" constant="8" id="OiQ-Gi-1EL"/>
                 <constraint firstItem="LrP-pm-5NA" firstAttribute="top" secondItem="8KU-CG-XN7" secondAttribute="bottom" constant="8" id="PaV-PG-VR8"/>
                 <constraint firstItem="fNP-Kq-HeX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="RQe-tv-R4F"/>
+                <constraint firstItem="3Cl-cA-BcY" firstAttribute="leading" secondItem="8KU-CG-XN7" secondAttribute="leading" id="WoN-HZ-CPJ"/>
                 <constraint firstItem="ExE-pH-eZV" firstAttribute="centerY" secondItem="pRB-X6-wwb" secondAttribute="centerY" id="bZ4-us-j4F"/>
                 <constraint firstItem="8KU-CG-XN7" firstAttribute="top" secondItem="fNP-Kq-HeX" secondAttribute="bottom" constant="12" id="cc7-5y-Css"/>
                 <constraint firstItem="rtg-O7-PPv" firstAttribute="centerY" secondItem="8KU-CG-XN7" secondAttribute="centerY" id="lZr-KU-IbB"/>
@@ -88,6 +97,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pRB-X6-wwb" secondAttribute="trailing" constant="16" id="mD4-bD-hWT"/>
                 <constraint firstItem="fNP-Kq-HeX" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="ncl-3c-Y8E"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rtg-O7-PPv" secondAttribute="trailing" constant="16" id="pct-8J-2fZ"/>
+                <constraint firstItem="3Cl-cA-BcY" firstAttribute="top" secondItem="8KU-CG-XN7" secondAttribute="bottom" constant="8" id="rRi-vC-QgC"/>
                 <constraint firstItem="LrP-pm-5NA" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="z49-Bz-laR"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -98,6 +108,7 @@
                 <outlet property="lblReceiptDate" destination="rtg-O7-PPv" id="BEx-3Z-b7O"/>
                 <outlet property="lblReceiptNo" destination="fNP-Kq-HeX" id="oaq-VJ-EJq"/>
                 <outlet property="tbvOrderDetail" destination="LrP-pm-5NA" id="ssV-Hz-9R1"/>
+                <outlet property="vwSeparatorLine" destination="3Cl-cA-BcY" id="9th-WK-jDc"/>
             </connections>
             <point key="canvasLocation" x="34.5" y="54.5"/>
         </view>

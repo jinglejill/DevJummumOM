@@ -31,7 +31,7 @@
 #import "Setting.h"
 #import "Printer.h"
 #import "ReceiptPrint.h"
-#import "InvoiceComposer.h"
+//#import "InvoiceComposer.h"
 
 
 #import "AppDelegate.h"
@@ -838,7 +838,7 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             
             NSString *message = [Setting getValue:@"014m" example:@"รวมทั้งหมด"];
             Receipt *receipt = [Receipt getReceipt:receiptID branchID:[Branch getCurrentBranch].branchID];
-            NSString *strTotalAmount = [Utility formatDecimal:receipt.cashAmount+receipt.transferAmount+receipt.creditCardAmount withMinFraction:2 andMaxFraction:2];
+            NSString *strTotalAmount = [Utility formatDecimal:receipt.netTotal withMinFraction:2 andMaxFraction:2];
             strTotalAmount = [Utility addPrefixBahtSymbol:strTotalAmount];
             cell.lblAmount.text = strTotalAmount;
             cell.lblAmount.textColor = cSystem1;
@@ -847,7 +847,8 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
             cell.lblTitle.textColor = cSystem4;
             cell.lblTitle.font = [UIFont fontWithName:@"Prompt-SemiBold" size:15.0f];
             cell.lblTitleTop.constant = 8;
-            
+            cell.vwTopBorder.hidden = NO;
+            cell.vwBottomBorder.hidden = NO;
             
             
             return cell;
@@ -1210,28 +1211,29 @@ static NSString * const reuseIdentifierButtonLabel = @"CustomTableViewCellButton
 
 - (void)tableView: (UITableView*)tableView willDisplayCell: (UITableViewCell*)cell forRowAtIndexPath: (NSIndexPath*)indexPath
 {
-    if([tableView isEqual:tbvData])
-    {
-        [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
-    }
-    else
-    {
-        NSInteger receiptID = tableView.tag;
-        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receiptID];
-        orderTakingList = [OrderTaking createSumUpOrderTakingWithTheSameMenuAndNote:orderTakingList];
-        Receipt *receipt = [Receipt getReceipt:receiptID];
-        cell.separatorInset = UIEdgeInsetsMake(0.0f, self.view.bounds.size.width, 0.0f, CGFLOAT_MAX);
-        if([Utility isStringEmpty:receipt.remark] && indexPath.item == [orderTakingList count]-1)
-        {
-            [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
-        }
-        
-        
-        if(indexPath.item == [orderTakingList count] || indexPath.item == [orderTakingList count]+1)
-        {
-            [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
-        }
-    }
+    cell.separatorInset = UIEdgeInsetsMake(0.0f, self.view.bounds.size.width, 0.0f, CGFLOAT_MAX);
+//    if([tableView isEqual:tbvData])
+//    {
+//        [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
+//    }
+//    else
+//    {
+//        NSInteger receiptID = tableView.tag;
+//        NSMutableArray *orderTakingList = [OrderTaking getOrderTakingListWithReceiptID:receiptID];
+//        orderTakingList = [OrderTaking createSumUpOrderTakingWithTheSameMenuAndNote:orderTakingList];
+//        Receipt *receipt = [Receipt getReceipt:receiptID];
+//        cell.separatorInset = UIEdgeInsetsMake(0.0f, self.view.bounds.size.width, 0.0f, CGFLOAT_MAX);
+//        if([Utility isStringEmpty:receipt.remark] && indexPath.item == [orderTakingList count]-1)
+//        {
+//            [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
+//        }
+//        
+//        
+//        if(indexPath.item == [orderTakingList count] || indexPath.item == [orderTakingList count]+1)
+//        {
+//            [cell setSeparatorInset:UIEdgeInsetsMake(16, 16, 16, 16)];
+//        }
+//    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

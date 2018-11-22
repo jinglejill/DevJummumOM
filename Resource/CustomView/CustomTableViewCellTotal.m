@@ -30,5 +30,7 @@
     self.lblTitle.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
     self.lblAmount.font = [UIFont systemFontOfSize:15 weight:UIFontWeightSemibold];
     self.lblAmount.textColor = cSystem1;
+    self.vwTopBorder.hidden = YES;
+    self.vwBottomBorder.hidden = YES;
 }
 @end
