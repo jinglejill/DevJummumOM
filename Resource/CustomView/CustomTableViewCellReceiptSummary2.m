@@ -24,10 +24,5 @@
 - (void)prepareForReuse
 {
     [super prepareForReuse];
-    
-    self.indicator.alpha = 0;
-    [self.indicator stopAnimating];
-    self.indicator.hidden = YES;
-    self.btnOrderItAgain.enabled = YES;
 }
 @end

@@ -49,6 +49,7 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
 @synthesize lblNavTitle;
 @synthesize tbvData;
 @synthesize topViewHeight;
+@synthesize printer;
 
 
 -(void)viewDidLayoutSubviews
@@ -93,9 +94,7 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
     
     if (_didAppear == NO)
     {
-//        [self loadingOverlayView];
         [self refreshPortInfo];
-//        [self removeOverlayViews];
         
         _didAppear = YES;
     }
@@ -152,6 +151,7 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //  [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    printer.printerStatus = 1;
     UITableViewCell *cell;
     
     if (_selectedIndexPath != nil) {
@@ -176,82 +176,10 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
     
     //skip choosing model
     [self didConfirmModelWithButtonIndex:1];
-    
-    //    if (modelIndex != ModelIndexNone) {
-    //        _selectedModelIndex = modelIndex;
-    //
-    //        NSString *message = [NSString stringWithFormat:@"Is your printer %@?",
-    //                             [ModelCapability titleAtModelIndex:modelIndex]];
-    //
-    //        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Confirm."
-    //                                                                       message:message
-    //                                                                preferredStyle:UIAlertControllerStyleAlert];
-    //        [alert addAction:[UIAlertAction actionWithTitle:@"YES"
-    //                                                  style:UIAlertActionStyleDefault
-    //                                                handler:^(UIAlertAction * _Nonnull action) {
-    //                                                    [self didConfirmModelWithButtonIndex:1];
-    //                                                }]];
-    //        [alert addAction:[UIAlertAction actionWithTitle:@"NO"
-    //                                                  style:UIAlertActionStyleCancel
-    //                                                handler:^(UIAlertAction * _Nonnull action) {
-    //                                                    [self didConfirmModelWithButtonIndex:0];
-    //                                                }]];
-    //
-    //        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.01f * NSEC_PER_SEC);
-    //        dispatch_after(delay, dispatch_get_main_queue(), ^{
-    //            [self presentViewController:alert animated:YES completion:nil];
-    //        });
-    //    }
-    //    else {
-    //        NSMutableArray<NSString *> *buttonTitles = [NSMutableArray array];
-    //        for (int i = 0; i < [ModelCapability modelIndexCount]; i++) {
-    //            NSString *title = [ModelCapability titleAtModelIndex:[ModelCapability modelIndexAtIndex:i]];
-    //
-    //            [buttonTitles addObject:title];
-    //        }
-    //
-    //        dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, (int64_t)0.01f * NSEC_PER_SEC);
-    //        dispatch_after(delay, dispatch_get_main_queue(), ^{
-    //            [self showAlertWithTitle:@"Confirm."
-    //                             message:@"What is your printer?"
-    //                        buttonTitles:[buttonTitles copy]
-    //                             handler:^(int buttonIndex) {
-    //                                 [self didSelectModelWithButtonIndex:buttonIndex];
-    //                             }];
-    //        });
-    //    }
 }
 
 - (void)refreshPortInfo {
     [self skipSelectInterface];
-    
-    //    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Select Interface."
-    //                                                                   message:nil
-    //                                                            preferredStyle:UIAlertControllerStyleAlert];
-    //    NSArray<NSString *> *interfaces = @[@"LAN", @"Bluetooth", @"Bluetooth Low Energy", @"USB", @"All"];
-    //
-    //    for (NSUInteger i = 0; i < interfaces.count; i++) {
-    //        UIAlertAction *action = [UIAlertAction actionWithTitle:interfaces[i]
-    //                                                         style:UIAlertActionStyleDefault
-    //                                                       handler:^(UIAlertAction * _Nonnull action) {
-    //                                                           [self didSelectRefreshPortWithButtonIndex:i];
-    //                                                       }];
-    //        [alert addAction:action];
-    //    }
-    //
-    //    [alert addAction:[UIAlertAction actionWithTitle:@"Manual"
-    //                                              style:UIAlertActionStyleDefault
-    //                                            handler:^(UIAlertAction * _Nonnull action) {
-    //                                                [self didSelectManual];
-    //                                            }]];
-    //
-    //    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
-    //                                              style:UIAlertActionStyleCancel
-    //                                            handler:^(UIAlertAction * _Nonnull action) {
-    //                                                [self.navigationController popViewControllerAnimated:YES];
-    //                                            }]];
-    //
-    //    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)didConfirmModelWithButtonIndex:(NSInteger)buttonIndex {
@@ -288,52 +216,7 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
         //skip choosing paper
         buttonIndex = 1;//3" 576dots
         [self didSelectPaperSizeWithButtonIndex:buttonIndex];
-        //        if (_paperSizeIndex == PaperSizeIndexNone) {
-        //            [self showAlertWithTitle:@"Select paper size."
-        //                             message:nil
-        //                        buttonTitles:@[@"2\" (384dots)", @"3\" (576dots)", @"4\" (832dots)"]
-        //                             handler:^(int buttonIndex) {
-        //                                 [self didSelectPaperSizeWithButtonIndex:buttonIndex];
-        //                             }];
-        //        }
-        //        else {
-        //            if ([ModelCapability cashDrawerOpenActiveAtModelIndex:modelIndex] == YES) {
-        //                [self showAlertWithTitle:@"Select CashDrawer Open Status."
-        //                                 message:nil
-        //                            buttonTitles:@[@"High when Open", @"Low when Open"]
-        //                                 handler:^(int buttonIndex) {
-        //                                     [self didSelectCashDrawerOpenActiveHighWithButtonIndex:buttonIndex];
-        //                                 }];
-        //            }
-        //            else {
-        //                [self saveParamsWithPortName:_portName
-        //                                portSettings:_portSettings
-        //                                   modelName:_modelName
-        //                                  macAddress:_macAddress
-        //                                   emulation:_emulation
-        //                    cashDrawerOpenActiveHigh:YES
-        //                                  modelIndex:_selectedModelIndex
-        //                              paperSizeIndex:_paperSizeIndex];
-        //
-        //                [self.navigationController popViewControllerAnimated:YES];
-        //            }
-        //        }
     }
-//    else {     // NO!!!
-//        NSMutableArray<NSString *> *buttonTitles = [NSMutableArray array];
-//        for (int i = 0; i < [ModelCapability modelIndexCount]; i++) {
-//            NSString *title = [ModelCapability titleAtModelIndex:[ModelCapability modelIndexAtIndex:i]];
-//
-//            [buttonTitles addObject:title];
-//        }
-//
-//        [self showAlertWithTitle:@"Confirm."
-//                         message:@"What is your printer?"
-//                    buttonTitles:[buttonTitles copy]
-//                         handler:^(int buttonIndex) {
-//                             [self didSelectModelWithButtonIndex:buttonIndex];
-//                         }];
-//    }
 }
 
 - (void)didSelectPaperSizeWithButtonIndex:(NSInteger)buttonIndex {
@@ -356,87 +239,7 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
     //skip choosing cashDrawer Open Status
     buttonIndex = 0;
     [self didSelectCashDrawerOpenActiveHighWithButtonIndex:buttonIndex];
-    //    if ([ModelCapability cashDrawerOpenActiveAtModelIndex:_selectedModelIndex] == YES) {
-    //        [self showAlertWithTitle:@"Select CashDrawer Open Status."
-    //                         message:nil
-    //                    buttonTitles:@[@"High when Open", @"Low when Open"]
-    //                         handler:^(int buttonIndex) {
-    //                             [self didSelectCashDrawerOpenActiveHighWithButtonIndex:buttonIndex];
-    //                         }];
-    //    }
-    //    else {
-    //        [self saveParamsWithPortName:_portName
-    //                        portSettings:_portSettings
-    //                           modelName:_modelName
-    //                          macAddress:_macAddress
-    //                           emulation:_emulation
-    //            cashDrawerOpenActiveHigh:YES
-    //                          modelIndex:_selectedModelIndex
-    //                      paperSizeIndex:_paperSizeIndex];
-    //
-    //        [self.navigationController popViewControllerAnimated:YES];
-    //    }
 }
-
-//- (void)didSelectModelWithButtonIndex:(int)buttonIndex {
-//    NSArray *cellParam = _cellArray[_selectedIndexPath.row];
-//
-//    _portName   = cellParam[CellParamIndexPortName];
-//    _modelName  = cellParam[CellParamIndexModelName];
-//    _macAddress = cellParam[CellParamIndexMacAddress];
-//
-//    ModelIndex modelIndex = [ModelCapability modelIndexAtIndex:buttonIndex];
-//
-//    _portSettings = [ModelCapability portSettingsAtModelIndex:modelIndex];
-//    _emulation    = [ModelCapability emulationAtModelIndex:modelIndex];
-//    _selectedModelIndex = modelIndex;
-//
-//    switch (_emulation) {
-//        case StarIoExtEmulationEscPos:
-//        _paperSizeIndex = PaperSizeIndexEscPosThreeInch;
-//        break;
-//        case StarIoExtEmulationStarDotImpact:
-//        _paperSizeIndex = PaperSizeIndexDotImpactThreeInch;
-//        break;
-//        default:
-//        _paperSizeIndex = PaperSizeIndexNone;
-//        break;
-//    }
-//
-//    if (self.selectedPrinterIndex > 0) {
-//        _paperSizeIndex = self->_appDelegate.settingManager.settings[0].selectedPaperSize;
-//    }
-//
-//    if (_paperSizeIndex == PaperSizeIndexNone) {
-//        [self showAlertWithTitle:@"Select paper size."
-//                         message:nil
-//                    buttonTitles:@[@"2\" (384dots)", @"3\" (576dots)", @"4\" (832dots)"]
-//                         handler:^(int buttonIndex) {
-//                             [self didSelectPaperSizeWithButtonIndex:buttonIndex];
-//                         }];
-//    } else {
-//        if ([ModelCapability cashDrawerOpenActiveAtModelIndex:modelIndex] == YES) {
-//            [self showAlertWithTitle:@"Select CashDrawer Open Status."
-//                             message:nil
-//                        buttonTitles:@[@"High when Open", @"Low when Open"]
-//                             handler:^(int buttonIndex) {
-//                                 [self didSelectCashDrawerOpenActiveHighWithButtonIndex:buttonIndex];
-//                             }];
-//        }
-//        else {
-//            [self saveParamsWithPortName:_portName
-//                            portSettings:_portSettings
-//                               modelName:_modelName
-//                              macAddress:_macAddress
-//                               emulation:_emulation
-//                cashDrawerOpenActiveHigh:YES
-//                              modelIndex:_selectedModelIndex
-//                          paperSizeIndex:_paperSizeIndex];
-//
-//            [self.navigationController popViewControllerAnimated:YES];
-//        }
-//    }
-//}
 
 - (void)didSelectCashDrawerOpenActiveHighWithButtonIndex:(NSInteger)buttonIndex {
     BOOL isCashDrawerOpenActiveHigh = NO;
@@ -463,146 +266,6 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
     //    [self.navigationController popViewControllerAnimated:YES];
 }
 
-//- (void)didInputPortName {
-//    if ([_portName isEqualToString:@""]) {
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Please enter the port name."
-//                                                                       message:@"Fill in the port name."
-//                                                                preferredStyle:UIAlertControllerStyleAlert];
-//        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-//            textField.text = self->_appDelegate.settingManager.settings[self->_selectedPrinterIndex].portName;
-//        }];
-//
-//        [alert addAction:[UIAlertAction actionWithTitle:@"OK"
-//                                                  style:UIAlertActionStyleDefault
-//                                                handler:^(UIAlertAction * _Nonnull action) {
-//                                                    NSString *newPortName = alert.textFields.firstObject.text;
-//                                                    if (newPortName != nil) {
-//                                                        self->_portName = newPortName;
-//                                                    }
-//
-//                                                    [self didInputPortName];
-//                                                }]];
-//
-//        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
-//                                                  style:UIAlertActionStyleCancel
-//                                                handler:^(UIAlertAction * _Nonnull action) {
-//                                                    [self.navigationController popViewControllerAnimated:YES];
-//                                                }]];
-//        [self presentViewController:alert animated:YES completion:nil];
-//    }
-//    else {
-//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Please enter the port settings."
-//                                                                       message:nil
-//                                                                preferredStyle:UIAlertControllerStyleAlert];
-//
-//        [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-//            textField.text = self->_appDelegate.settingManager.settings[self->_selectedPrinterIndex].portSettings;
-//        }];
-//
-//        [alert addAction:[UIAlertAction actionWithTitle:@"OK"
-//                                                  style:UIAlertActionStyleDefault
-//                                                handler:^(UIAlertAction * _Nonnull action) {
-//                                                    NSString *newPortSettings = alert.textFields.firstObject.text;
-//                                                    if (newPortSettings != nil) {
-//                                                        self->_portSettings = newPortSettings;
-//                                                    }
-//
-//                                                    [self didInputPortSettings];
-//                                                }]];
-//
-//        [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
-//                                                  style:UIAlertActionStyleCancel
-//                                                handler:^(UIAlertAction * _Nonnull action) {
-//                                                    [self.navigationController popViewControllerAnimated:YES];
-//                                                }]];
-//
-//        [self presentViewController:alert animated:YES completion:nil];
-//    }
-//}
-
-//- (void)didInputPortSettings {
-//    UIAlertController *nestAlertController = [UIAlertController alertControllerWithTitle:@"Confirm."
-//                                                                                 message:@"What is your printer?"
-//                                                                          preferredStyle:UIAlertControllerStyleAlert];
-//
-//    UIAlertAction *action = [UIAlertAction actionWithTitle:@"Cancel"
-//                                                     style:UIAlertActionStyleCancel
-//                                                   handler:^(UIAlertAction *action) {
-//                                                       NSUInteger index = [nestAlertController.actions indexOfObject:action];
-//
-//                                                       [self modelSelect1AlertClickedButtonAt:index];
-//                                                   }];
-//
-//    [nestAlertController addAction:action];
-//
-//    for (int i = 0; i < [ModelCapability modelIndexCount]; i++) {
-//        UIAlertAction *action = [UIAlertAction actionWithTitle:[ModelCapability titleAtModelIndex:[ModelCapability modelIndexAtIndex:i]]
-//                                                         style:UIAlertActionStyleDefault
-//                                                       handler:^(UIAlertAction *action) {
-//                                                           NSUInteger index = [nestAlertController.actions indexOfObject:action];
-//
-//                                                           [self modelSelect1AlertClickedButtonAt:index];
-//                                                       }];
-//
-//        [nestAlertController addAction:action];
-//    }
-//
-//    [self presentViewController:nestAlertController
-//                       animated:YES
-//                     completion:nil];
-//}
-
-//- (void)didSelectRefreshPortWithButtonIndex:(NSInteger)buttonIndex {
-//    self.blind = YES;
-//
-//    [_cellArray removeAllObjects];
-//
-//    _selectedIndexPath = nil;
-//
-//    NSArray *portInfoArray;
-//
-//    switch (buttonIndex) {
-//        case 0:     // LAN
-//        portInfoArray = [SMPort searchPrinter:@"TCP:"];
-//        break;
-//        case 1:     // Bluetooth
-//        portInfoArray = [SMPort searchPrinter:@"BT:"];
-//        break;
-//        case 2:     // Bluetooth Low Energy
-//        portInfoArray = [SMPort searchPrinter:@"BLE:"];
-//        break;
-//        case 3:     // USB
-//        portInfoArray = [SMPort searchPrinter:@"USB:"];
-//        break;
-//        case 4:     // All
-//        portInfoArray = [SMPort searchPrinter];
-//        break;
-//    }
-//
-//    PrinterSetting *currentSetting = self->_appDelegate.settingManager.settings[self->_selectedPrinterIndex];
-//
-//    NSString *portName   = currentSetting.portName;
-//    NSString *modelName  = currentSetting.modelName;
-//    NSString *macAddress = currentSetting.macAddress;
-//
-//    int row = 0;
-//
-//    for (PortInfo *portInfo in portInfoArray) {
-//        [_cellArray addObject:@[portInfo.portName, portInfo.modelName, portInfo.macAddress]];
-//
-//        if ([portInfo.portName   isEqualToString:portName]   == YES &&
-//            [portInfo.modelName  isEqualToString:modelName]  == YES &&
-//            [portInfo.macAddress isEqualToString:macAddress] == YES) {
-//            _selectedIndexPath = [NSIndexPath indexPathForRow:row inSection:0];
-//        }
-//
-//        row++;
-//    }
-//
-//    [tbvData reloadData];
-//
-//    self.blind = NO;
-//}
 
 -(void)skipSelectInterface
 {
@@ -616,12 +279,19 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
     NSArray *portInfoArray;
     portInfoArray = [SMPort searchPrinter:@"TCP:"];
     
-    PrinterSetting *currentSetting = self->_appDelegate.settingManager.settings[self->_selectedPrinterIndex];
     
-    NSString *portName   = currentSetting.portName;
-    NSString *modelName  = currentSetting.modelName;
-    NSString *macAddress = currentSetting.macAddress;
-    
+    NSString *portName = @"";
+    NSString *modelName = @"";
+    NSString *macAddress = @"";
+    NSMutableArray *printerSettingList = self->_appDelegate.settingManager.settings;
+    if(self->_selectedPrinterIndex+1 <= [printerSettingList count])
+    {
+        PrinterSetting *currentSetting = printerSettingList[self->_selectedPrinterIndex];
+        portName   = currentSetting.portName;
+        modelName  = currentSetting.modelName;
+        macAddress = currentSetting.macAddress;
+    }
+
     int row = 0;
     
     for (PortInfo *portInfo in portInfoArray) {
@@ -643,92 +313,6 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
     
 }
 
-//- (void)didSelectManual {
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Please enter the port name."
-//                                                                   message:@"Fill in the port name."
-//                                                            preferredStyle:UIAlertControllerStyleAlert];
-//    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-//        textField.text = self->_appDelegate.settingManager.settings[self->_selectedPrinterIndex].portName;
-//    }];
-//
-//    [alert addAction:[UIAlertAction actionWithTitle:@"OK"
-//                                              style:UIAlertActionStyleDefault
-//                                            handler:^(UIAlertAction * _Nonnull action) {
-//                                                NSString *newPortName = alert.textFields.firstObject.text;
-//                                                if (newPortName != nil) {
-//                                                    self->_portName = newPortName;
-//                                                }
-//
-//                                                [self didInputPortName];
-//                                            }]];
-//
-//    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel"
-//                                              style:UIAlertActionStyleCancel
-//                                            handler:^(UIAlertAction * _Nonnull action) {
-//                                                [self.navigationController popViewControllerAnimated:YES];
-//                                            }]];
-//    [self presentViewController:alert animated:YES completion:nil];
-//}
-
-//- (void)modelSelect1AlertClickedButtonAt:(NSUInteger)buttonIndex {
-//    if (buttonIndex == 0) {
-//        return;
-//    }
-//
-//    ModelIndex modelIndex = [ModelCapability modelIndexAtIndex:buttonIndex - 1];
-//
-//    _modelName    = [ModelCapability titleAtModelIndex       :modelIndex];
-//    _macAddress   = _portSettings;                                             // for display.
-//    _emulation    = [ModelCapability emulationAtModelIndex   :modelIndex];
-//    _selectedModelIndex = modelIndex;
-//
-//    switch (_emulation) {
-//        case StarIoExtEmulationStarDotImpact:
-//        _paperSizeIndex = PaperSizeIndexDotImpactThreeInch;
-//        break;
-//        case StarIoExtEmulationEscPos:
-//        _paperSizeIndex = PaperSizeIndexEscPosThreeInch;
-//        break;
-//        default:
-//        _paperSizeIndex = PaperSizeIndexNone;
-//        break;
-//    }
-//
-//    if (self.selectedPrinterIndex > 0) {
-//        _paperSizeIndex = self->_appDelegate.settingManager.settings[0].selectedPaperSize;
-//    }
-//
-//    if (_paperSizeIndex == PaperSizeIndexNone) {
-//        [self showAlertWithTitle:@"Select paper size."
-//                         message:nil
-//                    buttonTitles:@[@"2\" (384dots)", @"3\" (576dots)", @"4\" (832dots)"]
-//                         handler:^(int buttonIndex) {
-//                             [self didSelectPaperSizeWithButtonIndex:buttonIndex];
-//                         }];
-//    } else {
-//        if ([ModelCapability cashDrawerOpenActiveAtModelIndex:modelIndex] == YES) {
-//            [self showAlertWithTitle:@"Select CashDrawer Open Status."
-//                             message:nil
-//                        buttonTitles:@[@"High when Open", @"Low when Open"]
-//                             handler:^(int buttonIndex) {
-//                                 [self didSelectCashDrawerOpenActiveHighWithButtonIndex:buttonIndex];
-//                             }];
-//        }
-//        else {
-//            [self saveParamsWithPortName:_portName
-//                            portSettings:_portSettings
-//                               modelName:_modelName
-//                              macAddress:_macAddress
-//                               emulation:_emulation
-//                cashDrawerOpenActiveHigh:YES
-//                              modelIndex:modelIndex
-//                          paperSizeIndex:_paperSizeIndex];
-//
-//            [self.navigationController popViewControllerAnimated:YES];
-//        }
-//    }
-//}
-
 - (void)saveParamsWithPortName:(NSString *)portName
                   portSettings:(NSString *)portSettings
                      modelName:(NSString *)modelName
@@ -739,7 +323,7 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
                 paperSizeIndex:(PaperSizeIndex)paperSizeIndex {
     if (_selectedModelIndex != ModelIndexNone &&
         _paperSizeIndex != PaperSizeIndexNone) {
-        NSInteger currentAllReceiptsSetting = _appDelegate.settingManager.settings[_selectedPrinterIndex].allReceiptsSettings;
+        NSInteger currentAllReceiptsSetting = 0;
         
         PrinterSetting *printerSetting = [[PrinterSetting alloc] initWithPortName:portName
                                                                      portSettings:portSettings

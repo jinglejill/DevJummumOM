@@ -145,7 +145,6 @@ enum enumDB
     dbDispute,
     dbDisputeCancel,
     dbDisputeList,
-    dbReceiptWithModifiedDate,
     dbJummumReceipt,
     dbJummumReceiptPrint,
     dbJummumReceiptSendToKitchen,
@@ -155,7 +154,7 @@ enum enumDB
     dbJummumReceiptTapNotificationProcessing,
     dbJummumReceiptTapNotificationDelivered,
     dbJummumReceiptTapNotificationClear,
-    dbReceiptPrintList,
+    dbReceiptPrint,
     dbPrinter,
     dbAlarm,
     dbAlarmUpdate,
@@ -256,7 +255,6 @@ enum enumUrl
     urlUserRewardRedemptionUsedDeleteList,
     urlReceiptMaxModifiedDateGetList,
     urlReceiptGet,
-    urlReceiptWithModifiedDateGet,
     urlReceiptUpdate,
     urlDisputeReasonInsert,
     urlDisputeReasonUpdate,
@@ -292,7 +290,10 @@ enum enumUrl
     urlReportDetailsByOrderGetList,
     urlReceiptBuffetPageGetList,
     urlReceiptBuffetEndedPageGetList,
-    urlReceiptBuffetEndedUpdate
+    urlReceiptBuffetEndedUpdate,
+    urlPrinterGetList,
+    urlReceiptPrintUpdate,
+    urlReceiptPrintGetList
 
 
     
@@ -419,5 +420,8 @@ enum enumUrl
 +(void)setShowPrintButton:(BOOL)show;
 +(BOOL)isWeekend:(NSDate *)date;
 +(NSString *)encloseWithBracket:(NSString *)text;
++(UIImage *)getImageFromCache:(NSString *)imageName;
++(void)saveImageInCache:(UIImage *)image imageName:(NSString *)imageName;
++(void)deleteFileInCache:(NSString *)fileName;
 @end
 

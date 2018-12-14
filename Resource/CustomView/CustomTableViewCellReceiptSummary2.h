@@ -13,6 +13,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblBranchName;
 @property (strong, nonatomic) IBOutlet UILabel *lblReceiptDate;
 @property (strong, nonatomic) IBOutlet UITableView *tbvOrderDetail;
-@property (strong, nonatomic) IBOutlet UIButton *btnOrderItAgain;
-@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
+@property (strong, nonatomic) IBOutlet UILabel *lblPrinterName;
 @end

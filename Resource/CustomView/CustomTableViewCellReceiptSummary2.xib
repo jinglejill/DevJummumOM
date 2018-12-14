@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="บิลเลขที่ 000001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI9-yi-PyO">
-                    <rect key="frame" x="16" y="36" width="225" height="17"/>
+                    <rect key="frame" x="16" y="36" width="97" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="sFp-6Q-0YT"/>
                     </constraints>
@@ -56,45 +56,36 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="separatorColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rx-VP-mD5">
-                    <rect key="frame" x="249" y="29" width="110" height="30"/>
-                    <color key="backgroundColor" red="1" green="0.23529411759999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เครื่องพิมพ์ 4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMS-zs-6Nm">
+                    <rect key="frame" x="221" y="36" width="138" height="17"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="110" id="58v-vn-ThS"/>
-                        <constraint firstAttribute="height" constant="30" id="JkU-GE-FPU"/>
+                        <constraint firstAttribute="width" constant="138" id="6UL-Ft-xIR"/>
+                        <constraint firstAttribute="height" constant="17" id="LuL-Pa-uXR"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Prompt-SemiBold" family="Prompt" pointSize="15"/>
-                    <state key="normal" title="Order it again">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                </button>
-                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wQX-wn-BFn">
-                    <rect key="frame" x="294" y="34" width="20" height="20"/>
-                </activityIndicatorView>
+                    <fontDescription key="fontDescription" name="Prompt-Regular" family="Prompt" pointSize="13"/>
+                    <color key="textColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="iIv-po-2Lo" firstAttribute="bottom" secondItem="z0S-hv-RIS" secondAttribute="bottom" id="0w6-QO-pQn"/>
                 <constraint firstItem="iIv-po-2Lo" firstAttribute="trailing" secondItem="z0S-hv-RIS" secondAttribute="trailing" id="1DG-VZ-WvU"/>
-                <constraint firstItem="9Rx-VP-mD5" firstAttribute="leading" secondItem="WI9-yi-PyO" secondAttribute="trailing" constant="8" id="1MM-w8-Pah"/>
                 <constraint firstItem="iIv-po-2Lo" firstAttribute="leading" secondItem="z0S-hv-RIS" secondAttribute="leading" id="4fa-xy-Ae5"/>
-                <constraint firstItem="wQX-wn-BFn" firstAttribute="centerX" secondItem="9Rx-VP-mD5" secondAttribute="centerX" id="6aj-iT-Zex"/>
                 <constraint firstItem="WI9-yi-PyO" firstAttribute="top" secondItem="z0S-hv-RIS" secondAttribute="top" constant="16" id="9ZM-Qx-EPH"/>
+                <constraint firstItem="XMS-zs-6Nm" firstAttribute="centerY" secondItem="WI9-yi-PyO" secondAttribute="centerY" id="NOA-uw-1zI"/>
                 <constraint firstItem="WI9-yi-PyO" firstAttribute="leading" secondItem="z0S-hv-RIS" secondAttribute="leading" constant="16" id="Swq-QO-4ZX"/>
                 <constraint firstItem="Upu-Dr-4wh" firstAttribute="top" secondItem="WI9-yi-PyO" secondAttribute="bottom" constant="12" id="Vix-sJ-sIb"/>
+                <constraint firstItem="AXs-Db-OjN" firstAttribute="trailing" secondItem="XMS-zs-6Nm" secondAttribute="trailing" id="XOS-KG-iqI"/>
                 <constraint firstItem="z0S-hv-RIS" firstAttribute="trailing" secondItem="AXs-Db-OjN" secondAttribute="trailing" constant="16" id="fyh-iS-K1u"/>
-                <constraint firstItem="wQX-wn-BFn" firstAttribute="centerY" secondItem="9Rx-VP-mD5" secondAttribute="centerY" id="mlp-CB-qaD"/>
                 <constraint firstItem="iIv-po-2Lo" firstAttribute="top" secondItem="Upu-Dr-4wh" secondAttribute="bottom" constant="8" id="pXe-6w-m6t"/>
                 <constraint firstItem="AXs-Db-OjN" firstAttribute="centerY" secondItem="Upu-Dr-4wh" secondAttribute="centerY" id="pdK-F5-PpL"/>
                 <constraint firstItem="Upu-Dr-4wh" firstAttribute="leading" secondItem="z0S-hv-RIS" secondAttribute="leading" constant="16" id="t23-qe-2LE"/>
-                <constraint firstItem="9Rx-VP-mD5" firstAttribute="top" secondItem="z0S-hv-RIS" secondAttribute="top" constant="9" id="v1b-Qv-t6i"/>
-                <constraint firstItem="z0S-hv-RIS" firstAttribute="trailing" secondItem="9Rx-VP-mD5" secondAttribute="trailing" constant="16" id="wbU-lq-zeN"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="z0S-hv-RIS"/>
             <connections>
-                <outlet property="btnOrderItAgain" destination="9Rx-VP-mD5" id="Rlo-6q-vi2"/>
-                <outlet property="indicator" destination="wQX-wn-BFn" id="3NS-hW-Ahg"/>
                 <outlet property="lblBranchName" destination="Upu-Dr-4wh" id="kHV-al-TeT"/>
+                <outlet property="lblPrinterName" destination="XMS-zs-6Nm" id="7EB-Uo-BZb"/>
                 <outlet property="lblReceiptDate" destination="AXs-Db-OjN" id="P0Z-Bb-0ud"/>
                 <outlet property="lblReceiptNo" destination="WI9-yi-PyO" id="Mqb-Zt-OmK"/>
                 <outlet property="tbvOrderDetail" destination="iIv-po-2Lo" id="kLs-ET-896"/>

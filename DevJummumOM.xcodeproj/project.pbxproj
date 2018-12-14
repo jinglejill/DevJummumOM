@@ -111,7 +111,6 @@
 		EF33D5EA211C371E00560C69 /* SharedOrderTaking.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D483211C371E00560C69 /* SharedOrderTaking.m */; };
 		EF33D5EB211C371E00560C69 /* HotDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D484211C371E00560C69 /* HotDeal.m */; };
 		EF33D5EC211C371E00560C69 /* SharedCurrentOrderTaking.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D485211C371E00560C69 /* SharedCurrentOrderTaking.m */; };
-		EF33D5ED211C371E00560C69 /* SharedPushSync.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D486211C371E00560C69 /* SharedPushSync.m */; };
 		EF33D5EE211C371E00560C69 /* SharedHotDeal.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D488211C371E00560C69 /* SharedHotDeal.m */; };
 		EF33D5EF211C371E00560C69 /* NoteType.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D48A211C371E00560C69 /* NoteType.m */; };
 		EF33D5F0211C371E00560C69 /* SharedOrderNote.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D48B211C371E00560C69 /* SharedOrderNote.m */; };
@@ -144,7 +143,6 @@
 		EF33D60B211C371E00560C69 /* PromoCode.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4B9211C371E00560C69 /* PromoCode.m */; };
 		EF33D60C211C371E00560C69 /* SharedCustomerTable.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4BA211C371E00560C69 /* SharedCustomerTable.m */; };
 		EF33D60D211C371E00560C69 /* OrderKitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4BB211C371E00560C69 /* OrderKitchen.m */; };
-		EF33D60E211C371F00560C69 /* PushSync.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4BC211C371E00560C69 /* PushSync.m */; };
 		EF33D60F211C371F00560C69 /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4BD211C371E00560C69 /* Device.m */; };
 		EF33D610211C371F00560C69 /* SharedMenuType.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4C3211C371E00560C69 /* SharedMenuType.m */; };
 		EF33D611211C371F00560C69 /* DisputeReason.m in Sources */ = {isa = PBXBuildFile; fileRef = EF33D4C5211C371E00560C69 /* DisputeReason.m */; };
@@ -318,6 +316,12 @@
 		EFA4E35F2156B1B3004C0ECF /* OmiseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4E3552156B1B2004C0ECF /* OmiseError.swift */; };
 		EFA4E3622156BF3C004C0ECF /* badgeGray.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA4E3602156BF3C004C0ECF /* badgeGray.png */; };
 		EFA4E3632156BF3C004C0ECF /* badgeWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA4E3612156BF3C004C0ECF /* badgeWhite.png */; };
+		EFCE2EA721B9FB3800E84B8F /* PrinterMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCE2EA621B9FB3800E84B8F /* PrinterMenu.m */; };
+		EFCE2EAA21B9FB4A00E84B8F /* SharedPrinterMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCE2EA921B9FB4A00E84B8F /* SharedPrinterMenu.m */; };
+		EFCE2EB421BFA11A00E84B8F /* CustomTableViewCellLogo.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCE2EB121BFA11900E84B8F /* CustomTableViewCellLogo.xib */; };
+		EFCE2EB521BFA11A00E84B8F /* CustomTableViewCellLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCE2EB321BFA11900E84B8F /* CustomTableViewCellLogo.m */; };
+		EFCE2EBD21BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCE2EB621BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.m */; };
+		EFCE2EBE21BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFCE2EB821BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.xib */; };
 		EFDAFE32214BCF5400A2596D /* report.png in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE31214BCF5300A2596D /* report.png */; };
 		EFDAFE35214BCFA100A2596D /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE34214BCFA100A2596D /* ReportViewController.m */; };
 		EFDAFE41214E63FA00A2596D /* CustomTableViewCellMonthYear.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE3F214E63FA00A2596D /* CustomTableViewCellMonthYear.m */; };
@@ -486,7 +490,6 @@
 		EF33D45F211C371E00560C69 /* MenuType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuType.m; sourceTree = "<group>"; };
 		EF33D460211C371E00560C69 /* SharedRewardPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedRewardPoint.m; sourceTree = "<group>"; };
 		EF33D461211C371E00560C69 /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
-		EF33D462211C371E00560C69 /* PushSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushSync.h; sourceTree = "<group>"; };
 		EF33D463211C371E00560C69 /* OrderKitchen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderKitchen.h; sourceTree = "<group>"; };
 		EF33D464211C371E00560C69 /* SharedCustomerTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedCustomerTable.h; sourceTree = "<group>"; };
 		EF33D465211C371E00560C69 /* PromoCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PromoCode.h; sourceTree = "<group>"; };
@@ -521,7 +524,6 @@
 		EF33D483211C371E00560C69 /* SharedOrderTaking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedOrderTaking.m; sourceTree = "<group>"; };
 		EF33D484211C371E00560C69 /* HotDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HotDeal.m; sourceTree = "<group>"; };
 		EF33D485211C371E00560C69 /* SharedCurrentOrderTaking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedCurrentOrderTaking.m; sourceTree = "<group>"; };
-		EF33D486211C371E00560C69 /* SharedPushSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedPushSync.m; sourceTree = "<group>"; };
 		EF33D487211C371E00560C69 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
 		EF33D488211C371E00560C69 /* SharedHotDeal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedHotDeal.m; sourceTree = "<group>"; };
 		EF33D489211C371E00560C69 /* RewardPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardPoint.h; sourceTree = "<group>"; };
@@ -573,11 +575,9 @@
 		EF33D4B9211C371E00560C69 /* PromoCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PromoCode.m; sourceTree = "<group>"; };
 		EF33D4BA211C371E00560C69 /* SharedCustomerTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedCustomerTable.m; sourceTree = "<group>"; };
 		EF33D4BB211C371E00560C69 /* OrderKitchen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderKitchen.m; sourceTree = "<group>"; };
-		EF33D4BC211C371E00560C69 /* PushSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushSync.m; sourceTree = "<group>"; };
 		EF33D4BD211C371E00560C69 /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		EF33D4BE211C371E00560C69 /* MenuType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuType.h; sourceTree = "<group>"; };
 		EF33D4BF211C371E00560C69 /* SharedRewardPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedRewardPoint.h; sourceTree = "<group>"; };
-		EF33D4C0211C371E00560C69 /* SharedPushSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedPushSync.h; sourceTree = "<group>"; };
 		EF33D4C1211C371E00560C69 /* HotDeal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HotDeal.h; sourceTree = "<group>"; };
 		EF33D4C2211C371E00560C69 /* SharedCurrentOrderTaking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedCurrentOrderTaking.h; sourceTree = "<group>"; };
 		EF33D4C3211C371E00560C69 /* SharedMenuType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedMenuType.m; sourceTree = "<group>"; };
@@ -830,6 +830,16 @@
 		EFA4E3552156B1B2004C0ECF /* OmiseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OmiseError.swift; sourceTree = "<group>"; };
 		EFA4E3602156BF3C004C0ECF /* badgeGray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badgeGray.png; sourceTree = "<group>"; };
 		EFA4E3612156BF3C004C0ECF /* badgeWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badgeWhite.png; sourceTree = "<group>"; };
+		EFCE2EA521B9FB3800E84B8F /* PrinterMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinterMenu.h; sourceTree = "<group>"; };
+		EFCE2EA621B9FB3800E84B8F /* PrinterMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterMenu.m; sourceTree = "<group>"; };
+		EFCE2EA821B9FB4A00E84B8F /* SharedPrinterMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SharedPrinterMenu.h; sourceTree = "<group>"; };
+		EFCE2EA921B9FB4A00E84B8F /* SharedPrinterMenu.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedPrinterMenu.m; sourceTree = "<group>"; };
+		EFCE2EB121BFA11900E84B8F /* CustomTableViewCellLogo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCellLogo.xib; sourceTree = "<group>"; };
+		EFCE2EB221BFA11900E84B8F /* CustomTableViewCellLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellLogo.h; sourceTree = "<group>"; };
+		EFCE2EB321BFA11900E84B8F /* CustomTableViewCellLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellLogo.m; sourceTree = "<group>"; };
+		EFCE2EB621BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCellSeparatorLine.m; sourceTree = "<group>"; };
+		EFCE2EB721BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCellSeparatorLine.h; sourceTree = "<group>"; };
+		EFCE2EB821BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCellSeparatorLine.xib; sourceTree = "<group>"; };
 		EFDAFE31214BCF5300A2596D /* report.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = report.png; sourceTree = "<group>"; };
 		EFDAFE33214BCFA100A2596D /* ReportViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
 		EFDAFE34214BCFA100A2596D /* ReportViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
@@ -1203,8 +1213,6 @@
 				EF33D4D5211C371E00560C69 /* Promotion.m */,
 				EF33D4B7211C371E00560C69 /* PromotionMenu.h */,
 				EF33D468211C371E00560C69 /* PromotionMenu.m */,
-				EF33D462211C371E00560C69 /* PushSync.h */,
-				EF33D4BC211C371E00560C69 /* PushSync.m */,
 				EF33D4A5211C371E00560C69 /* Receipt.h */,
 				EF33D456211C371E00560C69 /* Receipt.m */,
 				EF33D4D8211C371E00560C69 /* ReceiptPrint.h */,
@@ -1263,8 +1271,6 @@
 				EF33D4CB211C371E00560C69 /* SharedPromotion.m */,
 				EF33D4B8211C371E00560C69 /* SharedPromotionMenu.h */,
 				EF33D466211C371E00560C69 /* SharedPromotionMenu.m */,
-				EF33D4C0211C371E00560C69 /* SharedPushSync.h */,
-				EF33D486211C371E00560C69 /* SharedPushSync.m */,
 				EF33D4B4211C371E00560C69 /* SharedReceipt.h */,
 				EF33D46B211C371E00560C69 /* SharedReceipt.m */,
 				EF33D4A4211C371E00560C69 /* SharedReceiptPrint.h */,
@@ -1307,6 +1313,10 @@
 				EFDAFE4C214F595200A2596D /* ReportDaily.m */,
 				EFDAFE6D2150159100A2596D /* ReportDetailsByOrder.h */,
 				EFDAFE6E2150159100A2596D /* ReportDetailsByOrder.m */,
+				EFCE2EA521B9FB3800E84B8F /* PrinterMenu.h */,
+				EFCE2EA621B9FB3800E84B8F /* PrinterMenu.m */,
+				EFCE2EA821B9FB4A00E84B8F /* SharedPrinterMenu.h */,
+				EFCE2EA921B9FB4A00E84B8F /* SharedPrinterMenu.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1314,6 +1324,12 @@
 		EF33D4EA211C371E00560C69 /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				EFCE2EB721BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.h */,
+				EFCE2EB621BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.m */,
+				EFCE2EB821BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.xib */,
+				EFCE2EB221BFA11900E84B8F /* CustomTableViewCellLogo.h */,
+				EFCE2EB321BFA11900E84B8F /* CustomTableViewCellLogo.m */,
+				EFCE2EB121BFA11900E84B8F /* CustomTableViewCellLogo.xib */,
 				EF33D50D211C371E00560C69 /* CustomCollectionReusableView.h */,
 				EF33D541211C371E00560C69 /* CustomCollectionReusableView.m */,
 				EF33D519211C371E00560C69 /* CustomCollectionReusableView.xib */,
@@ -1761,6 +1777,7 @@
 				EF33D66E211C371F00560C69 /* Prompt-Medium.ttf in Resources */,
 				EF33D664211C371F00560C69 /* CustomTableViewCellRedemption.xib in Resources */,
 				EF33D674211C371F00560C69 /* Kanit-ExtraBoldItalic.otf in Resources */,
+				EFCE2EBE21BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.xib in Resources */,
 				EF33D5AB211C371E00560C69 /* Icon-72.png in Resources */,
 				EF33D67F211C371F00560C69 /* Kanit-Regular.otf in Resources */,
 				EF33D62E211C371F00560C69 /* CustomTableViewCellImageLabelRemove.xib in Resources */,
@@ -1799,6 +1816,7 @@
 				EF33D5BA211C371E00560C69 /* Icon-Small@2x.png in Resources */,
 				EF33D692211C371F00560C69 /* Kanit-Light.ttf in Resources */,
 				EF33D68F211C371F00560C69 /* Kanit-BlackItalic.ttf in Resources */,
+				EFCE2EB421BFA11A00E84B8F /* CustomTableViewCellLogo.xib in Resources */,
 				EFDAFE42214E63FA00A2596D /* CustomTableViewCellMonthYear.xib in Resources */,
 				EF33D597211C371E00560C69 /* jummumOMLogo.png in Resources */,
 				EF33D68B211C371F00560C69 /* Kanit-SemiBoldItalic.ttf in Resources */,
@@ -2000,6 +2018,7 @@
 				EF33D652211C371F00560C69 /* CustomTableViewCellRewardDetail.m in Sources */,
 				EF33D5EB211C371E00560C69 /* HotDeal.m in Sources */,
 				EFA4E35A2156B1B3004C0ECF /* Globals.swift in Sources */,
+				EFCE2EA721B9FB3800E84B8F /* PrinterMenu.m in Sources */,
 				EFA4E3562156B1B3004C0ECF /* OmiseTokenRequest.swift in Sources */,
 				EF33D5F0211C371E00560C69 /* SharedOrderNote.m in Sources */,
 				EF33D636211C371F00560C69 /* CustomTableViewCellText.m in Sources */,
@@ -2013,12 +2032,10 @@
 				EF33D660211C371F00560C69 /* CustomTableViewCellImageLabelRemove.m in Sources */,
 				EF33D5F4211C371E00560C69 /* MenuPic.m in Sources */,
 				EF33D65B211C371F00560C69 /* CustomTableViewCellPromoBanner.m in Sources */,
-				EF33D60E211C371F00560C69 /* PushSync.m in Sources */,
 				EF33D5E3211C371E00560C69 /* SharedNote.m in Sources */,
 				EF33D5F7211C371E00560C69 /* SharedLogIn.m in Sources */,
 				EF33D643211C371F00560C69 /* CustomTableViewCellNote.m in Sources */,
 				EF33D5C9211C371E00560C69 /* MeViewController.m in Sources */,
-				EF33D5ED211C371E00560C69 /* SharedPushSync.m in Sources */,
 				EF5D2488212B6BE50073F1A1 /* SharedDevice.m in Sources */,
 				EF33D632211C371F00560C69 /* CustomTableViewHeaderFooterOkCancel.m in Sources */,
 				EF33D619211C371F00560C69 /* Promotion.m in Sources */,
@@ -2067,6 +2084,7 @@
 				EF33D5EA211C371E00560C69 /* SharedOrderTaking.m in Sources */,
 				EF14CDE621647FE90035A292 /* CustomTableViewCellButtonLabel.m in Sources */,
 				EF33D5FD211C371E00560C69 /* UserAccount.m in Sources */,
+				EFCE2EAA21B9FB4A00E84B8F /* SharedPrinterMenu.m in Sources */,
 				EFA4E35D2156B1B3004C0ECF /* CardNumber.swift in Sources */,
 				EF33D5FE211C371E00560C69 /* SharedShop.m in Sources */,
 				EFA4E3572156B1B3004C0ECF /* OmiseToken.swift in Sources */,
@@ -2088,6 +2106,8 @@
 				EF33D58D211C371E00560C69 /* Utility.m in Sources */,
 				EF33D5BD211C371E00560C69 /* ForgotPasswordViewController.m in Sources */,
 				EF33D603211C371E00560C69 /* Printer.m in Sources */,
+				EFCE2EB521BFA11A00E84B8F /* CustomTableViewCellLogo.m in Sources */,
+				EFCE2EBD21BFA4AC00E84B8F /* CustomTableViewCellSeparatorLine.m in Sources */,
 				EF33D61D211C371F00560C69 /* Message.m in Sources */,
 				EF33D5E2211C371E00560C69 /* SharedUserPromotionUsed.m in Sources */,
 				EF33D639211C371F00560C69 /* CustomTableViewCellImageTextButtonHalf.m in Sources */,
@@ -2189,7 +2209,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2247,7 +2267,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

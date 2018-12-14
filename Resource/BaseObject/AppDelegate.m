@@ -21,7 +21,6 @@
 #import "RunningReceiptViewController.h"
 #import "HomeModel.h"
 #import "Utility.h"
-#import "PushSync.h"
 #import "Receipt.h"
 #import "Setting.h"
 #import "SharedCurrentUserAccount.h"
@@ -30,7 +29,6 @@
 
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
-
 
 
 @interface AppDelegate ()
@@ -48,8 +46,6 @@
 @end
 
 extern BOOL globalRotateFromSeg;
-
-
 
 @implementation AppDelegate
 - (UIImage *)imageWithColor:(UIColor *)color {
@@ -1188,7 +1184,8 @@ void myExceptionHandler(NSException *exception)
     [delegate.settingManager load];
 }
 
-+ (NSString *)getPortName {
++ (NSString *)getPortName
+{
     AppDelegate *delegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
     
     return delegate.settingManager.settings[0].portName;

@@ -20,12 +20,7 @@
     if(self)
     {
         self.printerID = [Printer getNextID];
-        self.code = code;
         self.name = name;
-        self.menuTypeIDListInText = menuTypeIDListInText;
-        self.model = model;
-        self.portName = portName;
-        self.macAddress = macAddress;
         self.modifiedUser = [Utility modifiedUser];
         self.modifiedDate = [Utility currentDateTime];
     }
@@ -93,12 +88,7 @@
     if (copy)
     {
         ((Printer *)copy).printerID = self.printerID;
-        [copy setCode:self.code];
         [copy setName:self.name];
-        [copy setMenuTypeIDListInText:self.menuTypeIDListInText];
-        [copy setModel:self.model];
-        [copy setPortName:self.portName];
-        [copy setMacAddress:self.macAddress];
         [copy setModifiedUser:[Utility modifiedUser]];
         [copy setModifiedDate:[Utility currentDateTime]];
         
@@ -148,64 +138,5 @@
         return filterArray[0];
     }
     return nil;
-}
-
-+(NSString *)getMenuTypeListInTextWithPrinter:(Printer *)printer
-{
-    NSString *menuTypeListInText = @"";
-    NSArray* menuTypeIDList = [printer.menuTypeIDListInText componentsSeparatedByString: @","];
-    int i=0;
-    for(NSString *item in menuTypeIDList)
-    {
-        MenuType *menuType = [MenuType getMenuType:[item integerValue]];
-        if(i == 0)
-        {
-            menuTypeListInText = menuType.name;
-        }
-        else
-        {
-            menuTypeListInText = [NSString stringWithFormat:@"%@,%@",menuTypeListInText,menuType.name];
-        }
-        
-        i++;
-    }
-    return menuTypeListInText;
-}
-
-+(NSMutableArray *)getMenuTypeListOtherThanPrinter:(Printer *)printer
-{
-    NSMutableArray *menuTypeList = [[NSMutableArray alloc]init];
-    NSMutableArray *dataList = [SharedPrinter sharedPrinter].printerList;
-    for(Printer *item in dataList)
-    {
-        if(item.printerID != printer.printerID)
-        {
-            NSArray* menuTypeIDList = [item.menuTypeIDListInText componentsSeparatedByString: @","];
-            for(NSString *strMenuTypeID in menuTypeIDList)
-            {
-                MenuType *menuType = [MenuType getMenuType:[strMenuTypeID integerValue]];
-                if(menuType)
-                {
-                    [menuTypeList addObject:menuType];
-                }                
-            }
-        }
-    }
-    return menuTypeList;
-}
-
-+(NSMutableArray *)getMenuTypeListWithPrinter:(Printer *)printer
-{
-    NSMutableArray *menuTypeList = [[NSMutableArray alloc]init];
-    NSArray* menuTypeIDList = [printer.menuTypeIDListInText componentsSeparatedByString: @","];
-    for(NSString *strMenuTypeID in menuTypeIDList)
-    {
-        MenuType *menuType = [MenuType getMenuType:[strMenuTypeID integerValue]];
-        if(menuType)
-        {
-            [menuTypeList addObject:menuType];
-        }
-    }
-    return menuTypeList;
 }
 @end

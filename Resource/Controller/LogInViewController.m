@@ -219,6 +219,21 @@
         else
         {
             [Utility updateSharedObject:items];
+         
+         
+            //jummumLogo for receipt
+            NSString *jummumLogo = [Setting getSettingValueWithKeyName:@"JummumLogo"];
+            NSString *strPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+            NSString *noImageFileName = [NSString stringWithFormat:@"%@/JMS/Image/NoImage.jpg",strPath];
+            NSString *imageFileName = [NSString stringWithFormat:@"%@/JMS/Image/%@",strPath,jummumLogo];
+            imageFileName = [Utility isStringEmpty:jummumLogo]?noImageFileName:imageFileName;
+            [self.homeModel downloadImageWithFileName:jummumLogo type:5 branchID:0 completionBlock:^(BOOL succeeded, UIImage *image)
+             {
+                 if (succeeded)
+                 {
+                    [Utility saveImageInCache:image imageName:imageFileName];
+                 }
+             }];
             
             
             NSMutableArray *userAccountList = items[0];
@@ -228,14 +243,7 @@
             NSMutableArray *branchList = items[[items count]-1];
             _branch = branchList[0];
             [Branch setCurrentBranch:_branch];
-//            [CredentialsDb setCurrentCredentialsDb:_credentialsDb];
-//            [Utility setBranchID:_credentialsDb.branchID];
             //-----------**********
-            
-            
-            
-            
-            
             
             
             //credential

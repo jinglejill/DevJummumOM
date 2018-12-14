@@ -14,8 +14,6 @@
 
 
 @implementation Receipt
-
-
 - (NSDictionary *)dictionary
 {
     return [NSDictionary dictionaryWithObjectsAndKeys:
@@ -26,6 +24,7 @@
         [self valueForKey:@"servingPerson"]?[self valueForKey:@"servingPerson"]:[NSNull null],@"servingPerson",
         [self valueForKey:@"customerType"]?[self valueForKey:@"customerType"]:[NSNull null],@"customerType",
         [Utility dateToString:[self valueForKey:@"openTableDate"] toFormat:@"yyyy-MM-dd HH:mm:ss"],@"openTableDate",
+        [self valueForKey:@"paymentMethod"]?[self valueForKey:@"paymentMethod"]:[NSNull null],@"paymentMethod",
         [self valueForKey:@"totalAmount"]?[self valueForKey:@"totalAmount"]:[NSNull null],@"totalAmount",
         [self valueForKey:@"cashAmount"]?[self valueForKey:@"cashAmount"]:[NSNull null],@"cashAmount",
         [self valueForKey:@"cashReceive"]?[self valueForKey:@"cashReceive"]:[NSNull null],@"cashReceive",
@@ -68,12 +67,13 @@
         [self valueForKey:@"jummumDiscount"]?[self valueForKey:@"jummumDiscount"]:[NSNull null],@"jummumDiscount",
         [self valueForKey:@"transactionFeeValue"]?[self valueForKey:@"transactionFeeValue"]:[NSNull null],@"transactionFeeValue",
         [self valueForKey:@"jummumPayValue"]?[self valueForKey:@"jummumPayValue"]:[NSNull null],@"jummumPayValue",
+        [self valueForKey:@"gbpReferenceNo"]?[self valueForKey:@"gbpReferenceNo"]:[NSNull null],@"gbpReferenceNo",
         [self valueForKey:@"modifiedUser"]?[self valueForKey:@"modifiedUser"]:[NSNull null],@"modifiedUser",
         [Utility dateToString:[self valueForKey:@"modifiedDate"] toFormat:@"yyyy-MM-dd HH:mm:ss"],@"modifiedDate",
         nil];
 }
 
--(Receipt *)initWithBranchID:(NSInteger)branchID customerTableID:(NSInteger)customerTableID memberID:(NSInteger)memberID servingPerson:(NSInteger)servingPerson customerType:(NSInteger)customerType openTableDate:(NSDate *)openTableDate totalAmount:(float)totalAmount cashAmount:(float)cashAmount cashReceive:(float)cashReceive creditCardType:(NSInteger)creditCardType creditCardNo:(NSString *)creditCardNo creditCardAmount:(float)creditCardAmount transferDate:(NSDate *)transferDate transferAmount:(float)transferAmount remark:(NSString *)remark specialPriceDiscount:(float)specialPriceDiscount discountProgramType:(NSInteger)discountProgramType discountProgramTitle:(NSString *)discountProgramTitle discountProgramValue:(float)discountProgramValue discountType:(NSInteger)discountType discountValue:(float)discountValue discountReason:(NSString *)discountReason serviceChargePercent:(float)serviceChargePercent serviceChargeValue:(float)serviceChargeValue priceIncludeVat:(NSInteger)priceIncludeVat vatPercent:(float)vatPercent vatValue:(float)vatValue netTotal:(float)netTotal luckyDrawCount:(NSInteger)luckyDrawCount beforeVat:(float)beforeVat status:(NSInteger)status statusRoute:(NSString *)statusRoute receiptNoID:(NSString *)receiptNoID receiptNoTaxID:(NSString *)receiptNoTaxID receiptDate:(NSDate *)receiptDate sendToKitchenDate:(NSDate *)sendToKitchenDate deliveredDate:(NSDate *)deliveredDate mergeReceiptID:(NSInteger)mergeReceiptID hasBuffetMenu:(NSInteger)hasBuffetMenu timeToOrder:(NSInteger)timeToOrder buffetEnded:(NSInteger)buffetEnded buffetEndedDate:(NSDate *)buffetEndedDate buffetReceiptID:(NSInteger)buffetReceiptID voucherCode:(NSString *)voucherCode shopDiscount:(float)shopDiscount jummumDiscount:(float)jummumDiscount transactionFeeValue:(float)transactionFeeValue jummumPayValue:(float)jummumPayValue
+-(Receipt *)initWithBranchID:(NSInteger)branchID customerTableID:(NSInteger)customerTableID memberID:(NSInteger)memberID servingPerson:(NSInteger)servingPerson customerType:(NSInteger)customerType openTableDate:(NSDate *)openTableDate paymentMethod:(NSInteger)paymentMethod totalAmount:(float)totalAmount cashAmount:(float)cashAmount cashReceive:(float)cashReceive creditCardType:(NSInteger)creditCardType creditCardNo:(NSString *)creditCardNo creditCardAmount:(float)creditCardAmount transferDate:(NSDate *)transferDate transferAmount:(float)transferAmount remark:(NSString *)remark specialPriceDiscount:(float)specialPriceDiscount discountProgramType:(NSInteger)discountProgramType discountProgramTitle:(NSString *)discountProgramTitle discountProgramValue:(float)discountProgramValue discountType:(NSInteger)discountType discountValue:(float)discountValue discountReason:(NSString *)discountReason serviceChargePercent:(float)serviceChargePercent serviceChargeValue:(float)serviceChargeValue priceIncludeVat:(NSInteger)priceIncludeVat vatPercent:(float)vatPercent vatValue:(float)vatValue netTotal:(float)netTotal luckyDrawCount:(NSInteger)luckyDrawCount beforeVat:(float)beforeVat status:(NSInteger)status statusRoute:(NSString *)statusRoute receiptNoID:(NSString *)receiptNoID receiptNoTaxID:(NSString *)receiptNoTaxID receiptDate:(NSDate *)receiptDate sendToKitchenDate:(NSDate *)sendToKitchenDate deliveredDate:(NSDate *)deliveredDate mergeReceiptID:(NSInteger)mergeReceiptID hasBuffetMenu:(NSInteger)hasBuffetMenu timeToOrder:(NSInteger)timeToOrder buffetEnded:(NSInteger)buffetEnded buffetEndedDate:(NSDate *)buffetEndedDate buffetReceiptID:(NSInteger)buffetReceiptID voucherCode:(NSString *)voucherCode shopDiscount:(float)shopDiscount jummumDiscount:(float)jummumDiscount transactionFeeValue:(float)transactionFeeValue jummumPayValue:(float)jummumPayValue gbpReferenceNo:(NSString *)gbpReferenceNo
 {
     self = [super init];
     if(self)
@@ -85,6 +85,7 @@
         self.servingPerson = servingPerson;
         self.customerType = customerType;
         self.openTableDate = openTableDate;
+        self.paymentMethod = paymentMethod;
         self.totalAmount = totalAmount;
         self.cashAmount = cashAmount;
         self.cashReceive = cashReceive;
@@ -127,6 +128,7 @@
         self.jummumDiscount = jummumDiscount;
         self.transactionFeeValue = transactionFeeValue;
         self.jummumPayValue = jummumPayValue;
+        self.gbpReferenceNo = gbpReferenceNo;
         self.modifiedUser = [Utility modifiedUser];
         self.modifiedDate = [Utility currentDateTime];
     }
@@ -212,6 +214,7 @@
         ((Receipt *)copy).servingPerson = self.servingPerson;
         ((Receipt *)copy).customerType = self.customerType;
         [copy setOpenTableDate:self.openTableDate];
+        ((Receipt *)copy).paymentMethod = self.paymentMethod;
         ((Receipt *)copy).totalAmount = self.totalAmount;
         ((Receipt *)copy).cashAmount = self.cashAmount;
         ((Receipt *)copy).cashReceive = self.cashReceive;
@@ -254,6 +257,7 @@
         ((Receipt *)copy).jummumDiscount = self.jummumDiscount;
         ((Receipt *)copy).transactionFeeValue = self.transactionFeeValue;
         ((Receipt *)copy).jummumPayValue = self.jummumPayValue;
+        [copy setGbpReferenceNo:self.gbpReferenceNo];
         [copy setModifiedUser:[Utility modifiedUser]];
         [copy setModifiedDate:[Utility currentDateTime]];
     }
@@ -270,6 +274,7 @@
     && self.servingPerson == editingReceipt.servingPerson
     && self.customerType == editingReceipt.customerType
     && [self.openTableDate isEqual:editingReceipt.openTableDate]
+    && self.paymentMethod == editingReceipt.paymentMethod
     && self.totalAmount == editingReceipt.totalAmount
     && self.cashAmount == editingReceipt.cashAmount
     && self.cashReceive == editingReceipt.cashReceive
@@ -312,6 +317,7 @@
     && self.jummumDiscount == editingReceipt.jummumDiscount
     && self.transactionFeeValue == editingReceipt.transactionFeeValue
     && self.jummumPayValue == editingReceipt.jummumPayValue
+    && [self.gbpReferenceNo isEqualToString:editingReceipt.gbpReferenceNo]
     )
     {
         return NO;
@@ -328,6 +334,7 @@
     toReceipt.servingPerson = fromReceipt.servingPerson;
     toReceipt.customerType = fromReceipt.customerType;
     toReceipt.openTableDate = fromReceipt.openTableDate;
+    toReceipt.paymentMethod = fromReceipt.paymentMethod;
     toReceipt.totalAmount = fromReceipt.totalAmount;
     toReceipt.cashAmount = fromReceipt.cashAmount;
     toReceipt.cashReceive = fromReceipt.cashReceive;
@@ -370,12 +377,12 @@
     toReceipt.jummumDiscount = fromReceipt.jummumDiscount;
     toReceipt.transactionFeeValue = fromReceipt.transactionFeeValue;
     toReceipt.jummumPayValue = fromReceipt.jummumPayValue;
+    toReceipt.gbpReferenceNo = fromReceipt.gbpReferenceNo;
     toReceipt.modifiedUser = [Utility modifiedUser];
     toReceipt.modifiedDate = [Utility currentDateTime];
     
     return toReceipt;
 }
-
 
 +(NSMutableArray *)getReceiptListWithStartDate:(NSDate *)startDate endDate:(NSDate *)endDate statusList:(NSArray *)statusList
 {

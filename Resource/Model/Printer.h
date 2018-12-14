@@ -10,18 +10,14 @@
 
 @interface Printer : NSObject
 @property (nonatomic) NSInteger printerID;
-@property (retain, nonatomic) NSString * code;
 @property (retain, nonatomic) NSString * name;
-@property (retain, nonatomic) NSString * menuTypeIDListInText;
-@property (retain, nonatomic) NSString * model;
-@property (retain, nonatomic) NSString * portName;
-@property (retain, nonatomic) NSString * macAddress;
 @property (retain, nonatomic) NSString * modifiedUser;
 @property (retain, nonatomic) NSDate * modifiedDate;
 
 
-
+@property (nonatomic) NSInteger branchID;
 @property (nonatomic) NSInteger printerStatus;
+
 
 -(Printer *)initWithCode:(NSString *)code name:(NSString *)name menuTypeIDListInText:(NSString *)menuTypeIDListInText model:(NSString *)model portName:(NSString *)portName macAddress:(NSString *)macAddress;
 +(NSInteger)getNextID;
@@ -33,7 +29,4 @@
 +(Printer *)getPrinterWithCode:(NSString *)code;
 +(NSMutableArray *)getPrinterList;
 +(Printer *)getPrinterWithName:(NSString *)name;
-+(NSString *)getMenuTypeListInTextWithPrinter:(Printer *)printer;
-+(NSMutableArray *)getMenuTypeListOtherThanPrinter:(Printer *)printer;
-+(NSMutableArray *)getMenuTypeListWithPrinter:(Printer *)printer;
 @end

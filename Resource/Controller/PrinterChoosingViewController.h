@@ -7,15 +7,17 @@
 //
 
 #import "CustomViewController.h"
+#import "Printer.h"
 
 @interface PrinterChoosingViewController : CustomViewController<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UILabel *lblNavTitle;
 @property (strong, nonatomic) IBOutlet UITableView *tbvData;
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *topViewHeight;
-@property (nonatomic) NSInteger selectedPrinterIndex;
 @property (weak, nonatomic) IBOutlet UIView *blindView;
-
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic) NSInteger selectedPrinterIndex;
+@property (nonatomic) Printer *printer;
+
 
 @property (nonatomic) BOOL blind;
 - (IBAction)goBack:(id)sender;

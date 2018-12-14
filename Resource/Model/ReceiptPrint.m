@@ -13,13 +13,25 @@
 
 @implementation ReceiptPrint
 
--(ReceiptPrint *)initWithReceiptID:(NSInteger)receiptID
+- (NSDictionary *)dictionary
+{
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+        [self valueForKey:@"receiptPrintID"]?[self valueForKey:@"receiptPrintID"]:[NSNull null],@"receiptPrintID",
+        [self valueForKey:@"receiptID"]?[self valueForKey:@"receiptID"]:[NSNull null],@"receiptID",
+        [self valueForKey:@"printerID"]?[self valueForKey:@"printerID"]:[NSNull null],@"printerID",
+        [self valueForKey:@"modifiedUser"]?[self valueForKey:@"modifiedUser"]:[NSNull null],@"modifiedUser",
+        [Utility dateToString:[self valueForKey:@"modifiedDate"] toFormat:@"yyyy-MM-dd HH:mm:ss"],@"modifiedDate",
+        nil];
+}
+
+-(ReceiptPrint *)initWithReceiptID:(NSInteger)receiptID printerID:(NSInteger)printerID
 {
     self = [super init];
     if(self)
     {
         self.receiptPrintID = [ReceiptPrint getNextID];
         self.receiptID = receiptID;
+        self.printerID = printerID;
         self.modifiedUser = [Utility modifiedUser];
         self.modifiedDate = [Utility currentDateTime];
     }
@@ -31,13 +43,13 @@
     NSString *primaryKeyName = @"receiptPrintID";
     NSString *propertyName = [NSString stringWithFormat:@"_%@",primaryKeyName];
     NSMutableArray *dataList = [SharedReceiptPrint sharedReceiptPrint].receiptPrintList;
-    
-    
+
+
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:propertyName ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
     NSArray *sortArray = [dataList sortedArrayUsingDescriptors:sortDescriptors];
     dataList = [sortArray mutableCopy];
-    
+
     if([dataList count] == 0)
     {
         return -1;
@@ -95,15 +107,14 @@
 -(id)copyWithZone:(NSZone *)zone
 {
     id copy = [[[self class] alloc] init];
-    
+
     if (copy)
     {
         ((ReceiptPrint *)copy).receiptPrintID = self.receiptPrintID;
         ((ReceiptPrint *)copy).receiptID = self.receiptID;
+        ((ReceiptPrint *)copy).printerID = self.printerID;
         [copy setModifiedUser:[Utility modifiedUser]];
         [copy setModifiedDate:[Utility currentDateTime]];
-        
-        
     }
     
     return copy;
@@ -112,8 +123,9 @@
 -(BOOL)editReceiptPrint:(ReceiptPrint *)editingReceiptPrint
 {
     if(self.receiptPrintID == editingReceiptPrint.receiptPrintID
-       && self.receiptID == editingReceiptPrint.receiptID
-       )
+    && self.receiptID == editingReceiptPrint.receiptID
+    && self.printerID == editingReceiptPrint.printerID
+    )
     {
         return NO;
     }
@@ -124,23 +136,13 @@
 {
     toReceiptPrint.receiptPrintID = fromReceiptPrint.receiptPrintID;
     toReceiptPrint.receiptID = fromReceiptPrint.receiptID;
+    toReceiptPrint.printerID = fromReceiptPrint.printerID;
     toReceiptPrint.modifiedUser = [Utility modifiedUser];
     toReceiptPrint.modifiedDate = [Utility currentDateTime];
     
     return toReceiptPrint;
 }
 
-+(ReceiptPrint *)getReceiptPrintWithReceiptID:(NSInteger)receiptID
-{
-    NSMutableArray *dataList = [SharedReceiptPrint sharedReceiptPrint].receiptPrintList;
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"_receiptID = %ld",receiptID];
-    NSArray *filterArray = [dataList filteredArrayUsingPredicate:predicate];
-    
-    if([filterArray count] > 0)
-    {
-        return filterArray[0];
-    }
-    return nil;
-}
+
 
 @end

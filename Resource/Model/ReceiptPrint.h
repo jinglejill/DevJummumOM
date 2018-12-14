@@ -11,12 +11,12 @@
 @interface ReceiptPrint : NSObject
 @property (nonatomic) NSInteger receiptPrintID;
 @property (nonatomic) NSInteger receiptID;
+@property (nonatomic) NSInteger printerID;
 @property (retain, nonatomic) NSString * modifiedUser;
 @property (retain, nonatomic) NSDate * modifiedDate;
 
-
-
--(ReceiptPrint *)initWithReceiptID:(NSInteger)receiptID;
+- (NSDictionary *)dictionary;
+-(ReceiptPrint *)initWithReceiptID:(NSInteger)receiptID printerID:(NSInteger)printerID;
 +(NSInteger)getNextID;
 +(void)addObject:(ReceiptPrint *)receiptPrint;
 +(void)removeObject:(ReceiptPrint *)receiptPrint;
@@ -25,6 +25,5 @@
 +(ReceiptPrint *)getReceiptPrint:(NSInteger)receiptPrintID;
 -(BOOL)editReceiptPrint:(ReceiptPrint *)editingReceiptPrint;
 +(ReceiptPrint *)copyFrom:(ReceiptPrint *)fromReceiptPrint to:(ReceiptPrint *)toReceiptPrint;
-+(ReceiptPrint *)getReceiptPrintWithReceiptID:(NSInteger)receiptID;
 
 @end

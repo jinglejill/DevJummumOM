@@ -11,14 +11,12 @@
 #import "AppDelegate.h"
 #import "HomeModel.h"
 #import "Utility.h"
-#import "PushSync.h"
 #import "Setting.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <sys/utsname.h>
 #import "Receipt.h"
 #import "OrderTaking.h"
 #import "OrderNote.h"
-
 
 
 @interface CustomViewController ()
