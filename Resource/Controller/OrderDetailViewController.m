@@ -2464,7 +2464,8 @@ static NSString * const reuseIdentifierSeparatorLine = @"CustomTableViewCellSepa
                 [printerOrderTakingList addObject:orderTaking];
             }
         }
-                
+        
+        NSMutableArray *imageToPrintList = [[NSMutableArray alloc]init];
         NSMutableArray *allToPrintOrderTakingList = [[NSMutableArray alloc]init];
         if([printerOrderTakingList count] > 0)
         {
@@ -2488,69 +2489,71 @@ static NSString * const reuseIdentifierSeparatorLine = @"CustomTableViewCellSepa
                 [allToPrintOrderTakingList addObject:printerOrderTakingList];
             }
             
-            NSMutableArray *imageToPrintList = [[NSMutableArray alloc]init];
+            
             for(int j=0; j<[allToPrintOrderTakingList count]; j++)
             {
                 NSMutableArray *printOrderTakingList = allToPrintOrderTakingList[j];
                 UIImage *reviewOrderBill = [self getOrderBillForPrinter:printer orderTaking:printOrderTakingList receipt:receipt];
                 [imageToPrintList addObject:reviewOrderBill];
             }
-            if(printer.printerID == printReceiptAtPrinterNo)
-            {
-                [imageToPrintList addObject:[self screenCaptureBill:receipt]];
-            }
+        }
+        
+        
+        if(printer.printerID == printReceiptAtPrinterNo)
+        {
+            [imageToPrintList addObject:[self screenCaptureBill:receipt]];
+        }
+    
+        for(int j=0; j<[imageToPrintList count]; j++)
+        {
+            UIImage *reviewOrderBill = imageToPrintList[j];
             
-            for(int j=0; j<[imageToPrintList count]; j++)
-            {
-                UIImage *reviewOrderBill = imageToPrintList[j];
-                
-                NSData *commands = nil;
-        
-                ISCBBuilder *builder = [StarIoExt createCommandBuilder:[AppDelegate getEmulation]];
-        
-                [builder beginDocument];
-        
-                UIImage *imagePrint = reviewOrderBill;
-        
-                [builder appendBitmap:imagePrint diffusion:NO width:[AppDelegate getSelectedPaperSize] bothScale:YES];
-        
-                [builder appendCutPaper:SCBCutPaperActionPartialCutWithFeed];
-        
-                [builder endDocument];
-        
-                commands = [builder.commands copy];
-        
-        
-                PrinterSetting *printerSetting = appDelegate.settingManager.settings[i];
-                NSString *portName     = printerSetting.portName;
-                NSString *portSettings = printerSetting.portSettings;
-        
-        
-                dispatch_async(GlobalQueueManager.sharedManager.serialQueue, ^{
-                    [Communication sendCommands:commands
-                                       portName:portName
-                                   portSettings:portSettings
-                                        timeout:10000
-                              completionHandler:^(BOOL result, NSString *title, NSString *message) {
-                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                      if(!result)
-                                      {
-                                          [self showAlert:title message:message];
-                                      }
-                                      else
-                                      {
-                                          ReceiptPrint *receiptPrint = [[ReceiptPrint alloc]init];
-                                          receiptPrint.printerID = printer.printerID;
-                                          receiptPrint.receiptID = receipt.receiptID;
-                                          receiptPrint.modifiedUser = [Utility modifiedUser];
-                                          self.homeModel = [[HomeModel alloc]init];
-                                          self.homeModel.delegate = self;
-                                          [self.homeModel updateItems:dbReceiptPrint withData:receiptPrint actionScreen:@"update receipt and insert receiptPrint"];
-                                      }
-                                  });
-                              }];
-                });
-            }
+            NSData *commands = nil;
+    
+            ISCBBuilder *builder = [StarIoExt createCommandBuilder:[AppDelegate getEmulation]];
+    
+            [builder beginDocument];
+    
+            UIImage *imagePrint = reviewOrderBill;
+    
+            [builder appendBitmap:imagePrint diffusion:NO width:[AppDelegate getSelectedPaperSize] bothScale:YES];
+    
+            [builder appendCutPaper:SCBCutPaperActionPartialCutWithFeed];
+    
+            [builder endDocument];
+    
+            commands = [builder.commands copy];
+    
+    
+            PrinterSetting *printerSetting = appDelegate.settingManager.settings[i];
+            NSString *portName     = printerSetting.portName;
+            NSString *portSettings = printerSetting.portSettings;
+    
+    
+            dispatch_async(GlobalQueueManager.sharedManager.serialQueue, ^{
+                [Communication sendCommands:commands
+                                   portName:portName
+                               portSettings:portSettings
+                                    timeout:10000
+                          completionHandler:^(BOOL result, NSString *title, NSString *message) {
+                              dispatch_async(dispatch_get_main_queue(), ^{
+                                  if(!result)
+                                  {
+                                      [self showAlert:title message:message];
+                                  }
+                                  else
+                                  {
+                                      ReceiptPrint *receiptPrint = [[ReceiptPrint alloc]init];
+                                      receiptPrint.printerID = printer.printerID;
+                                      receiptPrint.receiptID = receipt.receiptID;
+                                      receiptPrint.modifiedUser = [Utility modifiedUser];
+                                      self.homeModel = [[HomeModel alloc]init];
+                                      self.homeModel.delegate = self;
+                                      [self.homeModel updateItems:dbReceiptPrint withData:receiptPrint actionScreen:@"update receipt and insert receiptPrint"];
+                                  }
+                              });
+                          }];
+            });
         }
     }
     {
@@ -2729,9 +2732,8 @@ static NSString * const reuseIdentifierSeparatorLine = @"CustomTableViewCellSepa
         CustomTableViewCellLogo *cell = [tbvData dequeueReusableCellWithIdentifier:reuseIdentifierLogo];
 
 
-        NSString *strPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-        NSString *noImageFileName = [NSString stringWithFormat:@"%@/JMS/Image/NoImage.jpg",strPath];
-        NSString *imageFileName = [NSString stringWithFormat:@"%@/JMS/Image/%@",strPath,jummumLogo];
+        NSString *noImageFileName = [NSString stringWithFormat:@"/JMS/Image/NoImage.jpg"];
+        NSString *imageFileName = [NSString stringWithFormat:@"/JMS/Image/%@",jummumLogo];
         imageFileName = [Utility isStringEmpty:jummumLogo]?noImageFileName:imageFileName;
         UIImage *image = [Utility getImageFromCache:imageFileName];
         if(image)

@@ -1545,40 +1545,56 @@ extern NSString *globalBundleID;
     return [NSString stringWithFormat:@"(%@)",text];
 }
 
++(void)createCacheFoler:(NSString *)folderName
+{
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString *cachesDirectory = [paths objectAtIndex:0]; // Get Caches folder
+    NSString *dataPath = [cachesDirectory stringByAppendingPathComponent:folderName];
+
+    if (![[NSFileManager defaultManager] fileExistsAtPath:dataPath])
+        [[NSFileManager defaultManager] createDirectoryAtPath:dataPath withIntermediateDirectories:NO attributes:nil error:&error];
+    
+        if(error)
+        {
+            NSLog(@"create folder error:%@",error.description);
+        }
+        else
+        {
+            NSLog(@"create folder success:%@",dataPath);
+        }
+}
+
 +(UIImage *)getImageFromCache:(NSString *)imageName
 {
-    NSRange needleRange = NSMakeRange(2,[imageName length]-2);
-    NSString *saveImageName = [imageName substringWithRange:needleRange];
-    saveImageName =[saveImageName stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
-    NSString *cachedFolderPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-    NSString *cachedImagePath = [cachedFolderPath stringByAppendingPathComponent:saveImageName];
-    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfFile:cachedImagePath]];
-    
+    NSString *strPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *imagePath = [NSString stringWithFormat:@"%@%@",strPath,imageName];
+    UIImage *image = [UIImage imageWithData:[NSData dataWithContentsOfFile:imagePath]];
     return image;
 }
 
 +(void)saveImageInCache:(UIImage *)image imageName:(NSString *)imageName
 {
-    NSRange needleRange = NSMakeRange(2,[imageName length]-2);
-    NSString *saveImageName = [imageName substringWithRange:needleRange];
-    saveImageName =[saveImageName stringByReplacingOccurrencesOfString:@"/" withString:@"_"];
-    NSString *cachedFolderPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
-    NSString *cachedImagePath = [cachedFolderPath stringByAppendingPathComponent:saveImageName];
-    [UIImagePNGRepresentation(image) writeToFile:cachedImagePath atomically:YES];
+    NSString *strPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *imagePath = [NSString stringWithFormat:@"%@%@",strPath,imageName];
+    BOOL writeSuccess =  [UIImagePNGRepresentation(image) writeToFile:imagePath atomically:YES];
 }
 
 +(void)deleteFileInCache:(NSString *)fileName
 {
-    NSLog(@"delete filename:%@",fileName);
+    NSString *strPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES)[0];
+    NSString *filePath = [NSString stringWithFormat:@"%@%@",strPath,fileName];
+    
+    NSLog(@"delete filename:%@",filePath);
     NSError *error;
     
-    if([[NSFileManager defaultManager] isDeletableFileAtPath:fileName])
+    if([[NSFileManager defaultManager] isDeletableFileAtPath:filePath])
     {
-        [[NSFileManager defaultManager]removeItemAtPath:fileName error:&error];
+        [[NSFileManager defaultManager]removeItemAtPath:filePath error:&error];
         if (error)
         {
           // file deletion failed
-          NSLog(@"file deletion failed: %@",error.localizedDescription);
+          NSLog(@"file deletion failed: %@, %@, %@",error.localizedDescription,error.description,error.description);
         }
     }
     else

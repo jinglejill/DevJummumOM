@@ -420,6 +420,7 @@ enum enumUrl
 +(void)setShowPrintButton:(BOOL)show;
 +(BOOL)isWeekend:(NSDate *)date;
 +(NSString *)encloseWithBracket:(NSString *)text;
++(void)createCacheFoler:(NSString *)folderName;
 +(UIImage *)getImageFromCache:(NSString *)imageName;
 +(void)saveImageInCache:(UIImage *)image imageName:(NSString *)imageName;
 +(void)deleteFileInCache:(NSString *)fileName;

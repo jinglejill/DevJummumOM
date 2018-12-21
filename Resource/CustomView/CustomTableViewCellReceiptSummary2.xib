@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="บิลเลขที่ 000001" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI9-yi-PyO">
-                    <rect key="frame" x="16" y="36" width="97" height="17"/>
+                    <rect key="frame" x="16" y="16" width="97" height="17"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="17" id="sFp-6Q-0YT"/>
                     </constraints>
@@ -33,7 +33,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ร้าน MAMARIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upu-Dr-4wh">
-                    <rect key="frame" x="16" y="65" width="100" height="18"/>
+                    <rect key="frame" x="16" y="45" width="100" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="02N-kx-vws"/>
                     </constraints>
@@ -42,7 +42,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 FEB 2018 12:30 PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXs-Db-OjN">
-                    <rect key="frame" x="221" y="65" width="138" height="17"/>
+                    <rect key="frame" x="221" y="45.5" width="138" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="138" id="PeV-G2-AVB"/>
                         <constraint firstAttribute="height" constant="17" id="VG1-hl-5pv"/>
@@ -52,12 +52,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iIv-po-2Lo">
-                    <rect key="frame" x="0.0" y="91" width="375" height="576"/>
+                    <rect key="frame" x="0.0" y="71" width="375" height="596"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="separatorColor" red="0.85098039219999999" green="0.85098039219999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เครื่องพิมพ์ 4" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMS-zs-6Nm">
-                    <rect key="frame" x="221" y="36" width="138" height="17"/>
+                    <rect key="frame" x="221" y="16" width="138" height="17"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="138" id="6UL-Ft-xIR"/>
                         <constraint firstAttribute="height" constant="17" id="LuL-Pa-uXR"/>
@@ -72,7 +72,6 @@
                 <constraint firstItem="iIv-po-2Lo" firstAttribute="bottom" secondItem="z0S-hv-RIS" secondAttribute="bottom" id="0w6-QO-pQn"/>
                 <constraint firstItem="iIv-po-2Lo" firstAttribute="trailing" secondItem="z0S-hv-RIS" secondAttribute="trailing" id="1DG-VZ-WvU"/>
                 <constraint firstItem="iIv-po-2Lo" firstAttribute="leading" secondItem="z0S-hv-RIS" secondAttribute="leading" id="4fa-xy-Ae5"/>
-                <constraint firstItem="WI9-yi-PyO" firstAttribute="top" secondItem="z0S-hv-RIS" secondAttribute="top" constant="16" id="9ZM-Qx-EPH"/>
                 <constraint firstItem="XMS-zs-6Nm" firstAttribute="centerY" secondItem="WI9-yi-PyO" secondAttribute="centerY" id="NOA-uw-1zI"/>
                 <constraint firstItem="WI9-yi-PyO" firstAttribute="leading" secondItem="z0S-hv-RIS" secondAttribute="leading" constant="16" id="Swq-QO-4ZX"/>
                 <constraint firstItem="Upu-Dr-4wh" firstAttribute="top" secondItem="WI9-yi-PyO" secondAttribute="bottom" constant="12" id="Vix-sJ-sIb"/>
@@ -80,6 +79,7 @@
                 <constraint firstItem="z0S-hv-RIS" firstAttribute="trailing" secondItem="AXs-Db-OjN" secondAttribute="trailing" constant="16" id="fyh-iS-K1u"/>
                 <constraint firstItem="iIv-po-2Lo" firstAttribute="top" secondItem="Upu-Dr-4wh" secondAttribute="bottom" constant="8" id="pXe-6w-m6t"/>
                 <constraint firstItem="AXs-Db-OjN" firstAttribute="centerY" secondItem="Upu-Dr-4wh" secondAttribute="centerY" id="pdK-F5-PpL"/>
+                <constraint firstItem="WI9-yi-PyO" firstAttribute="top" secondItem="dMi-FT-ay4" secondAttribute="top" constant="16" id="qwL-bK-ncO"/>
                 <constraint firstItem="Upu-Dr-4wh" firstAttribute="leading" secondItem="z0S-hv-RIS" secondAttribute="leading" constant="16" id="t23-qe-2LE"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="z0S-hv-RIS"/>

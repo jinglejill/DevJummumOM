@@ -473,7 +473,7 @@
             NSArray *dataList = (NSArray *)data;
             Branch *branch = dataList[0];
             NSDate *maxReceiptModifiedDate = dataList[1];
-            noteDataString = [NSString stringWithFormat:@"branchID=%ld&modifiedDate=%@",branch.branchID,maxReceiptModifiedDate];
+            noteDataString = [NSString stringWithFormat:@"branchID=%ld&maxModifiedDate=%@",branch.branchID,maxReceiptModifiedDate];
             url = [NSURL URLWithString:[Utility appendRandomParam:[Utility url:urlReceiptMaxModifiedDateGetList]]];
         }
             break;

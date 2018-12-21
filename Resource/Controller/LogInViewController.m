@@ -80,8 +80,6 @@
     float bottomPadding = window.safeAreaInsets.bottom;    
     
     
-    
-//    lblLogInTop.constant = 7 + bottomPadding;
     float spaceHeading = bottomPadding?30:0;
     lblLogInTop.constant = 7 + spaceHeading;
     lblLogInBottom.constant = 7 + spaceHeading;
@@ -127,7 +125,6 @@
     Device *device = [[Device alloc]initWithDeviceToken:[Utility deviceToken] model:[self deviceName] remark:@""];
     [self.homeModel insertItems:dbUserAccountValidate withData:@[userAccount,logIn,device] actionScreen:@"validate userAccount"];
     [self loadingOverlayView];
-    
 }
 
 - (IBAction)registerNow:(id)sender
@@ -164,7 +161,6 @@
         [btnRememberMe setTitle:message forState:UIControlStateNormal];
         _rememberMe = NO;
     }
-    
     
     
     
@@ -222,10 +218,11 @@
          
          
             //jummumLogo for receipt
+            [Utility createCacheFoler:@"/JMS"];
+            [Utility createCacheFoler:@"/JMS/Image"];
             NSString *jummumLogo = [Setting getSettingValueWithKeyName:@"JummumLogo"];
-            NSString *strPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
-            NSString *noImageFileName = [NSString stringWithFormat:@"%@/JMS/Image/NoImage.jpg",strPath];
-            NSString *imageFileName = [NSString stringWithFormat:@"%@/JMS/Image/%@",strPath,jummumLogo];
+            NSString *noImageFileName = [NSString stringWithFormat:@"/JMS/Image/NoImage.jpg"];
+            NSString *imageFileName = [NSString stringWithFormat:@"/JMS/Image/%@",jummumLogo];
             imageFileName = [Utility isStringEmpty:jummumLogo]?noImageFileName:imageFileName;
             [self.homeModel downloadImageWithFileName:jummumLogo type:5 branchID:0 completionBlock:^(BOOL succeeded, UIImage *image)
              {
