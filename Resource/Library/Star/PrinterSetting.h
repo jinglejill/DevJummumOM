@@ -33,6 +33,8 @@ typedef NS_ENUM(NSInteger, PaperSizeIndex) {
                         selectedPaperSize:(NSInteger)selectedPaperSize
                        selectedModelIndex:(NSInteger)selectedModelIndex;
 
+@property (nonatomic) NSInteger printerBrand; //1=star,2=epson,3=gprinter
+
 @property (nonatomic) NSString *portName;
 
 @property (nonatomic) NSString *portSettings;
