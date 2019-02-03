@@ -279,7 +279,8 @@
             port = [SMPort getPort:portName :portSettings :(uint32_t) timeout];
             
             if (port == nil) {
-                title = @"Fail to Open Port";
+//                title = @"Fail to Open Port";
+                title = @"ไม่สามารถติดต่อเครื่องพิมพ์ได้";
                 break;
             }
             

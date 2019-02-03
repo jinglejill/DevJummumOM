@@ -157,4 +157,10 @@
     NSArray *sortArray = [noteTypeList sortedArrayUsingDescriptors:sortDescriptors];
     return [sortArray mutableCopy];
 }
+
++(void)removeAllObjects
+{
+    NSMutableArray *dataList = [SharedNoteType sharedNoteType].noteTypeList;
+    [dataList removeAllObjects];
+}
 @end

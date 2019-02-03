@@ -256,4 +256,10 @@
     
     return [self sortList:[filterArray mutableCopy]];
 }
+
++(void)removeAllObjects
+{
+    NSMutableArray *dataList = [SharedCustomerTable sharedCustomerTable].customerTableList;
+    [dataList removeAllObjects];
+}
 @end

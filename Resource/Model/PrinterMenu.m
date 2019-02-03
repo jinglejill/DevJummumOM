@@ -151,4 +151,10 @@
     NSArray *filterArray = [dataList filteredArrayUsingPredicate:predicate];
     return [filterArray count] > 0;
 }
+
++(void)removeAllObjects
+{
+    NSMutableArray *dataList = [SharedPrinterMenu sharedPrinterMenu].printerMenuList;
+    [dataList removeAllObjects];
+}
 @end

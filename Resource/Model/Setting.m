@@ -142,6 +142,12 @@
     return toSetting;
 }
 
++(void)removeAllObjects
+{
+    NSMutableArray *dataList = [SharedSetting sharedSetting].settingList;
+    [dataList removeAllObjects];
+}
+
 +(NSString *)getSettingValueWithKeyName:(NSString *)keyName
 {
     NSMutableArray *dataList = [SharedSetting sharedSetting].settingList;

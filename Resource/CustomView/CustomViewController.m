@@ -18,10 +18,29 @@
 #import "OrderTaking.h"
 #import "OrderNote.h"
 
+#import "ReceiptPrint.h"
+#import "Printer.h"
+#import "PrinterMenu.h"
+
+
+#import "AppDelegate.h"
+#import "Communication.h"
+#import "GlobalQueueManager.h"
+
 
 @interface CustomViewController ()
 {
     UILabel *_lblStatus;
+    
+    //gprinter
+    GprinterReceiptCommand *gPrinterConnection;
+    
+    
+    //epson
+    Epos2FilterOption *filterOption;
+    Epos2Printer *epsonPrinter;
+    enum Epos2PrinterSeries valuePrinterSeries;
+    enum Epos2ModelLang valuePrinterModel;
 }
 @end
 
@@ -148,6 +167,15 @@ CGFloat animatedDistance;
     UIBarButtonItem *space=[[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     [toolBar setItems:[NSArray arrayWithObjects:space,doneBtn, nil]];
 
+
+    //epson
+    filterOption = [[Epos2FilterOption alloc]init];
+    valuePrinterSeries = EPOS2_TM_M10;
+    valuePrinterModel = EPOS2_MODEL_ANK;
+    
+    
+    //gprinter
+    gPrinterConnection = [[GprinterReceiptCommand alloc]init];
 }
 
 -(void) blinkAddedNotiView
@@ -797,8 +825,6 @@ CGFloat animatedDistance;
     
     
     int height = [heightStr intValue];
-    //  CGRect screenRect = [[UIScreen mainScreen] bounds];
-    //  CGFloat screenHeight = (self.contentWebView.hidden)?screenRect.size.width:screenRect.size.height;
     CGFloat screenHeight = webView.bounds.size.height;
     int pages = ceil(height / screenHeight);
     
@@ -1046,6 +1072,404 @@ CGFloat animatedDistance;
 -(void)dismissKeyboard
 {
     [self.view endEditing:YES];
+}
+
+- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize sourceImage:(UIImage *)sourceImage
+{
+
+    UIImage *newImage = nil;
+
+    CGSize imageSize = sourceImage.size;
+    CGFloat width = imageSize.width;
+    CGFloat height = imageSize.height;
+
+    CGFloat targetWidth = targetSize.width;
+    CGFloat targetHeight = targetSize.height;
+
+    CGFloat scaleFactor = 0.0;
+    CGFloat scaledWidth = targetWidth;
+    CGFloat scaledHeight = targetHeight;
+
+    CGPoint thumbnailPoint = CGPointMake(0.0,0.0);
+
+    if (CGSizeEqualToSize(imageSize, targetSize) == NO) {
+
+        CGFloat widthFactor = targetWidth / width;
+        CGFloat heightFactor = targetHeight / height;
+
+        if (widthFactor < heightFactor)
+            scaleFactor = widthFactor;
+        else
+            scaleFactor = heightFactor;
+
+        scaledWidth  = width * scaleFactor;
+        scaledHeight = height * scaleFactor;
+
+        // center the image
+
+        if (widthFactor < heightFactor) {
+            thumbnailPoint.y = (targetHeight - scaledHeight) * 0.5;
+        } else if (widthFactor > heightFactor) {
+            thumbnailPoint.x = (targetWidth - scaledWidth) * 0.5;
+        }
+    }
+
+
+    // this is actually the interesting part:
+
+    UIGraphicsBeginImageContext(targetSize);
+
+    CGRect thumbnailRect = CGRectZero;
+    thumbnailRect.origin = thumbnailPoint;
+    thumbnailRect.size.width  = scaledWidth;
+    thumbnailRect.size.height = scaledHeight;
+
+    [sourceImage drawInRect:thumbnailRect];
+
+    newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    if(newImage == nil) NSLog(@"could not scale image");
+
+
+    return newImage ;
+}
+
+-(void)printStar:(UIImage *)imagePrint portName:(NSString *)portName portSettings:(NSString *)portSettings printer:(Printer *)printer receipt:(Receipt *)receipt
+{
+    NSData *commands = nil;
+
+    ISCBBuilder *builder = [StarIoExt createCommandBuilder:[AppDelegate getEmulation]];
+
+    [builder beginDocument];
+
+    [builder appendBitmap:imagePrint diffusion:NO width:[AppDelegate getSelectedPaperSize] bothScale:YES];
+
+    [builder appendCutPaper:SCBCutPaperActionPartialCutWithFeed];
+
+    [builder endDocument];
+
+    commands = [builder.commands copy];
+
+    dispatch_async(GlobalQueueManager.sharedManager.serialQueue, ^{
+        [Communication sendCommands:commands
+                           portName:portName
+                       portSettings:portSettings
+                            timeout:10000
+                  completionHandler:^(BOOL result, NSString *title, NSString *message) {
+                      dispatch_async(dispatch_get_main_queue(), ^{
+                          if(!result)
+                          {
+                              [self showAlert:title message:message];
+                          }
+                          else
+                          {
+                              ReceiptPrint *receiptPrint = [[ReceiptPrint alloc]init];
+                              receiptPrint.printerID = printer.printerID;
+                              receiptPrint.receiptID = receipt.receiptID;
+                              receiptPrint.modifiedUser = [Utility modifiedUser];
+                              self.homeModel = [[HomeModel alloc]init];
+                              self.homeModel.delegate = self;
+                              [self.homeModel updateItems:dbReceiptPrint withData:receiptPrint actionScreen:@"update receipt and insert receiptPrint"];
+                          }
+                      });
+                  }];
+    });
+}
+
+-(void)printEpson:(NSMutableArray *)imagePrintList portName:(NSString *)portName printer:(Printer *)printer receipt:(Receipt *)receipt
+{
+    [self runPrinterReceiptSequence:imagePrintList portName:portName printer:printer receipt:receipt];
+}
+
+-(void)printGPrinter:(UIImage *)imagePrint portName:(NSString *)portName printer:(Printer *)printer receipt:(Receipt *)receipt
+{
+    
+//    gPrinterConnection = [[GprinterReceiptCommand alloc]init];
+    
+    //set image size for print
+    float width = 600;
+    float height = imagePrint.size.height/imagePrint.size.width*width;
+    imagePrint = [self imageByScalingProportionallyToSize:CGSizeMake(width, height) sourceImage:imagePrint];
+
+
+    
+    [gPrinterConnection ClosePort];
+    gPrinterConnection = [gPrinterConnection OpenPort:portName port:9100 timeout:100];
+    
+    
+    [gPrinterConnection basicSetting];
+    [gPrinterConnection addPicture:imagePrint Alignment:MiddleAlignment maxWidth:600];
+    [gPrinterConnection addCut];
+    
+    
+    [gPrinterConnection SendToThePrinter];
+}
+
+-(BOOL) runPrinterReceiptSequence:(NSMutableArray *)imagePrintList portName:(NSString *)portName printer:(Printer *)printer receipt:(Receipt *)receipt
+{
+//    textWarnings.text = ""
+    
+    if (![self initializePrinterObject])
+    {
+        return false;
+    }
+    
+    if (![self createReceiptData:imagePrintList])
+    {
+        [self finalizePrinterObject];
+        return false;
+    }
+    
+    if (![self printData:portName])
+    {
+        [self finalizePrinterObject];
+        return false;
+    }
+    
+    
+    ReceiptPrint *receiptPrint = [[ReceiptPrint alloc]init];
+    receiptPrint.printerID = printer.printerID;
+    receiptPrint.receiptID = receipt.receiptID;
+    receiptPrint.modifiedUser = [Utility modifiedUser];
+    self.homeModel = [[HomeModel alloc]init];
+    self.homeModel.delegate = self;
+    [self.homeModel updateItems:dbReceiptPrint withData:receiptPrint actionScreen:@"update receipt and insert receiptPrint"];
+    
+    
+    return true;
+}
+
+-(BOOL) initializePrinterObject
+{
+    epsonPrinter = [[Epos2Printer alloc]initWithPrinterSeries:valuePrinterSeries lang:valuePrinterModel];
+
+    if (epsonPrinter == nil)
+    {
+        return false;
+    }
+    [epsonPrinter setReceiveEventDelegate:self];
+
+    return true;
+}
+
+-(void) finalizePrinterObject
+{
+    if (epsonPrinter == nil)
+    {
+        return;
+    }
+    
+    [epsonPrinter clearCommandBuffer];
+    [epsonPrinter setReceiveEventDelegate:nil];
+    epsonPrinter = nil;
+}
+
+-(BOOL) createReceiptData:(NSMutableArray *)imageList
+{
+    enum Epos2ErrorStatus result = EPOS2_SUCCESS;
+
+
+    if ([imageList count] == 0)
+    {
+        return false;
+    }
+
+    result = [epsonPrinter addTextAlign:EPOS2_ALIGN_LEFT];
+    if (result != EPOS2_SUCCESS)
+    {
+//            MessageView.showErrorEpos(result, method:"addTextAlign")
+        return false;
+    }
+
+    
+    for (int i=0; i<[imageList count]; i++)
+    {
+        UIImage *image = imageList[i];
+        
+        //set image size for print
+        float width = 500;
+        float height = image.size.height/image.size.width*width;
+        image = [self imageByScalingProportionallyToSize:CGSizeMake(width, height) sourceImage:image];
+        
+        
+        result = [epsonPrinter addPageBegin];
+        if (result != EPOS2_SUCCESS)
+        {
+    //        MessageView.showErrorEpos(result, method:"addPageBegin")
+            return false;
+        }
+
+    //    NSLog(@"%f,%f",logoData.size.width,logoData.size.height);
+        result = [epsonPrinter addPageArea:0 y:0 width:(int)(image.size.width)+60 height:(int)(image.size.height)+60]; //(0, y:0, width:PAGE_AREA_WIDTH, height:PAGE_AREA_HEIGHT)
+        if (result != EPOS2_SUCCESS)
+        {
+    //        MessageView.showErrorEpos(result, method:"addPageArea")
+            return false;
+        }
+
+        result = [epsonPrinter addPageDirection:EPOS2_DIRECTION_LEFT_TO_RIGHT];
+        if (result != EPOS2_SUCCESS)
+        {
+    //        MessageView.showErrorEpos(result, method:"addPageDirection")
+            return false;
+        }
+
+        result = [epsonPrinter addPagePosition:0 y:(int)(image.size.height)];
+        if (result != EPOS2_SUCCESS)
+        {
+    //        MessageView.showErrorEpos(result, method:"addPagePosition")
+            return false;
+        }
+        
+        result = [epsonPrinter addImage:image x:0 y:0
+            width:(int)(image.size.width)
+            height:(int)(image.size.height)
+            color:EPOS2_COLOR_1
+            mode:EPOS2_MODE_MONO
+            halftone:EPOS2_HALFTONE_THRESHOLD
+            brightness:(double)EPOS2_PARAM_DEFAULT
+            compress:EPOS2_COMPRESS_AUTO];
+        if (result != EPOS2_SUCCESS)
+        {
+    //        MessageView.showErrorEpos(result, method:"addImage")
+            return false;
+        }
+        
+        
+        result = [epsonPrinter addPageEnd];
+        if (result != EPOS2_SUCCESS)
+        {
+    //        MessageView.showErrorEpos(result, method:"addPageEnd")
+            return false;
+        }
+        
+        result = [epsonPrinter addCut:EPOS2_CUT_FEED];
+        if (result != EPOS2_SUCCESS)
+        {
+    //        MessageView.showErrorEpos(result, method:"addCut")
+            return false;
+        }        
+    }
+    
+
+    return true;
+}
+
+-(BOOL) printData:(NSString *)portName
+{
+    Epos2PrinterStatusInfo *status;
+
+    if (epsonPrinter == nil)
+    {
+        return false;
+    }
+    
+    if (![self connectPrinter:portName])
+    {
+        return false;
+    }
+    
+    
+    status = [epsonPrinter getStatus];
+//    dispPrinterWarnings(status)
+    
+    if (![self isPrintable:status])
+    {
+//        MessageView.show(makeErrorMessage(status))
+        [epsonPrinter disconnect];
+        return false;
+    }
+    
+    enum Epos2ErrorStatus result = [epsonPrinter sendData:(int)EPOS2_PARAM_DEFAULT];
+    if (result != EPOS2_SUCCESS)
+    {
+//        MessageView.showErrorEpos(result, method:"sendData")
+        [epsonPrinter disconnect];
+        return false;
+    }
+    
+    return true;
+}
+
+-(BOOL) connectPrinter:(NSString *)portName
+{
+    enum Epos2ErrorStatus result = EPOS2_SUCCESS;
+
+    if (epsonPrinter == nil)
+    {
+        return false;
+    }
+
+    result = [epsonPrinter connect:portName timeout:(int)EPOS2_PARAM_DEFAULT];
+    if (result != EPOS2_SUCCESS)
+    {
+//            MessageView.showErrorEpos(result, method:"connect")
+        NSString *title = @"ไม่สามารถติดต่อเครื่องพิมพ์ได้";
+        NSString *msg = @"กรุณาตรวจสอบการเชื่อมต่ออีกครั้งหนึ่ง";
+        [self showAlert:title message:msg];
+        return false;
+    }
+
+    result = [epsonPrinter beginTransaction];
+    if (result != EPOS2_SUCCESS)
+    {
+//            MessageView.showErrorEpos(result, method:"beginTransaction")
+        [epsonPrinter disconnect];
+        return false;
+    }
+    return true;
+}
+
+-(void) disconnectPrinter
+{
+    enum Epos2ErrorStatus result = EPOS2_SUCCESS;
+    
+    if (epsonPrinter == nil)
+    {
+        return;
+    }
+    
+    result = [epsonPrinter endTransaction];
+    if (result != EPOS2_SUCCESS)
+    {
+//            DispatchQueue.main.async(execute: {
+//                MessageView.showErrorEpos(result, method:"endTransaction")
+//            })
+    }
+    
+    
+    result = [epsonPrinter disconnect];
+    if (result != EPOS2_SUCCESS)
+    {
+//            DispatchQueue.main.async(execute: {
+//                MessageView.showErrorEpos(result, method:"disconnect")
+//            })
+    }
+    
+    [self finalizePrinterObject];
+}
+
+-(BOOL) isPrintable:(Epos2PrinterStatusInfo *)status
+{
+    if (status == nil)
+    {
+        return false;
+    }
+
+    if (status.connection == EPOS2_FALSE)
+    {
+        return false;
+    }
+    else if (status.online == EPOS2_FALSE)
+    {
+        return false;
+    }
+    else
+    {
+        // print available
+    }
+    return true;
 }
 @end
 

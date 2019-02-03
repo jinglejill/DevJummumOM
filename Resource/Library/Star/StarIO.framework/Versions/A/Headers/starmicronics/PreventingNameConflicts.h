@@ -9,8 +9,8 @@
 
 #pragma mark - StarIOPort.h/c
 
-#define OpenPort JpStarmStarioOpenPort
-#define ClosePort JpStarmStarioClosePort
+//#define OpenPort JpStarmStarioOpenPort
+//#define ClosePort JpStarmStarioClosePort
 #define ReadPort JpStarmStarioReadPort
 #define WritePort JpStarmStarioWritePort
 #define RetrieveFirmwareInformation JpStarmStarioRetrieveFirmwareInformation

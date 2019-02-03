@@ -43,4 +43,5 @@
 +(NSMutableArray *)getCustomerTableListWithZone:(NSString *)zone customerTableList:(NSMutableArray *)customerTableList;
 +(void)setSharedData:(NSMutableArray *)dataList;
 +(NSMutableArray *)getCustomerTableListWithBranchID:(NSInteger)branchID;
++(void)removeAllObjects;
 @end

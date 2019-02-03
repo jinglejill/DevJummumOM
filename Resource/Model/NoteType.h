@@ -34,4 +34,5 @@
 +(void)setSharedData:(NSMutableArray *)dataList;
 +(NSMutableArray *)getNoteTypeList;
 +(NSMutableArray *)sort:(NSMutableArray *)noteTypeList;
++(void)removeAllObjects;
 @end

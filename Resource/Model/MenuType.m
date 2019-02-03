@@ -165,4 +165,10 @@
     
     return [sortArray mutableCopy];
 }
+
++(void)removeAllObjects
+{
+    NSMutableArray *dataList = [SharedMenuType sharedMenuType].menuTypeList;
+    [dataList removeAllObjects];
+}
 @end

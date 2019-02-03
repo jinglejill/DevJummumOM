@@ -61,7 +61,6 @@
 		EF33D5B0211C371E00560C69 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF33D419211C371D00560C69 /* Icon-60@2x.png */; };
 		EF33D5B1211C371E00560C69 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF33D41A211C371D00560C69 /* Icon@2x.png */; };
 		EF33D5B2211C371E00560C69 /* triangle_dev_om.png in Resources */ = {isa = PBXBuildFile; fileRef = EF33D41B211C371D00560C69 /* triangle_dev_om.png */; };
-		EF33D5B3211C371E00560C69 /* triangle_demo.png in Resources */ = {isa = PBXBuildFile; fileRef = EF33D41C211C371D00560C69 /* triangle_demo.png */; };
 		EF33D5B4211C371E00560C69 /* contactUs.png in Resources */ = {isa = PBXBuildFile; fileRef = EF33D41D211C371D00560C69 /* contactUs.png */; };
 		EF33D5B5211C371E00560C69 /* jummumLogoCrop2.png in Resources */ = {isa = PBXBuildFile; fileRef = EF33D41E211C371D00560C69 /* jummumLogoCrop2.png */; };
 		EF33D5B6211C371E00560C69 /* Icon-Small@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF33D41F211C371D00560C69 /* Icon-Small@3x.png */; };
@@ -282,6 +281,13 @@
 		EF33D698211C371F00560C69 /* Kanit-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF33D58A211C371E00560C69 /* Kanit-ExtraLightItalic.ttf */; };
 		EF33D699211C371F00560C69 /* Kanit-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EF33D58B211C371E00560C69 /* Kanit-Medium.ttf */; };
 		EF33D69A211C371F00560C69 /* Kanit-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF33D58C211C371E00560C69 /* Kanit-SemiBoldItalic.otf */; };
+		EF44371021D6359C0024BD6A /* PrinterBrandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF44370F21D6359C0024BD6A /* PrinterBrandViewController.m */; };
+		EF44371321D637E90024BD6A /* PrinterChoosingEpsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF44371221D637E90024BD6A /* PrinterChoosingEpsonViewController.m */; };
+		EF44371921DC60270024BD6A /* libepos2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF44371521DC60270024BD6A /* libepos2.a */; };
+		EF44371C21DC61670024BD6A /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = EF44371B21DC61670024BD6A /* libxml2.2.tbd */; };
+		EF44371E21DC617A0024BD6A /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF44371D21DC617A0024BD6A /* ExternalAccessory.framework */; };
+		EF44372121DC76130024BD6A /* PrinterChoosingGPrinterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF44372021DC76130024BD6A /* PrinterChoosingGPrinterViewController.m */; };
+		EF44372421DC85250024BD6A /* libGprinterSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF44372321DC85240024BD6A /* libGprinterSDK.a */; };
 		EF5D2441212759A30073F1A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF5D2440212759A20073F1A1 /* GoogleService-Info.plist */; };
 		EF5D2485212A98060073F1A1 /* NewVersionUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2484212A98050073F1A1 /* NewVersionUpdateViewController.m */; };
 		EF5D2488212B6BE50073F1A1 /* SharedDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5D2487212B6BE50073F1A1 /* SharedDevice.m */; };
@@ -341,6 +347,7 @@
 		EFDAFE68214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE66214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m */; };
 		EFDAFE69214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFDAFE67214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib */; };
 		EFDAFE6F2150159100A2596D /* ReportDetailsByOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = EFDAFE6E2150159100A2596D /* ReportDetailsByOrder.m */; };
+		EFF109742203F98C00DE0578 /* triangle_demo_om.png in Resources */ = {isa = PBXBuildFile; fileRef = EFF109732203F98C00DE0578 /* triangle_demo_om.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -437,7 +444,6 @@
 		EF33D419211C371D00560C69 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		EF33D41A211C371D00560C69 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		EF33D41B211C371D00560C69 /* triangle_dev_om.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_dev_om.png; sourceTree = "<group>"; };
-		EF33D41C211C371D00560C69 /* triangle_demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_demo.png; sourceTree = "<group>"; };
 		EF33D41D211C371D00560C69 /* contactUs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contactUs.png; sourceTree = "<group>"; };
 		EF33D41E211C371D00560C69 /* jummumLogoCrop2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jummumLogoCrop2.png; sourceTree = "<group>"; };
 		EF33D41F211C371D00560C69 /* Icon-Small@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@3x.png"; sourceTree = "<group>"; };
@@ -779,6 +785,23 @@
 		EF33D58A211C371E00560C69 /* Kanit-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		EF33D58B211C371E00560C69 /* Kanit-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-Medium.ttf"; sourceTree = "<group>"; };
 		EF33D58C211C371E00560C69 /* Kanit-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kanit-SemiBoldItalic.otf"; sourceTree = "<group>"; };
+		EF44370E21D6359B0024BD6A /* PrinterBrandViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinterBrandViewController.h; sourceTree = "<group>"; };
+		EF44370F21D6359C0024BD6A /* PrinterBrandViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterBrandViewController.m; sourceTree = "<group>"; };
+		EF44371121D637E80024BD6A /* PrinterChoosingEpsonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinterChoosingEpsonViewController.h; sourceTree = "<group>"; };
+		EF44371221D637E90024BD6A /* PrinterChoosingEpsonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterChoosingEpsonViewController.m; sourceTree = "<group>"; };
+		EF44371521DC60270024BD6A /* libepos2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libepos2.a; sourceTree = "<group>"; };
+		EF44371621DC60270024BD6A /* ePOSEasySelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ePOSEasySelect.h; sourceTree = "<group>"; };
+		EF44371721DC60270024BD6A /* ePOS2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ePOS2.h; sourceTree = "<group>"; };
+		EF44371821DC60270024BD6A /* libeposeasyselect.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libeposeasyselect.a; sourceTree = "<group>"; };
+		EF44371B21DC61670024BD6A /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		EF44371D21DC617A0024BD6A /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		EF44371F21DC76130024BD6A /* PrinterChoosingGPrinterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinterChoosingGPrinterViewController.h; sourceTree = "<group>"; };
+		EF44372021DC76130024BD6A /* PrinterChoosingGPrinterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterChoosingGPrinterViewController.m; sourceTree = "<group>"; };
+		EF44372321DC85240024BD6A /* libGprinterSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGprinterSDK.a; sourceTree = "<group>"; };
+		EF44372521DC85310024BD6A /* GprinterReceiptCheckCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GprinterReceiptCheckCommand.h; sourceTree = "<group>"; };
+		EF44372621DC85320024BD6A /* GprinterLabelCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GprinterLabelCommand.h; sourceTree = "<group>"; };
+		EF44372721DC85320024BD6A /* GprinterBluetooth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GprinterBluetooth.h; sourceTree = "<group>"; };
+		EF44372821DC85320024BD6A /* GprinterReceiptCommand.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GprinterReceiptCommand.h; sourceTree = "<group>"; };
 		EF5D2440212759A20073F1A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF5D2483212A98050073F1A1 /* NewVersionUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewVersionUpdateViewController.h; sourceTree = "<group>"; };
 		EF5D2484212A98050073F1A1 /* NewVersionUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewVersionUpdateViewController.m; sourceTree = "<group>"; };
@@ -872,6 +895,7 @@
 		EFDAFE67214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCellMonthYearBalance.xib; sourceTree = "<group>"; };
 		EFDAFE6D2150159100A2596D /* ReportDetailsByOrder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReportDetailsByOrder.h; sourceTree = "<group>"; };
 		EFDAFE6E2150159100A2596D /* ReportDetailsByOrder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReportDetailsByOrder.m; sourceTree = "<group>"; };
+		EFF109732203F98C00DE0578 /* triangle_demo_om.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_demo_om.png; sourceTree = "<group>"; };
 		F5FF20B72FD762642E1EF9EF /* Pods-DevJummumOM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DevJummumOM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DevJummumOM/Pods-DevJummumOM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -880,10 +904,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF44371E21DC617A0024BD6A /* ExternalAccessory.framework in Frameworks */,
+				EF44371C21DC61670024BD6A /* libxml2.2.tbd in Frameworks */,
 				EF5D2A4D212F40D80073F1A1 /* CoreBluetooth.framework in Frameworks */,
 				EF5D2A4B212F40C70073F1A1 /* SMCloudServices.framework in Frameworks */,
 				EF5D2A49212F40C70073F1A1 /* StarIO.framework in Frameworks */,
+				EF44371921DC60270024BD6A /* libepos2.a in Frameworks */,
 				771C289CD9993A928A7F79B7 /* libPods-DevJummumOM.a in Frameworks */,
+				EF44372421DC85250024BD6A /* libGprinterSDK.a in Frameworks */,
 				EF5D2A4A212F40C70073F1A1 /* StarIO_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -910,6 +938,8 @@
 		86B84D5CF7A3BEDD58149493 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF44371D21DC617A0024BD6A /* ExternalAccessory.framework */,
+				EF44371B21DC61670024BD6A /* libxml2.2.tbd */,
 				EF5D2A4C212F40D80073F1A1 /* CoreBluetooth.framework */,
 				A70B12ABC431D57B4FD255BB /* libPods-DevJummumOM.a */,
 				52814E2AEAE7882270F4707D /* libPods-DevJummumOMTests.a */,
@@ -1021,6 +1051,8 @@
 		EF33D3F4211C371D00560C69 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				EF44372221DC85150024BD6A /* GPrinter */,
+				EF44371421DC5FF40024BD6A /* Epson */,
 				EFA4E3482156B1B2004C0ECF /* Omise */,
 				EF5D2A45212F40A30073F1A1 /* Star */,
 				EF33D3F5211C371D00560C69 /* Encryption */,
@@ -1098,8 +1130,8 @@
 				EF33D425211C371D00560C69 /* selfService.png */,
 				EF33D40D211C371D00560C69 /* termsOfService.png */,
 				EF33D411211C371D00560C69 /* triangle_and_om.png */,
-				EF33D41C211C371D00560C69 /* triangle_demo.png */,
 				EF33D41B211C371D00560C69 /* triangle_dev_om.png */,
+				EFF109732203F98C00DE0578 /* triangle_demo_om.png */,
 				EF33D417211C371D00560C69 /* triangle.png */,
 			);
 			path = Image;
@@ -1132,20 +1164,26 @@
 				EF33D42F211C371D00560C69 /* OrderDetailViewController.m */,
 				EF33D44B211C371D00560C69 /* PersonalDataViewController.h */,
 				EF33D437211C371D00560C69 /* PersonalDataViewController.m */,
+				EF44370E21D6359B0024BD6A /* PrinterBrandViewController.h */,
+				EF44370F21D6359C0024BD6A /* PrinterBrandViewController.m */,
+				EF44371121D637E80024BD6A /* PrinterChoosingEpsonViewController.h */,
+				EF44371221D637E90024BD6A /* PrinterChoosingEpsonViewController.m */,
+				EF44371F21DC76130024BD6A /* PrinterChoosingGPrinterViewController.h */,
+				EF44372021DC76130024BD6A /* PrinterChoosingGPrinterViewController.m */,
 				EF5D2A6A212F4B690073F1A1 /* PrinterChoosingViewController.h */,
 				EF5D2A6B212F4B690073F1A1 /* PrinterChoosingViewController.m */,
 				EF5D2A42212F3E460073F1A1 /* PrinterSettingViewController.h */,
 				EF5D2A43212F3E460073F1A1 /* PrinterSettingViewController.m */,
+				EFDAFE62214FD2A000A2596D /* ReportDetailsByDayViewController.h */,
+				EFDAFE63214FD2A000A2596D /* ReportDetailsByDayViewController.m */,
 				EFDAFE33214BCFA100A2596D /* ReportViewController.h */,
 				EFDAFE34214BCFA100A2596D /* ReportViewController.m */,
+				EF14CE53216B8AB80035A292 /* RunningReceiptViewController.h */,
+				EF14CE54216B8AB80035A292 /* RunningReceiptViewController.m */,
 				EF33D429211C371D00560C69 /* TermsOfServiceViewController.h */,
 				EF33D43D211C371D00560C69 /* TermsOfServiceViewController.m */,
 				EF33D433211C371D00560C69 /* TosAndPrivacyPolicyViewController.h */,
 				EF33D443211C371D00560C69 /* TosAndPrivacyPolicyViewController.m */,
-				EFDAFE62214FD2A000A2596D /* ReportDetailsByDayViewController.h */,
-				EFDAFE63214FD2A000A2596D /* ReportDetailsByDayViewController.m */,
-				EF14CE53216B8AB80035A292 /* RunningReceiptViewController.h */,
-				EF14CE54216B8AB80035A292 /* RunningReceiptViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1527,6 +1565,29 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		EF44371421DC5FF40024BD6A /* Epson */ = {
+			isa = PBXGroup;
+			children = (
+				EF44371721DC60270024BD6A /* ePOS2.h */,
+				EF44371621DC60270024BD6A /* ePOSEasySelect.h */,
+				EF44371521DC60270024BD6A /* libepos2.a */,
+				EF44371821DC60270024BD6A /* libeposeasyselect.a */,
+			);
+			path = Epson;
+			sourceTree = "<group>";
+		};
+		EF44372221DC85150024BD6A /* GPrinter */ = {
+			isa = PBXGroup;
+			children = (
+				EF44372721DC85320024BD6A /* GprinterBluetooth.h */,
+				EF44372621DC85320024BD6A /* GprinterLabelCommand.h */,
+				EF44372521DC85310024BD6A /* GprinterReceiptCheckCommand.h */,
+				EF44372821DC85320024BD6A /* GprinterReceiptCommand.h */,
+				EF44372321DC85240024BD6A /* libGprinterSDK.a */,
+			);
+			path = GPrinter;
+			sourceTree = "<group>";
+		};
 		EF5D2A45212F40A30073F1A1 /* Star */ = {
 			isa = PBXGroup;
 			children = (
@@ -1797,6 +1858,7 @@
 				EF33D667211C371F00560C69 /* Prompt-BlackItalic.ttf in Resources */,
 				EF33D657211C371F00560C69 /* CustomTableViewCellLabelSwitch.xib in Resources */,
 				EF33D68A211C371F00560C69 /* Prompt-ExtraLightItalic.ttf in Resources */,
+				EFF109742203F98C00DE0578 /* triangle_demo_om.png in Resources */,
 				EF33D683211C371F00560C69 /* Kanit-ExtraLight.otf in Resources */,
 				EF33D59B211C371E00560C69 /* iTunesArtwork in Resources */,
 				EF33D679211C371F00560C69 /* Kanit-MediumItalic.ttf in Resources */,
@@ -1827,7 +1889,6 @@
 				EF33D696211C371F00560C69 /* Prompt-Italic.ttf in Resources */,
 				EF33D5B4211C371E00560C69 /* contactUs.png in Resources */,
 				EFDAFE57214F5F5A00A2596D /* CustomTableViewCellReportDaily.xib in Resources */,
-				EF33D5B3211C371E00560C69 /* triangle_demo.png in Resources */,
 				EF33D688211C371F00560C69 /* Kanit-Bold.ttf in Resources */,
 				EF33D64D211C371F00560C69 /* CustomTableViewHeaderFooterOkCancel.xib in Resources */,
 				EF33D5AA211C371E00560C69 /* Icon-Small-50@2x.png in Resources */,
@@ -1986,6 +2047,7 @@
 				EF33D60A211C371E00560C69 /* SharedPrinter.m in Sources */,
 				EF33D630211C371F00560C69 /* CustomCollectionViewCellNote.m in Sources */,
 				EFDAFE68214FECDA00A2596D /* CustomTableViewCellMonthYearBalance.m in Sources */,
+				EF44371021D6359C0024BD6A /* PrinterBrandViewController.m in Sources */,
 				EF33D635211C371F00560C69 /* CustomTableViewCellPromoThumbNail.m in Sources */,
 				EF33D610211C371F00560C69 /* SharedMenuType.m in Sources */,
 				EF33D649211C371F00560C69 /* CustomTableViewCellRedemption.m in Sources */,
@@ -2001,6 +2063,8 @@
 				EFA4E3592156B1B3004C0ECF /* OmiseJsonParser.swift in Sources */,
 				EF33D658211C371F00560C69 /* CustomCollectionReusableView.m in Sources */,
 				EF33D5D6211C371E00560C69 /* Receipt.m in Sources */,
+				EF44371321D637E90024BD6A /* PrinterChoosingEpsonViewController.m in Sources */,
+				EF44372121DC76130024BD6A /* PrinterChoosingGPrinterViewController.m in Sources */,
 				EF33D641211C371F00560C69 /* CustomTableViewCellSearchBar.m in Sources */,
 				EF33D605211C371E00560C69 /* Branch.m in Sources */,
 				EF33D64B211C371F00560C69 /* CustomTableViewCellReceiptSummary.m in Sources */,
@@ -2300,6 +2364,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resource/Library/Epson",
+					"$(PROJECT_DIR)/Resource/Library/GPrinter",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JummumCo.DevJummumOM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -2324,6 +2393,11 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Resource/Library/Epson",
+					"$(PROJECT_DIR)/Resource/Library/GPrinter",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JummumCo.DevJummumOM;
 				PRODUCT_NAME = "$(TARGET_NAME)";

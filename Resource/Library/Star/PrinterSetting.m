@@ -14,6 +14,7 @@
                     portSettings:(NSString *)portSettings
                        modelName:(NSString *)modelName
                       macAddress:(NSString *)macAddress
+                      printerBrand:(NSString *)printerBrand
                        emulation:(StarIoExtEmulation)emulation
         cashDrawerOpenActiveHigh:(BOOL)cashDrawerOpenActiveHigh
              allReceiptsSettings:(NSInteger)allReceiptsSettings
@@ -25,6 +26,7 @@
         _portSettings = portSettings;
         _modelName = modelName;
         _macAddress = macAddress;
+        _printerBrand = printerBrand;
         _emulation = emulation;
         _cashDrawerOpenActiveHigh = cashDrawerOpenActiveHigh;
         _allReceiptsSettings = allReceiptsSettings;
@@ -42,6 +44,7 @@
         _portSettings = [aDecoder decodeObjectForKey:@"portSettings"];
         _modelName = [aDecoder decodeObjectForKey:@"modelName"];
         _macAddress = [aDecoder decodeObjectForKey:@"macAddress"];
+        _printerBrand = [aDecoder decodeObjectForKey:@"printerBrand"];
         _emulation = [aDecoder decodeIntegerForKey:@"emulation"];
         _cashDrawerOpenActiveHigh = [aDecoder decodeBoolForKey:@"cashDrawerOpenActiveHigh"];
         _allReceiptsSettings = [aDecoder decodeIntegerForKey:@"allReceiptsSettings"];
@@ -57,6 +60,7 @@
     [aCoder encodeObject:_portSettings forKey:@"portSettings"];
     [aCoder encodeObject:_modelName forKey:@"modelName"];
     [aCoder encodeObject:_macAddress forKey:@"macAddress"];
+    [aCoder encodeObject:_printerBrand forKey:@"printerBrand"];
     [aCoder encodeInteger:_emulation forKey:@"emulation"];
     [aCoder encodeBool:_cashDrawerOpenActiveHigh forKey:@"cashDrawerOpenActiveHigh"];
     [aCoder encodeInteger:_allReceiptsSettings forKey:@"allReceiptsSettings"];
@@ -74,6 +78,7 @@
                              [NSString stringWithFormat:@"portSettings: %@", _portSettings],
                              [NSString stringWithFormat:@"modelName: %@", _modelName],
                              [NSString stringWithFormat:@"macAddress: %@", _macAddress],
+                             [NSString stringWithFormat:@"printerBrand: %@", _printerBrand],
                              [NSString stringWithFormat:@"emulation: %ld", (long)_emulation],
                              [NSString stringWithFormat:@"cashDrawerOpenActiveHigh: %d", _cashDrawerOpenActiveHigh],
                              [NSString stringWithFormat:@"allReceiptsSettings: %ld", (long)_allReceiptsSettings],

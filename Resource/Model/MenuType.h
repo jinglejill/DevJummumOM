@@ -32,4 +32,5 @@
 +(void)setSharedData:(NSMutableArray *)dataList;
 +(NSMutableArray *)getMenuTypeList;
 +(NSMutableArray *)sortList:(NSMutableArray *)menuTypeList;
++(void)removeAllObjects;
 @end

@@ -107,5 +107,6 @@
 +(NSInteger)getIndex:(NSMutableArray *)receiptList receipt:(Receipt *)receipt;
 +(NSString *)maskCreditCardNo:(Receipt *)receipt;
 +(Receipt *)getReceipt:(NSInteger)receiptID receiptList:(NSMutableArray *)receiptList;
++(NSInteger)getPaymentMethod:(Receipt *)receipt;
 @end
 

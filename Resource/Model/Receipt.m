@@ -807,4 +807,17 @@
     }
     return nil;
 }
+
++(NSInteger)getPaymentMethod:(Receipt *)receipt
+{
+    if(![Utility isStringEmpty:receipt.creditCardNo])
+    {
+        return 2;
+    }
+    else if(![Utility isStringEmpty:receipt.gbpReferenceNo])
+    {
+        return 1;
+    }
+    return 0;
+}
 @end

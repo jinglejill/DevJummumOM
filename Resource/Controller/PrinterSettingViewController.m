@@ -7,13 +7,14 @@
 //
 
 #import "PrinterSettingViewController.h"
-#import "PrinterChoosingViewController.h"
+#import "PrinterBrandViewController.h"
 #import "Setting.h"
 #import "AppDelegate.h"
 #import "PrinterSetting.h"
 #import "Printer.h"
 #import "Branch.h"
 #import <StarIO/SMPort.h>
+#import "ePOS2.h"
 
 
 @interface PrinterSettingViewController ()
@@ -22,6 +23,10 @@
     NSInteger _selectedPrinterIndex;
     BOOL _firstLoad;
     
+    
+    enum Epos2PrinterSeries valuePrinterSeries;
+    enum Epos2ModelLang valuePrinterModel;
+    Epos2Printer *epsonPrinter;
 }
 @property (nonatomic) NSMutableArray *statusCellArray;
 
@@ -37,7 +42,6 @@
 
 -(IBAction)unwindToPrinterSetting:(UIStoryboardSegue *)segue
 {
-//    [self loadingOverlayView];
     _firstLoad = NO;
     [tbvData reloadData];
 }
@@ -67,6 +71,10 @@
     _firstLoad = YES;
     
     
+    valuePrinterSeries = EPOS2_TM_M10;
+    valuePrinterModel = EPOS2_MODEL_ANK;
+    
+    
     [self loadingOverlayView];
     self.homeModel = [[HomeModel alloc]init];
     self.homeModel.delegate = self;
@@ -85,7 +93,8 @@
     
     if(_firstLoad)
     {
-        [self refreshDeviceStatus];
+        [self refreshDeviceStatus];//dont forget to uncomment
+//        [self removeOverlayViews];//test
     }
 }
 
@@ -138,8 +147,12 @@
             if(indexPath.section+1 <= [printerSettingList count])
             {
                 printerSetting = appDelegate.settingManager.settings[indexPath.section];
-                strPortNameAndMacAddress = [NSString stringWithFormat:@"%@ (%@)",printerSetting.portName,printerSetting.macAddress];
-                
+                strPortNameAndMacAddress = printerSetting.portName;
+                if(![Utility isStringEmpty:printerSetting.macAddress])
+                {
+                    strPortNameAndMacAddress = [NSString stringWithFormat:@"%@ (%@)",strPortNameAndMacAddress,printerSetting.macAddress];
+                }
+                                
                 if(printerSetting.modelName)
                 {
                     printerAlreadySet = YES;
@@ -189,12 +202,21 @@
                 cell.detailTextLabel.textColor = cSystem4_50;
                 cell.detailTextLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
             }
-            else
+            else if(printer.printerStatus == 0)
             {
                 cell.textLabel.text = @"สถานะ";
                 cell.textLabel.textColor = cSystem4;
                 cell.textLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
                 cell.detailTextLabel.text = @"Offline";
+                cell.detailTextLabel.textColor = cSystem4_50;
+                cell.detailTextLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
+            }
+            else if(printer.printerStatus == 2)
+            {
+                cell.textLabel.text = @"สถานะ";
+                cell.textLabel.textColor = cSystem4;
+                cell.textLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
+                cell.detailTextLabel.text = @"Pending";
                 cell.detailTextLabel.textColor = cSystem4_50;
                 cell.detailTextLabel.font = [UIFont fontWithName:@"Prompt-Regular" size:15.0f];
             }
@@ -226,7 +248,7 @@
     {
         _selectedPrinterIndex = indexPath.section;
         dispatch_async(dispatch_get_main_queue(),^ {
-            [self performSegueWithIdentifier:@"segPrinterChoosing" sender:self];            
+            [self performSegueWithIdentifier:@"segPrinterBrand" sender:self];
         } );
     }
 }
@@ -251,7 +273,10 @@
     return 44;
 }
 
-- (void)refreshDeviceStatus {
+- (void)refreshDeviceStatus
+{
+    BOOL starConnected = NO;
+    BOOL epsonConnected = NO;
     BOOL result = NO;
     
     
@@ -262,21 +287,32 @@
     {
         SMPort *port = nil;
     
-        @try {
+        @try
+        {
+            AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+            NSMutableArray *printerSettingList = appDelegate.settingManager.settings;
+        
+            
+            if(i+1 > [printerSettingList count])
+            {
+                break;
+            }
+            PrinterSetting *printerSetting = printerSettingList[i];
+            NSString *portName = printerSetting.portName;
+            Printer *printer = _printerList[i];
+            
             while (YES)
             {
-                AppDelegate *appDelegate = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-                NSMutableArray *printerSettingList = appDelegate.settingManager.settings;
-                if(i+1 > [printerSettingList count])
-                {
-                    break;
-                }
-                PrinterSetting *printerSetting = printerSettingList[i];
-                NSString *portName = printerSetting.portName;
                 port = [SMPort getPort:portName :printerSetting.portSettings :10000];     // 10000mS!!!
                 
-                if (port == nil) {
+                if (port == nil)
+                {
+                    starConnected = NO;
                     break;
+                }
+                else
+                {
+                    starConnected = YES;
                 }
                 
                 // Sleep to avoid a problem which sometimes cannot communicate with Bluetooth.
@@ -291,7 +327,7 @@
                 
                 [port getParsedStatus:&printerStatus :2];
                 
-                Printer *printer = _printerList[i];
+                
                 if (printerStatus.offline == SM_TRUE)
                 {
                     printer.printerStatus = 0;
@@ -303,44 +339,29 @@
                     [_statusCellArray addObject:@[@"Online", @"Online",  [UIColor blueColor]]];
                 }
                 
-                if (printerStatus.coverOpen == SM_TRUE) {
-                    [_statusCellArray addObject:@[@"Cover", @"Open",   [UIColor redColor]]];
+                result = YES;
+                break;
+            }
+            
+            if(!starConnected)
+            {
+                //check epson status
+                epsonConnected = [self connectPrinterWithPortName:portName];
+                if(epsonConnected)
+                {
+                    printer.printerStatus = 1;
                 }
-                else {
-                    [_statusCellArray addObject:@[@"Cover", @"Closed", [UIColor blueColor]]];
+                else
+                {
+                    printer.printerStatus = 0;
                 }
-                
-                if (printerStatus.receiptPaperEmpty == SM_TRUE) {
-                    [_statusCellArray addObject:@[@"Paper", @"Empty", [UIColor redColor]]];
-                }
-                else if (printerStatus.receiptPaperNearEmptyInner == SM_TRUE ||
-                         printerStatus.receiptPaperNearEmptyOuter == SM_TRUE) {
-                    [_statusCellArray addObject:@[@"Paper", @"Near Empty", [UIColor orangeColor]]];
-                }
-                else {
-                    [_statusCellArray addObject:@[@"Paper", @"Ready",      [UIColor blueColor]]];
-                }
-                
-                if (printerStatus.offline == SM_TRUE) {
-                    [_firmwareInfoCellArray addObject:@[@"Unable to get F/W info. from an error.", @"", [UIColor redColor]]];
-                    
-                    result = YES;
-                    break;
-                }
-                else {
-                    NSDictionary *firmwareInformation = [port getFirmwareInformation];
-                    
-                    if (firmwareInformation == nil) {
-                        break;
-                    }
-                    
-                    [_firmwareInfoCellArray addObject:@[@"Model Name",       [firmwareInformation objectForKey:@"ModelName"],       [UIColor blueColor]]];
-                    
-                    [_firmwareInfoCellArray addObject:@[@"Firmware Version", [firmwareInformation objectForKey:@"FirmwareVersion"], [UIColor blueColor]]];
-                    
-                    result = YES;
-                    break;
-                }
+            }
+            
+            
+            //check gprinter status
+            if(!starConnected && !epsonConnected)
+            {
+                printer.printerStatus = 2;
             }
         }
         @catch (PortException *exc) {
@@ -354,8 +375,12 @@
         }
     }
     
-    if (result == NO) {
-        [self showAlert:@"Fail to Open Port" message:@""];
+    if (result == NO)
+    {
+        NSString *title = @"ไม่สามารถติดต่อเครื่องพิมพ์ได้";
+        NSString *msg = @"";
+        [self showAlert:title message:msg];
+//        [self showAlert:@"Fail to Open Port" message:@""];
     }
     
     [tbvData reloadData];
@@ -364,9 +389,9 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"segPrinterChoosing"])
+    if([segue.identifier isEqualToString:@"segPrinterBrand"])
     {
-        PrinterChoosingViewController *vc = segue.destinationViewController;
+        PrinterBrandViewController *vc = segue.destinationViewController;
         vc.selectedPrinterIndex = _selectedPrinterIndex;
         vc.printer = _printerList[_selectedPrinterIndex];
     }
@@ -378,4 +403,35 @@
     _printerList = items[0];
     [tbvData reloadData];
 }
+
+-(BOOL) connectPrinterWithPortName:(NSString *)portName
+{
+    Epos2Printer *printer = [[Epos2Printer alloc]initWithPrinterSeries:valuePrinterSeries lang:valuePrinterModel];
+    enum Epos2ErrorStatus result = EPOS2_SUCCESS;
+
+    if (printer == nil)
+    {
+        return false;
+    }
+
+    result = [printer connect:portName timeout:(int)EPOS2_PARAM_DEFAULT];
+    if (result != EPOS2_SUCCESS)
+    {
+//            MessageView.showErrorEpos(result, method:"connect")
+//        NSString *title = @"ไม่สามารถติดต่อเครื่องพิมพ์ได้";
+//        NSString *msg = @"กรุณาตรวจสอบการเชื่อมต่ออีกครั้งหนึ่ง";
+//        [self showAlert:title message:msg];
+        return false;
+    }
+
+    result = [printer beginTransaction];
+    if (result != EPOS2_SUCCESS)
+    {
+//            MessageView.showErrorEpos(result, method:"beginTransaction")
+        [printer disconnect];
+        return false;
+    }
+    return true;
+}
+
 @end

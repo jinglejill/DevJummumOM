@@ -13,6 +13,7 @@
 @property (nonatomic) float balance;
 @property (nonatomic) float totalAmount;
 @property (nonatomic) float specialPriceDiscount;
+@property (nonatomic) float discountProgramValue;
 @property (nonatomic) float discountValue;
 @property (nonatomic) float afterDiscount;
 @property (nonatomic) float serviceChargeValue;

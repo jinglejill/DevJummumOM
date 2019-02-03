@@ -664,11 +664,13 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
         _paperSizeIndex != PaperSizeIndexNone) {
         NSInteger currentAllReceiptsSetting = _appDelegate.settingManager.settings[_selectedPrinterIndex].allReceiptsSettings;
         
+        NSString *printerBrand = @"1";
         PrinterSetting *printerSetting = [[PrinterSetting alloc] initWithPortName:portName
                                                                      portSettings:portSettings
                                                                         modelName:modelName
                                                                        macAddress:macAddress
-                                                                        emulation:emulation
+                                          
+                                                            printerBrand:printerBrand                emulation:emulation
                                                          cashDrawerOpenActiveHigh:cashDrawerOpenActiveHigh
                                                               allReceiptsSettings:currentAllReceiptsSetting
                                                                 selectedPaperSize:paperSizeIndex

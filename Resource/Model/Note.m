@@ -197,4 +197,9 @@
     return [filterArray mutableCopy];
 }
 
++(void)removeAllObjects
+{
+    NSMutableArray *dataList = [SharedNote sharedNote].noteList;
+    [dataList removeAllObjects];
+}
 @end

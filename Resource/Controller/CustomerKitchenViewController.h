@@ -7,9 +7,11 @@
 //
 
 #import "CustomViewController.h"
+#import "ePOS2.h"
+#import "GprinterReceiptCommand.h"
 
 
-@interface CustomerKitchenViewController : CustomViewController<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate>
+@interface CustomerKitchenViewController : CustomViewController<UITableViewDataSource,UITableViewDelegate,UIWebViewDelegate,Epos2DiscoveryDelegate,Epos2PtrReceiveDelegate>
 
 
 

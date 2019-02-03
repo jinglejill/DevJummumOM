@@ -31,4 +31,5 @@
 +(PrinterMenu *)copyFrom:(PrinterMenu *)fromPrinterMenu to:(PrinterMenu *)toPrinterMenu;
 
 +(BOOL)hasMenuID:(NSInteger)menuID inPrinter:(Printer *)printer;
++(void)removeAllObjects;
 @end

@@ -139,4 +139,10 @@
     }
     return nil;
 }
+
++(void)removeAllObjects
+{
+    NSMutableArray *dataList = [SharedPrinter sharedPrinter].printerList;
+    [dataList removeAllObjects];
+}
 @end

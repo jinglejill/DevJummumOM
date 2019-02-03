@@ -7,7 +7,6 @@
 //
 
 #import "PrinterChoosingViewController.h"
-#import "Setting.h"
 #import "AppDelegate.h"
 
 #import "ModelCapability.h"
@@ -322,14 +321,18 @@ typedef NS_ENUM(NSInteger, CellParamIndex) {
                     modelIndex:(ModelIndex)modelIndex
                 paperSizeIndex:(PaperSizeIndex)paperSizeIndex {
     if (_selectedModelIndex != ModelIndexNone &&
-        _paperSizeIndex != PaperSizeIndexNone) {
+        _paperSizeIndex != PaperSizeIndexNone)
+        {
         NSInteger currentAllReceiptsSetting = 0;
         
+        NSString *printerBrand = @"1";
         PrinterSetting *printerSetting = [[PrinterSetting alloc] initWithPortName:portName
                                                                      portSettings:portSettings
                                                                         modelName:modelName
                                                                        macAddress:macAddress
-                                                                        emulation:emulation
+                                          
+                                                            printerBrand:printerBrand
+                                                            emulation:emulation
                                                          cashDrawerOpenActiveHigh:cashDrawerOpenActiveHigh
                                                               allReceiptsSettings:currentAllReceiptsSetting
                                                                 selectedPaperSize:paperSizeIndex

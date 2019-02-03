@@ -27,6 +27,7 @@
 +(void)addList:(NSMutableArray *)settingList;
 +(void)removeList:(NSMutableArray *)settingList;
 +(Setting *)getSetting:(NSInteger)settingID;
++(void)removeAllObjects;
 +(NSString *)getSettingValueWithKeyName:(NSString *)keyName;
 +(Setting *)getSettingWithKeyName:(NSString *)keyName;
 +(BOOL)isDeleteOrderPasswordValid:(NSString *)password;

@@ -10,8 +10,11 @@
 #import "HomeModel.h"
 #import "Utility.h"
 #import "Receipt.h"
+#import "Setting.h"
 #import <MessageUI/MFMailComposeViewController.h>
-
+#import "ePOS2.h"
+#import "GprinterReceiptCommand.h"
+#import "Printer.h"
 
 @interface CustomViewController : UIViewController<HomeModelProtocol,MFMailComposeViewControllerDelegate,UITextFieldDelegate,UIWebViewDelegate>
 @property (nonatomic,retain) HomeModel *homeModel;
@@ -32,6 +35,7 @@
 @property (nonatomic) BOOL showRunningReceipt;
 @property (nonatomic,retain) UIToolbar *toolBar;
 @property (nonatomic,retain) Receipt *selectedReceipt;
+@property (strong, nonatomic) IBOutlet UITableView *tbvData;
 
 
 
@@ -78,4 +82,9 @@
 -(void)printReceiptKitchenBill:(NSMutableArray *)receiptList;
 -(void)doPrintProcess:(UIImage *)image portName:(NSString *)portName;
 -(void)dismissKeyboard;
+- (UIImage *)imageByScalingProportionallyToSize:(CGSize)targetSize sourceImage:(UIImage *)sourceImage;
+-(void)printStar:(UIImage *)imagePrint portName:(NSString *)portName portSettings:(NSString *)portSettings printer:(Printer *)printer receipt:(Receipt *)receipt;
+-(void)printEpson:(NSMutableArray *)imagePrintList portName:(NSString *)portName printer:(Printer *)printer receipt:(Receipt *)receipt;
+-(void)printGPrinter:(UIImage *)imagePrint portName:(NSString *)portName printer:(Printer *)printer receipt:(Receipt *)receipt;
+-(UIImage *)screenCaptureBill:(Receipt *)receipt;
 @end

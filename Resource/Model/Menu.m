@@ -297,4 +297,10 @@
     NSMutableArray *dataList = [SharedCurrentMenu SharedCurrentMenu].menuList;
     [dataList removeAllObjects];
 }
+
++(void)removeAllObjects
+{
+    NSMutableArray *dataList = [SharedCurrentMenu SharedCurrentMenu].menuList;
+    [dataList removeAllObjects];
+}
 @end

@@ -29,4 +29,5 @@
 +(Printer *)getPrinterWithCode:(NSString *)code;
 +(NSMutableArray *)getPrinterList;
 +(Printer *)getPrinterWithName:(NSString *)name;
++(void)removeAllObjects;
 @end

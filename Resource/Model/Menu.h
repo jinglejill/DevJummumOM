@@ -55,4 +55,5 @@
 +(NSMutableArray *)getCurrentMenuList;
 +(void)setCurrentMenuList:(NSMutableArray *)menuList;
 +(void)removeCurrentMenuList;
++(void)removeAllObjects;
 @end
